@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PersonalityTemplate id="mxs40ppca_dcmp" name="DCMP" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v10">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.atop\.adc_grp\.dcmp" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers>
+    <ExposedMember key="srcChannel" paramId="src_ch" />
+  </ExposedMembers>
+  <Parameters>
+    <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__dcmp.html" linkText="Open PPCA DCMP Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+
+    <!-- DCSG Configuration -->
+    <ParamString id="adcGroupNumber" name="ADC Group Number" group="Internal" default="`${getInstNumber(&quot;adc_grp&quot;)}`" visible="false" editable="false" desc="ADC Group name number." />
+    <ParamChoice id="comparison_mode"
+             name="DCMP Comparison mode"
+             group="DCMP Configuration"
+             visible="true"
+             editable="true"
+             desc="DCMP Comparison mode."
+             default="CY_DCMP_MODE_IMMEDIATE_COMPARISON">
+        <Entry name="Immediate Comparison" value="CY_DCMP_MODE_IMMEDIATE_COMPARISON" visible="true"/>
+        <Entry name="Integration of Immediate Comparision" value="CY_DCMP_MODE_INTEGRATION_OF_IMMEDIATE_COMPARISON" visible="true"/>
+        <Entry name="Accumulation of Immediate Comparision" value="CY_DCMP_MODE_ACCUMULATE_OF_IMMEDIATE_COMPARISON" visible="true"/>
+        <Entry name="Averaged Comparision" value="CY_DCMP_MODE_AVERAGED_COMPARISON" visible="true"/>
+    </ParamChoice>
+    <ParamChoice id="avg_sampling_window"
+             name="DCMP Average Sampling Window"
+             group="DCMP Configuration"
+             visible="true"
+             editable="true"
+             desc="DCMP Average Sampling Window."
+             default="CY_DCMP_AVG_SAMPLING_WINDOW_4POINTS">
+        <Entry name="Sampling Window is 4 Points" value="CY_DCMP_AVG_SAMPLING_WINDOW_4POINTS" visible="true"/>
+        <Entry name="Sampling Window is 16 Points" value="CY_DCMP_AVG_SAMPLING_WINDOW_16POINTS" visible="true"/>
+        <Entry name="Sampling Window is 64 Points" value="CY_DCMP_AVG_SAMPLING_WINDOW_64POINTS" visible="true"/>
+        <Entry name="Sampling Window is 256 Points" value="CY_DCMP_AVG_SAMPLING_WINDOW_256POINTS" visible="true"/>
+    </ParamChoice>
+    <ParamRange id="src_ch" name="Source Channel Number to DCMP" group="DCMP Configuration" default="0" min="0" max="`${((adcGroupNumber eq 0) || (adcGroupNumber eq 3) ? 7 : 3)}`" resolution="1" visible="true" editable="true" desc="Source Channel Number to DCMP." />
+    <ParamBool id="inv_dcmp_ev" name="Invert Immediate Comparision Result" group="DCMP Configuration" default="false" visible="`${(comparison_mode eq CY_DCMP_MODE_IMMEDIATE_COMPARISON)}`" editable="`${(comparison_mode eq CY_DCMP_MODE_IMMEDIATE_COMPARISON)}`" desc=" if enabled, The immediate comparison result will be inverted.."/>
+    <ParamRange id="dcmp_threshold" name="DCMP Threshold Value" group="DCMP Configuration" default="0" min="0" max="4095" resolution="1" visible="true" editable="true" desc="DCMP Threshold Value." />
+    <ParamRange id="dcmp_acc_threshold" name="SDCMP Accumulate Threshold Value" group="DCMP Configuration" default="0" min="0" max="255" resolution="1" visible="true" editable="true" desc="DCMP Accumulate Threshold Value. DCMP result will be 1 if the Comparator result is greater than dcmp_acc_threshold." />
+
+    <ParamSignal port="dcmp_out[0]" name="dcmp_out[0]" visible="`${hasVisibleOption(&quot;dcmp_out[0]&quot;)}`" canBeEmpty="true" group="Signals" desc="" />
+    <ParamSignal port="dcmp_trig[0]" name="dcmp_trig[0]"  visible="`${hasVisibleOption(&quot;dcmp_trig[0]&quot;)}`" canBeEmpty="true" group="Signals" desc="" />
+
+    <ParamString id="InstNumber" name="InstNumber" group="Internal" default="`${getInstNumber(&quot;dcmp&quot;)}`" visible="false" editable="false" desc="Instance number." />
+    <ParamString id="arefRsc" name="arefRsc" group="Internal" default="ppca[0].atop[0].adc_grp[0].aref[0]" visible="false" editable="false" desc="" />
+    <ParamString id="arefUsed" name="arefUsed" group="Internal" default="`${isBlockUsed(arefRsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+  </Parameters>
+  <DRCs>
+    <DRC type="ERROR" text="Enable AREF in ADC Group0 and configure VREF Source accordingly." condition="`${!arefUsed}`">
+      <FixIt action="ENABLE_BLOCK" target="`${arefRsc}`" value="" valid="true" />
+    </DRC>
+  </DRCs>
+
+  <ConfigFirmware>
+
+    <ConfigInclude value="cy_ppca_dcmp.h" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_ATOPSS_ADC_GRP`${adcGroupNumber}`_DCMP`${InstNumber}`" public="true" include="true" />
+    <ConfigStruct name="`${INST_NAME}`_config" type="cy_stc_ppca_dcmp_config_t" const="`${inFlash}`" public="true" include="true" >
+      <Member name="comparison_mode" value="`${comparison_mode}`" />
+      <Member name="avg_sampling_window" value="`${avg_sampling_window}`" />
+      <Member name="src_ch" value="`${src_ch}`" />
+      <Member name="inv_dcmp_ev" value="`${inv_dcmp_ev}`" />
+      <Member name="dcmp_threshold" value="`${dcmp_threshold}`" />
+      <Member name="dcmp_acc_threshold" value="`${dcmp_acc_threshold}`" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_DCMP_Init(`${INST_NAME}`_HW, &amp;`${INST_NAME}`_config);" include="`${init}`" purpose="INITIALIZE" />
+
+  </ConfigFirmware>
+</PersonalityTemplate>

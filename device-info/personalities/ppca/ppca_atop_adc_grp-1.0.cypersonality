@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--****************************************************************************
+* \file adcmic.cypersonality
+* \version 1.0
+*
+* \brief
+* ADCMic personality description file.
+*
+********************************************************************************
+* \copyright
+* (c) 2022-2026, Infineon Technologies AG, or an affiliate of Infineon
+* Technologies AG.
+* SPDX-License-Identifier: Apache-2.0
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*****************************************************************************-->
+
+<PersonalityTemplate id="mxs40ppca_adc_group" name="ADC_Group" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v12">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.atop\.adc_grp" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers />
+
+  <Parameters>
+	<ParamString id="greenBlock" name="greenBlock" group="Internal" default="#9BBA43" visible="false" editable="false" desc="" />
+  <ParamString id="greenLine" name="greenLine" group="Internal" default="#0A8276" visible="false" editable="false" desc="" />
+  <ParamString id="defaultLine" name="defaultLine" group="Internal" default="#D8D8D8" visible="false" editable="false" desc="" />
+    <ParamString id="orangeDarkLine" name="orangeDarkLine" group="Internal" default="marker-end:url(#mrkr10-258);stroke:#ff9737;stroke-linecap:butt;stroke-width:1" visible="false" editable="false" desc="" />
+    <ParamString id="grey" name="grey" group="Internal" default="#DCD5D7" visible="false" editable="false" desc="" />
+    <ParamString id="inputSignal_AIN_rectColor" name="inputSignal_AIN_rectColor" group="Internal" default="#000000" visible="false" editable="false" desc="" />
+	<ParamString id="inputSignal_AIN_textColor" name="inputSignal_AIN_textColor" group="Internal" default="#000000" visible="false" editable="false" desc="" />
+	<ParamString id="inputSignal_AIN_lineColor" name="inputSignal_AIN_lineColor" group="Internal" default="`${defaultLine}`" visible="false" editable="false" desc="" />
+
+	<ParamString id="adcGroupNumber" name="ADC Group Number" group="Internal" default="`${getInstNumber(&quot;adc_grp&quot;)}`" visible="false" editable="false" desc="ADC Group name number." />
+
+  <!-- ADC child resource reference -->
+  <ParamString id="adcRsc" name="adcRsc" group="Internal" default="ppca[0].atop[0].adc_grp[`${adcGroupNumber}`].adc[0]" visible="false" editable="false" desc="" />
+  <ParamBool id="adcUsed" name="adcUsed" group="Internal" default="`${isBlockUsed(adcRsc)}`" visible="false" editable="false" desc="" />
+
+  <!-- Filter child resource references -->
+  <ParamString id="filter0Rsc" name="filter0Rsc" group="Internal" default="ppca[0].atop[0].adc_grp[`${adcGroupNumber}`].aflt[0]" visible="false" editable="false" desc="" />
+  <ParamBool id="filter0Used" name="filter0Used" group="Internal" default="`${isBlockUsed(filter0Rsc)}`" visible="false" editable="false" desc="" />
+  <ParamString id="filter1Rsc" name="filter1Rsc" group="Internal" default="ppca[0].atop[0].adc_grp[`${adcGroupNumber}`].aflt[1]" visible="false" editable="false" desc="" />
+  <ParamBool id="filter1Used" name="filter1Used" group="Internal" default="`${isBlockUsed(filter1Rsc)}`" visible="false" editable="false" desc="" />
+
+  <!-- DCMP child resource references -->
+  <ParamString id="dcmp0Rsc" name="dcmp0Rsc" group="Internal" default="ppca[0].atop[0].adc_grp[`${adcGroupNumber}`].dcmp[0]" visible="false" editable="false" desc="" />
+  <ParamBool id="dcmp0Used" name="dcmp0Used" group="Internal" default="`${isBlockUsed(dcmp0Rsc)}`" visible="false" editable="false" desc="" />
+  <ParamString id="dcmp1Rsc" name="dcmp1Rsc" group="Internal" default="ppca[0].atop[0].adc_grp[`${adcGroupNumber}`].dcmp[1]" visible="false" editable="false" desc="" />
+  <ParamBool id="dcmp1Used" name="dcmp1Used" group="Internal" default="`${isBlockUsed(dcmp1Rsc)}`" visible="false" editable="false" desc="" />
+  <ParamString id="dcmp2Rsc" name="dcmp2Rsc" group="Internal" default="ppca[0].atop[0].adc_grp[`${adcGroupNumber}`].dcmp[2]" visible="false" editable="false" desc="" />
+  <ParamBool id="dcmp2Used" name="dcmp2Used" group="Internal" default="`${isBlockUsed(dcmp2Rsc)}`" visible="false" editable="false" desc="" />
+  <ParamString id="dcmp3Rsc" name="dcmp3Rsc" group="Internal" default="ppca[0].atop[0].adc_grp[`${adcGroupNumber}`].dcmp[3]" visible="false" editable="false" desc="" />
+  <ParamBool id="dcmp3Used" name="dcmp3Used" group="Internal" default="`${isBlockUsed(dcmp3Rsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamString id="line_color_AIN0P" name="line_color_AIN0P" group="Internal" default="`${greenLine}`" visible="false" editable="false" desc="" />
+
+    <ParamImage id="ATOP"
+                name="ATOP"
+                group="ATOP"
+                desc="ATOP peripheral connections"
+                visible="true"
+                position="OUTSET"
+                default="`${cy_libs_path()}`/device-info/personalities/ppca/`${(adcGroupNumber eq 0) ? &quot;ADC_group0.svg&quot; : (adcGroupNumber eq 1) ? &quot;ADC_group1.svg&quot; : (adcGroupNumber eq 2) ? &quot;ADC_group2.svg&quot; : &quot;ADC_group3.svg&quot;}`">
+        <Substitution name="inputSignal_AIN_rectColor" value="`${inputSignal_AIN_rectColor}`"/>
+		<Substitution name="inputSignal_AIN_textColor" value="`${inputSignal_AIN_textColor}`"/>
+		<Substitution name="inputSignal_AIN_lineColor" value="`${inputSignal_AIN_lineColor}`"/>
+        <Substitution name="adcGroupNumber" value="ADC`${adcGroupNumber}`"/>
+    <!-- SOC/EOC text values accessed directly from ADC child using getExposedMember in ParamImage -->
+    <Substitution name="adc_soc0_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_soc0_text&quot;) : &quot;adc_soc[0]&quot;}`"/>
+    <Substitution name="adc_soc1_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_soc1_text&quot;) : &quot;adc_soc[1]&quot;}`"/>
+    <Substitution name="adc_soc2_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_soc2_text&quot;) : &quot;adc_soc[2]&quot;}`"/>
+    <Substitution name="adc_soc3_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_soc3_text&quot;) : &quot;adc_soc[3]&quot;}`"/>
+    <Substitution name="adc_soc4_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_soc4_text&quot;) : &quot;adc_soc[4]&quot;}`"/>
+    <Substitution name="adc_soc5_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_soc5_text&quot;) : &quot;adc_soc[5]&quot;}`"/>
+    <Substitution name="adc_soc6_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_soc6_text&quot;) : &quot;adc_soc[6]&quot;}`"/>
+    <Substitution name="adc_soc7_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_soc7_text&quot;) : &quot;adc_soc[7]&quot;}`"/>
+    <Substitution name="adc_eoc0_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_eoc0_text&quot;) : &quot;adc_eoc[0]&quot;}`"/>
+    <Substitution name="adc_eoc1_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_eoc1_text&quot;) : &quot;adc_eoc[1]&quot;}`"/>
+    <Substitution name="adc_eoc2_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_eoc2_text&quot;) : &quot;adc_eoc[2]&quot;}`"/>
+    <Substitution name="adc_eoc3_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_eoc3_text&quot;) : &quot;adc_eoc[3]&quot;}`"/>
+    <Substitution name="adc_eoc4_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_eoc4_text&quot;) : &quot;adc_eoc[4]&quot;}`"/>
+    <Substitution name="adc_eoc5_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_eoc5_text&quot;) : &quot;adc_eoc[5]&quot;}`"/>
+    <Substitution name="adc_eoc6_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_eoc6_text&quot;) : &quot;adc_eoc[6]&quot;}`"/>
+    <Substitution name="adc_eoc7_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;adc_eoc7_text&quot;) : &quot;adc_eoc[7]&quot;}`"/>
+    <!-- Filter source channel text and fill color -->
+    <Substitution name="filter0_src_text" value="`${filter0Used ? &quot;src: CH&quot; . getExposedMember(filter0Rsc, &quot;srcChannel&quot;) : &quot;Not Connected&quot;}`"/>
+    <Substitution name="filter0_fill" value="`${filter0Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="filter1_src_text" value="`${filter1Used ? &quot;src: CH&quot; . getExposedMember(filter1Rsc, &quot;srcChannel&quot;) : &quot;Not Connected&quot;}`"/>
+    <Substitution name="filter1_fill" value="`${filter1Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <!-- DCMP source channel text and fill color -->
+    <Substitution name="dcmp0_src_text" value="`${dcmp0Used ? &quot;src: CH&quot; . getExposedMember(dcmp0Rsc, &quot;srcChannel&quot;) : &quot;Not Connected&quot;}`"/>
+    <Substitution name="dcmp0_fill" value="`${dcmp0Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="dcmp1_src_text" value="`${dcmp1Used ? &quot;src: CH&quot; . getExposedMember(dcmp1Rsc, &quot;srcChannel&quot;) : &quot;Not Connected&quot;}`"/>
+    <Substitution name="dcmp1_fill" value="`${dcmp1Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="dcmp2_src_text" value="`${dcmp2Used ? &quot;src: CH&quot; . getExposedMember(dcmp2Rsc, &quot;srcChannel&quot;) : &quot;Not Connected&quot;}`"/>
+    <Substitution name="dcmp2_fill" value="`${dcmp2Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="dcmp3_src_text" value="`${dcmp3Used ? &quot;src: CH&quot; . getExposedMember(dcmp3Rsc, &quot;srcChannel&quot;) : &quot;Not Connected&quot;}`"/>
+    <Substitution name="dcmp3_fill" value="`${dcmp3Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <!-- Channel fill colors (green when enabled and single-ended, gray otherwise) -->
+    <Substitution name="ch0_fill" value="`${(adcUsed &amp;&amp; getExposedMember(adcRsc, &quot;channel0&quot;) &amp;&amp; (getExposedMember(adcRsc, &quot;channel0type&quot;) eq &quot;0&quot;)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="ch1_fill" value="`${(adcUsed &amp;&amp; getExposedMember(adcRsc, &quot;channel1&quot;) &amp;&amp; (getExposedMember(adcRsc, &quot;channel1type&quot;) eq &quot;0&quot;)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="ch2_fill" value="`${(adcUsed &amp;&amp; getExposedMember(adcRsc, &quot;channel2&quot;) &amp;&amp; (getExposedMember(adcRsc, &quot;channel2type&quot;) eq &quot;0&quot;)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="ch3_fill" value="`${(adcUsed &amp;&amp; getExposedMember(adcRsc, &quot;channel3&quot;) &amp;&amp; (getExposedMember(adcRsc, &quot;channel3type&quot;) eq &quot;0&quot;)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="ch4_fill" value="`${(adcUsed &amp;&amp; getExposedMember(adcRsc, &quot;channel4&quot;) &amp;&amp; (getExposedMember(adcRsc, &quot;channel4type&quot;) eq &quot;0&quot;)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="ch5_fill" value="`${(adcUsed &amp;&amp; getExposedMember(adcRsc, &quot;channel5&quot;) &amp;&amp; (getExposedMember(adcRsc, &quot;channel5type&quot;) eq &quot;0&quot;)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="ch6_fill" value="`${(adcUsed &amp;&amp; getExposedMember(adcRsc, &quot;channel6&quot;) &amp;&amp; (getExposedMember(adcRsc, &quot;channel6type&quot;) eq &quot;0&quot;)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="ch7_fill" value="`${(adcUsed &amp;&amp; getExposedMember(adcRsc, &quot;channel7&quot;) &amp;&amp; (getExposedMember(adcRsc, &quot;channel7type&quot;) eq &quot;0&quot;)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <!-- Channel display (hide single-ended when in differential mode) -->
+    <Substitution name="ch0_display" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;channel0type&quot;) eq &quot;1&quot;)) ? &quot;none&quot; : &quot;inline&quot;}`"/>
+    <Substitution name="ch1_display" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;channel0type&quot;) eq &quot;1&quot;)) ? &quot;none&quot; : &quot;inline&quot;}`"/>
+    <Substitution name="ch2_display" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;channel2type&quot;) eq &quot;1&quot;)) ? &quot;none&quot; : &quot;inline&quot;}`"/>
+    <Substitution name="ch3_display" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;channel2type&quot;) eq &quot;1&quot;)) ? &quot;none&quot; : &quot;inline&quot;}`"/>
+    <Substitution name="ch4_display" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;channel4type&quot;) eq &quot;1&quot;)) ? &quot;none&quot; : &quot;inline&quot;}`"/>
+    <Substitution name="ch5_display" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;channel4type&quot;) eq &quot;1&quot;)) ? &quot;none&quot; : &quot;inline&quot;}`"/>
+    <Substitution name="ch6_display" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;channel6type&quot;) eq &quot;1&quot;)) ? &quot;none&quot; : &quot;inline&quot;}`"/>
+    <Substitution name="ch7_display" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;channel6type&quot;) eq &quot;1&quot;)) ? &quot;none&quot; : &quot;inline&quot;}`"/>
+    <!-- Differential pair fill colors (green when enabled) -->
+    <Substitution name="diff01_fill" value="`${(adcUsed &amp;&amp; getExposedMember(adcRsc, &quot;channel0&quot;) &amp;&amp; (getExposedMember(adcRsc, &quot;channel0type&quot;) eq &quot;1&quot;)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="diff23_fill" value="`${(adcUsed &amp;&amp; getExposedMember(adcRsc, &quot;channel2&quot;) &amp;&amp; (getExposedMember(adcRsc, &quot;channel2type&quot;) eq &quot;1&quot;)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="diff45_fill" value="`${(adcUsed &amp;&amp; getExposedMember(adcRsc, &quot;channel4&quot;) &amp;&amp; (getExposedMember(adcRsc, &quot;channel4type&quot;) eq &quot;1&quot;)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="diff67_fill" value="`${(adcUsed &amp;&amp; getExposedMember(adcRsc, &quot;channel6&quot;) &amp;&amp; (getExposedMember(adcRsc, &quot;channel6type&quot;) eq &quot;1&quot;)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <!-- Differential pair display (show when in differential mode) -->
+    <Substitution name="diff01_display" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;channel0type&quot;) eq &quot;1&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+    <Substitution name="diff23_display" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;channel2type&quot;) eq &quot;1&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+    <Substitution name="diff45_display" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;channel4type&quot;) eq &quot;1&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+    <Substitution name="diff67_display" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;channel6type&quot;) eq &quot;1&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+    <!-- Channel Sequence text -->
+    <Substitution name="channel_seq_text" value="`${adcUsed ? getExposedMember(adcRsc, &quot;channelSeqText&quot;) : &quot;-&quot;}`"/>
+		<Substitution name="inputSignal_AIN0P_text" value="AIN0P PIN"/>
+		<Substitution name="inputSignal_AIN0N_text" value="AIN0N PIN"/>
+		<Substitution name="inputSignal_AIN1P_text" value="AIN1P PIN"/>
+		<Substitution name="inputSignal_AIN1N_text" value="AIN1N PIN"/>
+		<Substitution name="inputSignal_AIN2P_text" value="AIN2P PIN"/>
+		<Substitution name="inputSignal_AIN2N_text" value="AIN2N PIN"/>
+		<Substitution name="inputSignal_AIN3P_text" value="AIN3P PIN"/>
+		<Substitution name="inputSignal_AIN3N_text" value="AIN3N PIN"/>
+    <!-- AUX / ALT AUX box fills (active green when aux slots configured, grey otherwise) -->
+    <Substitution name="aux_fill" value="`${(adcUsed &amp;&amp; (getExposedMember(adcRsc, &quot;noOfAuxSlots&quot;) &gt; 0)) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    <Substitution name="altAux_fill" value="`${(adcUsed &amp;&amp; ((getExposedMember(adcRsc, &quot;noOfAltAuxSlots&quot;) &gt; 0) || (getOrDefault(getExposedMember(adcRsc, &quot;altAux_AIN3N_enabled&quot;), &quot;false&quot;) eq &quot;true&quot;) || (getOrDefault(getExposedMember(adcRsc, &quot;altAux_AIN11N_enabled&quot;), &quot;false&quot;) eq &quot;true&quot;))) ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+    </ParamImage>
+  </Parameters>
+  <DRCs>
+  </DRCs>
+
+   <ConfigFirmware>
+   </ConfigFirmware>
+
+</PersonalityTemplate>

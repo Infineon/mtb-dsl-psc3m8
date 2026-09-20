@@ -1,0 +1,26 @@
+var group__group__ppca__hwfilt3p3z__functions =
+[
+    [ "Cy_PPCA_HWFILT3P3Z_SS_PeripheralEnable", "group__group__ppca__hwfilt3p3z__functions.html#ga97c67ef7cab50cec199e8b4a7acb9256", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_SS_PeripheralDisable", "group__group__ppca__hwfilt3p3z__functions.html#gabd4e5c02126f853d87acb95b8643e51f", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_FilterEnable", "group__group__ppca__hwfilt3p3z__functions.html#gac6dd3b173d608cdcababde2346e80a0b", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_InitFilterConfig", "group__group__ppca__hwfilt3p3z__functions.html#ga686df79513d38e1c20b811ff4e0fd196", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_ReadFilterStatus", "group__group__ppca__hwfilt3p3z__functions.html#ga57e3a4681373d6ab5d07d747898695fb", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_ReadFilterDataOutput", "group__group__ppca__hwfilt3p3z__functions.html#gade56b7cc01e22541fccac26a71c394dd", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_ConfigFilterProcessing", "group__group__ppca__hwfilt3p3z__functions.html#ga9f85f283fe949d2c1f0d6e264fe32326", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_Write_DATA_IN0", "group__group__ppca__hwfilt3p3z__functions.html#ga9cd10538f75add7a05154cd5ec42c8b3", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_Write_DATA_IN1", "group__group__ppca__hwfilt3p3z__functions.html#ga4f7240e30301180fa7f2d679cca4af6c", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_ConfigCoefficients", "group__group__ppca__hwfilt3p3z__functions.html#gac7fd1020c6422c1e8e58b81a1cb3edf2", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_ConfigOffset", "group__group__ppca__hwfilt3p3z__functions.html#gad0299f9e58f0b270886bd60b97394b24", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_ConfigFilterOutLimits", "group__group__ppca__hwfilt3p3z__functions.html#gaff5a55033722a5aeb1208ae71372f329", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_ConfigCoefficientScaleFactors", "group__group__ppca__hwfilt3p3z__functions.html#gabd80f02ec0a689d3153de4af17ec01b1", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_ConfigGains", "group__group__ppca__hwfilt3p3z__functions.html#gaca603ae9583865f50f94cf1036645358", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_SS_GetPeripheralEnable", "group__group__ppca__hwfilt3p3z__functions.html#gaff9c5850a2c24a428b3cc0cc865ba6fa", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_GetFilterEnable", "group__group__ppca__hwfilt3p3z__functions.html#ga4b0c80e7610279b9fb1fb11f9e32ab89", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_GetFilterProcessing", "group__group__ppca__hwfilt3p3z__functions.html#ga5aef4bb9ecd7604e61f996f658f58c7a", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_GetCoefficients", "group__group__ppca__hwfilt3p3z__functions.html#ga18923800a14b439019c361ebef71810c", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_GetOffset", "group__group__ppca__hwfilt3p3z__functions.html#gae3ead3cc4c49af36ba7b9f870ea10afe", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_GetFilterOutLimits", "group__group__ppca__hwfilt3p3z__functions.html#gae1324d8a29a88c10d308beabda10c760", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_GetCoefficientScaleFactors", "group__group__ppca__hwfilt3p3z__functions.html#ga36a6b4c07f6a421a3d572c10b89ac0fa", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_GetGains", "group__group__ppca__hwfilt3p3z__functions.html#gad83b9d21e127049bd9aa787587755283", null ],
+    [ "Cy_PPCA_HWFILT3P3Z_GetFilterConfig", "group__group__ppca__hwfilt3p3z__functions.html#gab596863bcec11923a29c3cdf22a5a6d5", null ]
+];

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PersonalityTemplate id="mxs40ppca-cpuss-cnfg" name="mxs40ppca-cpuss-cnfg" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v10">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.cpuss_cnfg" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers/>
+  <Parameters>
+    <ParamSignal port="txev0[0]" name="txev0[0]" visible="`${hasVisibleOption(&quot;txev0[0]&quot;)}`" canBeEmpty="true" group="Signals" desc="" />
+    <ParamSignal port="txev1[0]" name="txev1[0]" visible="`${hasVisibleOption(&quot;txev1[0]&quot;)}`" canBeEmpty="true" group="Signals" desc="" />
+    <ParamSignal port="fault[0]" name="fault[0]" visible="`${hasVisibleOption(&quot;fault[0]&quot;)}`" canBeEmpty="true" group="Signals" desc="" />
+  </Parameters>
+  <ConfigFirmware>
+  </ConfigFirmware>
+</PersonalityTemplate>

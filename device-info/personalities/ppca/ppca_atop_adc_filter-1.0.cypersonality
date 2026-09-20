@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PersonalityTemplate id="mxs40ppca_adc_filter" name="ADC Filter" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v10">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.atop\.adc_grp\.aflt" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers>
+    <ExposedMember key="instName" paramId="instName" />
+    <ExposedMember key="srcChannel" paramId="srcChannel" />
+  </ExposedMembers>
+
+  <Parameters>
+    <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__adc__filter.html" linkText="Open PPCA ADC Filter Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+    <ParamString id="instName" name="instName" group="Internal" default="`${INST_NAME}`" visible="false" editable="false" desc="" />
+
+    <ParamString id="adcGroupNumber" name="ADC Group Number" group="Internal" default="`${getInstNumber(&quot;adc_grp&quot;)}`" visible="false" editable="false" desc="ADC Group name number." />
+    <ParamRange id="adcFilterInst" name="ADC Filter Instance Number" group="Internal" default="`${getInstNumber(&quot;aflt&quot;)}`" min="0" max="2" resolution="1" visible="true" editable="false" desc="" />
+
+    <!-- Parent ADC resource and differential channel type params -->
+    <ParamString id="adcRsc" name="adcRsc" group="Internal" default="`${&quot;ppca[0].atop[0].adc_grp[&quot; . adcGroupNumber . &quot;].adc[0]&quot;}`" visible="false" editable="false" desc="Parent ADC resource path." />
+    <ParamString id="adcRscUsed" name="adcRscUsed" group="Internal" default="`${isBlockUsed(adcRsc)}`" visible="false" editable="false" desc="Whether the parent ADC block is used." />
+    <ParamString id="ch0type" name="ch0type" group="Internal" default="`${adcRscUsed ? getExposedMember(adcRsc, &quot;channel0type&quot;) : 0}`" visible="false" editable="false" desc="Channel 0 type from ADC: 0=single-ended, 1=differential." />
+    <ParamString id="ch2type" name="ch2type" group="Internal" default="`${adcRscUsed ? getExposedMember(adcRsc, &quot;channel2type&quot;) : 0}`" visible="false" editable="false" desc="Channel 2 type from ADC: 0=single-ended, 1=differential." />
+    <ParamString id="ch4type" name="ch4type" group="Internal" default="`${adcRscUsed ? getExposedMember(adcRsc, &quot;channel4type&quot;) : 0}`" visible="false" editable="false" desc="Channel 4 type from ADC: 0=single-ended, 1=differential." />
+    <ParamString id="ch6type" name="ch6type" group="Internal" default="`${adcRscUsed ? getExposedMember(adcRsc, &quot;channel6type&quot;) : 0}`" visible="false" editable="false" desc="Channel 6 type from ADC: 0=single-ended, 1=differential." />
+
+    <!-- ADC Filter General Configuration -->
+    <ParamBool id="median_filter_enable" name="Median Filter Enable" group="General" default="false" visible="true" editable="true" desc="Enable/Disable Median Filter. "/>
+    <ParamBool id="linear_filter_enable" name="Linear Filter Enable" group="General" default="false" visible="true" editable="true" desc="Enable/Disable Linear Interpolation Filter. "/>
+    <ParamBool id="average_filter_enable" name="Average Filter Enable" group="General" default="false" visible="true" editable="true" desc="Enable/Disable Configurable Average Filter. "/>
+    <ParamBool id="cic_filter_enable" name="CIC Filter Enable" group="General" default="false" visible="true" editable="true" desc="Enable/Disable  Cascade Integrator 3rd order Comb Filter. "/>
+    <ParamBool id="lpf_filter_enable" name="Low Pass Filter Enable" group="General" default="false" visible="true" editable="true" desc="Enable/Disable  Low Pass Filter. "/>
+    <ParamBool id="unsign_path_enable" name="Unsign Enable" group="General" default="false" visible="false" editable="false" desc="Enable/Disable unsigned path to Filter module. "/>
+    <ParamBool id="min_max_detection_enable" name="Min Max Detection Enable" group="General" default="false" visible="true" editable="true" desc="Enable/Disable MIN/MAX Detection. "/>
+    <ParamBool id="src_adc" name="External ADC Enable" group="General" default="false" visible="`${(adcGroupNumber eq 3)}`" editable="`${(adcGroupNumber eq 3)}`" desc="Select source of the ADC data for Filter Module: 0 = Internal 1 = External (from other ADC_GRP)."/>
+
+    <ParamBool id="median_filter_bypass" name="Median Filter Bypass" group="Bypass" default="false" visible="true" editable="true" desc="Bypass Median Filter. "/>
+    <ParamBool id="linear_filter_bypass" name="Linear Filter Bypass" group="Bypass" default="false" visible="true" editable="true" desc="Bypass Linear Interpolation Filter. "/>
+    <ParamBool id="average_filter_bypass" name="Average Filter Bypass" group="Bypass" default="false" visible="true" editable="true" desc="Bypass Configurable Average Filter. "/>
+    <ParamBool id="cic_filter_bypass" name="CIC Filter Bypass" group="Bypass" default="false" visible="true" editable="true" desc="Bypass  Cascade Integrator 3rd order Comb Filter. "/>
+    <ParamBool id="lpf_filter_bypass" name="Low Pass Filter Bypass" group="Bypass" default="false" visible="true" editable="true" desc="Bypass  Low Pass Filter. "/>
+
+
+    <ParamChoice id="srcChannel"
+                     name="Source ADC Channel"
+                     group="General"
+                     visible="true"
+                     editable="true"
+                     desc="source ADC channel for Filter Module."
+                     default="0">
+          <Entry name="Channel 0" value="0" visible="true"/>
+          <Entry name="Channel 1" value="1" visible="`${ch0type eq 0}`"/>
+          <Entry name="Channel 2" value="2" visible="true"/>
+          <Entry name="Channel 3" value="3" visible="`${ch2type eq 0}`"/>
+          <Entry name="Channel 4" value="4" visible="`${(adcGroupNumber eq 0) || ((adcGroupNumber eq 3) &amp;&amp; (src_adc eq false))}`"/>
+          <Entry name="Channel 5" value="5" visible="`${((adcGroupNumber eq 0) || ((adcGroupNumber eq 3) &amp;&amp; (src_adc eq false))) &amp;&amp; (ch4type eq 0)}`"/>
+          <Entry name="Channel 6" value="6" visible="`${(adcGroupNumber eq 0) || ((adcGroupNumber eq 3) &amp;&amp; (src_adc eq false))}`"/>
+          <Entry name="Channel 7" value="7" visible="`${((adcGroupNumber eq 0) || ((adcGroupNumber eq 3) &amp;&amp; (src_adc eq false))) &amp;&amp; (ch6type eq 0)}`"/>
+    </ParamChoice>
+
+    <ParamChoice id="lif_m_factor"
+                     name="M Factor for LIF"
+                     group="Linear InterPolator Filter"
+                     visible="`${linear_filter_enable}`"
+                     editable="`${linear_filter_enable}`"
+                     desc="is the maximum number of clock cycle between two SoC for the ADC Conversion.."
+                     default="CY_LIF_MFACTOR_SET_TO_2">
+          <Entry name="M-Factor set to 2" value="CY_LIF_MFACTOR_SET_TO_2" visible="true"/>
+          <Entry name="M-Factor set to 4" value="CY_LIF_MFACTOR_SET_TO_4" visible="true"/>
+          <Entry name="M-Factor set to 8" value="CY_LIF_MFACTOR_SET_TO_8" visible="true"/>
+          <Entry name="M-Factor set to 16" value="CY_LIF_MFACTOR_SET_TO_16" visible="true"/>
+          <Entry name="M-Factor set to 32" value="CY_LIF_MFACTOR_SET_TO_32" visible="true"/>
+          <Entry name="M-Factor set to 64" value="CY_LIF_MFACTOR_SET_TO_64" visible="true"/>
+          <Entry name="M-Factor set to 128" value="CY_LIF_MFACTOR_SET_TO_128" visible="true"/>
+          <Entry name="M-Factor set to 256" value="CY_LIF_MFACTOR_SET_TO_256" visible="true"/>
+    </ParamChoice>
+    <ParamBool id="lif_intp_extp_sel" name="Extrapolator Computation Enable" group="Linear InterPolator Filter" default="false" visible="true" editable="true" desc="When enabled extrapolator computation is set, else Interpolator computation. "/>
+
+    <ParamRange id="lpf_bandwidth" name="LPF CutOff Frequency" group="Low Pass Filter" default="0" min="0" max="255" resolution="1" visible="`${lpf_filter_enable}`" editable="`${lpf_filter_enable}`" desc="Cutoff Freq For LoW Pass Filter." />
+
+    <ParamChoice id="cic_src_type"
+                 name="CIC filter Source type"
+                 group="CIC Filter Configuration"
+                 visible="`${cic_filter_enable}`"
+                 editable="`${cic_filter_enable}`"
+                 desc="CIC filter Source type. 0 : Internal. 1 : External. "
+                 default="0">
+            <Entry name="Internal" value="0" visible="true"/>
+            <Entry name="External" value="1" visible="true"/>
+    </ParamChoice>
+    <ParamChoice id="cic_clck_div"
+                     name="CIC Filter Clock Divider"
+                     group="CIC Filter Configuration"
+                     visible="`${cic_filter_enable}`"
+                     editable="`${cic_filter_enable}`"
+                     desc="Clock Divider for external source sampling."
+                     default="CY_CIC_PPCACLK_DIV_BY_4">
+          <Entry name="PPCA Clock DIV BY 4" value="CY_CIC_PPCACLK_DIV_BY_4" visible="true"/>
+          <Entry name="PPCA Clock DIV BY 8" value="CY_CIC_PPCACLK_DIV_BY_8" visible="true"/>
+          <Entry name="PPCA Clock DIV BY 16" value="CY_CIC_PPCACLK_DIV_BY_16" visible="true"/>
+          <Entry name="PPCA Clock DIV BY 32" value="CY_CIC_PPCACLK_DIV_BY_32" visible="true"/>
+          <Entry name="PPCA Clock DIV BY 64" value="CY_CIC_PPCACLK_DIV_BY_64" visible="true"/>
+          <Entry name="PPCA Clock DIV BY 128" value="CY_CIC_PPCACLK_DIV_BY_128" visible="true"/>
+          <Entry name="PPCA Clock DIV BY 256" value="CY_CIC_PPCACLK_DIV_BY_256" visible="true"/>
+          <Entry name="PPCA Clock DIV BY 512" value="CY_CIC_PPCACLK_DIV_BY_512" visible="true"/>
+    </ParamChoice>
+
+    <ParamRange id="cic_decimation_factor" name="CIC Decimation Factor" group="CIC Filter Configuration" default="0" min="0" max="2047" resolution="1" visible="`${cic_filter_enable}`" editable="`${cic_filter_enable}`" desc="For Signal input width of 16: Range of support is from 4 to 64. For signal input width of 1: Range of support is from 4 to 2047" />
+    <ParamRange id="cic_decimation_offset" name="CIC Decimation Offset" group="CIC Filter Configuration" default="0" min="0" max="2047" resolution="1" visible="`${cic_filter_enable}`" editable="`${cic_filter_enable}`" desc="Decimation Offset." />
+    <ParamRange id="cic_decimation_scale" name="CIC Decimation Scale" group="CIC Filter Configuration" default="0" min="0" max="31" resolution="1" visible="`${cic_filter_enable}`" editable="`${cic_filter_enable}`" desc="CIC Scale." />
+    <ParamBool id="comparator_enable" name="CIC Comparater Enable" group="CIC Filter Configuration" default="false" visible="`${cic_filter_enable}`" editable="`${cic_filter_enable}`" desc="CIC Digital Comparator Enable. "/>
+    <ParamRange id="cic_UB_threshold" name="CIC Upper Bound Threshold" group="CIC Filter Configuration" default="0" min="0" max="65535" resolution="1" visible="`${cic_filter_enable}`" editable="`${cic_filter_enable}`" desc="CIC Filter Upper Bound Threshold ." />
+    <ParamRange id="cic_LB_threshold" name="CIC Lower Bound Threshold" group="CIC Filter Configuration" default="0" min="0" max="65535" resolution="1" visible="`${cic_filter_enable}`" editable="`${cic_filter_enable}`" desc="CIC Filter Lower Bound Threshold ." />
+
+    <ParamRange id="avg_no_of_samples" name="Number of accumulated samples" group="AVG Filter Configuration" default="0" min="0" max="65535" resolution="1" visible="`${average_filter_enable}`" editable="`${average_filter_enable}`" desc="AVG Filter Number of accumulated samples." />
+    <ParamBool id="avg_linear_or_squared" name="Squared Sample Enable" group="AVG Filter Configuration" default="false" visible="`${average_filter_enable}`" editable="`${average_filter_enable}`" desc="AVG Filter Select Linear or Squared sample: 0 = Linear (K=1), 1 = Squared (K=2)."/>
+    <ParamBool id="avg_fix_or_dynamic_sample" name="Dynamic Sample Window Enable" group="AVG Filter Configuration" default="false" visible="`${average_filter_enable}`" editable="`${average_filter_enable}`" desc="AVG Filter Select Fix or Dynamic sample window:: 0 = Fix(uses \ref avg_no_of_samples), 1 = Dynamic."/>
+
+    <ParamBool id="min_max_source" name="Source to Min Max Filter" group="Min Max Filter Configuration" default="false" visible="`${min_max_detection_enable}`" editable="`${min_max_detection_enable}`" desc="Source to MIN/MAX filter. 0 = ADC Input 1= Median Filter."/>
+    <ParamChoice id="min_max_sample_search"
+                 name="Min Max Sample Search Window"
+                 group="Min Max Filter Configuration"
+                 visible="`${min_max_detection_enable}`"
+                 editable="`${min_max_detection_enable}`"
+                 desc="Min/Max sample search window. "
+                 default="CY_SAMPLE_SEARCH_WINDOW_OPEN">
+            <Entry name="Open" value="CY_SAMPLE_SEARCH_WINDOW_OPEN" visible="true"/>
+            <Entry name="16 Points" value="CY_SAMPLE_SEARCH_WINDOW_16_POINTS" visible="true"/>
+            <Entry name="64 Points" value="CY_SAMPLE_SEARCH_WINDOW_64_POINTS" visible="true"/>
+            <Entry name="256 Points" value="CY_SAMPLE_SEARCH_WINDOW_256_POINTS" visible="true"/>
+    </ParamChoice>
+
+    <ParamSignal port="sample_w[0]" name="sample_w[0]" visible="`${(hasVisibleOption(&quot;sample_w[0]&quot;)) &amp;&amp; average_filter_enable}`" canBeEmpty="true" group="Signals" desc="" />
+    <ParamSignal port="min_max[0]" name="min_max[0]" visible="`${(hasVisibleOption(&quot;min_max[0]&quot;)) &amp;&amp; min_max_detection_enable}`" canBeEmpty="true" group="Signals" desc="" />
+    <ParamSignal port="sd_clk[0]" name="sd_clk[0]" visible="`${(hasVisibleOption(&quot;sd_clk[0]&quot;)) &amp;&amp; cic_filter_enable}`" canBeEmpty="true" group="Signals" desc="" />
+    <ParamSignal port="sd_cmp[0]" name="sd_cmp[0]" visible="`${(hasVisibleOption(&quot;sd_cmp[0]&quot;)) &amp;&amp; cic_filter_enable}`" canBeEmpty="true" group="Signals" desc="" />
+    <ParamSignal port="sd_in[0]" name="sd_in[0]" visible="`${(hasVisibleOption(&quot;sd_in[0]&quot;)) &amp;&amp; cic_filter_enable}`" canBeEmpty="true" group="Signals" desc="" />
+
+    <ParamString id="InstNumber" name="InstNumber" group="Internal" default="`${getInstNumber(&quot;aflt&quot;)}`" visible="false" editable="false" desc="Instance number." />
+    <ParamString id="arefRsc" name="arefRsc" group="Internal" default="ppca[0].atop[0].adc_grp[0].aref[0]" visible="false" editable="false" desc="" />
+    <ParamString id="arefUsed" name="arefUsed" group="Internal" default="`${isBlockUsed(arefRsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+  </Parameters>
+  <DRCs>
+    <DRC type="INFO" text="Source ADC Channels to ADC Group3 ADC Filter0 are from ADC Group2" condition="`${(adcGroupNumber eq 3) &amp;&amp; (adcFilterInst eq 0) &amp;&amp; (src_adc eq true)}`" />
+    <DRC type="INFO" text="Source ADC Channels to ADC Group3 ADC Filter1 are from ADC Group1" condition="`${(adcGroupNumber eq 3) &amp;&amp; (adcFilterInst eq 1) &amp;&amp; (src_adc eq true)}`" />
+    <DRC type="ERROR" text="Enable AREF in ADC Group0 and configure VREF Source accordingly." condition="`${!arefUsed}`">
+      <FixIt action="ENABLE_BLOCK" target="`${arefRsc}`" value="" valid="true" />
+    </DRC>
+    <DRC type="ERROR" text="At least one filter needs to be enabled." condition="`${(median_filter_enable eq false) &amp;&amp; (linear_filter_enable eq false) &amp;&amp; (average_filter_enable eq false) &amp;&amp; (cic_filter_enable eq false) &amp;&amp; (lpf_filter_enable eq false)}`" />
+  </DRCs>
+  <ConfigFirmware>
+    <ConfigInclude value="cy_ppca_adc_filter.h" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_ATOPSS_ADC_GRP`${adcGroupNumber}`_AFLT`${InstNumber}`" public="true" include="true" />
+
+    <ConfigStruct name="`${INST_NAME}`_config" type="cy_stc_ppca_adc_filter_config_t" const="`${inFlash}`" public="true" include="true" >
+      <Member name="median_filter_enable" value="`${median_filter_enable}`" />
+      <Member name="linear_filter_enable" value="`${linear_filter_enable}`" />
+      <Member name="average_filter_enable" value="`${average_filter_enable}`" />
+      <Member name="cic_filter_enable" value="`${cic_filter_enable}`" />
+      <Member name="lpf_filter_enable" value="`${lpf_filter_enable}`" />
+      <Member name="median_filter_bypass" value="`${median_filter_bypass}`" />
+      <Member name="linear_filter_bypass" value="`${linear_filter_bypass}`" />
+      <Member name="average_filter_bypass" value="`${average_filter_bypass}`" />
+      <Member name="cic_filter_bypass" value="`${cic_filter_bypass}`" />
+      <Member name="lpf_filter_bypass" value="`${lpf_filter_bypass}`" />
+      <Member name="unsign_path_enable" value="`${unsign_path_enable}`" />
+      <Member name="min_max_detection_enable" value="`${min_max_detection_enable}`" />
+      <Member name="src_ch" value="`${srcChannel}`" />
+      <Member name="lif_m_factor" value="`${lif_m_factor}`" />
+      <Member name="lif_intp_extp_sel" value="`${lif_intp_extp_sel}`" />
+      <Member name="lpf_bandwidth" value="`${lpf_bandwidth}`" />
+      <Member name="cic_src_type" value="`${cic_src_type}`" />
+      <Member name="cic_clck_div" value="`${cic_clck_div}`" />
+      <Member name="cic_decimation_factor" value="`${cic_decimation_factor}`" />
+      <Member name="cic_decimation_offset" value="`${cic_decimation_offset}`" />
+      <Member name="cic_decimation_scale" value="`${cic_decimation_scale}`" />
+      <Member name="cic_digital_comparator_enable" value="`${comparator_enable}`" />
+      <Member name="cic_UB_threshold" value="`${cic_UB_threshold}`" />
+      <Member name="cic_LB_threshold" value="`${cic_LB_threshold}`" />
+      <Member name="avg_no_of_samples" value="`${avg_no_of_samples}`" />
+      <Member name="avg_linear_or_squared" value="`${avg_linear_or_squared}`" />
+      <Member name="avg_fix_or_dynamic_sample" value="`${avg_fix_or_dynamic_sample}`" />
+      <Member name="min_max_source" value="`${min_max_source}`" />
+      <Member name="min_max_sample_search" value="`${min_max_sample_search}`" />
+      <Member name="src_adc" value="`${src_adc}`" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_ADC_Filter_Init(`${INST_NAME}`_HW, &amp;`${INST_NAME}`_config);" include="`${init}`" purpose="INITIALIZE" />
+
+  </ConfigFirmware>
+</PersonalityTemplate>

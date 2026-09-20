@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--****************************************************************************
+* \file dcsg_grp.cypersonality
+* \version 1.0
+*
+* \brief
+* DCSG Group personality description file.
+*
+********************************************************************************
+* \copyright
+* (c) 2022-2026, Infineon Technologies AG, or an affiliate of Infineon
+* Technologies AG.
+* SPDX-License-Identifier: Apache-2.0
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*****************************************************************************-->
+
+<PersonalityTemplate id="mxs40ppca_dcsg_group" name="DCSG_Group" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v12">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.atop\.dcsg_grp" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers>
+  </ExposedMembers>
+
+  <Parameters>
+    <ParamString id="greenBlock" name="greenBlock" group="Internal" default="#9BBA43" visible="false" editable="false" desc="" />
+    <ParamString id="greenLine" name="greenLine" group="Internal" default="#0A8276" visible="false" editable="false" desc="" />
+    <ParamString id="defaultLine" name="defaultLine" group="Internal" default="#D8D8D8" visible="false" editable="false" desc="" />
+    <ParamString id="grey" name="grey" group="Internal" default="#DCD5D7" visible="false" editable="false" desc="" />
+
+    <ParamString id="dcsgGroupNumber" name="DCSG Group Number" group="Internal" default="`${getInstNumber(&quot;dcsg_grp&quot;)}`" visible="false" editable="false" desc="DCSG Group name number." />
+
+    <!-- DCSG child resource references (Group 0: 6 DCSG, Group 1: 3 DCSG) -->
+    <ParamString id="dcsg0Rsc" name="dcsg0Rsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].dcsg[0]" visible="false" editable="false" desc="" />
+    <ParamBool id="dcsg0Used" name="dcsg0Used" group="Internal" default="`${isBlockUsed(dcsg0Rsc)}`" visible="false" editable="false" desc="" />
+    <ParamString id="dcsg1Rsc" name="dcsg1Rsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].dcsg[1]" visible="false" editable="false" desc="" />
+    <ParamBool id="dcsg1Used" name="dcsg1Used" group="Internal" default="`${isBlockUsed(dcsg1Rsc)}`" visible="false" editable="false" desc="" />
+    <ParamString id="dcsg2Rsc" name="dcsg2Rsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].dcsg[2]" visible="false" editable="false" desc="" />
+    <ParamBool id="dcsg2Used" name="dcsg2Used" group="Internal" default="`${isBlockUsed(dcsg2Rsc)}`" visible="false" editable="false" desc="" />
+    <ParamString id="dcsg3Rsc" name="dcsg3Rsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].dcsg[3]" visible="false" editable="false" desc="" />
+    <ParamBool id="dcsg3Used" name="dcsg3Used" group="Internal" default="`${(dcsgGroupNumber eq 0) ? isBlockUsed(dcsg3Rsc) : false}`" visible="false" editable="false" desc="" />
+    <ParamString id="dcsg4Rsc" name="dcsg4Rsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].dcsg[4]" visible="false" editable="false" desc="" />
+    <ParamBool id="dcsg4Used" name="dcsg4Used" group="Internal" default="`${(dcsgGroupNumber eq 0) ? isBlockUsed(dcsg4Rsc) : false}`" visible="false" editable="false" desc="" />
+    <ParamString id="dcsg5Rsc" name="dcsg5Rsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].dcsg[5]" visible="false" editable="false" desc="" />
+    <ParamBool id="dcsg5Used" name="dcsg5Used" group="Internal" default="`${(dcsgGroupNumber eq 0) ? isBlockUsed(dcsg5Rsc) : false}`" visible="false" editable="false" desc="" />
+
+    <!-- Slope Gen child resource references -->
+    <ParamString id="slgen0Rsc" name="slgen0Rsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].dcsg_slgen[0]" visible="false" editable="false" desc="" />
+    <ParamBool id="slgen0Used" name="slgen0Used" group="Internal" default="`${isBlockUsed(slgen0Rsc)}`" visible="false" editable="false" desc="" />
+    <ParamString id="slgen1Rsc" name="slgen1Rsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].dcsg_slgen[1]" visible="false" editable="false" desc="" />
+    <ParamBool id="slgen1Used" name="slgen1Used" group="Internal" default="`${(dcsgGroupNumber eq 0) ? isBlockUsed(slgen1Rsc) : false}`" visible="false" editable="false" desc="" />
+
+    <!-- R2R DAC child resource reference -->
+    <ParamString id="r2rDacRsc" name="r2rDacRsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].r2r_dac[0]" visible="false" editable="false" desc="" />
+    <ParamBool id="r2rDacUsed" name="r2rDacUsed" group="Internal" default="`${isBlockUsed(r2rDacRsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamImage id="DCSG_GRP"
+                name="DCSG_GRP"
+                group="DCSG Group"
+                desc="DCSG Group peripheral connections"
+                visible="true"
+                position="OUTSET"
+                default="`${cy_libs_path()}`/device-info/personalities/ppca/`${(dcsgGroupNumber eq 0) ? &quot;DCSG_group0.svg&quot; : &quot;DCSG_group1.svg&quot;}`">
+        <Substitution name="dcsgGroupNumber" value="DCSG Group `${dcsgGroupNumber}`"/>
+
+        <!-- DCSG instance fill colors and display -->
+        <Substitution name="dcsg0_fill" value="`${dcsg0Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+        <Substitution name="dcsg1_fill" value="`${dcsg1Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+        <Substitution name="dcsg2_fill" value="`${dcsg2Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+        <Substitution name="dcsg3_fill" value="`${dcsg3Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+        <Substitution name="dcsg4_fill" value="`${dcsg4Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+        <Substitution name="dcsg5_fill" value="`${dcsg5Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+
+        <!-- DCSG source text for display in SVG (shows AIN channel or DAC) -->
+        <Substitution name="dcsg0_src_text" value="`${dcsg0Used ? ((getExposedMember(dcsg0Rsc, &quot;src_type&quot;) eq &quot;1&quot;) ? &quot;R2R DAC&quot; : &quot;AIN&quot; . getExposedMember(dcsg0Rsc, &quot;src_ch&quot;)) : &quot;-&quot;}`"/>
+        <Substitution name="dcsg1_src_text" value="`${dcsg1Used ? ((getExposedMember(dcsg1Rsc, &quot;src_type&quot;) eq &quot;1&quot;) ? &quot;R2R DAC&quot; : &quot;AIN&quot; . getExposedMember(dcsg1Rsc, &quot;src_ch&quot;)) : &quot;-&quot;}`"/>
+        <Substitution name="dcsg2_src_text" value="`${dcsg2Used ? ((getExposedMember(dcsg2Rsc, &quot;src_type&quot;) eq &quot;1&quot;) ? &quot;R2R DAC&quot; : &quot;AIN&quot; . getExposedMember(dcsg2Rsc, &quot;src_ch&quot;)) : &quot;-&quot;}`"/>
+        <Substitution name="dcsg3_src_text" value="`${dcsg3Used ? ((getExposedMember(dcsg3Rsc, &quot;src_type&quot;) eq &quot;1&quot;) ? &quot;R2R DAC&quot; : &quot;AIN&quot; . getExposedMember(dcsg3Rsc, &quot;src_ch&quot;)) : &quot;-&quot;}`"/>
+        <Substitution name="dcsg4_src_text" value="`${dcsg4Used ? ((getExposedMember(dcsg4Rsc, &quot;src_type&quot;) eq &quot;1&quot;) ? &quot;R2R DAC&quot; : &quot;AIN&quot; . getExposedMember(dcsg4Rsc, &quot;src_ch&quot;)) : &quot;-&quot;}`"/>
+        <Substitution name="dcsg5_src_text" value="`${dcsg5Used ? ((getExposedMember(dcsg5Rsc, &quot;src_type&quot;) eq &quot;1&quot;) ? &quot;R2R DAC&quot; : &quot;AIN&quot; . getExposedMember(dcsg5Rsc, &quot;src_ch&quot;)) : &quot;-&quot;}`"/>
+
+        <!-- Slope Gen fill colors -->
+        <Substitution name="slgen0_fill" value="`${slgen0Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+        <Substitution name="slgen1_fill" value="`${slgen1Used ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+        <Substitution name="slgen0_map" value="`${slgen0Used ? getExposedMember(slgen0Rsc, &quot;slgen_map&quot;) : &quot;-&quot;}`"/>
+        <Substitution name="slgen1_map" value="`${slgen1Used ? getExposedMember(slgen1Rsc, &quot;slgen_map&quot;) : &quot;-&quot;}`"/>
+
+        <!-- Slope Gen 0 connection lines to DCSGs (based on slgen0_map value) -->
+        <Substitution name="slgen0_dcsg0_display" value="`${(slgen0Used &amp;&amp; (getExposedMember(slgen0Rsc, &quot;slgen_map&quot;) eq &quot;0&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+        <Substitution name="slgen0_dcsg1_display" value="`${(slgen0Used &amp;&amp; (getExposedMember(slgen0Rsc, &quot;slgen_map&quot;) eq &quot;1&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+        <Substitution name="slgen0_dcsg2_display" value="`${(slgen0Used &amp;&amp; (getExposedMember(slgen0Rsc, &quot;slgen_map&quot;) eq &quot;2&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+        <Substitution name="slgen0_dcsg3_display" value="`${(slgen0Used &amp;&amp; (getExposedMember(slgen0Rsc, &quot;slgen_map&quot;) eq &quot;3&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+        <Substitution name="slgen0_dcsg4_display" value="`${(slgen0Used &amp;&amp; (getExposedMember(slgen0Rsc, &quot;slgen_map&quot;) eq &quot;4&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+        <Substitution name="slgen0_dcsg5_display" value="`${(slgen0Used &amp;&amp; (getExposedMember(slgen0Rsc, &quot;slgen_map&quot;) eq &quot;5&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+
+        <!-- Slope Gen 1 connection lines to DCSGs (based on slgen1_map value) -->
+        <Substitution name="slgen1_dcsg0_display" value="`${(slgen1Used &amp;&amp; (getExposedMember(slgen1Rsc, &quot;slgen_map&quot;) eq &quot;0&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+        <Substitution name="slgen1_dcsg1_display" value="`${(slgen1Used &amp;&amp; (getExposedMember(slgen1Rsc, &quot;slgen_map&quot;) eq &quot;1&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+        <Substitution name="slgen1_dcsg2_display" value="`${(slgen1Used &amp;&amp; (getExposedMember(slgen1Rsc, &quot;slgen_map&quot;) eq &quot;2&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+        <Substitution name="slgen1_dcsg3_display" value="`${(slgen1Used &amp;&amp; (getExposedMember(slgen1Rsc, &quot;slgen_map&quot;) eq &quot;3&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+        <Substitution name="slgen1_dcsg4_display" value="`${(slgen1Used &amp;&amp; (getExposedMember(slgen1Rsc, &quot;slgen_map&quot;) eq &quot;4&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+        <Substitution name="slgen1_dcsg5_display" value="`${(slgen1Used &amp;&amp; (getExposedMember(slgen1Rsc, &quot;slgen_map&quot;) eq &quot;5&quot;)) ? &quot;inline&quot; : &quot;none&quot;}`"/>
+
+        <!-- R2R DAC fill color and output pin -->
+        <Substitution name="r2r_dac_fill" value="`${r2rDacUsed ? &quot;#C8E6C9&quot; : &quot;#F5F5F5&quot;}`"/>
+        <Substitution name="r2r_dac_out_pin" value="`${r2rDacUsed ? getExposedMember(r2rDacRsc, &quot;dac_out_pin&quot;) : &quot;-&quot;}`"/>
+        <Substitution name="r2r_dac_out_display" value="`${r2rDacUsed ? &quot;inline&quot; : &quot;none&quot;}`"/>
+
+        <!-- Slope Gen trigger signal text -->
+        <Substitution name="slgen0_trig_text" value="`${slgen0Used ? getExposedMember(slgen0Rsc, &quot;slgen_trig_text&quot;) : &quot;-&quot;}`"/>
+        <Substitution name="slgen1_trig_text" value="`${slgen1Used ? getExposedMember(slgen1Rsc, &quot;slgen_trig_text&quot;) : &quot;-&quot;}`"/>
+
+        <!-- DCSG output signal text labels -->
+        <Substitution name="dcsg_out0_text" value="`${dcsg0Used ? getExposedMember(dcsg0Rsc, &quot;dcsg_out0_text&quot;) : &quot;DCSG_OUT[0]&quot;}`"/>
+        <Substitution name="dcsg_out1_text" value="`${dcsg1Used ? getExposedMember(dcsg1Rsc, &quot;dcsg_out0_text&quot;) : &quot;DCSG_OUT[1]&quot;}`"/>
+        <Substitution name="dcsg_out2_text" value="`${dcsg2Used ? getExposedMember(dcsg2Rsc, &quot;dcsg_out0_text&quot;) : &quot;DCSG_OUT[2]&quot;}`"/>
+        <Substitution name="dcsg_out3_text" value="`${dcsg3Used ? getExposedMember(dcsg3Rsc, &quot;dcsg_out0_text&quot;) : &quot;DCSG_OUT[3]&quot;}`"/>
+        <Substitution name="dcsg_out4_text" value="`${dcsg4Used ? getExposedMember(dcsg4Rsc, &quot;dcsg_out0_text&quot;) : &quot;DCSG_OUT[4]&quot;}`"/>
+        <Substitution name="dcsg_out5_text" value="`${dcsg5Used ? getExposedMember(dcsg5Rsc, &quot;dcsg_out0_text&quot;) : &quot;DCSG_OUT[5]&quot;}`"/>
+    </ParamImage>
+  </Parameters>
+  <DRCs>
+  </DRCs>
+
+   <ConfigFirmware>
+   </ConfigFirmware>
+
+</PersonalityTemplate>

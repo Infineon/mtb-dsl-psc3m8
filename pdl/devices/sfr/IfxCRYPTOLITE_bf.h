@@ -1,0 +1,559 @@
+/***************************************************************************//**
+* \file IfxCRYPTOLITE_bf.h
+*
+* \brief
+* CRYPTOLITE Bitfields mask and offset
+*
+********************************************************************************
+* \copyright
+* (c) 2025-2026, Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG.
+* SPDX-License-Identifier: Apache-2.0
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+********************************************************************************
+*
+* \defgroup IfxSfr_CRYPTOLITE_Registers_BitfieldsMask Bitfields mask and offset
+* \ingroup IfxSfr_CRYPTOLITE_Registers
+*
+*******************************************************************************/
+
+#ifndef _IFXCRYPTOLITE_BF_H_
+#define _IFXCRYPTOLITE_BF_H_ 1
+
+/******************************************************************************/
+
+/******************************************************************************/
+
+/** \addtogroup IfxSfr_CRYPTOLITE_Registers_BitfieldsMask
+ * \{  */
+/** \brief Length for Ifx_CRYPTOLITE_CTL_Bits.P */
+#define IFX_CRYPTOLITE_CTL_P_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_CTL_Bits.P */
+#define IFX_CRYPTOLITE_CTL_P_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_CTL_Bits.P */
+#define IFX_CRYPTOLITE_CTL_P_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_CTL_Bits.NS */
+#define IFX_CRYPTOLITE_CTL_NS_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_CTL_Bits.NS */
+#define IFX_CRYPTOLITE_CTL_NS_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_CTL_Bits.NS */
+#define IFX_CRYPTOLITE_CTL_NS_OFF (1u)
+
+/** \brief Length for Ifx_CRYPTOLITE_CTL_Bits.PC */
+#define IFX_CRYPTOLITE_CTL_PC_LEN (4u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_CTL_Bits.PC */
+#define IFX_CRYPTOLITE_CTL_PC_MSK (0xfu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_CTL_Bits.PC */
+#define IFX_CRYPTOLITE_CTL_PC_OFF (4u)
+
+/** \brief Length for Ifx_CRYPTOLITE_CTL_Bits.MS */
+#define IFX_CRYPTOLITE_CTL_MS_LEN (4u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_CTL_Bits.MS */
+#define IFX_CRYPTOLITE_CTL_MS_MSK (0xfu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_CTL_Bits.MS */
+#define IFX_CRYPTOLITE_CTL_MS_OFF (8u)
+
+/** \brief Length for Ifx_CRYPTOLITE_CTL_Bits.SHA_SEL */
+#define IFX_CRYPTOLITE_CTL_SHA_SEL_LEN (2u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_CTL_Bits.SHA_SEL */
+#define IFX_CRYPTOLITE_CTL_SHA_SEL_MSK (0x3u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_CTL_Bits.SHA_SEL */
+#define IFX_CRYPTOLITE_CTL_SHA_SEL_OFF (12u)
+
+/** \brief Length for Ifx_CRYPTOLITE_STATUS_Bits.BUSY */
+#define IFX_CRYPTOLITE_STATUS_BUSY_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_STATUS_Bits.BUSY */
+#define IFX_CRYPTOLITE_STATUS_BUSY_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_STATUS_Bits.BUSY */
+#define IFX_CRYPTOLITE_STATUS_BUSY_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_AES_DESCR_Bits.PTR */
+#define IFX_CRYPTOLITE_AES_DESCR_PTR_LEN (30u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_AES_DESCR_Bits.PTR */
+#define IFX_CRYPTOLITE_AES_DESCR_PTR_MSK (0x3fffffffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_AES_DESCR_Bits.PTR */
+#define IFX_CRYPTOLITE_AES_DESCR_PTR_OFF (2u)
+
+/** \brief Length for Ifx_CRYPTOLITE_VU_DESCR_Bits.PTR */
+#define IFX_CRYPTOLITE_VU_DESCR_PTR_LEN (30u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_VU_DESCR_Bits.PTR */
+#define IFX_CRYPTOLITE_VU_DESCR_PTR_MSK (0x3fffffffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_VU_DESCR_Bits.PTR */
+#define IFX_CRYPTOLITE_VU_DESCR_PTR_OFF (2u)
+
+/** \brief Length for Ifx_CRYPTOLITE_SHA_DESCR_Bits.PTR */
+#define IFX_CRYPTOLITE_SHA_DESCR_PTR_LEN (30u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_SHA_DESCR_Bits.PTR */
+#define IFX_CRYPTOLITE_SHA_DESCR_PTR_MSK (0x3fffffffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_SHA_DESCR_Bits.PTR */
+#define IFX_CRYPTOLITE_SHA_DESCR_PTR_OFF (2u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_ERROR_Bits.BUS_ERROR */
+#define IFX_CRYPTOLITE_INTR_ERROR_BUS_ERROR_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_ERROR_Bits.BUS_ERROR */
+#define IFX_CRYPTOLITE_INTR_ERROR_BUS_ERROR_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_ERROR_Bits.BUS_ERROR */
+#define IFX_CRYPTOLITE_INTR_ERROR_BUS_ERROR_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_ERROR_SET_Bits.BUS_ERROR */
+#define IFX_CRYPTOLITE_INTR_ERROR_SET_BUS_ERROR_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_ERROR_SET_Bits.BUS_ERROR */
+#define IFX_CRYPTOLITE_INTR_ERROR_SET_BUS_ERROR_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_ERROR_SET_Bits.BUS_ERROR */
+#define IFX_CRYPTOLITE_INTR_ERROR_SET_BUS_ERROR_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_ERROR_MASK_Bits.BUS_ERROR */
+#define IFX_CRYPTOLITE_INTR_ERROR_MASK_BUS_ERROR_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_ERROR_MASK_Bits.BUS_ERROR */
+#define IFX_CRYPTOLITE_INTR_ERROR_MASK_BUS_ERROR_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_ERROR_MASK_Bits.BUS_ERROR */
+#define IFX_CRYPTOLITE_INTR_ERROR_MASK_BUS_ERROR_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_ERROR_MASKED_Bits.BUS_ERROR */
+#define IFX_CRYPTOLITE_INTR_ERROR_MASKED_BUS_ERROR_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_ERROR_MASKED_Bits.BUS_ERROR */
+#define IFX_CRYPTOLITE_INTR_ERROR_MASKED_BUS_ERROR_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_ERROR_MASKED_Bits.BUS_ERROR */
+#define IFX_CRYPTOLITE_INTR_ERROR_MASKED_BUS_ERROR_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.SAMPLE_CLOCK_DIV */
+#define IFX_CRYPTOLITE_TRNG_CTL0_SAMPLE_CLOCK_DIV_LEN (8u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.SAMPLE_CLOCK_DIV */
+#define IFX_CRYPTOLITE_TRNG_CTL0_SAMPLE_CLOCK_DIV_MSK (0xffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.SAMPLE_CLOCK_DIV */
+#define IFX_CRYPTOLITE_TRNG_CTL0_SAMPLE_CLOCK_DIV_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.RED_CLOCK_DIV */
+#define IFX_CRYPTOLITE_TRNG_CTL0_RED_CLOCK_DIV_LEN (8u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.RED_CLOCK_DIV */
+#define IFX_CRYPTOLITE_TRNG_CTL0_RED_CLOCK_DIV_MSK (0xffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.RED_CLOCK_DIV */
+#define IFX_CRYPTOLITE_TRNG_CTL0_RED_CLOCK_DIV_OFF (8u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.INIT_DELAY */
+#define IFX_CRYPTOLITE_TRNG_CTL0_INIT_DELAY_LEN (8u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.INIT_DELAY */
+#define IFX_CRYPTOLITE_TRNG_CTL0_INIT_DELAY_MSK (0xffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.INIT_DELAY */
+#define IFX_CRYPTOLITE_TRNG_CTL0_INIT_DELAY_OFF (16u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.VON_NEUMANN_CORR */
+#define IFX_CRYPTOLITE_TRNG_CTL0_VON_NEUMANN_CORR_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.VON_NEUMANN_CORR */
+#define IFX_CRYPTOLITE_TRNG_CTL0_VON_NEUMANN_CORR_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.VON_NEUMANN_CORR */
+#define IFX_CRYPTOLITE_TRNG_CTL0_VON_NEUMANN_CORR_OFF (24u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.FEEDBACK_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL0_FEEDBACK_EN_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.FEEDBACK_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL0_FEEDBACK_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.FEEDBACK_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL0_FEEDBACK_EN_OFF (25u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.STOP_ON_AP_DETECT */
+#define IFX_CRYPTOLITE_TRNG_CTL0_STOP_ON_AP_DETECT_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.STOP_ON_AP_DETECT */
+#define IFX_CRYPTOLITE_TRNG_CTL0_STOP_ON_AP_DETECT_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.STOP_ON_AP_DETECT */
+#define IFX_CRYPTOLITE_TRNG_CTL0_STOP_ON_AP_DETECT_OFF (28u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.STOP_ON_RC_DETECT */
+#define IFX_CRYPTOLITE_TRNG_CTL0_STOP_ON_RC_DETECT_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.STOP_ON_RC_DETECT */
+#define IFX_CRYPTOLITE_TRNG_CTL0_STOP_ON_RC_DETECT_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL0_Bits.STOP_ON_RC_DETECT */
+#define IFX_CRYPTOLITE_TRNG_CTL0_STOP_ON_RC_DETECT_OFF (29u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.RO11_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_RO11_EN_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.RO11_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_RO11_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.RO11_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_RO11_EN_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.RO15_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_RO15_EN_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.RO15_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_RO15_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.RO15_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_RO15_EN_OFF (1u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.GARO15_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_GARO15_EN_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.GARO15_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_GARO15_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.GARO15_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_GARO15_EN_OFF (2u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.GARO31_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_GARO31_EN_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.GARO31_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_GARO31_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.GARO31_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_GARO31_EN_OFF (3u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.FIRO15_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_FIRO15_EN_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.FIRO15_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_FIRO15_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.FIRO15_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_FIRO15_EN_OFF (4u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.FIRO31_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_FIRO31_EN_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.FIRO31_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_FIRO31_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_CTL1_Bits.FIRO31_EN */
+#define IFX_CRYPTOLITE_TRNG_CTL1_FIRO31_EN_OFF (5u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_STATUS_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_TRNG_STATUS_INITIALIZED_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_STATUS_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_TRNG_STATUS_INITIALIZED_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_STATUS_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_TRNG_STATUS_INITIALIZED_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_RESULT_Bits.DATA */
+#define IFX_CRYPTOLITE_TRNG_RESULT_DATA_LEN (32u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_RESULT_Bits.DATA */
+#define IFX_CRYPTOLITE_TRNG_RESULT_DATA_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_RESULT_Bits.DATA */
+#define IFX_CRYPTOLITE_TRNG_RESULT_DATA_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_GARO_CTL_Bits.POLYNOMIAL */
+#define IFX_CRYPTOLITE_TRNG_GARO_CTL_POLYNOMIAL_LEN (31u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_GARO_CTL_Bits.POLYNOMIAL */
+#define IFX_CRYPTOLITE_TRNG_GARO_CTL_POLYNOMIAL_MSK (0x7fffffffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_GARO_CTL_Bits.POLYNOMIAL */
+#define IFX_CRYPTOLITE_TRNG_GARO_CTL_POLYNOMIAL_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_FIRO_CTL_Bits.POLYNOMIAL */
+#define IFX_CRYPTOLITE_TRNG_FIRO_CTL_POLYNOMIAL_LEN (31u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_FIRO_CTL_Bits.POLYNOMIAL */
+#define IFX_CRYPTOLITE_TRNG_FIRO_CTL_POLYNOMIAL_MSK (0x7fffffffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_FIRO_CTL_Bits.POLYNOMIAL */
+#define IFX_CRYPTOLITE_TRNG_FIRO_CTL_POLYNOMIAL_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_MON_CTL_Bits.BITSTREAM_SEL */
+#define IFX_CRYPTOLITE_TRNG_MON_CTL_BITSTREAM_SEL_LEN (2u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_MON_CTL_Bits.BITSTREAM_SEL */
+#define IFX_CRYPTOLITE_TRNG_MON_CTL_BITSTREAM_SEL_MSK (0x3u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_MON_CTL_Bits.BITSTREAM_SEL */
+#define IFX_CRYPTOLITE_TRNG_MON_CTL_BITSTREAM_SEL_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_MON_CTL_Bits.AP */
+#define IFX_CRYPTOLITE_TRNG_MON_CTL_AP_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_MON_CTL_Bits.AP */
+#define IFX_CRYPTOLITE_TRNG_MON_CTL_AP_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_MON_CTL_Bits.AP */
+#define IFX_CRYPTOLITE_TRNG_MON_CTL_AP_OFF (8u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_MON_CTL_Bits.RC */
+#define IFX_CRYPTOLITE_TRNG_MON_CTL_RC_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_MON_CTL_Bits.RC */
+#define IFX_CRYPTOLITE_TRNG_MON_CTL_RC_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_MON_CTL_Bits.RC */
+#define IFX_CRYPTOLITE_TRNG_MON_CTL_RC_OFF (9u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_MON_RC_CTL_Bits.CUTOFF_COUNT8 */
+#define IFX_CRYPTOLITE_TRNG_MON_RC_CTL_CUTOFF_COUNT8_LEN (8u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_MON_RC_CTL_Bits.CUTOFF_COUNT8 */
+#define IFX_CRYPTOLITE_TRNG_MON_RC_CTL_CUTOFF_COUNT8_MSK (0xffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_MON_RC_CTL_Bits.CUTOFF_COUNT8 */
+#define IFX_CRYPTOLITE_TRNG_MON_RC_CTL_CUTOFF_COUNT8_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_MON_RC_STATUS0_Bits.BIT */
+#define IFX_CRYPTOLITE_TRNG_MON_RC_STATUS0_BIT_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_MON_RC_STATUS0_Bits.BIT */
+#define IFX_CRYPTOLITE_TRNG_MON_RC_STATUS0_BIT_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_MON_RC_STATUS0_Bits.BIT */
+#define IFX_CRYPTOLITE_TRNG_MON_RC_STATUS0_BIT_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_MON_RC_STATUS1_Bits.REP_COUNT */
+#define IFX_CRYPTOLITE_TRNG_MON_RC_STATUS1_REP_COUNT_LEN (8u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_MON_RC_STATUS1_Bits.REP_COUNT */
+#define IFX_CRYPTOLITE_TRNG_MON_RC_STATUS1_REP_COUNT_MSK (0xffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_MON_RC_STATUS1_Bits.REP_COUNT */
+#define IFX_CRYPTOLITE_TRNG_MON_RC_STATUS1_REP_COUNT_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_MON_AP_CTL_Bits.CUTOFF_COUNT16 */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_CTL_CUTOFF_COUNT16_LEN (16u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_MON_AP_CTL_Bits.CUTOFF_COUNT16 */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_CTL_CUTOFF_COUNT16_MSK (0xffffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_MON_AP_CTL_Bits.CUTOFF_COUNT16 */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_CTL_CUTOFF_COUNT16_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_MON_AP_CTL_Bits.WINDOW_SIZE */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_CTL_WINDOW_SIZE_LEN (16u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_MON_AP_CTL_Bits.WINDOW_SIZE */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_CTL_WINDOW_SIZE_MSK (0xffffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_MON_AP_CTL_Bits.WINDOW_SIZE */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_CTL_WINDOW_SIZE_OFF (16u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_MON_AP_STATUS0_Bits.BIT */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_STATUS0_BIT_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_MON_AP_STATUS0_Bits.BIT */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_STATUS0_BIT_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_MON_AP_STATUS0_Bits.BIT */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_STATUS0_BIT_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_MON_AP_STATUS1_Bits.OCC_COUNT */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_STATUS1_OCC_COUNT_LEN (16u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_MON_AP_STATUS1_Bits.OCC_COUNT */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_STATUS1_OCC_COUNT_MSK (0xffffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_MON_AP_STATUS1_Bits.OCC_COUNT */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_STATUS1_OCC_COUNT_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_TRNG_MON_AP_STATUS1_Bits.WINDOW_INDEX */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_STATUS1_WINDOW_INDEX_LEN (16u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_TRNG_MON_AP_STATUS1_Bits.WINDOW_INDEX */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_STATUS1_WINDOW_INDEX_MSK (0xffffu)
+
+/** \brief Offset for Ifx_CRYPTOLITE_TRNG_MON_AP_STATUS1_Bits.WINDOW_INDEX */
+#define IFX_CRYPTOLITE_TRNG_MON_AP_STATUS1_WINDOW_INDEX_OFF (16u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_INTR_TRNG_INITIALIZED_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_INTR_TRNG_INITIALIZED_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_INTR_TRNG_INITIALIZED_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_Bits.DATA_AVAILABLE */
+#define IFX_CRYPTOLITE_INTR_TRNG_DATA_AVAILABLE_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_Bits.DATA_AVAILABLE */
+#define IFX_CRYPTOLITE_INTR_TRNG_DATA_AVAILABLE_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_Bits.DATA_AVAILABLE */
+#define IFX_CRYPTOLITE_INTR_TRNG_DATA_AVAILABLE_OFF (1u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_Bits.AP_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_AP_DETECT_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_Bits.AP_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_AP_DETECT_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_Bits.AP_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_AP_DETECT_OFF (2u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_Bits.RC_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_RC_DETECT_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_Bits.RC_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_RC_DETECT_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_Bits.RC_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_RC_DETECT_OFF (3u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_SET_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_INTR_TRNG_SET_INITIALIZED_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_SET_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_INTR_TRNG_SET_INITIALIZED_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_SET_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_INTR_TRNG_SET_INITIALIZED_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_SET_Bits.DATA_AVAILABLE */
+#define IFX_CRYPTOLITE_INTR_TRNG_SET_DATA_AVAILABLE_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_SET_Bits.DATA_AVAILABLE */
+#define IFX_CRYPTOLITE_INTR_TRNG_SET_DATA_AVAILABLE_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_SET_Bits.DATA_AVAILABLE */
+#define IFX_CRYPTOLITE_INTR_TRNG_SET_DATA_AVAILABLE_OFF (1u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_SET_Bits.AP_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_SET_AP_DETECT_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_SET_Bits.AP_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_SET_AP_DETECT_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_SET_Bits.AP_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_SET_AP_DETECT_OFF (2u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_SET_Bits.RC_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_SET_RC_DETECT_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_SET_Bits.RC_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_SET_RC_DETECT_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_SET_Bits.RC_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_SET_RC_DETECT_OFF (3u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_MASK_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASK_INITIALIZED_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_MASK_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASK_INITIALIZED_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_MASK_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASK_INITIALIZED_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_MASK_Bits.DATA_AVAILABLE */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASK_DATA_AVAILABLE_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_MASK_Bits.DATA_AVAILABLE */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASK_DATA_AVAILABLE_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_MASK_Bits.DATA_AVAILABLE */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASK_DATA_AVAILABLE_OFF (1u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_MASK_Bits.AP_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASK_AP_DETECT_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_MASK_Bits.AP_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASK_AP_DETECT_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_MASK_Bits.AP_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASK_AP_DETECT_OFF (2u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_MASK_Bits.RC_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASK_RC_DETECT_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_MASK_Bits.RC_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASK_RC_DETECT_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_MASK_Bits.RC_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASK_RC_DETECT_OFF (3u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_MASKED_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASKED_INITIALIZED_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_MASKED_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASKED_INITIALIZED_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_MASKED_Bits.INITIALIZED */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASKED_INITIALIZED_OFF (0u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_MASKED_Bits.DATA_AVAILABLE */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASKED_DATA_AVAILABLE_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_MASKED_Bits.DATA_AVAILABLE */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASKED_DATA_AVAILABLE_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_MASKED_Bits.DATA_AVAILABLE */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASKED_DATA_AVAILABLE_OFF (1u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_MASKED_Bits.AP_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASKED_AP_DETECT_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_MASKED_Bits.AP_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASKED_AP_DETECT_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_MASKED_Bits.AP_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASKED_AP_DETECT_OFF (2u)
+
+/** \brief Length for Ifx_CRYPTOLITE_INTR_TRNG_MASKED_Bits.RC_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASKED_RC_DETECT_LEN (1u)
+
+/** \brief Mask for Ifx_CRYPTOLITE_INTR_TRNG_MASKED_Bits.RC_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASKED_RC_DETECT_MSK (0x1u)
+
+/** \brief Offset for Ifx_CRYPTOLITE_INTR_TRNG_MASKED_Bits.RC_DETECT */
+#define IFX_CRYPTOLITE_INTR_TRNG_MASKED_RC_DETECT_OFF (3u)
+
+/** \}  */
+
+/******************************************************************************/
+
+/******************************************************************************/
+
+#endif /* _IFXCRYPTOLITE_BF_H_ */

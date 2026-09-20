@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!DOCTYPE 	svgdiagram
+[
+<!ENTITY comboFb_blockColor "#ffffff">
+<!ENTITY comboFb_lineColor "#000000">
+<!ENTITY comboFb_textColor "#000000">
+<!ENTITY input_text "COMBO_FB_IN">
+]
+>
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="EPU_COMBO_FB.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.69219276"
+     inkscape:cx="131.46627"
+     inkscape:cy="450.01915"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       id="endMarker66"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline68" />
+    </marker>
+    <marker
+       id="marker1"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline1" />
+    </marker>
+    <marker
+       id="endMarker66-0"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline68-2" />
+    </marker>
+    <marker
+       id="endMarker66-0-1"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline68-2-9" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="Layer1225"
+       transform="matrix(0.66670016,0,0,0.64257294,-99.802462,-140.89918)">
+      <g
+         id="Layer1226">
+        <path
+           d="M 241.2598,462.3622 H 382.9921 V 320.6299 H 241.2598 Z"
+           style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round"
+           id="path1" />
+        <path
+           d="M 241.2598,462.3622 H 382.9921 V 320.6299 H 241.2598 Z"
+           style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+           id="path2" />
+      </g>
+      <text
+         x="245.2598"
+         y="313.65936"
+         id="text2"
+         style="font-size:12.9356px"><tspan
+           font-family="Calibri"
+           font-size="12px"
+           fill="#000000"
+           fill-opacity="1"
+           stroke-opacity="1"
+           id="tspan2"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.9356px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">COMBO_FB</tspan></text>
+    </g>
+    <g
+       id="Layer1216"
+       transform="matrix(0.92679455,0,0,1.2140071,-665.89999,-460.81277)">
+      <path
+         d="m 799.531,442.0473 v 56.693 h 28.3465 v -56.693 z"
+         style="fill:&comboFb_blockColor;;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round"
+         id="path78" />
+      <path
+         d="m 799.531,442.0473 v 56.693 h 28.3465 v -56.693 z"
+         style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         id="path79" />
+      <text
+         xml:space="preserve"
+         style="font-size:6.65165px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';fill:#ffffff;stroke:#3b9b91;stroke-width:0.245116;stroke-linecap:square;paint-order:fill markers stroke"
+         x="708.88831"
+         y="536.77374"
+         id="text1"
+         transform="scale(1.1445081,0.87373778)"><tspan
+           sodipodi:role="line"
+           id="tspan1"
+           style="stroke-width:0.245116"
+           x="708.88831"
+           y="536.77374"></tspan></text>
+    </g>
+    <text
+       x="79.867172"
+       y="113.13829"
+       id="text2-2-2"
+       style="font-size:8.46668px;stroke-width:0.654525"
+       transform="scale(1.0186009,0.98173877)"><tspan
+         font-family="Calibri"
+         font-size="12px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan2-6-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46668px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:0.654525">MX</tspan></text>
+    <g
+       id="Layer1216-0"
+       transform="matrix(0.93410973,0,0,0.65737816,-628.49503,-200.9165)">
+      <path
+         d="m 799.531,442.0473 v 56.693 h 28.3465 v -56.693 z"
+         style="fill:&comboFb_blockColor;;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round"
+         id="path78-2" />
+      <path
+         d="m 799.531,442.0473 v 56.693 h 28.3465 v -56.693 z"
+         style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         id="path79-6" />
+    </g>
+    <text
+       x="124.37484"
+       y="113.02502"
+       id="text2-2"
+       style="font-size:8.46668px;stroke-width:0.654525"
+       transform="scale(1.0186009,0.98173877)"><tspan
+         font-family="Calibri"
+         font-size="12px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan2-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46668px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:0.654525">FF</tspan></text>
+    <g
+       id="Layer1207"
+       transform="matrix(0.34115191,0,0,0.35320634,-193.98409,26.588668)">
+      <defs
+         id="defs68">
+        <marker
+           id="marker2"
+           markerUnits="strokeWidth"
+           orient="auto"
+           markerWidth="8"
+           markerHeight="6"
+           viewBox="0 0 10 10"
+           refX="1"
+           refY="5">
+          <polyline
+             points="0,0 10,5 0,10 1,5"
+             fill="solid"
+             id="polyline2" />
+        </marker>
+      </defs>
+      <path
+         d="m 583.73888,229.17835 h 194.8103"
+         style="fill:none;stroke:&comboFb_lineColor;;stroke-width:1.65016;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#endMarker66)"
+         id="path69" />
+      <path
+         d="M 995.05922,230.03039 H 1151.2219"
+         style="fill:none;stroke:&comboFb_lineColor;;stroke-width:1.7212;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;marker-end:url(#endMarker66-0)"
+         id="path69-6" />
+      <path
+         d="m 866.91128,229.13237 h 40.25971"
+         style="fill:none;stroke:&comboFb_lineColor;;stroke-width:1.39842;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;marker-end:url(#endMarker66-0-1)"
+         id="path69-6-5"
+         inkscape:transform-center-x="-20.897323"
+         inkscape:transform-center-y="-2.4325565" />
+      <text
+         x="580.46277"
+         y="220.05026"
+         id="text69"
+         style="font-size:22.3581px"><tspan
+           font-family="Calibri"
+           font-size="12px"
+           fill="&comboFb_textColor;"
+           fill-opacity="1"
+           stroke-opacity="1"
+           id="tspan69"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.3581px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">&input_text;</tspan></text>
+      <text
+         x="1037.9913"
+         y="220.38855"
+         id="text69-1"
+         style="font-size:22.3581px"><tspan
+           font-family="Calibri"
+           font-size="12px"
+           fill="&comboFb_textColor;"
+           fill-opacity="1"
+           stroke-opacity="1"
+           id="tspan69-2"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.3581px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">EVFB_SYNC</tspan></text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,487 @@
+/***************************************************************************//**
+* \file IfxSVGS_bf.h
+*
+* \brief
+* SVGS Bitfields mask and offset
+*
+********************************************************************************
+* \copyright
+* (c) 2025-2026, Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG.
+* SPDX-License-Identifier: Apache-2.0
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+********************************************************************************
+*
+* \defgroup IfxSfr_SVGS_Registers_BitfieldsMask Bitfields mask and offset
+* \ingroup IfxSfr_SVGS_Registers
+*
+*******************************************************************************/
+
+#ifndef _IFXSVGS_BF_H_
+#define _IFXSVGS_BF_H_ 1
+
+/******************************************************************************/
+
+/******************************************************************************/
+
+/** \addtogroup IfxSfr_SVGS_Registers_BitfieldsMask
+ * \{  */
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CTL_Bits.ENABLE */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CTL_ENABLE_LEN (4u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CTL_Bits.ENABLE */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CTL_ENABLE_MSK (0xfu)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CTL_Bits.ENABLE */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CTL_ENABLE_OFF (0u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CTL_Bits.FAULT_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CTL_FAULT_EN_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CTL_Bits.FAULT_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CTL_FAULT_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CTL_Bits.FAULT_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CTL_FAULT_EN_OFF (8u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.UVC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_UVC_CAPTURED_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.UVC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_UVC_CAPTURED_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.UVC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_UVC_CAPTURED_OFF (0u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.OVC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_OVC_CAPTURED_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.OVC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_OVC_CAPTURED_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.OVC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_OVC_CAPTURED_OFF (1u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.UVFC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_UVFC_CAPTURED_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.UVFC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_UVFC_CAPTURED_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.UVFC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_UVFC_CAPTURED_OFF (2u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.NVC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_NVC_CAPTURED_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.NVC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_NVC_CAPTURED_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.NVC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_NVC_CAPTURED_OFF (3u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.HVC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_HVC_CAPTURED_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.HVC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_HVC_CAPTURED_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.HVC_CAPTURED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_HVC_CAPTURED_OFF (4u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.EN_SEQ_ACTIVE */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_EN_SEQ_ACTIVE_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.EN_SEQ_ACTIVE */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_EN_SEQ_ACTIVE_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.EN_SEQ_ACTIVE */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_EN_SEQ_ACTIVE_OFF (8u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.SVGS_ENABLED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_SVGS_ENABLED_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.SVGS_ENABLED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_SVGS_ENABLED_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_STATUS_Bits.SVGS_ENABLED */
+#define IFX_SVGS_SVGS_MAIN_SVGS_STATUS_SVGS_ENABLED_OFF (9u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVC_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVC_EN_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVC_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVC_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVC_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVC_EN_OFF (0u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.OVC_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_OVC_EN_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.OVC_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_OVC_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.OVC_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_OVC_EN_OFF (1u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVFC_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVFC_EN_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVFC_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVFC_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVFC_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVFC_EN_OFF (2u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.NVC_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_NVC_EN_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.NVC_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_NVC_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.NVC_EN */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_NVC_EN_OFF (3u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVC_PWR */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVC_PWR_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVC_PWR */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVC_PWR_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVC_PWR */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVC_PWR_OFF (8u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.OVC_PWR */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_OVC_PWR_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.OVC_PWR */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_OVC_PWR_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.OVC_PWR */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_OVC_PWR_OFF (9u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVFC_PWR */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVFC_PWR_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVFC_PWR */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVFC_PWR_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVFC_PWR */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVFC_PWR_OFF (10u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.NVC_PWR */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_NVC_PWR_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.NVC_PWR */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_NVC_PWR_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.NVC_PWR */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_NVC_PWR_OFF (11u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVC_MASK_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVC_MASK_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVC_MASK_OFF (16u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.OVC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_OVC_MASK_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.OVC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_OVC_MASK_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.OVC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_OVC_MASK_OFF (17u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVFC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVFC_MASK_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVFC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVFC_MASK_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.UVFC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_UVFC_MASK_OFF (18u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.NVC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_NVC_MASK_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.NVC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_NVC_MASK_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.NVC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_NVC_MASK_OFF (19u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.HVC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_HVC_MASK_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.HVC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_HVC_MASK_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.HVC_MASK */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_HVC_MASK_OFF (20u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.SVGS_UVFC_TC */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_SVGS_UVFC_TC_LEN (4u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.SVGS_UVFC_TC */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_SVGS_UVFC_TC_MSK (0xfu)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_Bits.SVGS_UVFC_TC */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_CFG_RO_SVGS_UVFC_TC_OFF (24u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_Bits.SVGS_UVC_TRIP */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_SVGS_UVC_TRIP_LEN (6u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_Bits.SVGS_UVC_TRIP */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_SVGS_UVC_TRIP_MSK (0x3fu)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_Bits.SVGS_UVC_TRIP */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_SVGS_UVC_TRIP_OFF (0u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_Bits.SVGS_OVC_TRIP */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_SVGS_OVC_TRIP_LEN (2u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_Bits.SVGS_OVC_TRIP */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_SVGS_OVC_TRIP_MSK (0x3u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_Bits.SVGS_OVC_TRIP */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_SVGS_OVC_TRIP_OFF (8u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_Bits.SVGS_UVFC_TRIP */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_SVGS_UVFC_TRIP_LEN (6u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_Bits.SVGS_UVFC_TRIP */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_SVGS_UVFC_TRIP_MSK (0x3fu)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_Bits.SVGS_UVFC_TRIP */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_SVGS_UVFC_TRIP_OFF (16u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_Bits.SVGS_NVC_TRIP */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_SVGS_NVC_TRIP_LEN (4u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_Bits.SVGS_NVC_TRIP */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_SVGS_NVC_TRIP_MSK (0xfu)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_Bits.SVGS_NVC_TRIP */
+#define IFX_SVGS_SVGS_MAIN_SVGS_CMP_TRIP_RO_SVGS_NVC_TRIP_OFF (24u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_TRIM_RO_Bits.SVGS_VREG_TRIM */
+#define IFX_SVGS_SVGS_MAIN_SVGS_TRIM_RO_SVGS_VREG_TRIM_LEN (4u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_TRIM_RO_Bits.SVGS_VREG_TRIM */
+#define IFX_SVGS_SVGS_MAIN_SVGS_TRIM_RO_SVGS_VREG_TRIM_MSK (0xfu)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_TRIM_RO_Bits.SVGS_VREG_TRIM */
+#define IFX_SVGS_SVGS_MAIN_SVGS_TRIM_RO_SVGS_VREG_TRIM_OFF (0u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_TRIM_RO_Bits.SVGS_IBIAS_TRIM */
+#define IFX_SVGS_SVGS_MAIN_SVGS_TRIM_RO_SVGS_IBIAS_TRIM_LEN (4u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_TRIM_RO_Bits.SVGS_IBIAS_TRIM */
+#define IFX_SVGS_SVGS_MAIN_SVGS_TRIM_RO_SVGS_IBIAS_TRIM_MSK (0xfu)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_TRIM_RO_Bits.SVGS_IBIAS_TRIM */
+#define IFX_SVGS_SVGS_MAIN_SVGS_TRIM_RO_SVGS_IBIAS_TRIM_OFF (8u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.UVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_UVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.UVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_UVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.UVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_UVC_GLITCH_OFF (0u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.OVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_OVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.OVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_OVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.OVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_OVC_GLITCH_OFF (1u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.UVFC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_UVFC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.UVFC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_UVFC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.UVFC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_UVFC_GLITCH_OFF (2u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.NVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_NVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.NVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_NVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.NVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_NVC_GLITCH_OFF (3u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.HVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_HVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.HVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_HVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_Bits.HVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_HVC_GLITCH_OFF (4u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.UVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_UVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.UVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_UVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.UVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_UVC_GLITCH_OFF (0u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.OVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_OVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.OVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_OVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.OVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_OVC_GLITCH_OFF (1u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.UVFC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_UVFC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.UVFC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_UVFC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.UVFC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_UVFC_GLITCH_OFF (2u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.NVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_NVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.NVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_NVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.NVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_NVC_GLITCH_OFF (3u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.HVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_HVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.HVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_HVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_SET_Bits.HVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_SET_HVC_GLITCH_OFF (4u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.UVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_UVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.UVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_UVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.UVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_UVC_GLITCH_OFF (0u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.OVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_OVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.OVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_OVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.OVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_OVC_GLITCH_OFF (1u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.UVFC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_UVFC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.UVFC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_UVFC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.UVFC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_UVFC_GLITCH_OFF (2u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.NVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_NVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.NVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_NVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.NVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_NVC_GLITCH_OFF (3u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.HVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_HVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.HVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_HVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASK_Bits.HVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASK_HVC_GLITCH_OFF (4u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.UVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_UVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.UVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_UVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.UVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_UVC_GLITCH_OFF (0u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.OVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_OVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.OVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_OVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.OVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_OVC_GLITCH_OFF (1u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.UVFC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_UVFC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.UVFC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_UVFC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.UVFC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_UVFC_GLITCH_OFF (2u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.NVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_NVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.NVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_NVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.NVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_NVC_GLITCH_OFF (3u)
+
+/** \brief Length for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.HVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_HVC_GLITCH_LEN (1u)
+
+/** \brief Mask for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.HVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_HVC_GLITCH_MSK (0x1u)
+
+/** \brief Offset for Ifx_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_Bits.HVC_GLITCH */
+#define IFX_SVGS_SVGS_MAIN_SVGS_INTR_MASKED_HVC_GLITCH_OFF (4u)
+
+/** \}  */
+
+/******************************************************************************/
+
+/******************************************************************************/
+
+#endif /* _IFXSVGS_BF_H_ */

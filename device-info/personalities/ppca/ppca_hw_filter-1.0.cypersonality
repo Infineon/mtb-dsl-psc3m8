@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--****************************************************************************
+* \file ppca_hw_filter.cypersonality
+* \version 1.0
+*
+* \brief
+* Hardware Filter 3P3Z personality description file.
+*
+********************************************************************************
+* \copyright
+* (c) 2025-2026, Infineon Technologies AG, or an affiliate of Infineon
+* Technologies AG.
+* SPDX-License-Identifier: Apache-2.0
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*****************************************************************************-->
+
+<PersonalityTemplate id="mxs40ppca-hw_filter" name="Hardware Filter 3P3Z" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v12">
+  <Constants>
+    <Const id='SET_CNT' value='20' />
+  </Constants>
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.hwfilt3p3zss\.hwfilt3p3z" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers />
+  <Parameters>
+
+    <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__hwfilt3p3z.html" linkText="Open PPCA HW Filter 3P3Z Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+
+    <!-- The input may be CPU/AHB-driven or ADC-datapath-driven. In datapath mode,
+         ADC filter and HWFILT3P3Z instances are mapped through the REGs Master IF;
+         HWFILT3P3Z outputs can then map to TCPWM/PWM SS0/SS1 counters. -->
+    <ParamChoice id="dataSrcSel"
+                 name="Data Source Select"
+                 group="HWFILT3P3Z Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="Selects the HWFILT3P3Z input source: AHB Interface for CPU writes, or the ADC filter output for autonomous datapath operation. In datapath mode, ADC0 filter instances ADC_FILT_00/01 map to HWFILT3P3Z SS1 0/1, ADC1 ADC_FILT_1 maps to SS0 0, ADC2 ADC_FILT_2 maps to SS0 1, and ADC3 ADC_FILT_30/31 maps to SS0 2/3 through the REGs Master IF. TCPWM group 0 counters 0/1/2/3 map to HWFILT3P3Z SS0 0/1/2/3, while group 1 counters 0/1 map to SS1 0/1."
+                 default="CY_AHB_IF">
+      <Entry name="AHB Interface" value="CY_AHB_IF" visible="true"/>
+      <Entry name="ADC Filter" value="CY_DATA_PATH" visible="true"/>
+    </ParamChoice>
+
+    <ParamChoice id="enableTrig"
+                 name="Enable Trigger"
+                 group="HWFILT3P3Z Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="Selects the HWFILT3P3Z input register that starts processing: TRIG0 writes DATA_IN0, or TRIG1 writes DATA_IN1. Enable only the trigger used by the connected source."
+                 default="0">
+      <Entry name="Enable TRIG0" value="0" visible="true"/>
+      <Entry name="Enable TRIG1" value="1" visible="true"/>
+    </ParamChoice>
+
+    <ParamString id="SSInstNumber" name="SSInstNumber" group="Internal" default="`${getInstNumber(&quot;hwfilt3p3zss&quot;)}`" visible="false" editable="false" desc="SS Instance number." />
+    <ParamString id="InstNumber" name="InstNumber" group="Internal" default="`${getInstNumber(&quot;hwfilt3p3z&quot;)}`" visible="false" editable="false" desc="Instance number." />
+    <ParamString id="cfgFilePath" name="cfgFilePath" group="External Tools" default="`${cy_design_path() . &quot;/&quot; . &quot;design.mtbcoef&quot;}`" visible="false" editable="false" desc="" />
+
+    <ParamCustom id="FilterCoefficientConfigurator" name="Filter Coefficient Configurator Tool" group="External Tools" path='`${cy_tools_path(&quot;filter-coef-configurator&quot;) . &quot;/filter-coef-configurator&quot;}`' visible="true" editable="true" desc="Launch Filter Coefficient Configurator Tool">
+       <Arg value="`${&quot;--design=&quot; . cy_design_file()}`" />
+       <Arg value="`${&quot;--config=&quot; . cfgFilePath}`" />
+       <Arg value="`${&quot;--resource=ppca[0].hwfilt3p3zss[&quot; . SSInstNumber . &quot;].hwfilt3p3z[&quot; . InstNumber . &quot;]&quot;}`"/>
+    </ParamCustom>
+
+    <ParamRange id="setNum" name="Number of coefficient sets" group="HWFILT3P3Z Configuration" default="1" min="1" max="$SET_CNT" resolution="1" visible="true" editable="true" desc="The total number of desired sets of coefficients for this filter" /> <!-- may be hidden later when integrated with the Filter Tool -->
+
+    <Repeat count='$SET_CNT'>
+      <ParamString id="setName$idx" name="Coefficient set $idx name" group="HWFILT3P3Z Configuration" default="Set_$idx" visible="false" editable="`${$idx &lt; setNum}`" desc="Coefficient set name" />
+    </Repeat>
+
+    <!-- BWC start -->
+    <Repeat count="4">
+        <ParamRange id="cx$idx" name="X$idx Coefficient" group="HWFILT3P3Z Configuration" default="0" min="-0.99999999" max="0.99999999" resolution="0.00000001" visible="false" editable="true" desc="X$idx coefficient." />
+    </Repeat>
+
+    <ParamRange id="cy1" name="Y1 Coefficient" group="HWFILT3P3Z Configuration" default="0" min="-0.99999999" max="0.99999999" resolution="0.00000001" visible="false" editable="true" desc="Y1 coefficient." />
+    <ParamRange id="cy2" name="Y2 Coefficient" group="HWFILT3P3Z Configuration" default="0" min="-0.99999999" max="0.99999999" resolution="0.00000001" visible="false" editable="true" desc="Y2 coefficient." />
+    <ParamRange id="cy3" name="Y3 Coefficient" group="HWFILT3P3Z Configuration" default="0" min="-0.99999999" max="0.99999999" resolution="0.00000001" visible="false" editable="true" desc="Y3 coefficient." />
+
+    <ParamChoice id="scaleCXCoeff" name="Scale X Coefficient" group="HWFILT3P3Z Configuration" visible="false" editable="true" desc="Scale X coefficients factor." default="0">
+      <Entry name="$idx" value="$idx" visible="true" repeatCount="8" />
+    </ParamChoice>
+
+    <ParamChoice id="scaleCYCoeff" name="Scale Y Coefficient" group="HWFILT3P3Z Configuration" visible="false" editable="true" desc="Scale Y coefficients factor." default="0">
+      <Entry name="$idx" value="$idx" visible="true" repeatCount="8" />
+    </ParamChoice>
+
+    <ParamRange id="dataOutOffset" name="Data Out Offset" group="HWFILT3P3Z Configuration" default="0" min="-0.99999999" max="0.99999999" resolution="0.00000001" visible="false" editable="true" desc="Filter data out offset." />
+    <ParamRange id="limMax" name="Filter Out Max Limit" group="HWFILT3P3Z Configuration" default="0" min="-0.99999999" max="0.99999999" resolution="0.00000001" visible="false" editable="true" desc="Max limit of filter out." />
+    <ParamRange id="limMin" name="Filter Out Min Limit" group="HWFILT3P3Z Configuration" default="0" min="-0.99999999" max="0.99999999" resolution="0.00000001" visible="false" editable="true" desc="Min limit of filter out." />
+
+    <ParamChoice id="gOut" name="Output Scale Down Factor" group="HWFILT3P3Z Configuration" visible="false" editable="true" desc="Output Scale Down Factor" default="0">
+      <Entry name="$idx" value="$idx" visible="true" repeatCount="8" />
+    </ParamChoice>
+    <!-- BWC end -->
+
+    <ParamChoice id="setDsp"
+                 name="Coefficient set to display"
+                 group="HWFILT3P3Z Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="Selects which coefficient set is displayed in the HWFILT3P3Z configuration fields below."
+                 default="0">
+      <Entry name="`${setName$idx}`" value="$idx" visible="`${$idx &lt; setNum}`" repeatCount='$SET_CNT' />
+    </ParamChoice>
+
+    <Repeat count='$SET_CNT' repeatId='set' >
+      <Repeat count="4" repeatId='coef'>
+        <ParamRange id="cx$idx{coef}$idx{set}" name="X$idx{coef} Coefficient" group="HWFILT3P3Z Configuration" default="`${0 == $idx{set} ? cx$idx{coef} : 0}`" min="-0.99999999" max="0.99999999" resolution="0.00000001" visible="`${$idx{set} == setDsp}`" editable="`${$idx{set} &lt; setNum}`" desc="X$idx coefficient." />
+        <ParamRange id="cx$idx{coef}$idx{set}val"                             group="HWFILT3P3Z Configuration" default="`${8388607 * cx$idx{coef}$idx{set}}`"   min="-8388607"    max="8388607"    resolution="1" />
+      </Repeat>
+      <Repeat count="4" repeatId='coef'>
+        <ParamRange id="cy$idx{coef}$idx{set}" name="Y$idx{coef} Coefficient" group="HWFILT3P3Z Configuration" default="`${(0 == $idx{set} &amp;&amp; $idx{coef} != 0) ? cy$idx{coef} : 0}`" min="-0.99999999" max="0.99999999" resolution="0.00000001" visible="`${($idx{set} == setDsp) &amp;&amp; !($idx{coef} == 0)}`" editable="`${($idx{set} &lt; setNum) &amp;&amp; !($idx{coef} == 0)}`" desc="Y$idx coefficient." />
+        <ParamRange id="cy$idx{coef}$idx{set}val"                             group="HWFILT3P3Z Configuration" default="`${-8388607 * cy$idx{coef}$idx{set}}`"                                min="-8388607"    max="8388607"    resolution="1" />
+      </Repeat>
+
+      <ParamChoice id="scaleCXCoeff$idx{set}"
+                   name="Scale X Coefficient"
+                   group="HWFILT3P3Z Configuration"
+                   visible="`${$idx{set} == setDsp}`"
+                   editable="`${$idx{set} &lt; setNum}`"
+                   desc="Scale X coefficients factor."
+                   default="`${0 == $idx{set} ? scaleCXCoeff : 0}`">
+        <Entry name="$idx{0}" value="$idx{0}" visible="true" repeatCount="8" />
+      </ParamChoice>
+
+      <ParamChoice id="scaleCYCoeff$idx{set}"
+                   name="Scale Y Coefficient"
+                   group="HWFILT3P3Z Configuration"
+                   visible="`${$idx{set} == setDsp}`"
+                   editable="`${$idx{set} &lt; setNum}`"
+                   desc="Scale Y coefficients factor."
+                   default="`${0 == $idx{set} ? scaleCYCoeff : 0}`">
+        <Entry name="$idx{0}" value="$idx{0}" visible="true" repeatCount="8" />
+      </ParamChoice>
+
+      <ParamRange id="dataOutOffset$idx{set}" name="Data Out Offset" group="HWFILT3P3Z Configuration" default="`${0 == $idx{set} ? dataOutOffset : 0}`" min="-0.99999999" max="0.99999999" resolution="0.00000001" visible="`${$idx{set} == setDsp}`" editable="`${$idx{set} &lt; setNum}`" desc="Filter data out offset." />
+      <ParamRange id="limMax$idx{set}" name="Filter Out Max Limit" group="HWFILT3P3Z Configuration" default="`${0 == $idx{set} ? limMax : 0}`" min="-0.99999999" max="0.99999999" resolution="0.00000001" visible="`${$idx{set} == setDsp}`" editable="`${$idx{set} &lt; setNum}`" desc="Max limit of filter out." />
+      <ParamRange id="limMin$idx{set}" name="Filter Out Min Limit" group="HWFILT3P3Z Configuration" default="`${0 == $idx{set} ? limMin : 0}`" min="-0.99999999" max="0.99999999" resolution="0.00000001" visible="`${$idx{set} == setDsp}`" editable="`${$idx{set} &lt; setNum}`" desc="Min limit of filter out." />
+
+      <ParamRange id="dataOutOffset$idx{set}val"                   group="HWFILT3P3Z Configuration" default="`${8388607 * dataOutOffset$idx{set}}`" min="-8388607" max="8388607" resolution="1" />
+      <ParamRange id="limMax$idx{set}val"                          group="HWFILT3P3Z Configuration" default="`${8388607 * limMax$idx{set}}`"        min="-8388607" max="8388607" resolution="1" />
+      <ParamRange id="limMin$idx{set}val"                          group="HWFILT3P3Z Configuration" default="`${8388607 * limMin$idx{set}}`"        min="-8388607" max="8388607" resolution="1" />
+    </Repeat>
+
+    <ParamChoice id="gIn"
+                 name="Input Difference Amplification Factor"
+                 group="HWFILT3P3Z Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="Input Difference Amplification Factor."
+                 default="0">
+      <Entry name="$idx" value="$idx" visible="true" repeatCount="4" />
+    </ParamChoice>
+
+    <Repeat count='$SET_CNT' repeatId='set' >
+    <ParamChoice id="gOut$idx{set}"
+                 name="Output Scale Down Factor"
+                 group="HWFILT3P3Z Configuration"
+                 visible="`${$idx{set} == setDsp}`"
+                 editable="`${$idx{set} &lt; setNum}`"
+                 desc="Output Scale Down Factor."
+                 default="`${0 == $idx{set} ? gOut : 0}`">
+      <Entry name="$idx{0}" value="$idx{0}" visible="true" repeatCount="8" />
+    </ParamChoice>
+    </Repeat>
+
+    <ParamSignal port="eop[0]" name="eop[0]" visible="`${hasVisibleOption(&quot;eop[0]&quot;)}`" canBeEmpty="true" group="Signals" desc="Reports HWFILT3P3Z filter completion and may be routed to another configured consumer." />
+
+    <ParamString id="HF3Rsc" name="HF3Rsc" group="Internal" default="srss[0].clock[0].hfclk[3]" visible="false" editable="false" desc="" />
+    <ParamBool id="HF3Used" name="HF3Used" group="Internal" default="`${isBlockUsed(HF3Rsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+  </Parameters>
+  <DRCs>
+    <DRC type="ERROR" text="Enable Clock HF3 For PPCA." condition="`${!HF3Used}`">
+      <FixIt action="ENABLE_BLOCK" target="`${HF3Rsc}`" value="" valid="true" />
+    </DRC>
+  </DRCs>
+
+  <ConfigFirmware>
+
+    <ConfigInclude value="cy_ppca_hwfilt3p3z.h" include="true" />
+    <ConfigInclude value="mtb_hal.h" include="true" guard="defined (COMPONENT_MTB_HAL)" />
+    <ConfigInclude value="mtb_hal_hw_types.h" include="true" guard="defined (COMPONENT_MTB_HAL)" />
+    <ConfigDefine name="`${INST_NAME}`_SS_HW" value="((PPCA_HWFILT3P3Z_SS_Type *)PPCA_HWFILT3P3Z_SS_`${SSInstNumber}`)" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="((PPCA_HWFILT3P3Z_SS_HWFILT3P3Z_Type *)PPCA_HWFILT3P3Z_SS_`${SSInstNumber}`_HWFILT3P3Z`${InstNumber}`)" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_`${setName0}`_config" value="`${INST_NAME}`_config" public="true" include="true" />
+
+    <ConfigStruct name="`${INST_NAME}`_`${setName$idx}`_config" type="cy_stc_ppca_hwfilt3p3z_config_t" const="`${inFlash}`" public="true" include="`${$idx{0} &lt; setNum}`" repeatCount='$SET_CNT' >
+      <Member name="srcSel" value="`${dataSrcSel}`" />
+      <Member name="enTrig0" value="`${(enableTrig eq 0 ? &quot;true&quot; : &quot;false&quot;)}`" />
+      <Member name="enTrig1" value="`${(enableTrig eq 1 ? &quot;true&quot; : &quot;false&quot;)}`" />
+      <Member name="cx0" value="`${toHex(cx0$idxval, 8)}`" />
+      <Member name="cx1" value="`${toHex(cx1$idxval, 8)}`" />
+      <Member name="cx2" value="`${toHex(cx2$idxval, 8)}`" />
+      <Member name="cx3" value="`${toHex(cx3$idxval, 8)}`" />
+      <Member name="cy1" value="`${toHex(cy1$idxval, 8)}`" />
+      <Member name="cy2" value="`${toHex(cy2$idxval, 8)}`" />
+      <Member name="cy3" value="`${toHex(cy3$idxval, 8)}`" />
+      <Member name="dataOutOffset" value="`${toHex(dataOutOffset$idxval, 8)}`" />
+      <Member name="limMax" value="`${toHex(limMax$idxval, 8)}`" />
+      <Member name="limMin" value="`${toHex(limMin$idxval, 8)}`" />
+      <Member name="scaleCX" value="`${scaleCXCoeff$idx}`" />
+      <Member name="scaleCY" value="`${scaleCYCoeff$idx}`" />
+      <Member name="gIn" value="`${gIn}`" />
+      <Member name="gOut" value="`${gOut$idx}`" />
+    </ConfigStruct>
+
+    <ConfigStruct name="`${INST_NAME}`_hal_config" type="mtb_hal_npnz_configurator_t" const="`${inFlash}`" public="true" include="true" guard="defined (COMPONENT_MTB_HAL) &amp;&amp; (MTB_HAL_DRIVER_AVAILABLE_NPNZ)">
+      <Member name="base" value="`${INST_NAME}`_HW" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_HWFILT3P3Z_InitFilterConfig(`${INST_NAME}`_HW, &amp;`${INST_NAME}`_`${setName0}`_config);" include="`${init}`" purpose="INITIALIZE" />
+
+  </ConfigFirmware>
+</PersonalityTemplate>

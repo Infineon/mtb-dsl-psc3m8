@@ -1,0 +1,14 @@
+# CM33 port
+target remote:3333
+
+# Open all memory
+set mem inaccessible-by-default off
+
+# Enable semihosting
+monitor arm semihosting enable
+
+# Set temporary breakpoint at main
+tbreak main
+
+# Continue program execution
+continue

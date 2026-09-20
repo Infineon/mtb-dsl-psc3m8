@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svgdiagram
+[
+<!ENTITY puOn_blockColor "#dcd5d7">
+<!ENTITY puOn_lineColor "#dcd5d7">
+<!ENTITY bypass_color "#dcd5d7">
+<!ENTITY asyncBypass_color "#dcd5d7">
+<!ENTITY syncBypass_lineColor "#dcd5d7">
+<!ENTITY syncBypass_blockColor "#dcd5d7">
+<!ENTITY puEnable_lineColor "#dcd5d7">
+<!ENTITY edge_color "#dcd5d7">
+<!ENTITY pol_color "#dcd5d7">
+<!ENTITY inSel1_text "IN1">
+<!ENTITY inSel_textColor "#ffffff">
+<!ENTITY outSel_text "Combiner">
+]
+>
+
+<svg
+   version="1.1"
+   width="18.3750in"
+   height="2.8726in"
+   viewBox="-198 0 1323 206.8287"
+   id="svg31"
+   sodipodi:docname="EPU_PUT2.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview31"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="in"
+     inkscape:zoom="4"
+     inkscape:cx="141.875"
+     inkscape:cy="87.125"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg31" />
+  <g
+     id="Layer1134">
+    <g
+       id="Layer1135">
+      <path
+         d="  M64.4196,188.4537 L390.4038,188.4537 L390.4038,18.3750 L64.4196,18.3750 L64.4196,188.4537 Z"
+         style="stroke-width: 0.7500; stroke-linecap: round; stroke-linejoin: round; fill-rule: evenodd; fill: #ffffff; "
+         id="path1" />
+      <path
+         d="  M64.4196,188.4537 L390.4038,188.4537 L390.4038,18.3750 L64.4196,18.3750 L64.4196,188.4537 Z"
+         style="stroke-width: 0.7500; stroke: #000000; stroke-dasharray: none; stroke-linecap: round; stroke-linejoin: round; fill: none; "
+         id="path2" />
+    </g>
+    <text
+       x="64.099625"
+       y="15.716554"
+       id="text2"><tspan
+         font-family="Times New Roman"
+         font-size="12px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan2">MXSTAGEx</tspan></text>
+  </g>
+  <defs
+     id="defs2">
+    <marker
+       id="endMarker32"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline2" />
+    </marker>
+  </defs>
+  <path
+     d="M 149.45526,75.0679 H 331.87145"
+     style="fill:none;stroke:&puOn_lineColor;;stroke-width:0.746255;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#endMarker32);stroke-opacity:1"
+     id="path3" />
+  <g
+     id="Layer1136"
+     transform="translate(-1.3292232,14.506285)">
+    <g
+       id="Layer1137">
+      <path
+         d="m 121.1125,103.4144 h 29.1429 V 46.7215 h -29.1429 z"
+         style="fill:&puOn_blockColor;;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round"
+         id="path4" />
+      <path
+         d="m 121.1125,103.4144 h 29.1429 V 46.7215 h -29.1429 z"
+         style="fill:&puOn_blockColor;;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1"
+         id="path5" />
+    </g>
+    <text
+       x="125.93402"
+       y="78.723267"
+       id="text5"><tspan
+         font-family="Times New Roman"
+         font-size="10px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan5">MXx</tspan></text>
+  </g>
+  <g
+     id="Layer1138"
+     transform="matrix(0.93184579,0,0,1.012355,2.8577221,11.910835)">
+    <defs
+       id="defs5">
+      <marker
+         id="endMarker33"
+         markerUnits="strokeWidth"
+         orient="auto"
+         markerWidth="8"
+         markerHeight="6"
+         viewBox="0 0 10 10"
+         refX="1"
+         refY="5">
+        <polyline
+           points="0,0 10,5 0,10 1,5"
+           fill="solid"
+           id="polyline5" />
+      </marker>
+    </defs>
+    <path
+       d="m -205,60.8947 h 326.1125"
+       style="fill:none;stroke:&puOn_lineColor;;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#endMarker33)"
+       id="path6" />
+    <text
+       x="-202"
+       y="57"
+       id="text6"><tspan
+         font-family="Times New Roman"
+         font-size="12px"
+         fill="&inSel_textColor;"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan6"
+         style="fill:&inSel_textColor;;fill-opacity:1">&inSel1_text;</tspan></text>
+  </g>
+  <g
+     id="Layer1139"
+     transform="translate(-3.9876697,-1.661529)">
+    <defs
+       id="defs6">
+      <marker
+         id="endMarker34"
+         markerUnits="strokeWidth"
+         orient="auto"
+         markerWidth="8"
+         markerHeight="6"
+         viewBox="0 0 10 10"
+         refX="1"
+         refY="5">
+        <polyline
+           points="0,0 10,5 0,10 1,5"
+           fill="solid"
+           id="polyline6" />
+      </marker>
+    </defs>
+    <path
+       d="m 309.6164,174.2805 v -70.8661 l 25.73933,0.46995"
+       style="fill:none;stroke:&puOn_lineColor;;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#endMarker34);stroke-opacity:1"
+       id="path7"
+       sodipodi:nodetypes="ccc" />
+    <text
+       x="259.35257"
+       y="171.28975"
+       id="text7"><tspan
+         font-family="Times New Roman"
+         font-size="12px"
+         fill="&inSel_textColor;"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan7"
+         style="fill:&inSel_textColor;;fill-opacity:1">STIM_IN</tspan></text>
+  </g>
+  <g
+     id="Layer1140"
+     transform="translate(2.3497569,-0.46995141)">
+    <g
+       id="Layer1141">
+      <path
+         d="m 333.7109,117.5876 h 29.143 V 60.8947 h -29.143 z"
+         style="fill:&puOn_blockColor;;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1"
+         id="path8" />
+      <path
+         d="m 333.7109,117.5876 h 29.143 V 60.8947 h -29.143 z"
+         style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         id="path9" />
+    </g>
+    <text
+       x="340.82028"
+       y="91.120903"
+       id="text9"><tspan
+         font-family="Times New Roman"
+         font-size="10px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan9">MX</tspan></text>
+  </g>
+  <g
+     id="Layer1142"
+     transform="translate(-0.30379848,4.1725478)">
+    <defs
+       id="defs9">
+      <marker
+         id="endMarker35"
+         markerUnits="strokeWidth"
+         orient="auto"
+         markerWidth="8"
+         markerHeight="6"
+         viewBox="0 0 10 10"
+         refX="1"
+         refY="5">
+        <polyline
+           points="0,0 10,5 0,10 1,5"
+           fill="solid"
+           id="polyline9" />
+      </marker>
+    </defs>
+    <path
+       d="M 347.8842,174.2805 V 117.5876"
+       style="fill:none;stroke:&puOn_lineColor;;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#endMarker35);stroke-opacity:1"
+       id="path10" />
+    <text
+       x="-206.66121"
+       y="280.50455"
+       transform="matrix(0,-0.81803694,1.2224387,0,0,0)"
+       id="text10"
+       style="font-size:9.81644px;stroke-width:0.818037;fill:&puOn_lineColor;;fill-opacity:1"><tspan
+         font-family="Times New Roman"
+         font-size="9.81644px"
+         fill="&inSel_textColor;"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan10"
+         style="stroke-width:0.818037;fill:&inSel_textColor;;fill-opacity:1">SEL_STIM_IN</tspan></text>
+  </g>
+  <g
+     id="Layer1143"
+     transform="translate(5.3168929,1.3292232)">
+    <g
+       id="Layer1144">
+      <path
+         d="M 482.7502,165.369 H 767.1597 V 64.9892 H 482.7502 Z"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round"
+         id="path11" />
+      <path
+         d="M 482.7502,165.369 H 767.1597 V 64.9892 H 482.7502 Z"
+         style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         id="path12" />
+    </g>
+    <text
+       x="501.13138"
+       y="55.575493"
+       id="text15"
+       transform="scale(0.96548887,1.0357447)"
+       style="font-size:20.9838px;stroke-width:1.74865"><tspan
+         font-family="Times New Roman"
+         font-size="12px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan12"
+         style="stroke-width:1.74865">PU_T</tspan><tspan
+         font-family="Times New Roman"
+         font-size="12px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan13"
+         style="stroke-width:1.74865">2</tspan><tspan
+         font-family="Times New Roman"
+         font-size="12px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan14"
+         style="stroke-width:1.74865">_</tspan><tspan
+         font-family="Times New Roman"
+         font-size="12px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan15"
+         style="stroke-width:1.74865">x</tspan></text>
+  </g>
+  <g
+     id="Layer1145"
+     transform="translate(5.3168929)">
+    <g
+       id="Layer1146">
+      <path
+         d="m 499.4802,147.4749 h 50.1899 v -18.045 h -50.1899 z"
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round"
+         id="path15" />
+      <path
+         d="m 499.4802,147.4749 h 50.1899 v -18.045 h -50.1899 z"
+         style="fill:&pol_color;;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1"
+         id="path16" />
+    </g>
+    <text
+       x="513.10779"
+       y="140.44623"
+       id="text16"><tspan
+         font-family="Times New Roman"
+         font-size="10px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan16">POL</tspan></text>
+  </g>
+  <g
+     id="Layer1147"
+     transform="translate(0.46995138,1.4098541)">
+    <g
+       id="Layer1148"
+       transform="translate(12.627621)"
+       style="fill:&puOn_blockColor;;fill-opacity:1">
+      <path
+         d="m 718.0258,145.8879 h 33.46 V 78.9681 h -33.46 z"
+         style="fill:&puOn_blockColor;;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1"
+         id="path17" />
+      <path
+         d="m 718.0258,145.8879 h 33.46 V 78.9681 h -33.46 z"
+         style="fill:&puOn_blockColor;;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1"
+         id="path18" />
+    </g>
+    <text
+       x="740.37402"
+       y="114.30781"
+       id="text18"><tspan
+         font-family="Times New Roman"
+         font-size="10px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan18">MX</tspan></text>
+  </g>
+  <g
+     id="Layer1149"
+     transform="translate(9.9691741)">
+    <g
+       id="Layer1150"
+       style="fill:&edge_color;;fill-opacity:1">
+      <path
+         d="m 583.13,147.4749 h 50.1899 v -18.045 H 583.13 Z"
+         style="fill:&edge_color;;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1"
+         id="path19" />
+      <path
+         d="m 583.13,147.4749 h 50.1899 v -18.045 H 583.13 Z"
+         style="fill:&edge_color;;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1"
+         id="path20" />
+    </g>
+    <text
+       x="594.9389"
+       y="141.27209"
+       id="text20"><tspan
+         font-family="Times New Roman"
+         font-size="10px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan20">EDGE</tspan></text>
+  </g>
+  <g
+     id="Layer1151"
+     transform="translate(7.1584791)">
+    <g
+       id="Layer1152"
+       style="fill:&syncBypass_blockColor;;fill-opacity:1">
+      <path
+         d="m 583.13,113.3574 h 50.1899 V 96.6275 H 583.13 Z"
+         style="fill:&syncBypass_blockColor;;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1"
+         id="path21" />
+      <path
+         d="m 583.13,113.3574 h 50.1899 V 96.6275 H 583.13 Z"
+         style="fill:&syncBypass_blockColor;;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1"
+         id="path22" />
+    </g>
+    <text
+       x="603.86798"
+       y="107.34225"
+       id="text22"><tspan
+         font-family="Times New Roman"
+         font-size="10px"
+         fill="#000000"
+         fill-opacity="1"
+         stroke-opacity="1"
+         id="tspan22">FF</tspan></text>
+  </g>
+  <defs
+     id="defs22">
+    <marker
+       id="endMarker36"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline22" />
+    </marker>
+  </defs>
+  <path
+     d="m 765.27989,121.109 h 350"
+     style="fill:none;stroke:&puOn_lineColor;;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#endMarker36);stroke-opacity:1"
+     id="path23" />
+  <text
+     x="790"
+     y="117"
+     id="text_out"><tspan
+       font-family="Times New Roman"
+       font-size="12px"
+       fill="&inSel_textColor;"
+       fill-opacity="1"
+       stroke-opacity="1"
+       id="tspan_out"
+       style="fill:&inSel_textColor;;fill-opacity:1">&outSel_text;</tspan></text>
+  <defs
+     id="defs23">
+    <marker
+       id="endMarker37"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline23" />
+    </marker>
+  </defs>
+  <defs
+     id="defs24">
+    <marker
+       id="endMarker38"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline24" />
+    </marker>
+  </defs>
+  <defs
+     id="defs25">
+    <marker
+       id="endMarker39"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline25" />
+    </marker>
+  </defs>
+  <defs
+     id="defs26">
+    <marker
+       id="endMarker40"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline26" />
+    </marker>
+  </defs>
+  <path
+     d="  M468.9187,87.9391 L468.9187,138.4524 L499.7581,138.4524"
+     style="stroke-width:0.75;stroke:&puOn_lineColor;;stroke-dasharray:none;stroke-linecap:round;stroke-linejoin:round;fill:none;marker-end:url(#endMarker40);stroke-opacity:1"
+     id="path27" />
+  <path
+     d="M 365.8024,87.9391 H 468.92618"
+     style="fill:none;stroke:&puOn_lineColor;;stroke-width:0.742479;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     id="path28" />
+  <defs
+     id="defs28">
+    <marker
+       id="endMarker41"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline28" />
+    </marker>
+  </defs>
+  <defs
+     id="defs29">
+    <marker
+       id="endMarker42"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline29" />
+    </marker>
+  </defs>
+  <g
+     id="Layer1153"
+     style="stroke:&bypass_color;;stroke-opacity:1;stroke-width:0.96385828;stroke-dasharray:none;stroke-linecap:square"
+     transform="matrix(1,0,0,0.67519671,7.6615726,44.998119)">
+    <path
+       d="m 562.7502,87.6663 v 50.5133"
+       style="fill:#000000;fill-opacity:1;stroke:&bypass_color;;stroke-width:0.96385828;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="path31" />
+  </g>
+  <g
+     id="Layer1153-5"
+     style="stroke:&asyncBypass_color;;stroke-width:0.963858;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+     transform="matrix(1,0,0,0.31095483,7.6681306,60.742274)">
+    <path
+       d="m 562.7502,87.6663 v 50.5666"
+       style="fill:#000000;fill-opacity:1;stroke:&asyncBypass_color;;stroke-width:0.963858;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="path31-5"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:&puOn_lineColor;;stroke-width:0.760824px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 570.7548,138.22447 -15.36842,0.0586"
+     id="path13"
+     inkscape:connector-type="polyline"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:&puEnable_lineColor;;stroke-width:0.768647px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 592.77789,138.18475 -22.04175,0.0417"
+     id="path13-3"
+     inkscape:connector-type="polyline"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:&syncBypass_lineColor;;stroke-width:0.750005px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 570.50527,104.21062 19.35719,-0.13258"
+     id="path14"
+     inkscape:connector-type="polyline"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:&syncBypass_lineColor;;stroke-width:0.745834px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 640.80681,104.34325 89.92076,-0.39785"
+     id="path24"
+     inkscape:connector-type="polyline"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:&puEnable_lineColor;;stroke-width:0.746598px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 643.63782,137.75425 h 87.10597"
+     id="path25"
+     inkscape:connector-type="polyline"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:&asyncBypass_color;;stroke-width:0.750916px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 569.93575,87.505102 H 730.75113"
+     id="path26"
+     inkscape:connector-type="polyline"
+     inkscape:connector-curvature="0" />
+</svg>

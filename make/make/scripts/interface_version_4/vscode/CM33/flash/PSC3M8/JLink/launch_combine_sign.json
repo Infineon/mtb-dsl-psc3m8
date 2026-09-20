@@ -1,0 +1,100 @@
+        {
+            "name": "Launch PSOC C3 P8 &&_MTB_RECIPE__TARGET_PROCESSOR_NAME&& (JLink)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "&&_MTB_RECIPE__ELF_FILE&&",
+            "servertype": "jlink",
+            "debuggerArgs": ["-l", "30"],
+            "device": "&&_MTB_RECIPE__JLINK_CFG&&",
+            "interface": "&&_MTB_RECIPE__PROBE_INTERFACE&&",
+            "serialNumber": "&&_MTB_RECIPE__PROBE_SERIAL&&",
+            "preLaunchCommands": [
+                // Add symbol file of NS or S project
+                &&MTB_COMBINE_SIGN_&&IDX&&_VSCODE_EXTRA_ELF_PATH&&
+            ],
+            "loadFiles": [
+                "&&MTB_COMBINE_SIGN_&&IDX&&_VSCODE_HEX_PATH&&"//PSC3_P8 Main Only//
+            ],
+            "overrideRestartCommands": [
+                "starti"
+            ],
+            // svdFile is optional, it can be very large.
+            "svdFile": "&&_MTB_RECIPE__SVD_FILE_NAME&&",
+            "breakAfterReset": true,
+            "runToEntryPoint": "main",    // Specifies application entry point name for restart/reset
+            "preLaunchTask": "Build Application", // Set this to run a task from tasks.json before
+                                                     // starting a debug session
+            "showDevDebugOutput": "none",
+            "presentation": {
+                "hidden": false,
+                "group": "&&_PRJ_NAME&&"
+            },
+            "liveWatch": {
+                "enabled": true
+            }
+        },
+        // When using 'attach', make sure your program is running on the board and that your
+        // executable matches the image in the chip exactly, or else strange things can happen
+        // with breakpoints, variables, etc.
+        {
+            "name": "Attach PSOC C3 P8 &&_MTB_RECIPE__TARGET_PROCESSOR_NAME&& (JLink)",
+            "type": "cortex-debug",
+            "request": "attach",
+            "cwd": "${workspaceFolder}",
+            "executable": "&&_MTB_RECIPE__ELF_FILE&&",
+            "servertype": "jlink",
+            "device": "&&_MTB_RECIPE__JLINK_CFG_ATTACH&&",
+            "interface": "&&_MTB_RECIPE__PROBE_INTERFACE&&",
+            "serialNumber": "&&_MTB_RECIPE__PROBE_SERIAL&&",
+            "preAttachCommands": [
+                // Add symbol file of NS or S project
+                &&MTB_COMBINE_SIGN_&&IDX&&_VSCODE_EXTRA_ELF_PATH&&
+            ],
+            "overrideRestartCommands": [
+                "starti"
+            ],
+            // svdFile is optional, it can be very large.
+            "svdFile": "&&_MTB_RECIPE__SVD_FILE_NAME&&",
+            "breakAfterReset": true,
+            "runToEntryPoint": "main",    // Specifies application entry point name for restart/reset
+            "showDevDebugOutput": "none",
+            "presentation": {
+                "hidden": false,
+                "group": "&&_PRJ_NAME&&"
+            },
+            "liveWatch": {
+                "enabled": true
+            }
+        }//PSC3 Main Only//
+        },//PSC3_P8 PPCA Only//
+        // When using 'attach', make sure your program is running on the board and that your//PSC3_P8 PPCA Only//
+        // executable matches the image in the chip exactly, or else strange things can happen//PSC3_P8 PPCA Only//
+        // with breakpoints, variables, etc.//PSC3_P8 PPCA Only//
+        {//PSC3_P8 PPCA Only//
+            "name": "Multi-Core Attach PSOC C3 P8 &&_MTB_RECIPE__TARGET_PROCESSOR_NAME&& (JLink)",//PSC3_P8 PPCA Only//
+            "type": "cortex-debug",//PSC3_P8 PPCA Only//
+            "request": "attach",//PSC3_P8 PPCA Only//
+            "cwd": "${workspaceFolder}",//PSC3_P8 PPCA Only//
+            "executable": "&&_MTB_RECIPE__ELF_FILE&&",//PSC3_P8 PPCA Only//
+            "servertype": "jlink",//PSC3_P8 PPCA Only//
+            "device": "&&_MTB_RECIPE__JLINK_CFG_ATTACH&&",//PSC3_P8 PPCA Only//
+            "interface": "&&_MTB_RECIPE__PROBE_INTERFACE&&",//PSC3_P8 PPCA Only//
+            "serialNumber": "&&_MTB_RECIPE__PROBE_SERIAL&&",//PSC3_P8 PPCA Only//
+            "preAttachCommands": [//PSC3_P8 PPCA Only//
+                // Add symbol file of NS or S project//PSC3_P8 PPCA Only//
+                &&MTB_COMBINE_SIGN_&&IDX&&_VSCODE_EXTRA_ELF_PATH&&//PSC3_P8 PPCA Only//
+            ],//PSC3_P8 PPCA Only//
+            "overrideRestartCommands": [//PSC3_P8 PPCA Only//
+                "starti"//PSC3_P8 PPCA Only//
+            ],//PSC3_P8 PPCA Only//
+            // svdFile is optional, it can be very large.//PSC3_P8 PPCA Only//
+            "svdFile": "&&_MTB_RECIPE__SVD_FILE_NAME&&",//PSC3_P8 PPCA Only//
+            "breakAfterReset": true,//PSC3_P8 PPCA Only//
+            "runToEntryPoint": "main",    // Specifies application entry point name for restart/reset//PSC3_P8 PPCA Only//
+            "showDevDebugOutput": "none",//PSC3_P8 PPCA Only//
+            "presentation": {//PSC3_P8 PPCA Only//
+                "hidden": true,//PSC3_P8 PPCA Only//
+                "group": "&&_PRJ_NAME&&"//PSC3_P8 PPCA Only//
+            }//PSC3_P8 PPCA Only//
+        }//PSC3_P8 PPCA Only//

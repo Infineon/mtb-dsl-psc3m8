@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svgdiagram [
+<!ENTITY inputSignal_AIN_rectColor "#000000">
+<!ENTITY inputSignal_AIN_textColor "#000000">
+<!ENTITY inputSignal_AIN_lineColor "#0A8276">
+<!ENTITY adcGroupNumber "ADC2">
+<!ENTITY adc_soc0_text "adc_soc[0]">
+<!ENTITY adc_soc1_text "adc_soc[1]">
+<!ENTITY adc_soc2_text "adc_soc[2]">
+<!ENTITY adc_soc3_text "adc_soc[3]">
+<!ENTITY adc_eoc0_text "adc_eoc[0]">
+<!ENTITY adc_eoc1_text "adc_eoc[1]">
+<!ENTITY adc_eoc2_text "adc_eoc[2]">
+<!ENTITY adc_eoc3_text "adc_eoc[3]">
+<!ENTITY ch0_fill "#F5F5F5">
+<!ENTITY ch1_fill "#F5F5F5">
+<!ENTITY ch2_fill "#F5F5F5">
+<!ENTITY ch3_fill "#F5F5F5">
+<!ENTITY ch0_display "inline">
+<!ENTITY ch1_display "inline">
+<!ENTITY ch2_display "inline">
+<!ENTITY ch3_display "inline">
+<!ENTITY diff01_fill "#F5F5F5">
+<!ENTITY diff01_display "none">
+<!ENTITY diff23_fill "#F5F5F5">
+<!ENTITY diff23_display "none">
+<!ENTITY filter0_src_text "Not Enabled">
+<!ENTITY filter0_fill "#F5F5F5">
+<!ENTITY dcmp0_src_text "Not Enabled">
+<!ENTITY dcmp0_fill "#F5F5F5">
+<!ENTITY dcmp1_src_text "Not Enabled">
+<!ENTITY dcmp1_fill "#F5F5F5">
+<!ENTITY channel_seq_text "-">
+]>
+<svg width="1000" height="520" viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="endMarker75" markerUnits="strokeWidth" orient="auto" markerWidth="8" markerHeight="6" viewBox="0 0 10 10" refX="10" refY="5">
+      <polyline points="0,0 10,5 0,10 1,5" fill="#000000" />
+    </marker>
+    <marker id="filterMarker" markerUnits="strokeWidth" orient="auto" markerWidth="8" markerHeight="6" viewBox="0 0 10 10" refX="10" refY="5">
+      <polyline points="0,0 10,5 0,10 1,5" fill="#388E3C" />
+    </marker>
+    <clipPath id="eocTextClip">
+      <rect x="635" y="0" width="283" height="9999"/>
+    </clipPath>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="30" font-family="Arial" font-size="18" font-weight="bold" fill="#000000" text-anchor="middle">&adcGroupNumber; - ADC Group Block Diagram</text>
+
+  <!-- ADC Channels Block (center) -->
+  <rect x="300" y="50" width="330" height="280" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="465" y="75" font-family="Arial" font-size="14" font-weight="bold" fill="#000000" text-anchor="middle">ADC Channels (4)</text>
+
+  <!-- Single-Ended Channels -->
+  <g id="single_ended_channels">
+    <!-- CH0 (single-ended) -->
+    <g id="ch0_single" style="display: &ch0_display;;">
+      <text x="10" y="100" font-family="Arial" font-size="10" fill="#000000" text-anchor="start">&adc_soc0_text;</text>
+      <rect x="10" y="106" width="70" height="18" fill="#E8F5E9" stroke="#0A8276" stroke-width="1" rx="2" />
+      <text x="45" y="119" font-family="Arial" font-size="9" fill="#000000" text-anchor="middle">SOC[0]</text>
+      <line x1="80" y1="115" x2="308" y2="115" stroke="#0A8276" stroke-width="1" marker-end="url(#endMarker75)" />
+      <rect x="310" y="102" width="100" height="26" fill="&ch0_fill;" stroke="#388E3C" stroke-width="1.5" rx="3" />
+      <text x="360" y="120" font-family="Arial" font-size="11" fill="#000000" text-anchor="middle">CH0 (AIN6P)</text>
+    </g>
+
+    <!-- CH1 (single-ended) -->
+    <g id="ch1_single" style="display: &ch1_display;;">
+      <text x="10" y="160" font-family="Arial" font-size="10" fill="#000000" text-anchor="start">&adc_soc1_text;</text>
+      <rect x="10" y="166" width="70" height="18" fill="#E8F5E9" stroke="#0A8276" stroke-width="1" rx="2" />
+      <text x="45" y="179" font-family="Arial" font-size="9" fill="#000000" text-anchor="middle">SOC[1]</text>
+      <line x1="80" y1="175" x2="308" y2="175" stroke="#0A8276" stroke-width="1" marker-end="url(#endMarker75)" />
+      <rect x="310" y="162" width="100" height="26" fill="&ch1_fill;" stroke="#388E3C" stroke-width="1.5" rx="3" />
+      <text x="360" y="180" font-family="Arial" font-size="11" fill="#000000" text-anchor="middle">CH1 (AIN6N)</text>
+    </g>
+
+    <!-- CH2 (single-ended) -->
+    <g id="ch2_single" style="display: &ch2_display;;">
+      <text x="10" y="220" font-family="Arial" font-size="10" fill="#000000" text-anchor="start">&adc_soc2_text;</text>
+      <rect x="10" y="226" width="70" height="18" fill="#E8F5E9" stroke="#0A8276" stroke-width="1" rx="2" />
+      <text x="45" y="239" font-family="Arial" font-size="9" fill="#000000" text-anchor="middle">SOC[2]</text>
+      <line x1="80" y1="235" x2="308" y2="235" stroke="#0A8276" stroke-width="1" marker-end="url(#endMarker75)" />
+      <rect x="310" y="222" width="100" height="26" fill="&ch2_fill;" stroke="#388E3C" stroke-width="1.5" rx="3" />
+      <text x="360" y="240" font-family="Arial" font-size="11" fill="#000000" text-anchor="middle">CH2 (AIN7P)</text>
+    </g>
+
+    <!-- CH3 (single-ended) -->
+    <g id="ch3_single" style="display: &ch3_display;;">
+      <text x="10" y="280" font-family="Arial" font-size="10" fill="#000000" text-anchor="start">&adc_soc3_text;</text>
+      <rect x="10" y="286" width="70" height="18" fill="#E8F5E9" stroke="#0A8276" stroke-width="1" rx="2" />
+      <text x="45" y="299" font-family="Arial" font-size="9" fill="#000000" text-anchor="middle">SOC[3]</text>
+      <line x1="80" y1="295" x2="308" y2="295" stroke="#0A8276" stroke-width="1" marker-end="url(#endMarker75)" />
+      <rect x="310" y="282" width="100" height="26" fill="&ch3_fill;" stroke="#388E3C" stroke-width="1.5" rx="3" />
+      <text x="360" y="300" font-family="Arial" font-size="11" fill="#000000" text-anchor="middle">CH3 (AIN7N)</text>
+    </g>
+  </g>
+
+  <!-- Differential Channel Pairs -->
+  <g id="differential_channels">
+    <!-- DIFF CH0+CH1 -->
+    <g id="diff01" style="display: &diff01_display;;">
+      <text x="10" y="130" font-family="Arial" font-size="10" fill="#000000" text-anchor="start">&adc_soc0_text;</text>
+      <rect x="10" y="136" width="70" height="18" fill="#E8F5E9" stroke="#0A8276" stroke-width="1" rx="2" />
+      <text x="45" y="149" font-family="Arial" font-size="9" fill="#000000" text-anchor="middle">SOC[0]</text>
+      <line x1="80" y1="145" x2="308" y2="145" stroke="#0A8276" stroke-width="1" marker-end="url(#endMarker75)" />
+      <rect x="310" y="125" width="130" height="42" fill="&diff01_fill;" stroke="#388E3C" stroke-width="1.5" rx="3" />
+      <text x="375" y="143" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle">CH0 (AIN6P)</text>
+      <text x="375" y="160" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle">CH1 (AIN6N)</text>
+    </g>
+
+    <!-- DIFF CH2+CH3 -->
+    <g id="diff23" style="display: &diff23_display;;">
+      <text x="10" y="250" font-family="Arial" font-size="10" fill="#000000" text-anchor="start">&adc_soc2_text;</text>
+      <rect x="10" y="256" width="70" height="18" fill="#E8F5E9" stroke="#0A8276" stroke-width="1" rx="2" />
+      <text x="45" y="269" font-family="Arial" font-size="9" fill="#000000" text-anchor="middle">SOC[2]</text>
+      <line x1="80" y1="265" x2="308" y2="265" stroke="#0A8276" stroke-width="1" marker-end="url(#endMarker75)" />
+      <rect x="310" y="245" width="130" height="42" fill="&diff23_fill;" stroke="#388E3C" stroke-width="1.5" rx="3" />
+      <text x="375" y="263" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle">CH2 (AIN7P)</text>
+      <text x="375" y="280" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle">CH3 (AIN7N)</text>
+    </g>
+  </g>
+
+  <!-- EOC Signals (right side) -->
+  <g id="eoc_signals">
+    <!-- EOC0 -->
+    <line x1="630" y1="115" x2="920" y2="115" stroke="#0A8276" stroke-width="1" marker-end="url(#endMarker75)" />
+    <text x="635" y="100" font-family="Arial" font-size="11" fill="#000000" text-anchor="start" clip-path="url(#eocTextClip)">&adc_eoc0_text;</text>
+    <rect x="920" y="106" width="70" height="18" fill="#FFF3E0" stroke="#FF9737" stroke-width="1" rx="2" />
+    <text x="955" y="119" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle">EOC[0]</text>
+
+    <!-- EOC1 -->
+    <line x1="630" y1="175" x2="920" y2="175" stroke="#0A8276" stroke-width="1" marker-end="url(#endMarker75)" />
+    <text x="635" y="160" font-family="Arial" font-size="11" fill="#000000" text-anchor="start" clip-path="url(#eocTextClip)">&adc_eoc1_text;</text>
+    <rect x="920" y="166" width="70" height="18" fill="#FFF3E0" stroke="#FF9737" stroke-width="1" rx="2" />
+    <text x="955" y="179" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle">EOC[1]</text>
+
+    <!-- EOC2 -->
+    <line x1="630" y1="235" x2="920" y2="235" stroke="#0A8276" stroke-width="1" marker-end="url(#endMarker75)" />
+    <text x="635" y="220" font-family="Arial" font-size="11" fill="#000000" text-anchor="start" clip-path="url(#eocTextClip)">&adc_eoc2_text;</text>
+    <rect x="920" y="226" width="70" height="18" fill="#FFF3E0" stroke="#FF9737" stroke-width="1" rx="2" />
+    <text x="955" y="239" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle">EOC[2]</text>
+
+    <!-- EOC3 -->
+    <line x1="630" y1="295" x2="920" y2="295" stroke="#0A8276" stroke-width="1" marker-end="url(#endMarker75)" />
+    <text x="635" y="280" font-family="Arial" font-size="11" fill="#000000" text-anchor="start" clip-path="url(#eocTextClip)">&adc_eoc3_text;</text>
+    <rect x="920" y="286" width="70" height="18" fill="#FFF3E0" stroke="#FF9737" stroke-width="1" rx="2" />
+    <text x="955" y="299" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle">EOC[3]</text>
+  </g>
+
+  <!-- ADC Output bus -->
+  <line x1="600" y1="115" x2="600" y2="295" stroke="#000000" stroke-width="2" />
+  <text x="610" y="205" font-family="Arial" font-size="10" fill="#000000" transform="rotate(90 610 205)">ADC Output</text>
+
+  <!-- Filter Block -->
+  <g id="filters">
+    <rect x="50" y="400" width="130" height="55" fill="&filter0_fill;" stroke="#388E3C" stroke-width="1.5" rx="3" />
+    <text x="115" y="425" font-family="Arial" font-size="13" font-weight="bold" fill="#000000" text-anchor="middle">Filter0</text>
+    <text x="115" y="442" font-family="Arial" font-size="11" fill="#000000" text-anchor="middle">&filter0_src_text;</text>
+  </g>
+
+  <!-- DCMP Blocks -->
+  <g id="dcmps">
+    <rect x="220" y="400" width="130" height="55" fill="&dcmp0_fill;" stroke="#388E3C" stroke-width="1.5" rx="3" />
+    <text x="285" y="425" font-family="Arial" font-size="13" font-weight="bold" fill="#000000" text-anchor="middle">DCMP0</text>
+    <text x="285" y="442" font-family="Arial" font-size="11" fill="#000000" text-anchor="middle">&dcmp0_src_text;</text>
+
+    <rect x="390" y="400" width="130" height="55" fill="&dcmp1_fill;" stroke="#388E3C" stroke-width="1.5" rx="3" />
+    <text x="455" y="425" font-family="Arial" font-size="13" font-weight="bold" fill="#000000" text-anchor="middle">DCMP1</text>
+    <text x="455" y="442" font-family="Arial" font-size="11" fill="#000000" text-anchor="middle">&dcmp1_src_text;</text>
+  </g>
+
+  <!-- Connection lines from ADC output to Filters/DCMPs -->
+  <line x1="600" y1="340" x2="600" y2="370" stroke="#388E3C" stroke-width="1.5" stroke-dasharray="4,2" />
+  <line x1="115" y1="370" x2="600" y2="370" stroke="#388E3C" stroke-width="1.5" stroke-dasharray="4,2" />
+  <line x1="115" y1="370" x2="115" y2="400" stroke="#388E3C" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#filterMarker)" />
+  <line x1="285" y1="370" x2="285" y2="400" stroke="#388E3C" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#filterMarker)" />
+<line x1="455" y1="370" x2="455" y2="400" stroke="#388E3C" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#filterMarker)" />
+
+  <!-- Sequence Boxes -->
+  <g id="sequence_boxes">
+    <rect x="580" y="390" width="200" height="20" fill="#E3F2FD" stroke="#1565C0" stroke-width="1" rx="3" />
+    <text x="590" y="404" font-family="Arial" font-size="9" fill="#000000" text-anchor="start">CH Seq: &channel_seq_text;</text>
+  </g>
+
+</svg>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PersonalityTemplate id="mxs40ppca-epuputype2" name="mxs40ppca-epuputype2" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v12">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.epu\.putype2" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers />
+  <Parameters>
+     <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__epu.html" linkText="Open PPCA EPU Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+
+    <ParamChoice id="enable"
+                 name="PUT2 Enable"
+                 group="Processing Unit Type 2 (PUT2) Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="Enables/Disables and Bypass Configuration of Processing Unit"
+                 default="CY_PU_DISABLE">
+      <Entry name="Disable" value="CY_PU_DISABLE" visible="true"/>
+      <Entry name="Enable Asynchronous Bypass" value="CY_ENABLE_ASYNC_BYPASS" visible="true"/>
+      <Entry name="Enable Synchronous Bypass" value="CY_ENABLE_SYNC_BYPASS" visible="true"/>
+      <Entry name="Enable PU" value="CY_ENABLE_PU" visible="true"/>
+    </ParamChoice>
+
+    <ParamBool id="isPUDisabled" name="isPUDisabled" group="Internal" default="`${(enable eq CY_PU_DISABLE)}`" visible="false" editable="false" desc=""/>
+    <ParamBool id="swEventEnable" name="Enable Constant Input" group="Processing Unit Type 2 (PUT2) Configuration" default="false" visible="true" editable="true" desc="This parameter enables/disables Constant Input generation"/>
+    <ParamChoice id="inputLevel"
+                 name="Constant input level"
+                 group="Processing Unit Type 2 (PUT2) Configuration"
+                 visible="`${swEventEnable}`"
+                 editable="`${swEventEnable}`"
+                 desc="Constant input level from PUT2"
+                 default="CY_CONSTANT_0">
+      <Entry name="Constant Input Level 0" value="CY_CONSTANT_0" visible="true"/>
+      <Entry name="Constant Input Level 1" value="CY_CONSTANT_1" visible="true"/>
+    </ParamChoice>
+    <!-- Colors -->
+    <ParamString id="greenBlock" name="greenBlock" group="Internal" default="#9BBA43" visible="false" editable="false" desc="" />
+    <ParamString id="greenLine" name="greenLine" group="Internal" default="#0A8276" visible="false" editable="false" desc="" />
+    <ParamString id="greenText" name="greenText" group="Internal" default="#00B050" visible="false" editable="false" desc="" />
+    <ParamString id="grey" name="grey" group="Internal" default="#A6A6A6" visible="false" editable="false" desc="" />
+    <ParamString id="black" name="black" group="Internal" default="#000000" visible="false" editable="false" desc="" />
+
+    <!-- Path Updates for "Enable Asynchronous Bypass" Selection -->
+    <ParamString id="bypassColor" name="bypassColor" group="Internal" default="`${((enable eq CY_ENABLE_ASYNC_BYPASS) || (enable eq CY_ENABLE_SYNC_BYPASS)) ? greenLine : grey}`" visible="false" editable="false" desc="" />
+    <ParamString id="asynBypassColor" name="asynBypassColor" group="Internal" default="`${(enable eq CY_ENABLE_ASYNC_BYPASS) ? greenLine : grey}`" visible="false" editable="false" desc="" />
+    <ParamString id="synBypassLineColor" name="synBypassColor" group="Internal" default="`${(enable eq CY_ENABLE_SYNC_BYPASS) ? greenLine : grey}`" visible="false" editable="false" desc="" />
+    <ParamString id="synBypassBlockColor" name="synBypassColor" group="Internal" default="`${(enable eq CY_ENABLE_SYNC_BYPASS) ? greenBlock : grey}`" visible="false" editable="false" desc="" />
+    <ParamString id="puEnableLineColor" name="puEnable" group="Internal" default="`${(enable eq CY_ENABLE_PU) ? greenLine : grey}`" visible="false" editable="false" desc="" />
+    <ParamString id="puEnableBlockColor" name="puEnable" group="Internal" default="`${(enable eq CY_ENABLE_PU) ? greenBlock : grey}`" visible="false" editable="false" desc="" />
+    <ParamString id="puOnLineColor" name="puOnLineColor" group="Internal" default="`${(enable ne CY_PU_DISABLE) ? greenLine : grey}`" visible="false" editable="false" desc="" />
+    <ParamString id="puOnBlockColor" name="puOnBlockColor" group="Internal" default="`${(enable ne CY_PU_DISABLE) ? greenBlock : grey}`" visible="false" editable="false" desc="" />
+    <ParamString id="inTextColor" name="inTextColor" group="Internal" default="`${(enable ne CY_PU_DISABLE) ? greenText : black}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="inpPolarityInv" name="Enable Input Polarity Inversion" group="Processing Unit Type 2 (PUT2) Configuration" default="false" visible="true" editable="true" desc="This parameter enables/disables input polarity inversion  "/>
+    <ParamString id="polColor" name="polColor" group="Internal" default="`${(inpPolarityInv) ? greenBlock : grey}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="put2InSel"
+                 name="Input Level/Edge Selection"
+                 group="Processing Unit Type 2 (PUT2) Configuration"
+                 visible="`${(enable eq CY_ENABLE_PU)}`"
+                 editable="true"
+                 desc="Processing Unit Function"
+                 default="CY_LEVEL_SIGNAL">
+      <Entry name="Level Signal(Output Polarity Inversion)" value="CY_LEVEL_SIGNAL" visible="true"/>
+      <Entry name="Edge Signal(Output of Edge Extractor which input is the Output of Polarity Inversion)" value="CY_EDGE_SIGNAL" visible="true"/>
+    </ParamChoice>
+    <ParamString id="edgeColor" name="edgeColor" group="Internal" default="`${((enable eq CY_ENABLE_PU) &amp;&amp; (put2InSel eq CY_EDGE_SIGNAL)) ? greenBlock : grey}`" visible="false" editable="false" desc="" />
+
+    <ParamSignal port="pu2_bus_in[0]" name="Input Source (IN1)" group="Processing Unit Type 2 (PUT2) Configuration" visible="`${hasVisibleOption(&quot;pu2_bus_in[0]&quot;)}`" desc="PUT2 Input Source" canBeEmpty="true" />
+    <ParamString id="inSel1" name="inSel1" group="Internal" default="`${(getParamValueDisplay(&quot;pu2_bus_in[0]&quot;) eq &quot;&quot;) ? &quot;IN1&quot; : (getParamValueDisplay(&quot;pu2_bus_in[0]&quot;))}`" visible="false" editable="false" desc="" />
+
+    <ParamString id="instNumber" name="Instance number" group="Internal" default="`${getInstNumber(&quot;putype2&quot;)}`" visible="false" editable="false" desc="EPUTY2 Instance name number." />
+    <ParamString id="pu2BusIn1" name="pu2BusIn1" group="Internal" default="PUT2_OUT`${instNumber}`_SRC_SEL" visible="false" editable="false" desc="" />
+    <ParamString id="pu2BusIn" name="pu2BusIn" group="Internal" default="`${(getParamValueDisplay(&quot;pu2_bus_in[0]&quot;) eq &quot;&quot;) ? 0 : pu2BusIn1}`" visible="false" editable="false" desc="" />
+
+    <ParamImage id="epu_put2"
+                name="EPU Type2"
+                group="Processing Unit Type 2 (PUT2) Configuration"
+                desc=""
+                visible="true"
+                position="OUTSET"
+                default="`${cy_libs_path()}`/device-info/personalities/ppca/EPU_PUT2.svg">
+    <Substitution name="puOn_lineColor" value="`${puOnLineColor}`"/>
+    <Substitution name="puOn_blockColor" value="`${puOnBlockColor}`"/>
+    <Substitution name="bypass_color" value="`${bypassColor}`"/>
+    <Substitution name="asyncBypass_color" value="`${asynBypassColor}`"/>
+    <Substitution name="syncBypass_lineColor" value="`${synBypassLineColor}`"/>
+    <Substitution name="syncBypass_blockColor" value="`${synBypassBlockColor}`"/>
+    <Substitution name="puEnable_lineColor" value="`${puEnableLineColor}`"/>
+    <Substitution name="puEnable_blockColor" value="`${puEnableBlockColor}`"/>
+    <Substitution name="edge_color" value="`${edgeColor}`"/>
+    <Substitution name="pol_color" value="`${polColor}`"/>
+    <Substitution name="inSel_textColor" value="`${inTextColor}`"/>
+    <Substitution name="inSel1_text" value="`${inSel1}`"/>
+    <Substitution name="outSel_text" value="`${(getParamValueDisplay(&quot;out[0]&quot;) eq &quot;&quot;) ? &quot;Combiner&quot; : (getParamValueDisplay(&quot;out[0]&quot;))}`"/>
+    </ParamImage>
+    <ParamString id="epuRsc" name="epuRsc" group="Internal" default="`${&quot;ppca[0].epu[0]&quot;}`" visible="false" editable="false" desc="" />
+    <ParamString id="epuUsed" name="epuUsed" group="Internal" default="`${isBlockUsed(epuRsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamSignal port="out[0]" name="Out Signal" group="Signals" visible="true" desc="" canBeEmpty="true" />
+
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+  </Parameters>
+  <DRCs>
+    <DRC type="ERROR" text="Enable EPU." condition="`${!epuUsed}`">
+        <FixIt action="ENABLE_BLOCK" target="`${epuRsc}`" value="mxs40ppca-epu-1.0" valid="true" />
+    </DRC>
+    <DRC type="INFO" text="Input Source (IN1) has no connection. Connect a signal or enable Constant Input." condition="`${!isPUDisabled &amp;&amp; !swEventEnable &amp;&amp; !hasConnection(&quot;pu2_bus_in&quot;, 0)}`" paramId="pu2_bus_in[0]" />
+  </DRCs>
+
+  <ConfigFirmware>
+
+    <ConfigInclude value="cycfg_routing.h" include="true" />
+    <ConfigInclude value="cy_ppca_epu.h" include="true" />
+
+    <ConfigDefine name="`${INST_NAME}`_INDEX" value="`${instNumber}`" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_EPU_EPU" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_ENABLE_MODE" value="`${enable}`" public="true" include="true" />
+    <ConfigStruct name="`${INST_NAME}`_put2_config" type="cy_stc_ppca_epu_PU_T2_config_t" const="`${inFlash}`"  public="true" include="true" >
+      <Member name="PUT2_enable" value="`${enable}`" />
+      <Member name="inpPolarityInv" value="`${inpPolarityInv}`" />
+      <Member name="swEventEnable" value="`${swEventEnable}`" />
+      <Member name="inputLevel" value="`${inputLevel}`" />
+      <Member name="PUT2_IN_Sel" value="`${put2InSel}`" />
+      <Member name="PUT2_SRC_SEL" value="`${pu2BusIn}`" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_EPU_PU_T2_Configure(`${INST_NAME}`_HW, `${INST_NAME}`_INDEX, &amp;`${INST_NAME}`_put2_config);" include="`${init}`" purpose="INITIALIZE" />
+
+  </ConfigFirmware>
+
+</PersonalityTemplate>

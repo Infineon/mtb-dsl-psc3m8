@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--****************************************************************************
+* \file smartlb.cypersonality
+* \version 1.0
+*
+* \brief
+* Smart Logic Block (SLB) personality description file.
+* This supports PSC devices (boy1 and later mxsmartlb-based devices).
+********************************************************************************
+* \copyright
+* (c) 2026, Infineon Technologies AG, or an affiliate of Infineon
+* Technologies AG.
+* SPDX-License-Identifier: Apache-2.0
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*****************************************************************************-->
+
+<Personality id="smartlb" name="Smart Logic Block" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v7">
+  <Dependencies>
+    <IpBlock name="mxsmartlb" />
+    <Resource name="mxsmartlb" />
+  </Dependencies>
+  <ExposedMembers />
+  <Parameters>
+    <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__smartlb.html" linkText="Open SmartLB Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+
+    <!-- Debug Enable -->
+    <ParamBool id="debug" name="Debug Flag" group="General" default="false" visible="false" editable="false" desc="Set this to true to expose all parameters" />
+
+    <!--General-->
+    <ParamChoice id="clockSrc" name="Clock Source" group="General" default="16" visible="true" editable="true" desc="clk_fabric/rst_fabric_n clock source selection (CTL.CLOCK_SRC)" >
+      <Entry name="Trigger input 0" value="0" visible="true" />
+      <Entry name="Trigger input 1" value="1" visible="true" />
+      <Entry name="Trigger input 2" value="2" visible="true" />
+      <Entry name="Trigger input 3" value="3" visible="true" />
+      <Entry name="Trigger input 4" value="4" visible="true" />
+      <Entry name="Trigger input 5" value="5" visible="true" />
+      <Entry name="Trigger input 6" value="6" visible="true" />
+      <Entry name="Trigger input 7" value="7" visible="true" />
+      <Entry name="Synchronous (clk_smartlb / PCLK)" value="16" visible="true" />
+      <Entry name="Asynchronous / clockless" value="31" visible="true" />
+    </ParamChoice>
+
+    <ParamBool id="pipelineEn" name="Pipeline Stage Enable" group="General" default="false" visible="true" editable="true" desc="Enables the pipeline stage (CTL.PIPELINE_EN). Note: Cy_SmartLB_Disable() forces this on automatically while the block is disabled to avoid combinatorial loops." />
+
+    <ParamBool id="duEn" name="DU Enable" group="General" default="false" visible="`${(debug eq true)}`" editable="true" desc="Enable/Disable Data Unit (DU) configuration" />
+    <Repeat count="8">
+      <ParamBool id="lutEn$idx" name="LUT$idx Enable" group="General" default="false" visible="`${(debug eq true)}`" editable="true" desc="Enable/Disable LUT$idx configuration" />
+    </Repeat>
+
+    <!--Trigger Input Synchronization -->
+    <Repeat count="8">
+      <ParamBool id="trigSyncEn$idx" name="Trigger $idx Sync Enable" group="Trigger Sync" default="false" visible="true" editable="true" desc="Synchronizes trigger input $idx to clk_fabric (SYNC_CTL.TRIG_SYNC_EN[$idx])" />
+      <ParamChoice id="trigSyncMode$idx" name="Trigger $idx Sync Mode" group="Trigger Sync" default="0" visible="`${trigSyncEn$idx}`" editable="true" desc="Synchronization stages for trigger input $idx (SYNC_CTL.TRIG_SYNC_MODE[$idx])" >
+        <Entry name="2-Stage Synchronization" value="0" visible="true" />
+        <Entry name="1-Stage Synchronization" value="1" visible="true" />
+      </ParamChoice>
+    </Repeat>
+
+    <!--Interrupt Polarity -->
+    <Repeat count="8">
+      <ParamChoice id="intrPolarity$idx" name="LUT$idx Interrupt Polarity" group="Interrupts" default="0" visible="true" editable="true" desc="Edge polarity for the LUT$idx event/interrupt flag (CTL.INT_POLARITY[$idx])" >
+        <Entry name="Rising edge" value="0" visible="true" />
+        <Entry name="Falling edge" value="1" visible="true" />
+      </ParamChoice>
+    </Repeat>
+
+    <!--LUTs -->
+    <Repeat count="8">
+      <ParamChoice id="lut$idxOpcode" name="Op-code" group="LUT$idx" default="0" visible="`${lutEn$idx}`" editable="true" desc="LUT$idx opcode (LUT_CTL.LUT_OPC)" >
+        <Entry name="Combinatorial output, no feedback" value="0" visible="true" />
+        <Entry name="Sequential (gated) output" value="1" visible="true" />
+        <Entry name="TR2-gated, combinatorial output" value="2" visible="true" />
+        <Entry name="Asynchronous Set/Reset mode" value="3" visible="true" />
+      </ParamChoice>
+
+      <ParamRange id="lut$idxMap" name="LUT mapping" group="LUT$idx" default="0" min="0" max="255" resolution="1" visible="`${lutEn$idx}`" editable="true" desc="LUT$idx truth table: LUT out = 3'b{tr2_in,tr1_in,tr0_in} indexed lookup (LUT_CTL.LUT)" />
+
+      <ParamRange id="lut$idxTr0" name="Input TR0" group="LUT$idx" default="0" min="0" max="16" resolution="1" visible="`${lutEn$idx}`" editable="true" desc="LUT$idx input trigger 0 source (0-7: LUT0-LUT7 output, 8-15: trig_data_in[0-7], 16: Data Unit output) - LUT_SEL.LUT_TR0_SEL" />
+      <ParamRange id="lut$idxTr1" name="Input TR1" group="LUT$idx" default="0" min="0" max="16" resolution="1" visible="`${lutEn$idx}`" editable="true" desc="LUT$idx input trigger 1 source (0-7: LUT0-LUT7 output, 8-15: trig_data_in[0-7], 16: Data Unit output) - LUT_SEL.LUT_TR1_SEL" />
+      <ParamRange id="lut$idxTr2" name="Input TR2" group="LUT$idx" default="0" min="0" max="16" resolution="1" visible="`${lutEn$idx}`" editable="true" desc="LUT$idx input trigger 2 source (0-7: LUT0-LUT7 output, 8-15: trig_data_in[0-7], 16: Data Unit output) - LUT_SEL.LUT_TR2_SEL" />
+    </Repeat>
+
+    <!--DU -->
+    <ParamChoice id="duOpcode" name="Op-code" group="DU" default="0" visible="`${duEn}`" editable="true" desc="DU opcode (DU_CTL.DU_OPC)" >
+      <Entry name="No-operation" value="0" visible="true" />
+      <Entry name="Increment" value="1" visible="true" />
+      <Entry name="Decrement" value="2" visible="true" />
+      <Entry name="Increment and wrap" value="3" visible="true" />
+      <Entry name="Decrement and wrap" value="4" visible="true" />
+      <Entry name="Increment/Decrement" value="5" visible="true" />
+      <Entry name="Increment/Decrement and wrap" value="6" visible="true" />
+      <Entry name="Rotate Right" value="7" visible="true" />
+      <Entry name="Shift Right" value="8" visible="true" />
+      <Entry name="AND, OR" value="9" visible="true" />
+      <Entry name="Shift right and Majority-3" value="10" visible="true" />
+      <Entry name="Shift right and Compare" value="11" visible="true" />
+    </ParamChoice>
+
+    <ParamRange id="duSize" name="Size" group="DU" default="7" min="0" max="7" resolution="1" visible="`${duEn}`" editable="true" desc="DU operand size/width - 1 (DU_CTL.DU_SIZE); width in bits = DU_SIZE + 1" />
+
+    <ParamRange id="duTr0" name="Input TR0" group="DU" default="0" min="0" max="10" resolution="1" visible="`${duEn}`" editable="true" desc="DU input trigger 0 source: 0=Const 0, 1=Const 1, 2=DU output, 3-10=LUT0-LUT7 output (DU_SEL.DU_TR0_SEL)" />
+    <ParamRange id="duTr1" name="Input TR1" group="DU" default="0" min="0" max="10" resolution="1" visible="`${duEn}`" editable="true" desc="DU input trigger 1 source: 0=Const 0, 1=Const 1, 2=DU output, 3-10=LUT0-LUT7 output (DU_SEL.DU_TR1_SEL)" />
+    <ParamRange id="duTr2" name="Input TR2" group="DU" default="0" min="0" max="10" resolution="1" visible="`${duEn}`" editable="true" desc="DU input trigger 2 source: 0=Const 0, 1=Const 1, 2=DU output, 3-10=LUT0-LUT7 output (DU_SEL.DU_TR2_SEL)" />
+
+    <ParamChoice id="duData0" name="Input DATA0" group="DU" default="0" visible="`${duEn}`" editable="true" desc="DU input DATA0 source (DU_SEL.DU_DATA0_SEL)" >
+      <Entry name="Constant 0" value="0" visible="true" />
+      <Entry name="Chip data [7:0]" value="1" visible="true" />
+      <Entry name="Trigger data [7:0]" value="2" visible="true" />
+      <Entry name="DATA Register" value="3" visible="true" />
+    </ParamChoice>
+
+    <ParamChoice id="duData1" name="Input DATA1" group="DU" default="0" visible="`${duEn}`" editable="true" desc="DU input DATA1 source (DU_SEL.DU_DATA1_SEL)" >
+      <Entry name="Constant 0" value="0" visible="true" />
+      <Entry name="Chip data [7:0]" value="1" visible="true" />
+      <Entry name="Trigger data [7:0]" value="2" visible="true" />
+      <Entry name="DATA Register" value="3" visible="true" />
+    </ParamChoice>
+
+    <!--Config-->
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in Flash (const, true) or SRAM (not const, false)." />
+
+    <!-- PRT selection -->
+    <ParamRange id="prtNumber" name="PRT Number" group="General" default="0" min="0" max="15" resolution="1" visible="true" editable="true" desc="Select which Smart Logic Block PRT instance (0-15) to configure." />
+
+    <!-- Instance number (mxsmartlb block index, always 0 for PSC3M4) -->
+    <ParamString id="InstNumber" name="InstNumber" group="Internal" default="`${getInstNumber(&quot;mxsmartlb&quot;)}`" visible="false" editable="false" desc="SmartLB block instance number." />
+
+  </Parameters>
+
+  <DRCs>
+    <!--LUT TR DRCs: DU-sourced LUT input requires DU enabled-->
+    <DRC type="ERROR" text="Invalid LUT connection. LUT [$idx] input trigger is sourced from the Data Unit output, but the Data Unit is not enabled."
+    condition="`${((lut$idxTr0 eq 16) || (lut$idxTr1 eq 16) || (lut$idxTr2 eq 16)) &amp;&amp; (duEn eq false)}`" repeatCount="8" />
+
+    <!--LUT enabled but truth table left at reset default DRC-->
+    <DRC type="WARNING" text="LUT [$idx] is enabled but its truth table (LUT mapping) is left at the default value of 0, which always drives a constant '0' output."
+    condition="`${(lutEn$idx eq true) &amp;&amp; (lut$idxMap eq 0)}`" repeatCount="8" />
+
+    <!-- Trigger sync mode set without sync enabled (informational) -->
+    <DRC type="WARNING" text="Trigger $idx synchronization mode is configured, but Trigger $idx Sync Enable is not set; the mode selection has no effect."
+    condition="`${(trigSyncEn$idx eq false) &amp;&amp; (trigSyncMode$idx ne 0)}`" repeatCount="8" />
+
+  </DRCs>
+
+  <!--Config Structs-->
+  <ConfigFirmware>
+    <ConfigInclude value="cy_smartlb.h" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="MXSMARTLB_PRT`${prtNumber}`" public="true" include="true" />
+
+    <ConfigStruct name="`${INST_NAME . &quot;_lutCfg$idx&quot;}`" type="cy_stc_smartlb_lutcfg_t" const="`${inFlash}`" public="true" include="`${lutEn$idx}`" repeatCount="8" >
+      <Member name="tr0Sel" value="`${lut$idxTr0}`U" />
+      <Member name="tr1Sel" value="`${lut$idxTr1}`U" />
+      <Member name="tr2Sel" value="`${lut$idxTr2}`U" />
+      <Member name="lut" value="`${lut$idxMap}`U" />
+      <Member name="lutOpc" value="`${lut$idxOpcode}`U" />
+    </ConfigStruct>
+
+    <ConfigStruct name="`${INST_NAME . &quot;_duCfg&quot;}`" type="cy_stc_smartlb_ducfg_t" const="`${inFlash}`" public="true" include="`${duEn}`" >
+      <Member name="tr0Sel" value="`${duTr0}`U" />
+      <Member name="tr1Sel" value="`${duTr1}`U" />
+      <Member name="tr2Sel" value="`${duTr2}`U" />
+      <Member name="data0Sel" value="`${duData0}`U" />
+      <Member name="data1Sel" value="`${duData1}`U" />
+      <Member name="size" value="`${duSize}`U" />
+      <Member name="opc" value="`${duOpcode}`U" />
+    </ConfigStruct>
+
+    <ConfigStruct name="`${INST_NAME . &quot;_config&quot;}`" type="cy_stc_smartlb_config_t" const="`${inFlash}`" public="true" include="true" >
+      <Member name="intPolarity" value="`${
+      (intrPolarity0 * 1) . &quot;|&quot; . (intrPolarity1 * 2) . &quot;|&quot; . (intrPolarity2 * 4) . &quot;|&quot; . (intrPolarity3 * 8) . &quot;|&quot; .
+      (intrPolarity4 * 16) . &quot;|&quot; . (intrPolarity5 * 32) . &quot;|&quot; . (intrPolarity6 * 64) . &quot;|&quot; . (intrPolarity7 * 128)}`U" />
+      <Member name="clockSrc" value="`${clockSrc}`U" />
+      <Member name="pipelineEn" value="`${pipelineEn}`" />
+      <Member name="trigSyncEn" value="`${
+      ((trigSyncEn0 eq true) ? &quot;1&quot; : &quot;0&quot;) . &quot;|&quot; . ((trigSyncEn1 eq true) ? &quot;2&quot; : &quot;0&quot;) . &quot;|&quot; .
+      ((trigSyncEn2 eq true) ? &quot;4&quot; : &quot;0&quot;) . &quot;|&quot; . ((trigSyncEn3 eq true) ? &quot;8&quot; : &quot;0&quot;) . &quot;|&quot; .
+      ((trigSyncEn4 eq true) ? &quot;16&quot; : &quot;0&quot;) . &quot;|&quot; . ((trigSyncEn5 eq true) ? &quot;32&quot; : &quot;0&quot;) . &quot;|&quot; .
+      ((trigSyncEn6 eq true) ? &quot;64&quot; : &quot;0&quot;) . &quot;|&quot; . ((trigSyncEn7 eq true) ? &quot;128&quot; : &quot;0&quot;)}`U" />
+      <Member name="trigSyncMode" value="`${
+      (trigSyncMode0 * 1) . &quot;|&quot; . (trigSyncMode1 * 2) . &quot;|&quot; . (trigSyncMode2 * 4) . &quot;|&quot; . (trigSyncMode3 * 8) . &quot;|&quot; .
+      (trigSyncMode4 * 16) . &quot;|&quot; . (trigSyncMode5 * 32) . &quot;|&quot; . (trigSyncMode6 * 64) . &quot;|&quot; . (trigSyncMode7 * 128)}`U" />
+      <Member name="lutCfg0" value="`${lutEn0 eq true ? (&quot;&amp;&quot; . INST_NAME . &quot;_lutCfg0&quot;) : &quot;NULL&quot;}`" />
+      <Member name="lutCfg1" value="`${lutEn1 eq true ? (&quot;&amp;&quot; . INST_NAME . &quot;_lutCfg1&quot;) : &quot;NULL&quot;}`" />
+      <Member name="lutCfg2" value="`${lutEn2 eq true ? (&quot;&amp;&quot; . INST_NAME . &quot;_lutCfg2&quot;) : &quot;NULL&quot;}`" />
+      <Member name="lutCfg3" value="`${lutEn3 eq true ? (&quot;&amp;&quot; . INST_NAME . &quot;_lutCfg3&quot;) : &quot;NULL&quot;}`" />
+      <Member name="lutCfg4" value="`${lutEn4 eq true ? (&quot;&amp;&quot; . INST_NAME . &quot;_lutCfg4&quot;) : &quot;NULL&quot;}`" />
+      <Member name="lutCfg5" value="`${lutEn5 eq true ? (&quot;&amp;&quot; . INST_NAME . &quot;_lutCfg5&quot;) : &quot;NULL&quot;}`" />
+      <Member name="lutCfg6" value="`${lutEn6 eq true ? (&quot;&amp;&quot; . INST_NAME . &quot;_lutCfg6&quot;) : &quot;NULL&quot;}`" />
+      <Member name="lutCfg7" value="`${lutEn7 eq true ? (&quot;&amp;&quot; . INST_NAME . &quot;_lutCfg7&quot;) : &quot;NULL&quot;}`" />
+      <Member name="duCfg" value="`${duEn eq true ? (&quot;&amp;&quot; . INST_NAME . &quot;_duCfg&quot;) : &quot;NULL&quot;}`" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_SmartLB_Init(`${INST_NAME}`_HW, &amp;`${INST_NAME}`_config);" include="true" />
+  </ConfigFirmware>
+</Personality>

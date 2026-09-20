@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PersonalityTemplate id="mxs40ppca_dcsg_slope_gen_slice" name="DCSG Slope Generation Slice" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v10">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.atop\.dcsg_grp\.dcsg_slgen" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers>
+    <ExposedMember key="slgen_map"  paramId="slgen_map_display" />
+    <ExposedMember key="slgen_trig_text"  paramId="slgen_trig_text" />
+  </ExposedMembers>
+  <Parameters>
+    <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__dcsg__slgen.html" linkText="Open PPCA DCSG SLGEN Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+    <ParamRange id="pInstCnt" name="pInstCnt" desc="Instance Number" group="Internal"  default="`${getInstNumber(&quot;dcsg_slgen&quot;)}`" min="0" max="1" resolution="1" visible="false" editable="false" />
+
+    <!-- DCSG Configuration -->
+    <ParamString id="dcsgGroupNumber" name="DCSG Group Number" group="Internal" default="`${getInstNumber(&quot;dcsg_grp&quot;)}`" visible="false" editable="false" desc="DCSG Group name number." />
+    <ParamChoice id="slgen_src"
+             name="Slope Generator Source"
+             group="DCSG SLGEN Configuration"
+             visible="true"
+             editable="true"
+             desc="if enabled, Select SLGEN RAMP as source, SLGEN_RAMP is control of the DAC threshold. If disabled CPU is in control of DCSG_TH: DAC threshold."
+             default="false">
+        <Entry name="CPU in Control of DCSG Threshold" value="false" visible="true"/>
+        <Entry name="SLGEN RAMP in Control of DCSG Threshold" value="true" visible="true"/>
+    </ParamChoice>
+    <ParamBool id="single_clk_glitch" name="Enable Glitch FIlter" group="DCSG SLGEN Configuration" default="false" visible="true" editable="true" desc=" if enabled, single clock blank glitch filter is enabled."/>
+    <ParamBool id="trigger_unmask" name="UnMask Triggers " group="DCSG SLGEN Configuration" default="false" visible="true" editable="true" desc=" if enabled, triggers are unmasked. Upon detect of Trigger will start the SL operation."/>
+    <ParamBool id="shadow_transfer" name="Enable Shadow Transfer" group="DCSG SLGEN Configuration" default="false" visible="true" editable="true" desc=" Enable/Disable Shadow Transfer Feature."/>
+    <ParamBool id="auto_reset" name="Enable Auto Reset" group="DCSG SLGEN Configuration" default="false" visible="true" editable="true" desc=" Enable/Disable Auto Reset Feature. Auto-Reset of Slope Generation threshold between initial and target value."/>
+    <ParamChoice id="slgen_map"
+             name="Slope Generator Map"
+             group="DCSG SLGEN Configuration"
+             visible="true"
+             editable="true"
+             desc="Map SL_GEN operation DCSG."
+             default="CY_DCSG_SLGEN_MAP_0">
+        <Entry name="SLGEN Mapped to DCSG0" value="CY_DCSG_SLGEN_MAP_0" visible="true"/>
+        <Entry name="SLGEN Mapped to DCSG1" value="CY_DCSG_SLGEN_MAP_1" visible="true"/>
+        <Entry name="SLGEN Mapped to DCSG2" value="CY_DCSG_SLGEN_MAP_2" visible="true"/>
+        <Entry name="SLGEN Mapped to DCSG3" value="CY_DCSG_SLGEN_MAP_3" visible="`${(dcsgGroupNumber eq 0)}`"/>
+        <Entry name="SLGEN Mapped to DCSG4" value="CY_DCSG_SLGEN_MAP_4" visible="`${(dcsgGroupNumber eq 0)}`"/>
+        <Entry name="SLGEN Mapped to DCSG5" value="CY_DCSG_SLGEN_MAP_5" visible="`${(dcsgGroupNumber eq 0)}`"/>
+    </ParamChoice>
+
+    <ParamRange id="slgen_init_value" name="SLGEN Initial Integer Value" group="DCSG SLGEN Configuration" default="0" min="0" max="4095" resolution="1" visible="true" editable="true" desc="12 bit Initial Integer Value. Please make sure that the initial value is equal to DCSG threshold value. " />
+    <ParamRange id="slgen_init_frac_value" name="SLGEN Initial Fractional Value" group="DCSG SLGEN Configuration" default="0" min="0" max="15" resolution="1" visible="true" editable="true" desc="4 bit Initial Frational Value." />
+
+    <ParamRange id="slgen_init_buf_value" name="SLGEN Initial Integer Shadow Value" group="DCSG SLGEN Configuration" default="0" min="0" max="4095" resolution="1" visible="true" editable="true" desc="12 bit Initial Integer Shadow Value." />
+    <ParamRange id="slgen_init_buf_frac_value" name="SLGEN Initial Fractional Shadow Value" group="DCSG SLGEN Configuration" default="0" min="0" max="15" resolution="1" visible="true" editable="true" desc="4 bit Initial Frational Shadow Value." />
+
+    <ParamRange id="slgen_target_value" name="SLGEN Target Integer Value" group="DCSG SLGEN Configuration" default="0" min="0" max="4095" resolution="1" visible="true" editable="true" desc="12 bit Target Integer Value. Depending on the difference between init and target value, sign of step will be either positve or negative." />
+    <ParamRange id="slgen_target_frac_value" name="SLGEN Target Fractional Value" group="DCSG SLGEN Configuration" default="0" min="0" max="15" resolution="1" visible="true" editable="true" desc="4 bit Target Frational Value." />
+
+    <ParamRange id="slgen_target_buf_value" name="SLGEN Target Integer Shadow Value" group="DCSG SLGEN Configuration" default="0" min="0" max="4095" resolution="1" visible="true" editable="true" desc="12 bit Target Shadow Integer Value." />
+    <ParamRange id="slgen_target_buf_frac_value" name="SLGEN Target Fractional Shadow Value" group="DCSG SLGEN Configuration" default="0" min="0" max="15" resolution="1" visible="true" editable="true" desc="4 bit Target Shadow Frational Value." />
+
+    <ParamRange id="slgen_step_value" name="SLGEN Step Integer Value" group="DCSG SLGEN Configuration" default="0" min="0" max="4095" resolution="1" visible="true" editable="true" desc="12 bit Step Integer Value. Configure a non-zero value. " />
+    <ParamRange id="slgen_step_frac_value" name="SLGEN Step Fractional Value" group="DCSG SLGEN Configuration" default="0" min="0" max="15" resolution="1" visible="true" editable="true" desc="4 bit Step Frational Value." />
+
+    <ParamSignal port="dcsg_cmp_trig[0]" name="dcsg_cmp_trig[0]" visible="`${hasVisibleOption(&quot;dcsg_cmp_trig[0]&quot;)}`" canBeEmpty="true" group="Signals" desc="" />
+    <ParamString id="slgen_trig_text" name="Slope Gen Trigger Text" group="Internal" default="`${hasConnection(&quot;dcsg_cmp_trig&quot;, 0) ? getParamValueDisplay(&quot;dcsg_cmp_trig[0]&quot;) : &quot;-&quot;}`" visible="false" editable="false" desc="Trigger signal display text." />
+
+    <ParamString id="InstNumber" name="InstNumber" group="Internal" default="`${getInstNumber(&quot;dcsg_slgen&quot;)}`" visible="false" editable="false" desc="Instance number." />
+    <ParamString id="arefRsc" name="arefRsc" group="Internal" default="ppca[0].atop[0].adc_grp[0].aref[0]" visible="false" editable="false" desc="" />
+    <ParamString id="arefUsed" name="arefUsed" group="Internal" default="`${isBlockUsed(arefRsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamString id="otherSlopeGenRes" name="otherSlopeGenRes" group="Internal" default="`${(pInstCnt eq 0) ? 1 : 0}`" visible="false" editable="false" desc="otherSlopeGenRes" />
+    <ParamString id="otherSlopeGenResUsed" name="otherSlopeGenResUsed" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].dcsg_slgen[`${otherSlopeGenRes}`]" visible="false" editable="false" desc="" />
+    <ParamString id="slopeGenResUsed" name="slopeGenResUsed" group="Internal" default="`${isBlockUsed(otherSlopeGenResUsed)}`" visible="false" editable="false" desc="otherSlopeGenRes" />
+    <ParamString id="slgen_map_value" name="slgen_map_value" group="Internal" default="`${getParamValue(&quot;slgen_map&quot;)}`" visible="false" editable="false" desc="otherSlopeGenRes" />
+    <ParamString id="slgen_map_value_num" name="slgen_map_value_num" group="Internal" default="`${((slgen_map_value eq CY_DCSG_SLGEN_MAP_0) ? 0 : ((slgen_map_value eq CY_DCSG_SLGEN_MAP_1) ? 1 : ((slgen_map_value eq CY_DCSG_SLGEN_MAP_2) ? 2 : ((slgen_map_value eq CY_DCSG_SLGEN_MAP_3) ? 3 :((slgen_map_value eq CY_DCSG_SLGEN_MAP_4) ? 4 :5)))))}`" visible="false" editable="false" desc="otherSlopeGenRes" />
+    <ParamString id="slgen_map_display" name="slgen_map_display" group="Internal" default="DCSG`${slgen_map_value_num}`" visible="false" editable="false" desc="Simple DCSG map display text." />
+    <ParamString id="DCSG_Rsc" name="DCSG Resource" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].dcsg[`${slgen_map_value_num}`]" visible="false" editable="false" desc="" />
+    <ParamString id="DCSGResUsed" name="DCSGResUsed" group="Internal" default="`${isBlockUsed(DCSG_Rsc)}`" visible="false" editable="false" desc="otherSlopeGenRes" />
+    <ParamString id="dcsg_threshold_value" name="Threshold Value of DCSG Mapped" group="Internal" default="`${DCSGResUsed ? getExposedMember(DCSG_Rsc, &quot;threshold&quot;) : 0}`" visible="True" editable="false" desc="DCSG Threshold value. Initial Value of SLopeGen and DCSG should be same. " />
+
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+  </Parameters>
+  <DRCs>
+    <DRC type="ERROR" text="Two Slope Gen Resource in the same group should not use same DCSG." condition="`${((slopeGenResUsed) &amp;&amp; (getExposedMember(otherSlopeGenResUsed, &quot;slgen_map&quot;) eq getParamValue(&quot;slgen_map&quot;)))}`"  >
+    </DRC>
+
+    <DRC type="ERROR" text="Enable AREF in ADC Group0 and configure VREF Source accordingly." condition="`${!arefUsed}`">
+      <FixIt action="ENABLE_BLOCK" target="`${arefRsc}`" value="" valid="true" />
+    </DRC>
+    <DRC type="ERROR" text="Enable DCSG resource." condition="`${!DCSGResUsed}`">
+      <FixIt action="ENABLE_BLOCK" target="`${DCSG_Rsc}`" value="" valid="true" />
+    </DRC>
+    <DRC type="ERROR" text="SlopeGen Initial value and DCSG Threshold Value should be same." condition="`${(slgen_init_value ne dcsg_threshold_value)}`" />
+  </DRCs>
+
+
+ <ConfigFirmware>
+
+    <ConfigInclude value="cy_ppca_dcsg_slgen.h" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_ATOPSS_DCSG_GRP`${dcsgGroupNumber}`_DCSG_SLGEN`${InstNumber}`" public="true" include="true" />
+    <ConfigStruct name="`${INST_NAME}`_config" type="cy_stc_ppca_dcsg_slgen_config_t" const="`${inFlash}`" public="true" include="true" >
+      <Member name="trigger_unmask" value="`${trigger_unmask}`" />
+      <Member name="single_clk_glitch" value="`${single_clk_glitch}`" />
+      <Member name="slgen_src" value="`${slgen_src}`" />
+      <Member name="shadow_transfer" value="`${shadow_transfer}`" />
+      <Member name="auto_reset" value="`${auto_reset}`" />
+      <Member name="slgen_map" value="`${slgen_map}`" />
+      <Member name="slgen_init_value" value="`${slgen_init_value}`" />
+      <Member name="slgen_init_frac_value" value="`${slgen_init_frac_value}`" />
+      <Member name="slgen_init_buf_value" value="`${slgen_init_buf_value}`" />
+      <Member name="slgen_init_buf_frac_value" value="`${slgen_init_buf_frac_value}`" />
+      <Member name="slgen_target_value" value="`${slgen_target_value}`" />
+      <Member name="slgen_target_frac_value" value="`${slgen_target_frac_value}`" />
+      <Member name="slgen_target_buf_value" value="`${slgen_target_buf_value}`" />
+      <Member name="slgen_target_buf_frac_value" value="`${slgen_target_buf_frac_value}`" />
+      <Member name="slgen_step_value" value="`${slgen_step_value}`" />
+      <Member name="slgen_step_frac_value" value="`${slgen_step_frac_value}`" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_DCSG_SLGEN_Init(`${INST_NAME}`_HW, &amp;`${INST_NAME}`_config);" include="`${init}`" purpose="INITIALIZE" />
+
+   </ConfigFirmware>
+</PersonalityTemplate>

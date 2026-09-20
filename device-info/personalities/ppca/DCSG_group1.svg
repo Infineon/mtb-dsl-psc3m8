@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svgdiagram [
+<!ENTITY dcsgGroupNumber "DCSG Group 1">
+<!ENTITY dcsg0_fill "#F5F5F5">
+<!ENTITY dcsg1_fill "#F5F5F5">
+<!ENTITY dcsg2_fill "#F5F5F5">
+<!ENTITY slgen0_fill "#F5F5F5">
+<!ENTITY slgen0_map "-">
+<!ENTITY slgen0_trig_text "-">
+<!ENTITY r2r_dac_fill "#F5F5F5">
+<!ENTITY r2r_dac_out_pin "-">
+<!ENTITY r2r_dac_out_display "none">
+<!ENTITY dcsg_out0_text "OUT[0]">
+<!ENTITY dcsg_out1_text "OUT[1]">
+<!ENTITY dcsg_out2_text "OUT[2]">
+<!ENTITY dcsg0_src_text "AIN0">
+<!ENTITY dcsg1_src_text "AIN0">
+<!ENTITY dcsg2_src_text "AIN0">
+<!ENTITY slgen0_dcsg0_display "none">
+<!ENTITY slgen0_dcsg1_display "none">
+<!ENTITY slgen0_dcsg2_display "none">
+]>
+<svg width="700" height="480" viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0A8276" />
+    </marker>
+    <marker id="arrowhead_blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1565C0" />
+    </marker>
+    <clipPath id="clip_trig0">
+      <rect x="20" y="380" width="300" height="30" />
+    </clipPath>
+    <clipPath id="clip_out0"><rect x="382" y="100" width="296" height="30" /></clipPath>
+    <clipPath id="clip_out1"><rect x="382" y="160" width="296" height="30" /></clipPath>
+    <clipPath id="clip_out2"><rect x="382" y="220" width="296" height="30" /></clipPath>
+    <clipPath id="clip_src">
+      <rect x="72" y="0" width="256" height="9999" />
+    </clipPath>
+    <clipPath id="clip_r2r">
+      <rect x="212" y="0" width="136" height="9999" />
+    </clipPath>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="30" font-family="Arial" font-size="18" font-weight="bold" fill="#000000" text-anchor="middle">&dcsgGroupNumber; - Block Diagram</text>
+
+  <!-- DCSG Instances Block (single column) -->
+  <rect x="50" y="50" width="300" height="230" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="200" y="75" font-family="Arial" font-size="14" font-weight="bold" fill="#000000" text-anchor="middle">DCSG Instances (3)</text>
+
+  <!-- DCSG0 -->
+  <rect x="70" y="90" width="260" height="50" fill="&dcsg0_fill;" stroke="#388E3C" stroke-width="1.5" rx="3" />
+  <text x="200" y="110" font-family="Arial" font-size="12" font-weight="bold" fill="#000000" text-anchor="middle">DCSG0 - Comparator</text>
+  <text x="200" y="128" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle" clip-path="url(#clip_src)">Source: &dcsg0_src_text;</text>
+
+  <!-- DCSG1 -->
+  <rect x="70" y="150" width="260" height="50" fill="&dcsg1_fill;" stroke="#388E3C" stroke-width="1.5" rx="3" />
+  <text x="200" y="170" font-family="Arial" font-size="12" font-weight="bold" fill="#000000" text-anchor="middle">DCSG1 - Comparator</text>
+  <text x="200" y="188" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle" clip-path="url(#clip_src)">Source: &dcsg1_src_text;</text>
+
+  <!-- DCSG2 -->
+  <rect x="70" y="210" width="260" height="50" fill="&dcsg2_fill;" stroke="#388E3C" stroke-width="1.5" rx="3" />
+  <text x="200" y="230" font-family="Arial" font-size="12" font-weight="bold" fill="#000000" text-anchor="middle">DCSG2 - Comparator</text>
+  <text x="200" y="248" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle" clip-path="url(#clip_src)">Source: &dcsg2_src_text;</text>
+
+  <!-- Connection lines from DCSG to OUT boxes -->
+  <g id="dcsg_connections">
+    <!-- DCSG0 to OUT[0] -->
+    <line x1="330" y1="115" x2="380" y2="115" stroke="#0A8276" stroke-width="1.5" marker-end="url(#arrowhead)" />
+    <!-- DCSG1 to OUT[1] -->
+    <line x1="330" y1="175" x2="380" y2="175" stroke="#0A8276" stroke-width="1.5" marker-end="url(#arrowhead)" />
+    <!-- DCSG2 to OUT[2] -->
+    <line x1="330" y1="235" x2="380" y2="235" stroke="#0A8276" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  </g>
+
+  <!-- DCSG Output Boxes (right side - wide enough for 50 characters) -->
+  <g id="dcsg_outputs">
+    <!-- OUT[0] box - signal name inside -->
+    <rect x="380" y="100" width="300" height="30" fill="#FFF3E0" stroke="#FF9737" stroke-width="1.5" rx="3" />
+    <text x="385" y="120" font-family="Arial" font-size="11" fill="#000000" text-anchor="start" clip-path="url(#clip_out0)">&dcsg_out0_text;</text>
+
+    <!-- OUT[1] box - signal name inside -->
+    <rect x="380" y="160" width="300" height="30" fill="#FFF3E0" stroke="#FF9737" stroke-width="1.5" rx="3" />
+    <text x="385" y="180" font-family="Arial" font-size="11" fill="#000000" text-anchor="start" clip-path="url(#clip_out1)">&dcsg_out1_text;</text>
+
+    <!-- OUT[2] box - signal name inside -->
+    <rect x="380" y="220" width="300" height="30" fill="#FFF3E0" stroke="#FF9737" stroke-width="1.5" rx="3" />
+    <text x="385" y="240" font-family="Arial" font-size="11" fill="#000000" text-anchor="start" clip-path="url(#clip_out2)">&dcsg_out2_text;</text>
+  </g>
+
+  <!-- Slope Gen instance (outside DCSG block, at bottom) -->
+  <rect x="50" y="310" width="140" height="45" fill="&slgen0_fill;" stroke="#1565C0" stroke-width="1.5" rx="3" />
+  <text x="120" y="330" font-family="Arial" font-size="11" font-weight="bold" fill="#000000" text-anchor="middle">Slope Gen 0</text>
+  <text x="120" y="346" font-family="Arial" font-size="9" fill="#000000" text-anchor="middle">Map: &slgen0_map;</text>
+
+  <!-- R2R DAC (outside DCSG block) -->
+  <rect x="210" y="310" width="140" height="45" fill="&r2r_dac_fill;" stroke="#FF9737" stroke-width="1.5" rx="3" />
+  <text x="280" y="330" font-family="Arial" font-size="11" font-weight="bold" fill="#000000" text-anchor="middle">R2R DAC</text>
+  <text x="280" y="346" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle" clip-path="url(#clip_r2r)" style="display:&r2r_dac_out_display;">Out: &r2r_dac_out_pin;</text>
+
+  <!-- Slope Gen Trigger Signal Box (below slope gen with connecting line) -->
+  <g id="slgen_triggers">
+    <!-- Slope Gen 0 Trigger Signal Box -->
+    <rect x="20" y="380" width="300" height="30" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5" rx="3" />
+    <text x="170" y="400" font-family="Arial" font-size="10" fill="#000000" text-anchor="middle" clip-path="url(#clip_trig0)">&slgen0_trig_text;</text>
+    <!-- Line from trigger box to Slope Gen 0 -->
+    <line x1="120" y1="380" x2="120" y2="355" stroke="#1565C0" stroke-width="1.5" marker-end="url(#arrowhead_blue)" />
+  </g>
+
+  <!-- Slope Gen 0 connection lines to DCSGs (conditional based on slgen0_map) -->
+  <g id="slgen0_connections">
+    <line x1="120" y1="310" x2="120" y2="115" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="4,2" style="display:&slgen0_dcsg0_display;"/>
+    <line x1="120" y1="115" x2="70" y2="115" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="4,2" style="display:&slgen0_dcsg0_display;"/>
+
+    <line x1="120" y1="310" x2="120" y2="175" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="4,2" style="display:&slgen0_dcsg1_display;"/>
+    <line x1="120" y1="175" x2="70" y2="175" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="4,2" style="display:&slgen0_dcsg1_display;"/>
+
+    <line x1="120" y1="310" x2="120" y2="235" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="4,2" style="display:&slgen0_dcsg2_display;"/>
+    <line x1="120" y1="235" x2="70" y2="235" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="4,2" style="display:&slgen0_dcsg2_display;"/>
+  </g>
+
+</svg>

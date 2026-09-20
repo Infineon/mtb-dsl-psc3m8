@@ -1,0 +1,36 @@
+var group__IfxSfr__TCPWM__GRP__CNT__struct =
+[
+    [ "IfxSfr_TCPWM_GRP_struct", "group__IfxSfr__TCPWM__GRP__struct.html", "group__IfxSfr__TCPWM__GRP__struct" ],
+    [ "Ifx_TCPWM_GRP_CNT", "group__IfxSfr__TCPWM__GRP__CNT__struct.html#structIfx__TCPWM__GRP__CNT", [
+      [ "CTRL", "group__IfxSfr__TCPWM__struct.html#gaf2235719049b61969ddd7fbba9253096", null ],
+      [ "STATUS", "group__IfxSfr__TCPWM__struct.html#ga58ddfecb19ef26e94de0febece5f0a1d", null ],
+      [ "COUNTER", "group__IfxSfr__TCPWM__struct.html#ga96cd7f5bd3411fb0b7336a11bae27dee", null ],
+      [ "reserved_C", "group__IfxSfr__TCPWM__struct.html#gac1cd21d41dda982655ef49bad2f36475", null ],
+      [ "CC0", "group__IfxSfr__TCPWM__struct.html#gaaa0c6128d89696ba32ebff058ffbe479", null ],
+      [ "CC0_BUFF", "group__IfxSfr__TCPWM__struct.html#gac175209eb55b0927fb5c0f4a28ce43aa", null ],
+      [ "reserved_18", "group__IfxSfr__TCPWM__struct.html#ga23928209637e0d2a26530a294add8eaa", null ],
+      [ "PERIOD", "group__IfxSfr__TCPWM__struct.html#ga8799944056522450762a8f2c9e018e48", null ],
+      [ "PERIOD_BUFF", "group__IfxSfr__TCPWM__struct.html#ga39bdfb193bc3b96da38cfef7645d1507", null ],
+      [ "reserved_28", "group__IfxSfr__TCPWM__struct.html#gaef6aeb5e4f555b4e2819f3a2cf53ee88", null ],
+      [ "DT", "group__IfxSfr__TCPWM__struct.html#ga3f6333e8fa04630142f7be8f4f4f6519", null ],
+      [ "DT_BUFF", "group__IfxSfr__TCPWM__struct.html#gacded213a7bbe86779ef9159117d5c4e5", null ],
+      [ "PS", "group__IfxSfr__TCPWM__struct.html#ga56d8786c29e271c4e352beb701cbf37f", null ],
+      [ "reserved_3C", "group__IfxSfr__TCPWM__struct.html#gae35a83a175d55f4aa3bafbf9ccc5a4a8", null ],
+      [ "TR_CMD", "group__IfxSfr__TCPWM__struct.html#ga6ec17520cbf7dac624894fcfbb9ef2fa", null ],
+      [ "TR_IN_SEL0", "group__IfxSfr__TCPWM__struct.html#gab29c6682c7889471aa7889a3e58b104a", null ],
+      [ "TR_IN_SEL1", "group__IfxSfr__TCPWM__struct.html#gadc5469d593db53c75ab1f7e401ebf328", null ],
+      [ "TR_IN_EDGE_SEL", "group__IfxSfr__TCPWM__struct.html#gaaa0c71f03849e6089dea1b4a8198e79c", null ],
+      [ "TR_PWM_CTRL", "group__IfxSfr__TCPWM__struct.html#ga748b57cfbc42247a9ee545e86dbc5e72", null ],
+      [ "TR_OUT_SEL", "group__IfxSfr__TCPWM__struct.html#ga1e43cb38e0a3e41832ae748550663c0b", null ],
+      [ "reserved_58", "group__IfxSfr__TCPWM__struct.html#ga4025d2be4ef6eaf8d694c937a97fc3fb", null ],
+      [ "INTR", "group__IfxSfr__TCPWM__struct.html#ga0f964d165e3f14403580aa8e51301fab", null ],
+      [ "INTR_SET", "group__IfxSfr__TCPWM__struct.html#gaf168e0b30238dfc918f211c57183c3f3", null ],
+      [ "INTR_MASK", "group__IfxSfr__TCPWM__struct.html#gacc49676777f7c2a7dcf3bb6eebff4f60", null ],
+      [ "INTR_MASKED", "group__IfxSfr__TCPWM__struct.html#gac821fe06aaa9f8301ae4cdc2b3f976ed", null ],
+      [ "reserved_80", "group__IfxSfr__TCPWM__struct.html#gaddec4e56f97ee7e2b182f89285293f0b", null ],
+      [ "TR_ONE_SYNC_BYPASS", "group__IfxSfr__TCPWM__struct.html#ga8e3a0cf7b7eda4f08350013dca5b4291", null ],
+      [ "reserved_A8", "group__IfxSfr__TCPWM__struct.html#ga060e84a158214fedaae04f633aeaa2b6", null ],
+      [ "CTRL2", "group__IfxSfr__TCPWM__struct.html#ga8a5c974496c257e145e56ad3890481c6", null ],
+      [ "reserved_B8", "group__IfxSfr__TCPWM__struct.html#gadb5ee872c0e0bacc95744935a28b8782", null ]
+    ] ]
+];

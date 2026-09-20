@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['ramc_20address_0',['RAMC address',['../group__IfxSfr__RAMC__Registers__Cfg.html',1,'']]],
+  ['ramc_20baseaddress_1',['RAMC BaseAddress',['../group__IfxSfr__RAMC__Registers__Cfg__BaseAddress.html',1,'']]],
+  ['ramc_20registers_2',['RAMC Registers',['../group__IfxSfr__RAMC__Registers.html',1,'']]],
+  ['ramc_5fmpc_20struct_3',['RAMC_MPC Struct',['../group__IfxSfr__RAMC__MPC__struct.html',1,'']]],
+  ['ramc_5fppu_20address_4',['RAMC_PPU address',['../group__IfxSfr__RAMC__PPU__Registers__Cfg.html',1,'']]],
+  ['ramc_5fppu_20baseaddress_5',['RAMC_PPU BaseAddress',['../group__IfxSfr__RAMC__PPU__Registers__Cfg__BaseAddress.html',1,'']]],
+  ['ramc_5fppu_20registers_6',['RAMC_PPU Registers',['../group__IfxSfr__RAMC__PPU__Registers.html',1,'']]],
+  ['ramc_5fppu_20struct_7',['RAMC_PPU Struct',['../group__IfxSfr__RAMC__PPU__struct.html',1,'']]],
+  ['random_20number_20generation_28trng_29_8',['Random Number Generation(TRNG)',['../group__group__cryptolite__lld__random__number.html',1,'']]],
+  ['register_20unions_9',['Register unions',['../group__IfxSfr__BACKUP__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__CANFD__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__CM33__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__CPUSS__PPU__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__CPUSS__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__CPUSS__SL__CTL__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__CRYPTOLITE__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__DEBUG600__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__DW__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__FAULT__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__FLASHC__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__GPIO__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__HSIOM__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__ICACHE__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__IPC__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__LPCOMP__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__MS__CTL__2__1__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__MXAES__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__MXCM33__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__MXWOUND__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__PERI__PCLK__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__PERI__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__PPC__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__PPCA__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__PROMC__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__PWRMODE__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__RAMC__PPU__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__RAMC__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__SCB__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__SFLASH__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__SRSS__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__SVGS__Registers__union.html',1,'(Global Namespace)'],['../group__IfxSfr__TCPWM__Registers__union.html',1,'(Global Namespace)']]],
+  ['regulated_20output_20voltage_20level_20_28voh_29_20and_20input_20buffer_20trip_2dpoint_20of_20an_20sio_20pair_10',['Regulated output voltage level (Voh) and input buffer trip-point of an SIO pair',['../group__group__gpio__sioVoh.html',1,'']]],
+  ['reset_20cause_11',['Reset cause',['../group__group__syslib__macros__reset__cause.html',1,'']]],
+  ['result_20codes_12',['Result Codes',['../group__group__hal__results.html',1,'']]],
+  ['result_20type_13',['Result Type',['../group__group__result.html',1,'']]],
+  ['rtc_20_20_20_20_20_20_20_20_20_20_28real_2dtime_20clock_29_14',['RTC          (Real-Time Clock)',['../group__group__rtc.html',1,'']]],
+  ['rtc_20_28real_20time_20clock_29_15',['RTC (Real Time Clock)',['../group__group__hal__impl__rtc.html',1,'']]],
+  ['rtc_20_28real_2dtime_20clock_29_16',['RTC (Real-Time Clock)',['../group__group__hal__rtc.html',1,'']]],
+  ['rtc_20hal_20results_17',['RTC HAL Results',['../group__group__hal__results__rtc.html',1,'']]],
+  ['rtc_20interrupt_20sources_18',['RTC Interrupt sources',['../group__group__rtc__macros__interrupts.html',1,'']]],
+  ['rtc_20srf_20_20_20_20_20_20_28rtc_20secure_20request_20framework_20—_20not_20supported_20in_20es100_29_19',['RTC SRF      (RTC Secure Request Framework — not supported in ES100)',['../group__group__rtc__srf.html',1,'']]],
+  ['rtc_20status_20definitions_20',['RTC Status definitions',['../group__group__rtc__busy__status.html',1,'']]],
+  ['rx_20interrupt_20masks_21',['RX Interrupt masks',['../group__group__canfd__rx__interrupt__masks.html',1,'']]],
+  ['rx_20interrupt_20statuses_22',['RX Interrupt Statuses',['../group__group__scb__common__macros__rx__intr.html',1,'']]]
+];

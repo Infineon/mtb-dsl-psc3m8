@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!DOCTYPE svgdiagram
+[
+<!ENTITY bankSel_blockColor "#ffffff">
+<!ENTITY bankSel_lineColor "#000000">
+<!ENTITY bankSelSigA_lineColor "#000000">
+<!ENTITY bankSelSigB_lineColor "#000000">
+<!ENTITY bankSelSigA_textColor "#ffffff">
+<!ENTITY bankSelSigB_textColor "#000000">
+<!ENTITY srcInSigC_lineColor "#000000">
+<!ENTITY srcInSigD_lineColor "#000000">
+<!ENTITY srcInSigC_textColor "#000000">
+<!ENTITY srcInSigD_textColor "#000000">
+<!ENTITY puSrcIn_blockColor "#ffffff">
+<!ENTITY puSrcIn_lineColor "#000000">
+<!ENTITY qualIn_blockColor "#ffffff">
+<!ENTITY qualIn_lineColor "#000000">
+<!ENTITY qualIn_textColor "#000000">
+<!ENTITY polInv_lineColor "#000000">
+<!ENTITY polInv_textColor "#000000">
+<!ENTITY polInv_blockColor "#ffffff">
+<!ENTITY bankSelSigA_text " ">
+<!ENTITY bankSelSigB_text " ">
+<!ENTITY srcInSigC_Text " ">
+<!ENTITY srcInSigD_Text " ">
+<!ENTITY qualIn_Text " ">
+<!ENTITY comboEn_blockColor "#ffffff">
+<!ENTITY comboEn_lineColor "#000000">
+<!ENTITY comboEn_textColor "#000000">
+]
+>
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="combo_re.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.9578168"
+     inkscape:cx="404.78762"
+     inkscape:cy="545.76097"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer1154" />
+  <defs
+     id="defs1">
+    <marker
+       id="endMarker53-3"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline48-3" />
+    </marker>
+    <marker
+       id="endMarker53-3-5"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline48-3-6" />
+    </marker>
+    <marker
+       id="endMarker53-3-8"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline48-3-4" />
+    </marker>
+    <marker
+       id="endMarker64-9"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline66-0" />
+    </marker>
+    <marker
+       id="endMarker64-9-5"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline66-0-2" />
+    </marker>
+    <marker
+       id="endMarker64-9-9"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline66-0-7" />
+    </marker>
+    <marker
+       id="endMarker64-9-5-2"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline66-0-2-4" />
+    </marker>
+    <marker
+       id="endMarker64-9-57-2-8"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline66-0-1-0-7" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="Layer1154"
+       transform="matrix(0.31655723,0,0,0.2901,-202.38226,4.6171025)"
+       style="stroke-width:1.37114;stroke-dasharray:none">
+      <g
+         id="Layer1155"
+         transform="matrix(0.81686902,0,0,0.89526974,188.71535,118.95914)"
+         style="mix-blend-mode:lighten;stroke-width:1.37114;stroke-dasharray:none">
+        <path
+           d="M 773.78724,733.15502 H 1197.2452 V 103.36285 H 773.78724 Z"
+           style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.92938;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           id="path1" />
+        <path
+           d="M 655.9084,602.6144 H 808.70827"
+           style="fill:none;stroke:&qualIn_lineColor;;stroke-width:1.15763;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;marker-end:url(#endMarker64-9-57-2-8)"
+           id="path67-8-5-3" />
+        <path
+           d="M 1028.3582,340.51384 V 441.39247 H 972.92914"
+           style="fill:none;stroke:&puSrcIn_lineColor;;stroke-width:1.59482;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none"
+           id="path8-1" />
+        <path
+           d="M 1094.5896,341.33151 V 604.22957 H 973.60873"
+           style="fill:none;stroke:&qualIn_lineColor;;stroke-width:1.68566;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none"
+           id="path8-1-3" />
+        <path
+           d="M 1029.0167,297.06364 V 221.46033 H 972.14221"
+           style="fill:none;stroke:&bankSel_lineColor;;stroke-width:1.39801;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none"
+           id="path8-1-4" />
+        <g
+           id="Layer1156-4-8-9-9"
+           transform="matrix(1.3028142,0,0,0.72011479,-42.826657,257.15792)">
+          <g
+             id="Layer1157-9-3-5-4">
+            <path
+               d="m 912.9171,59.3701 v 56.6929 h 28.3464 V 59.3701 Z"
+               style="fill:&polInv_blockColor;;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round"
+               id="path3-4-9-9-1" />
+            <path
+               d="m 912.9171,59.3701 v 56.6929 h 28.3464 V 59.3701 Z"
+               style="fill:none;stroke:#000000;stroke-width:1.70344;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+               id="path4-0-7-2-59" />
+          </g>
+        </g>
+        <text
+           x="1211.8254"
+           y="310.99619"
+           id="text5-6-4-3-9-4"
+           style="font-size:18.6261px;mix-blend-mode:normal;stroke-width:1.64995;stroke-dasharray:none"
+           transform="scale(0.95729929,1.0446054)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="#000000"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan5-9-1-6-4-3"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.6261px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.64995;stroke-dasharray:none">+</tspan></text>
+        <g
+           id="Layer1156-4-8-9-2"
+           transform="matrix(1.3028142,0,0,0.72011479,-113.53438,280.47395)">
+          <g
+             id="Layer1157-9-3-5-2">
+            <path
+               d="m 912.9171,59.3701 v 56.6929 h 28.3464 V 59.3701 Z"
+               style="fill:&qualIn_blockColor;;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round"
+               id="path3-4-9-9-9" />
+            <path
+               d="m 912.9171,59.3701 v 56.6929 h 28.3464 V 59.3701 Z"
+               style="fill:none;stroke:#000000;stroke-width:1.70344;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+               id="path4-0-7-2-3" />
+          </g>
+        </g>
+        <text
+           x="1137.1138"
+           y="310.10577"
+           id="text5-6-2-1"
+           style="font-size:16.2978px;mix-blend-mode:normal;stroke-width:1.64995;stroke-dasharray:none"
+           transform="scale(0.95729929,1.0446054)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="#000000"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan5-9-7-8"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.2978px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.64995;stroke-dasharray:none">&amp;</tspan></text>
+        <path
+           d="m 1047.9814,318.72314 h 16.151"
+           style="fill:none;stroke:&comboEn_lineColor;;stroke-width:1.94674;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;marker-end:url(#endMarker53-3)"
+           id="path49-4" />
+        <path
+           d="m 1185.4156,318.83927 h 49.8239"
+           style="fill:none;stroke:&comboEn_lineColor;;stroke-width:1.92938;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;marker-end:url(#endMarker53-3-5)"
+           id="path49-4-3" />
+        <path
+           d="M 627.74535,185.01143 H 808.49448"
+           style="fill:none;stroke:&bankSelSigA_lineColor;;stroke-width:1.18457;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#endMarker64-9)"
+           id="path67" />
+        <text
+           x="650.97656"
+           y="145.52283"
+           id="text67"
+           style="font-size:16.2978px;stroke-width:1.57006"
+           transform="scale(0.94046702,1.0633015)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="&bankSelSigA_textColor;"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan67"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.2978px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.57006">&bankSelSigA_text;</tspan></text>
+        <text
+           x="665.57635"
+           y="166.76781"
+           id="text67-6"
+           style="font-size:16.2978px;stroke-width:1.57006"
+           transform="scale(0.94046702,1.0633015)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="&bankSelSigA_textColor;"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan67-7"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.2978px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.57006">(SIGNAL A)</tspan></text>
+        <path
+           d="m 627.74614,262.90632 h 180.951"
+           style="fill:none;stroke:&bankSelSigB_lineColor;;stroke-width:1.18536;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#endMarker64-9-5)"
+           id="path67-0" />
+        <text
+           x="652.25024"
+           y="219.09021"
+           id="text67-4"
+           style="font-size:16.2978px;stroke-width:1.57006"
+           transform="scale(0.94046702,1.0633015)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="&bankSelSigB_textColor;"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan67-0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.2978px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.57006">&bankSelSigB_text;</tspan></text>
+        <text
+           x="666.07257"
+           y="240.33511"
+           id="text67-6-5"
+           style="font-size:16.2978px;stroke-width:1.57006"
+           transform="scale(0.94046702,1.0633015)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="&bankSelSigB_textColor;"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan67-7-0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.2978px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.57006">(SIGNAL B)</tspan></text>
+        <path
+           d="m 1115.0411,318.71952 h 16.7052"
+           style="fill:none;stroke:&comboEn_lineColor;;stroke-width:2.52391;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;marker-end:url(#endMarker53-3-8)"
+           id="path49-4-5" />
+        <g
+           id="Layer1156-4-8-9"
+           transform="matrix(1.3028142,0,0,0.72011479,-180.25981,255.56185)">
+          <g
+             id="Layer1157-9-3-5"
+             style="stroke-width:1.71026;stroke-dasharray:none">
+            <path
+               d="m 912.9171,59.3701 v 56.6929 h 28.3464 V 59.3701 Z"
+               style="fill:&comboEn_blockColor;;fill-rule:evenodd;stroke-width:1.71026;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+               id="path3-4-9-9" />
+            <path
+               d="m 912.9171,59.3701 v 56.6929 h 28.3464 V 59.3701 Z"
+               style="fill:none;stroke:#000000;stroke-width:1.71026;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+               id="path4-0-7-2" />
+          </g>
+        </g>
+        <text
+           x="1068.2814"
+           y="310.65796"
+           id="text5-6-4-3-9"
+           style="font-size:18.6261px;mix-blend-mode:normal;stroke-width:1.64995;stroke-dasharray:none"
+           transform="scale(0.95729929,1.0446054)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="#000000"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan5-9-1-6-4"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.6261px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.64995;stroke-dasharray:none">+</tspan></text>
+        <path
+           d="M 627.74535,392.95686 H 808.49448"
+           style="fill:none;stroke:&srcInSigC_lineColor;;stroke-width:1.18457;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#endMarker64-9-9)"
+           id="path67-6" />
+        <text
+           x="650.11884"
+           y="341.08835"
+           id="text67-68"
+           style="font-size:16.2978px;stroke-width:1.57006;stroke-dasharray:none"
+           transform="scale(0.94046702,1.0633015)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="&srcInSigC_textColor;"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan67-79"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.2978px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.57006">&srcInSigC_Text;</tspan></text>
+        <text
+           x="665.71863"
+           y="362.3334"
+           id="text67-6-6"
+           style="font-size:16.2978px;stroke-width:1.57006;stroke-dasharray:none"
+           transform="scale(0.94046702,1.0633015)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="&srcInSigC_textColor;"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan67-7-5"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.2978px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.57006">(SIGNAL C)</tspan></text>
+        <path
+           d="M 627.72745,470.85175 H 808.47658"
+           style="fill:none;stroke:&srcInSigD_lineColor;;stroke-width:1.18457;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#endMarker64-9-5-2)"
+           id="path67-0-0" />
+        <text
+           x="652.39252"
+           y="414.65604"
+           id="text67-4-2"
+           style="font-size:16.2978px;stroke-width:1.57006;stroke-dasharray:none"
+           transform="scale(0.94046702,1.0633015)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="&srcInSigD_textColor;"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan67-0-0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.2978px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.57006">&srcInSigD_Text;</tspan></text>
+        <text
+           x="666.21484"
+           y="435.90094"
+           id="text67-6-5-7"
+           style="font-size:16.2978px;stroke-width:1.57006;stroke-dasharray:none"
+           transform="scale(0.94046702,1.0633015)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="&srcInSigD_textColor;"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan67-7-0-7"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.2978px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.57006">(SIGNAL D)</tspan></text>
+        <text
+           x="652.09113"
+           y="558.05719"
+           id="text67-6-3-6-2"
+           style="font-size:16.276px;stroke-width:1.14355"
+           transform="scale(0.93902851,1.0649304)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="&qualIn_textColor;"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan67-7-2-3-9"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.276px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.14355">&qualIn_Text;</tspan></text>
+        <text
+           x="652.09528"
+           y="653.16766"
+           id="text67-6-3-6-2-6"
+           style="font-size:16.276px;stroke-width:1.14355;stroke-dasharray:none"
+           transform="scale(0.93902851,1.0649304)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="&polInv_textColor;"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan67-7-2-3-9-2"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.276px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.14355">POL_INV</tspan></text>
+        <text
+           x="1329.9316"
+           y="304.59879"
+           id="text67-6-3-6-2-6-5"
+           style="font-size:16.276px;stroke-width:1.14355;stroke-dasharray:none"
+           transform="scale(0.93902851,1.0649304)"><tspan
+             font-family="Calibri"
+             font-size="12px"
+             fill="&comboEn_textColor;"
+             fill-opacity="1"
+             stroke-opacity="1"
+             id="tspan67-7-2-3-9-2-7"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.276px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.14355">EVOUT</tspan></text>
+      </g>
+      <g
+         id="Layer1156-4"
+         transform="matrix(4.4343749,0,0,2.0059463,-3192.0056,142.34505)">
+        <g
+           id="Layer1157-9">
+          <path
+             d="m 912.9171,59.3701 v 56.6929 h 28.3464 V 59.3701 Z"
+             style="fill:&bankSel_blockColor;;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round"
+             id="path3-4" />
+          <path
+             d="m 912.9171,59.3701 v 56.6929 h 28.3464 V 59.3701 Z"
+             style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+             id="path4-0" />
+        </g>
+      </g>
+      <text
+         x="1001.076"
+         y="272.39023"
+         id="text67-0"
+         style="font-size:13.9373px;stroke-width:1.34267;stroke-dasharray:none"
+         transform="scale(0.89834427,1.113159)"><tspan
+           font-family="Calibri"
+           font-size="12px"
+           fill="#000000"
+           fill-opacity="1"
+           stroke-opacity="1"
+           id="tspan67-1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.9373px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.34267">BANK</tspan></text>
+      <text
+         x="996.51569"
+         y="292.92841"
+         id="text67-9"
+         style="font-size:13.9373px;stroke-width:1.34267;stroke-dasharray:none"
+         transform="scale(0.89834427,1.113159)"><tspan
+           font-family="Calibri"
+           font-size="12px"
+           fill="#000000"
+           fill-opacity="1"
+           stroke-opacity="1"
+           id="tspan67-2"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.9373px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.34267">SELECT</tspan></text>
+      <g
+         id="Layer1156-4-8"
+         transform="matrix(4.4332196,0,0,2.0059497,-3190.9512,331.9464)"
+         style="stroke-width:1.37114;stroke-dasharray:none">
+        <g
+           id="Layer1157-9-5">
+          <path
+             d="m 912.9171,59.3701 v 56.6929 h 28.3464 V 59.3701 Z"
+             style="fill:&puSrcIn_blockColor;;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round"
+             id="path3-4-9" />
+          <path
+             d="m 912.9171,59.3701 v 56.6929 h 28.3464 V 59.3701 Z"
+             style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+             id="path4-0-5" />
+        </g>
+      </g>
+      <text
+         x="991.9563"
+         y="446.96716"
+         id="text67-68-7"
+         style="font-size:13.9373px;stroke-width:1.34267;stroke-dasharray:none"
+         transform="scale(0.89834427,1.113159)"><tspan
+           font-family="Calibri"
+           font-size="12px"
+           fill="#000000"
+           fill-opacity="1"
+           stroke-opacity="1"
+           id="tspan67-79-1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.9373px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.34267">PU INPUT</tspan></text>
+      <text
+         x="968.8158"
+         y="466.60233"
+         id="text67-6-6-3"
+         style="font-size:13.9373px;stroke-width:1.34267;stroke-dasharray:none"
+         transform="scale(0.89834427,1.113159)"><tspan
+           font-family="Calibri"
+           font-size="12px"
+           fill="#000000"
+           fill-opacity="1"
+           stroke-opacity="1"
+           id="tspan67-7-5-6"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.9373px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.34267">SOURCE SELECT</tspan></text>
+      <g
+         id="Layer1156-4-8-1"
+         transform="matrix(4.4356827,0,0,1.0943237,-3193.4572,564.42394)"
+         style="stroke-width:1.37114;stroke-dasharray:none">
+        <g
+           id="Layer1157-9-5-9">
+          <path
+             d="m 912.9171,59.3701 v 56.6929 h 28.3464 V 59.3701 Z"
+             style="fill:&qualIn_blockColor;;fill-rule:evenodd;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round"
+             id="path3-4-9-6" />
+          <path
+             d="m 912.9171,59.3701 v 56.6929 h 28.3464 V 59.3701 Z"
+             style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+             id="path4-0-5-8" />
+        </g>
+      </g>
+      <text
+         x="989.03601"
+         y="595.87341"
+         id="text67-9-5"
+         style="font-size:13.9373px;stroke-width:1.34267;stroke-dasharray:none"
+         transform="scale(0.89834427,1.113159)"><tspan
+           font-family="Calibri"
+           font-size="12px"
+           fill="#000000"
+           fill-opacity="1"
+           stroke-opacity="1"
+           id="tspan67-2-0"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.9373px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1.34267">QUALIFIER</tspan></text>
+      <g
+         id="Layer1162-6-8-2"
+         transform="matrix(1.8277845,0,0,0.18613612,-594.86106,607.90531)" />
+      <path
+         d="m 1141.3742,424.93498 c -0.2347,108.525 0.8725,220.34481 -0.8125,325.30917 H 726.23884"
+         style="fill:none;stroke:&polInv_lineColor;;stroke-width:1.45202;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none"
+         id="path8-1-7"
+         sodipodi:nodetypes="ccc" />
+    </g>
+  </g>
+</svg>

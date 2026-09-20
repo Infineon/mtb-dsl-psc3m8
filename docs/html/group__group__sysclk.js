@@ -1,0 +1,28 @@
+var group__group__sysclk =
+[
+    [ "Alternative High-Frequency Clock (ALTHF)", "group__group__sysclk__alt__hf.html", "group__group__sysclk__alt__hf" ],
+    [ "Backup Domain Clock", "group__group__sysclk__clk__bak.html", "group__group__sysclk__clk__bak" ],
+    [ "Clock Measurement", "group__group__sysclk__calclk.html", "group__group__sysclk__calclk" ],
+    [ "Clock Path Source", "group__group__sysclk__path__src.html", "group__group__sysclk__path__src" ],
+    [ "Clock Trim (ILO, PILO)", "group__group__sysclk__trim.html", "group__group__sysclk__trim" ],
+    [ "External Clock Source (EXTCLK)", "group__group__sysclk__ext.html", "group__group__sysclk__ext" ],
+    [ "External Crystal Oscillator (ECO)", "group__group__sysclk__eco.html", "group__group__sysclk__eco" ],
+    [ "Frequency Locked Loop (FLL)", "group__group__sysclk__fll.html", "group__group__sysclk__fll" ],
+    [ "General Enumerated Types", "group__group__sysclk__enums.html", "group__group__sysclk__enums" ],
+    [ "High-Frequency Clocks", "group__group__sysclk__clk__hf.html", "group__group__sysclk__clk__hf" ],
+    [ "Internal High Frequency(IHO) Clock", "group__group__sysclk__iho.html", "group__group__sysclk__iho" ],
+    [ "Internal Low-Speed Oscillator (ILO)", "group__group__sysclk__ilo.html", "group__group__sysclk__ilo" ],
+    [ "Internal Main Oscillator(IMO) Clock", "group__group__sysclk__imo.html", "group__group__sysclk__imo" ],
+    [ "Low Power Callback", "group__group__sysclk__pm.html", "group__group__sysclk__pm" ],
+    [ "Low-Frequency Clock", "group__group__sysclk__clk__lf.html", "group__group__sysclk__clk__lf" ],
+    [ "Macros", "group__group__sysclk__macros.html", "group__group__sysclk__macros" ],
+    [ "Medium-Frequency Clock (ClkMf)", "group__group__sysclk__mf.html", "group__group__sysclk__mf" ],
+    [ "Peripheral Group(MMIO Group) Controls", "group__group__sysclk__clk__peripheral__group.html", "group__group__sysclk__clk__peripheral__group" ],
+    [ "Peripherals Clock Dividers", "group__group__sysclk__clk__peripheral.html", "group__group__sysclk__clk__peripheral" ],
+    [ "Phase Locked Loop (PLL)", "group__group__sysclk__pll.html", "group__group__sysclk__pll" ],
+    [ "Power Clock", "group__group__sysclk__clk__pwr.html", "group__group__sysclk__clk__pwr" ],
+    [ "Precision Internal Low-Speed Oscillator (PILO)", "group__group__sysclk__pilo.html", "group__group__sysclk__pilo" ],
+    [ "Pump Clock", "group__group__sysclk__clk__pump.html", "group__group__sysclk__clk__pump" ],
+    [ "Slow Clock", "group__group__sysclk__clk__slow.html", "group__group__sysclk__clk__slow" ],
+    [ "Watch Crystal Oscillator (WCO)", "group__group__sysclk__wco.html", "group__group__sysclk__wco" ]
+];

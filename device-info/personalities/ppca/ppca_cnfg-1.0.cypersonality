@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PersonalityTemplate id="mxs40ppca-cnfg" name="mxs40ppca-cnfg" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v10">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.ppca_cnfg" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers>
+    <ExposedMember key="cpu1Enabled" paramId="cpu1Enable" />
+    <ExposedMember key="ppcaOutSelEn" paramId="ppcaOutSelEn" />
+    <ExposedMember key="ppcaOutSel" paramId="ppcaOutSel" />
+  </ExposedMembers>
+
+
+  <Parameters>
+
+    <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__cnfg.html" linkText="Open PPCA CNFG Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+
+    <ParamString id="ocean" name="ocean" group="Internal" default="#3b9b91" visible="false" editable="false" desc="" />
+    <ParamString id="berry" name="berry" group="Internal" default="#be3283" visible="false" editable="false" desc="" />
+    <ParamString id="grey" name="grey" group="Internal" default="#cccccc" visible="false" editable="false" desc="" />
+
+    <ParamBool id="dpslpRetentionEnable" name="Enable DeepSleep Retention" group="General" default="false" visible="true" editable="true" desc="This parameter enables/disables PPCA Deepsleep Retention "/>
+    <ParamBool id="clkShutDown" name="Enable Clock Shut Down" group="General" default="false" visible="true" editable="true" desc="This parameter enables/disables PPCA Clock Shut Down "/>
+    <ParamBool id="remapMem" name="Enable Remap Memory" group="General" default="false" visible="true" editable="true" desc="This parameter enables/disables PPCA BusMatrix Remap, when enabled reduced data memory is set and CPU1 will not have any memory allocated. CPU1 should be disabled. "/>
+    <ParamBool id="cpu0HRESPError" name="Enable CPU0 HRESP Error" group="General" default="false" visible="true" editable="true" desc="This parameter enables/disables CPU0 HRESP ERROR propagation as Fault Enable Control  "/>
+    <ParamBool id="cpu1HRESPError" name="Enable CPU1 HRESP Error" group="General" default="false" visible="`${hasBlock(&quot;ppca[0].cpuss_cnfg[0].mxcm33[1]&quot;)}`" editable="`${hasBlock(&quot;ppca[0].cpuss_cnfg[0].mxcm33[1]&quot;)}`" desc="This parameter enables/disables CPU1 HRESP ERROR propagation as Fault Enable Control  "/>
+    <ParamBool id="cpu1Enable" name="Enable CPU1" group="General" default="false" visible="`${!remapMem &amp;&amp; hasBlock(&quot;ppca[0].cpuss_cnfg[0].mxcm33[1]&quot;)}`" editable="`${!remapMem &amp;&amp; hasBlock(&quot;ppca[0].cpuss_cnfg[0].mxcm33[1]&quot;)}`" desc="This parameter enables/disables CPU1 Clock"/>
+    <ParamString id="cpu1_fill" name="cpu1_fill" group="Internal" default="`${(cpu1Enable) ? berry : grey}`" visible="false" editable="false" desc="" />
+    <ParamString id="m0_fill" name="m0_fill" group="Internal" default="`${ocean}`" visible="false" editable="false" desc="" />
+    <ParamString id="m1_fill" name="m1_fill" group="Internal" default="`${ocean}`" visible="false" editable="false" desc="" />
+    <ParamString id="m2_fill" name="m2_fill" group="Internal" default="`${(cpu1Enable) ? berry : ocean}`" visible="false" editable="false" desc="" />
+    <ParamString id="m3_fill" name="m3_fill" group="Internal" default="`${(cpu1Enable) ? berry : ocean}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="pwmSS0"
+                 name="PWM SS0"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="PWM SS0 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="pwmSS0Fill" name="pwmSS0_fill" group="Internal" default="`${(pwmSS0 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="pwmSS1"
+                 name="PWM SS1"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="PWM SS1 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="pwmSS1Fill" name="pwmSS1_fill" group="Internal" default="`${(pwmSS1 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="pwmSS2"
+                 name="PWM SS2"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="PWM SS2 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="pwmSS2Fill" name="pwmSS2_fill" group="Internal" default="`${(pwmSS2 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="pwmSS3"
+                 name="PWM SS3"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="PWM SS3 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="pwmSS3Fill" name="pwmSS3_fill" group="Internal" default="`${(pwmSS3 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="hwfilt3p3zSS0"
+                 name="HWFILT3P3Z SS0"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="HWFILT3P3Z SS0 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="hwfilt3p3zSS0Fill" name="hwfilt3p3zSS0_fill" group="Internal" default="`${(hwfilt3p3zSS0 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="hwfilt3p3zSS1"
+                 name="HWFILT3P3Z SS1"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="HWFILT3P3Z SS1 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="hwfilt3p3zSS1Fill" name="hwfilt3p3zSS1_fill" group="Internal" default="`${(hwfilt3p3zSS1 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="adcMirror"
+                 name="ADC Mirror"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="ADC Mirror Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="adcMirrorFill" name="adcMirror_fill" group="Internal" default="`${(adcMirror eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="clb"
+                 name="CLB"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="CLB Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="clbFill" name="clb_fill" group="Internal" default="`${(clb eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="cordicSS0"
+                 name="Cordic SS0"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="CORDIC SS0 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="cordicSS0Fill" name="cordicSS0_fill" group="Internal" default="`${(cordicSS0 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="cordicSS1"
+                 name="Cordic SS1"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="CORDIC SS1 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="cordicSS1Fill" name="cordicSS1_fill" group="Internal" default="`${(cordicSS1 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="adcGrp0"
+                 name="ADC Group 0"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="ADC Group 0 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="adcGrp0Fill" name="adcGrp0_fill" group="Internal" default="`${(adcGrp0 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="adcGrp1"
+                 name="ADC Group 1"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="ADC Group 1 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="adcGrp1Fill" name="adcGrp1_fill" group="Internal" default="`${(adcGrp1 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="adcGrp2"
+                 name="ADC Group 2"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="ADC Group 2 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="adcGrp2Fill" name="adcGrp2_fill" group="Internal" default="`${(adcGrp2 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="adcGrp3"
+                 name="ADC Group 3"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="ADC Group 3 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="adcGrp3Fill" name="adcGrp3_fill" group="Internal" default="`${(adcGrp3 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="dcsgGrp0"
+                 name="DCSG Group 0"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="DCSG Group 0 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="dcsgGrp0Fill" name="dcsgGrp0_fill" group="Internal" default="`${(dcsgGrp0 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="dcsgGrp1"
+                 name="DCSG Group 1"
+                 group="PPCA Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="DCSG Group 1 Assignment"
+                 default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+      <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+      <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="`${cpu1Enable}`"/>
+    </ParamChoice>
+    <ParamString id="dcsgGrp1Fill" name="dcsgGrp1_fill" group="Internal" default="`${(dcsgGrp1 eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+
+    <Repeat count="16">
+	  <ParamSignal port="ppssin_sel_src[$idx]" name="ppcain_sel_src[$idx]" group="PPCA_IN Configuration" visible="`${hasVisibleOption(&quot;ppssin_sel_src[$idx]&quot;)}`" desc="Source for PPCA IN configuration." canBeEmpty="true" >
+		  <Constraint type="ACCEPT" targetLocation="ioss\[\d+\]\.port\[\d+\]\.pin.*" valid="true" >
+			<Parameter id="DriveModes" severity="DEFAULT" reason="">
+			  <Fixed value="CY_GPIO_DM_HIGHZ" />
+			</Parameter>
+		  </Constraint>
+		  <Constraint type="ACCEPT" targetLocation="ioss\[\d+\]\.port\[\d+\]\.pin.*" valid="true" >
+			<Parameter id="DriveModes" severity="INFO" reason="The pin Drive Mode parameter does not match expected.">
+			  <Fixed value="CY_GPIO_DM_HIGHZ" />
+			</Parameter>
+		  </Constraint>
+		  <Constraint type="ACCEPT" targetLocation=".*" valid="true" />
+      </ParamSignal>
+      <ParamSignal port="ppssin_sel[$idx]" name="ppcain_sel[$idx]" visible="`${hasVisibleOption(&quot;ppssin_sel[$idx]&quot;)}`" canBeEmpty="true" group="PPCA_IN Configuration" desc="PPCA In configuration" />
+
+	  <ParamSignal port="tr_ppssin_sel_src[$idx]" name="tr_ppcain_sel_src[$idx]" group="PPCA_IN trigger Configuration" visible="`${hasVisibleOption(&quot;tr_ppssin_sel_src[$idx]&quot;)}`" desc="Source for PPCA_IN trigger configuration." canBeEmpty="true" >
+		  <Constraint type="ACCEPT" targetLocation="ioss\[\d+\]\.port\[\d+\]\.pin.*" valid="true" >
+			<Parameter id="DriveModes" severity="DEFAULT" reason="">
+			  <Fixed value="CY_GPIO_DM_HIGHZ" />
+			</Parameter>
+		  </Constraint>
+		  <Constraint type="ACCEPT" targetLocation="ioss\[\d+\]\.port\[\d+\]\.pin.*" valid="true" >
+			<Parameter id="DriveModes" severity="INFO" reason="The pin Drive Mode parameter does not match expected.">
+			  <Fixed value="CY_GPIO_DM_HIGHZ" />
+			</Parameter>
+		  </Constraint>
+		  <Constraint type="ACCEPT" targetLocation=".*" valid="true" />
+      </ParamSignal>
+      <ParamSignal port="tr_ppssin_sel[$idx]" name="tr_ppcain_sel[$idx]" visible="`${hasVisibleOption(&quot;tr_ppssin_sel[$idx]&quot;)}`" canBeEmpty="true" group="PPCA_IN trigger Configuration" desc="PPCA_IN trigger configuration" />
+
+    </Repeat>
+
+    <!-- PPCA OUT Config -->
+    <ParamBool id="ppcaOutSelEn" name="Enable PPCA Output Selector" group="PPCA_OUT Configuration" default="false" visible="true" editable="true" desc="This parameter enables/disables PPCA Output Selector."/>
+    <ParamChoice id="ppcaOutSel"
+                 name="PPCA Output Selector"
+                 group="PPCA_OUT Configuration"
+                 visible="`${ppcaOutSelEn}`"
+                 editable="true"
+                 desc="PPCA Output Selector"
+                 default="CY_PPCAOUT_TCPWM_OUTPUT">
+      <Entry name="TCPWM Output" value="CY_PPCAOUT_TCPWM_OUTPUT" visible="true"/>
+      <Entry name="CLB Output" value="CY_PPCAOUT_CLB_OUPTUT" visible="true"/>
+    </ParamChoice>
+    <!--Repeat count="52">
+      <ParamSignal port="tr_ppssout_sel[$idx]" name="tr_ppcaout_sel[$idx]" visible="`${(ppcaOutSelEn) &amp;&amp; (hasVisibleOption(&quot;tr_ppssout_sel[$idx]&quot;))}`" canBeEmpty="true" group="PPCA_OUT Configuration" desc="" />
+    </Repeat-->
+
+    <ParamRange id="puty1ResAlloc" name="puty1ResAlloc" group="Internal" default="`${isBlockUsed(&quot;ppca[0].epu[0]&quot;) ? getExposedMember(&quot;ppca[0].epu[0]&quot;, &quot;puty1ResAlloc&quot;) : 0}`" min="0" max="4294967295" resolution="1" visible="false" editable="false" desc="" />
+    <ParamRange id="puty2ResAlloc" name="puty2ResAlloc" group="Internal" default="`${isBlockUsed(&quot;ppca[0].epu[0]&quot;) ? getExposedMember(&quot;ppca[0].epu[0]&quot;, &quot;puty2ResAlloc&quot;) : 0}`" min="0" max="65535" resolution="1" visible="false" editable="false" desc="" />
+
+    <ParamImage id="mxs40ppca_diagram"
+                name="MXS40PPCA Subsystem"
+                group="PPCA Configuration"
+                desc=""
+                visible="true"
+                position="OUTSET"
+                default="`${cy_libs_path()}`/device-info/personalities/ppca/PPCA_Block_diagram.svg">
+    <Substitution name="cpu1_color" value="`${cpu1_fill}`"/>
+    <Substitution name="mem0_color" value="`${m0_fill}`"/>
+    <Substitution name="mem1_color" value="`${m1_fill}`"/>
+    <Substitution name="mem2_color" value="`${m2_fill}`"/>
+    <Substitution name="mem3_color" value="`${m3_fill}`"/>
+    <Substitution name="pwm_ss0_color" value="`${pwmSS0Fill}`"/>
+    <Substitution name="pwm_ss1_color" value="`${pwmSS1Fill}`"/>
+    <Substitution name="pwm_ss2_color" value="`${pwmSS2Fill}`"/>
+    <Substitution name="pwm_ss3_color" value="`${pwmSS3Fill}`"/>
+    <Substitution name="hw_fltr0_color" value="`${hwfilt3p3zSS0Fill}`"/>
+    <Substitution name="hw_fltr1_color" value="`${hwfilt3p3zSS1Fill}`"/>
+    <Substitution name="adc_mirror_color" value="`${adcMirrorFill}`"/>
+    <Substitution name="clb_color" value="`${clbFill}`"/>
+    <Substitution name="cordic_ss0_color" value="`${cordicSS0Fill}`"/>
+    <Substitution name="cordic_ss1_color" value="`${cordicSS1Fill}`"/>
+    <Substitution name="adc_ss0_color" value="`${adcGrp0Fill}`"/>
+    <Substitution name="adc_ss1_color" value="`${adcGrp1Fill}`"/>
+    <Substitution name="adc_ss2_color" value="`${adcGrp2Fill}`"/>
+    <Substitution name="adc_ss3_color" value="`${adcGrp3Fill}`"/>
+    <Substitution name="dcsg_ss0_color" value="`${dcsgGrp0Fill}`"/>
+    <Substitution name="dcsg_ss1_color" value="`${dcsgGrp1Fill}`"/>
+    </ParamImage>
+
+    <ParamString id="HF3Rsc" name="HF3Rsc" group="Internal" default="srss[0].clock[0].hfclk[3]" visible="false" editable="false" desc="" />
+    <ParamBool id="HF3Used" name="HF3Used" group="Internal" default="`${isBlockUsed(HF3Rsc)}`" visible="false" editable="false" desc="" />
+    <ParamRange id="HF3Freq" name="HF3Freq" group="Internal" default="`${HF3Used ? getExposedMember(HF3Rsc, &quot;frequency&quot;) : 0}`" min="0" max="400000000" resolution="1" visible="false" editable="false" desc="HF3 clock frequency used for PPCA" />
+
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+  </Parameters>
+  <DRCs>
+    <DRC type="ERROR" text="Enable Clock HF3 For PPCA." condition="`${!HF3Used}`">
+      <FixIt action="ENABLE_BLOCK" target="`${HF3Rsc}`" value="" valid="true" />
+    </DRC>
+    <DRC type="ERROR" text="CLK_HF3 frequency exceeds the maximum allowed 200 MHz for PPCA." condition="`${HF3Used &amp;&amp; (HF3Freq &gt; 200000000)}`" />
+  </DRCs>
+
+  <ConfigFirmware>
+
+    <ConfigInclude value="cy_ppca_cnfg.h" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_CNFG" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`CNFG_HW" value="PPCA_CNFG_CNFG" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_IRQ" value="ppca_cnfg_rdy_for_dslp_IRQn" public="true" include="true" />
+    <ConfigDefine name="CY_CFG_SYSCLK_PPCA" value="`${HF3Freq}`UL" public="true" include="true" />
+    <ConfigDefine name="PPCA_INPUT_SRC_SELECT$idx" value="$idx" public="true" include="`${hasConnection(&quot;ppssin_sel&quot;, $idx)}`" repeatCount="16" />
+    <ConfigDefine name="PPCA_TR_INPUT_SRC_SELECT$idx" value="$idx" public="true" include="`${hasConnection(&quot;tr_ppssin_sel&quot;, $idx)}`" repeatCount="16" />
+    <!--ConfigDefine name="PPCA_TR_OUTPUT_SRC_SELECT$idx" value="$idx" public="true" include="`${hasConnection(&quot;tr_ppssout_sel&quot;, $idx)}`" repeatCount="52" /-->
+
+    <ConfigStruct name="`${INST_NAME}`_controlConfig" type="cy_stc_ppca_control_config_t" const="`${inFlash}`"  public="true" include="true" >
+      <Member name="pwmSS0" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : pwmSS0}`" />
+      <Member name="pwmSS1" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : pwmSS1}`" />
+      <Member name="pwmSS2" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : pwmSS2}`" />
+      <Member name="pwmSS3" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : pwmSS3}`" />
+      <Member name="HWFILT3P3Z_SS0" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : hwfilt3p3zSS0}`" />
+      <Member name="HWFILT3P3Z_SS1" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : hwfilt3p3zSS1}`" />
+      <Member name="ADCMirror" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : adcMirror}`" />
+      <Member name="CLB" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : clb}`" />
+      <Member name="cordic0" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : cordicSS0}`" />
+      <Member name="cordic1" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : cordicSS1}`" />
+      <Member name="adcGroup0" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : adcGrp0}`" />
+      <Member name="adcGroup1" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : adcGrp1}`" />
+      <Member name="adcGroup2" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : adcGrp2}`" />
+      <Member name="adcGroup3" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : adcGrp3}`" />
+      <Member name="dcsgGroup0" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : dcsgGrp0}`" />
+      <Member name="dcsgGroup1" value="`${(!cpu1Enable) ? CY_ALLOCATE_PERIPHERAL_TO_CPU0 : dcsgGrp1}`" />
+    </ConfigStruct>
+
+    <ConfigStruct name="`${INST_NAME}`_ppcaOutConfig" type="cy_stc_ppca_cnfg_ppcaout_output_selector_t" const="`${inFlash}`" public="true" include="true" >
+      <Member name="outputSelSrc" value="`${ppcaOutSel}`" />
+      <Member name="enableOutputSel" value="`${ppcaOutSelEn}`" />
+    </ConfigStruct>
+
+    <ConfigStruct name="`${INST_NAME}`_config" type="cy_stc_ppca_cnfg_config_t" const="`${inFlash}`" public="true" include="true" >
+      <Member name="dpslpRetentionEnable" value="`${dpslpRetentionEnable}`" />
+      <Member name="clkShutDown" value="`${clkShutDown}`" />
+      <Member name="remapEnable" value="`${remapMem}`" />
+      <Member name="cpu0HRESPError" value="`${cpu0HRESPError}`" />
+      <Member name="cpu1HRESPError" value="`${cpu1HRESPError}`" />
+      <Member name="cpu0Enable" value="true" />
+      <Member name="cpu1Enable" value="`${cpu1Enable}`" />
+      <Member name="ctrl_cnfg" value="&amp;`${INST_NAME . &quot;_controlConfig&quot;}`" />
+      <Member name="puty1ResAlloc" value="`${puty1ResAlloc}`" />
+      <Member name="puty2ResAlloc" value="`${puty2ResAlloc}`" />
+      <Member name="ppcaout_cnfg" value="&amp;`${INST_NAME . &quot;_ppcaOutConfig&quot;}`" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_CNFG_Init(`${INST_NAME}`_HW, &amp;`${INST_NAME}`_config);" include="`${init}`" purpose="INITIALIZE" guard="!defined (COMPONENT_PPCA_DEVICE)" />
+
+  </ConfigFirmware>
+</PersonalityTemplate>

@@ -1,0 +1,27 @@
+var group__IfxSfr__PPC__Registers__BitfieldsMask =
+[
+    [ "IFX_PPC_CTL_RESP_CFG_LEN", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga49c844330cfbbb67a01d8212ba24968d", null ],
+    [ "IFX_PPC_CTL_RESP_CFG_MSK", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga9442d784c901b19acc4cfa20199fb48f", null ],
+    [ "IFX_PPC_CTL_RESP_CFG_OFF", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga17c67ab318b877cbda8843974574faa1", null ],
+    [ "IFX_PPC_LOCK_MASK_LOCK_MASK_LEN", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga3a189656170fe87ff4741d36c33e459f", null ],
+    [ "IFX_PPC_LOCK_MASK_LOCK_MASK_MSK", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga8eb7df211dd90bf942bb786e0583ef0c", null ],
+    [ "IFX_PPC_LOCK_MASK_LOCK_MASK_OFF", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#gaafcb38820be83d11a87edbef89e27440", null ],
+    [ "IFX_PPC_PC_MASK_PC_MASK_LEN", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#gab894e40a67a18fb85d7599b3597825ca", null ],
+    [ "IFX_PPC_PC_MASK_PC_MASK_MSK", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga6f187c82028233a298a1b25539d8d6b3", null ],
+    [ "IFX_PPC_PC_MASK_PC_MASK_OFF", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#gadfe53a01b03bb35d189fa2d1a965c992", null ],
+    [ "IFX_PPC_NS_ATT_NS_LEN", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga8d35211f27e2284afe252cf07851d001", null ],
+    [ "IFX_PPC_NS_ATT_NS_MSK", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga94dd959afb05f2a716d043722b17fe9b", null ],
+    [ "IFX_PPC_NS_ATT_NS_OFF", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#gac87f2f12d32056929fbf8bd7a1e03c07", null ],
+    [ "IFX_PPC_S_P_ATT_S_P_LEN", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#gac00f41e15ec4a659c4ff4bd24cff1c89", null ],
+    [ "IFX_PPC_S_P_ATT_S_P_MSK", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga7e7b5e4e4d92e53fca2e341fc327e917", null ],
+    [ "IFX_PPC_S_P_ATT_S_P_OFF", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga3877db7691eb370b60bbd60fc17bb371", null ],
+    [ "IFX_PPC_NS_P_ATT_NS_P_LEN", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga76e23632b0f20efae9d1fb0a8750f15e", null ],
+    [ "IFX_PPC_NS_P_ATT_NS_P_MSK", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga32d4c6a8297e33f9d2423db86498e887", null ],
+    [ "IFX_PPC_NS_P_ATT_NS_P_OFF", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#gac5b81e1f636813bd3f88af60f14970d8", null ],
+    [ "IFX_PPC_R_ADDR_R_ADDR_R_ADDR_LEN", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga2806a629b63aca8016e7134bc87c2087", null ],
+    [ "IFX_PPC_R_ADDR_R_ADDR_R_ADDR_MSK", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#gaa83e2287ef7a66ef6444c93da72a3182", null ],
+    [ "IFX_PPC_R_ADDR_R_ADDR_R_ADDR_OFF", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga0c44227628025a6c4d7b993929baf679", null ],
+    [ "IFX_PPC_R_ATT_R_ATT_R_SIZE_LEN", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga7799dc76b50999ad2408542b251ff177", null ],
+    [ "IFX_PPC_R_ATT_R_ATT_R_SIZE_MSK", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga0c358a32473533734fc340b73c65d0e9", null ],
+    [ "IFX_PPC_R_ATT_R_ATT_R_SIZE_OFF", "group__IfxSfr__PPC__Registers__BitfieldsMask.html#ga3c2f1b54c69e4baa95725401778f7509", null ]
+];

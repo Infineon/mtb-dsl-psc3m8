@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--****************************************************************************
+* \file adcmic.cypersonality
+* \version 1.0
+*
+* \brief
+* ADCMic personality description file.
+*
+********************************************************************************
+* \copyright
+* (c) 2022-2026, Infineon Technologies AG, or an affiliate of Infineon
+* Technologies AG.
+* SPDX-License-Identifier: Apache-2.0
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*****************************************************************************-->
+
+<PersonalityTemplate id="mxs40ppca_adc" name="ADC" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v10">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.atop\.adc_grp\.adc" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers>
+    <ExposedMember key="channel0"  paramId="channel0" />
+    <ExposedMember key="channel1"  paramId="channel1" />
+    <ExposedMember key="channel2"  paramId="channel2" />
+    <ExposedMember key="channel3"  paramId="channel3" />
+    <ExposedMember key="channel4"  paramId="channel4" />
+    <ExposedMember key="channel5"  paramId="channel5" />
+    <ExposedMember key="channel6"  paramId="channel6" />
+    <ExposedMember key="channel7"  paramId="channel7" />
+    <ExposedMember key="eosSignal"  paramId="eosSignal" />
+    <ExposedMember key="AIN0P_enabled"  paramId="AIN0P_enabled" />
+    <ExposedMember key="AIN0N_enabled"  paramId="AIN0N_enabled" />
+    <ExposedMember key="AIN1P_enabled"  paramId="AIN1P_enabled" />
+    <ExposedMember key="AIN1N_enabled"  paramId="AIN1N_enabled" />
+    <ExposedMember key="AIN2P_enabled"  paramId="AIN2P_enabled" />
+    <ExposedMember key="AIN2N_enabled"  paramId="AIN2N_enabled" />
+    <ExposedMember key="AIN3P_enabled"  paramId="AIN3P_enabled" />
+    <ExposedMember key="AIN3N_enabled"  paramId="AIN3N_enabled" />
+    <ExposedMember key="AIN4P_enabled"  paramId="AIN4P_enabled" />
+    <ExposedMember key="AIN4N_enabled"  paramId="AIN4N_enabled" />
+    <ExposedMember key="AIN5P_enabled"  paramId="AIN5P_enabled" />
+    <ExposedMember key="AIN5N_enabled"  paramId="AIN5N_enabled" />
+    <ExposedMember key="AIN6P_enabled"  paramId="AIN6P_enabled" />
+    <ExposedMember key="AIN6N_enabled"  paramId="AIN6N_enabled" />
+    <ExposedMember key="AIN7P_enabled"  paramId="AIN7P_enabled" />
+    <ExposedMember key="AIN7N_enabled"  paramId="AIN7N_enabled" />
+    <ExposedMember key="AIN8P_enabled"  paramId="AIN8P_enabled" />
+    <ExposedMember key="AIN8N_enabled"  paramId="AIN8N_enabled" />
+    <ExposedMember key="AIN9P_enabled"  paramId="AIN9P_enabled" />
+    <ExposedMember key="AIN9N_enabled"  paramId="AIN9N_enabled" />
+    <ExposedMember key="AIN10P_enabled"  paramId="AIN10P_enabled" />
+    <ExposedMember key="AIN10N_enabled"  paramId="AIN10N_enabled" />
+    <ExposedMember key="AIN11P_enabled"  paramId="AIN11P_enabled" />
+    <ExposedMember key="AIN11N_enabled"  paramId="AIN11N_enabled" />
+    <!-- AI0-AI15 exposed members for aux/alt_aux channels -->
+    <ExposedMember key="altAux_AIN3N_enabled"  paramId="altAux_AIN3N_enabled" />
+    <ExposedMember key="altAux_AIN11N_enabled"  paramId="altAux_AIN11N_enabled" />
+    <ExposedMember key="AI0_enabled"  paramId="AI0_enabled" />
+    <ExposedMember key="AI1_enabled"  paramId="AI1_enabled" />
+    <ExposedMember key="AI2_enabled"  paramId="AI2_enabled" />
+    <ExposedMember key="AI3_enabled"  paramId="AI3_enabled" />
+    <ExposedMember key="AI4_enabled"  paramId="AI4_enabled" />
+    <ExposedMember key="AI5_enabled"  paramId="AI5_enabled" />
+    <ExposedMember key="AI6_enabled"  paramId="AI6_enabled" />
+    <ExposedMember key="AI7_enabled"  paramId="AI7_enabled" />
+    <ExposedMember key="AI8_enabled"  paramId="AI8_enabled" />
+    <ExposedMember key="AI9_enabled"  paramId="AI9_enabled" />
+    <ExposedMember key="AI10_enabled"  paramId="AI10_enabled" />
+    <ExposedMember key="AI11_enabled"  paramId="AI11_enabled" />
+    <ExposedMember key="AI12_enabled"  paramId="AI12_enabled" />
+    <ExposedMember key="AI13_enabled"  paramId="AI13_enabled" />
+    <ExposedMember key="AI14_enabled"  paramId="AI14_enabled" />
+    <ExposedMember key="AI15_enabled"  paramId="AI15_enabled" />
+    <!-- TSNS, DAC0, DAC1, AREF, VDDA_DIV2 exposed members for aux channels -->
+    <ExposedMember key="TSNS_aux_enabled"  paramId="TSNS_aux_enabled" />
+    <ExposedMember key="DAC0_aux_enabled"  paramId="DAC0_aux_enabled" />
+    <ExposedMember key="DAC1_aux_enabled"  paramId="DAC1_aux_enabled" />
+    <ExposedMember key="AREF_aux_enabled"  paramId="AREF_aux_enabled" />
+    <ExposedMember key="VDDA_DIV2_GRP0_aux_enabled"  paramId="VDDA_DIV2_GRP0_aux_enabled" />
+    <ExposedMember key="VDDA_DIV2_GRP1_aux_enabled"  paramId="VDDA_DIV2_GRP1_aux_enabled" />
+    <!-- SOC/EOC signal display values -->
+    <ExposedMember key="adc_soc0_text"  paramId="adc_soc0_text" />
+    <ExposedMember key="adc_soc1_text"  paramId="adc_soc1_text" />
+    <ExposedMember key="adc_soc2_text"  paramId="adc_soc2_text" />
+    <ExposedMember key="adc_soc3_text"  paramId="adc_soc3_text" />
+    <ExposedMember key="adc_soc4_text"  paramId="adc_soc4_text" />
+    <ExposedMember key="adc_soc5_text"  paramId="adc_soc5_text" />
+    <ExposedMember key="adc_soc6_text"  paramId="adc_soc6_text" />
+    <ExposedMember key="adc_soc7_text"  paramId="adc_soc7_text" />
+    <ExposedMember key="adc_eoc0_text"  paramId="adc_eoc0_text" />
+    <ExposedMember key="adc_eoc1_text"  paramId="adc_eoc1_text" />
+    <ExposedMember key="adc_eoc2_text"  paramId="adc_eoc2_text" />
+    <ExposedMember key="adc_eoc3_text"  paramId="adc_eoc3_text" />
+    <ExposedMember key="adc_eoc4_text"  paramId="adc_eoc4_text" />
+    <ExposedMember key="adc_eoc5_text"  paramId="adc_eoc5_text" />
+    <ExposedMember key="adc_eoc6_text"  paramId="adc_eoc6_text" />
+    <ExposedMember key="adc_eoc7_text"  paramId="adc_eoc7_text" />
+    <!-- Channel type (0=single-ended, 1=differential) exposed members -->
+    <ExposedMember key="channel0type"  paramId="channel0type" />
+    <ExposedMember key="channel1type"  paramId="channel1type" />
+    <ExposedMember key="channel2type"  paramId="channel2type" />
+    <ExposedMember key="channel3type"  paramId="channel3type" />
+    <ExposedMember key="channel4type"  paramId="channel4type" />
+    <ExposedMember key="channel5type"  paramId="channel5type" />
+    <ExposedMember key="channel6type"  paramId="channel6type" />
+    <ExposedMember key="channel7type"  paramId="channel7type" />
+    <!-- Channel sequence string for SVG display -->
+    <ExposedMember key="channelSeqText"  paramId="channelSeqText" />
+    <ExposedMember key="auxSeqText"  paramId="auxSeqText" />
+    <ExposedMember key="altAuxSeqText"  paramId="altAuxSeqText" />
+    <!-- AUX / ALT AUX slot counts for SVG fill logic -->
+    <ExposedMember key="noOfAuxSlots"  paramId="noOfAuxSlots" />
+    <ExposedMember key="noOfAltAuxSlots"  paramId="noOfAltAuxSlots" />
+  </ExposedMembers>
+
+  <Parameters>
+
+    <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__adc.html" linkText="Open PPCA ADC Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+    <ParamString id="adcGroupNumber" name="ADC Group Number" group="Internal" default="`${getInstNumber(&quot;adc_grp&quot;)}`" visible="false" editable="false" desc="ADC Group name number." />
+
+    <!-- ADC Conversion Configuration -->
+    <ParamBool id="calibGainMode" name="Calibration Mode" group="ADC Conversion Configuration" default="false" visible="false" editable="false" desc="if enabled, IP handles calibration and gain computation, else subsystem has to handle. "/>
+    <ParamBool id="auxSlotSelect" name="AUX Channel Slot Control" group="ADC Conversion Configuration" default="false" visible="`${(adcGroupNumber eq 0)}`" editable="`${(adcGroupNumber eq 0)}`" desc="if enabled,Slot Control scheme for the AUX Channel is enabled, else disabled. "/>
+    <ParamBool id="altAuxSlotSelect" name="ALTAUX Channel Slot Control" group="ADC Conversion Configuration" default="false" visible="`${((adcGroupNumber eq 0) || (adcGroupNumber eq 3))}`" editable="`${((adcGroupNumber eq 0) || (adcGroupNumber eq 3))}`" desc="if enabled,Slot Control scheme for the ALT AUX Channel is enabled, else disabled. "/>
+
+
+    <ParamBool id="groupOfChannels" name="Grouping Of Channels" group="ADC Conversion Configuration" default="false" visible="true" editable="true" desc="Enable Group of Sequence of Channels to be converted at provided trigger. "/>
+    <ParamChoice id="triggerMode"
+                 name="Trigger Mode"
+                 group="ADC Conversion Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="Trigger Mode Selection. Manual, Continuous Conversion and Arbitrary Conversion."
+                 default="CY_ADC_MANUAL_TRIGGER">
+      <Entry name="Manual Trigger Mode" value="CY_ADC_MANUAL_TRIGGER" visible="true"/>
+      <Entry name="Auto Trigger Mode" value="CY_ADC_AUTO_TRIGGER" visible="true"/>
+      <Entry name="Arbitrary Trigger Mode" value="CY_ADC_ARBITRARY_TRIGGER" visible="true"/>
+    </ParamChoice>
+    <ParamRange id="samplingCycles" name="Sampling Cycles" group="ADC Conversion Configuration" default="0" min="0" max="63" resolution="1" visible="true" editable="true" desc="Number of system clock cycles for sampling on top of a minimum of 4 clock cycles. This is not applicable for Arbitary trigger mode. When AFE is used, AFE_CLOCK_RATIO will define the sample period." />
+    <ParamBool id="eosSignal" name="Source of EOS" group="ADC Conversion Configuration" default="false" visible="true" editable="true" desc="If enabled ADC conversion is started with SOC signal. If disabled ADC conversion is started with trigger."/>
+
+    <!-- ADC Channel Configuration -->
+
+    <ParamString id="ch0_input" name="Channel0 Input" group="Internal" default="`${((adcGroupNumber eq 0) ? &quot;AIN0P&quot; : ((adcGroupNumber eq 1) ? &quot;AIN4P&quot; : ((adcGroupNumber eq 2) ? &quot;AIN6P&quot; : &quot;AIN8P&quot;)))}`" visible="false" editable="false" desc="ADC CHannel 0 input." />
+    <ParamString id="ch1_input" name="Channel1 Input" group="Internal" default="`${((adcGroupNumber eq 0) ? &quot;AIN0N&quot; : ((adcGroupNumber eq 1) ? &quot;AIN4N&quot; : ((adcGroupNumber eq 2) ? &quot;AIN6N&quot; : &quot;AIN8N&quot;)))}`" visible="false" editable="false" desc="ADC CHannel 1 input." />
+    <ParamString id="ch2_input" name="Channel2 Input" group="Internal" default="`${((adcGroupNumber eq 0) ? &quot;AIN1P&quot; : ((adcGroupNumber eq 1) ? &quot;AIN5P&quot; : ((adcGroupNumber eq 2) ? &quot;AIN7P&quot; : &quot;AIN9P&quot;)))}`" visible="false" editable="false" desc="ADC CHannel 2 input." />
+    <ParamString id="ch3_input" name="Channel3 Input" group="Internal" default="`${((adcGroupNumber eq 0) ? &quot;AIN1N&quot; : ((adcGroupNumber eq 1) ? &quot;AIN5N&quot; : ((adcGroupNumber eq 2) ? &quot;AIN7N&quot; : &quot;AIN9N&quot;)))}`" visible="false" editable="false" desc="ADC CHannel 3 input." />
+    <ParamString id="ch4_input" name="Channel4 Input" group="Internal" default="`${((adcGroupNumber eq 0) ? &quot;AIN2P&quot; : &quot;AIN10P&quot;)}`" visible="false" editable="false" desc="ADC CHannel 4 input." />
+    <ParamString id="ch5_input" name="Channel5 Input" group="Internal" default="`${((adcGroupNumber eq 0) ? &quot;AIN2N&quot; : &quot;AIN10N&quot;)}`" visible="false" editable="false" desc="ADC CHannel 5 input." />
+    <ParamString id="ch6_input" name="Channel6 Input" group="Internal" default="`${((adcGroupNumber eq 0) ? &quot;AIN3P&quot; : &quot;AIN11P&quot;)}`" visible="false" editable="false" desc="ADC CHannel 6 input." />
+    <ParamString id="ch7_input" name="Channel7 Input" group="Internal" default="`${((adcGroupNumber eq 0) ? &quot;AIN3N&quot; : &quot;AIN11N&quot;)}`" visible="false" editable="false" desc="ADC CHannel 7 input." />
+
+    <Repeat count="8">
+        <ParamString id="channel$idx_modular" name="Channel Modular $idx" group="ADC Channel Configuration" default="`${($idx) % 2}`" visible="false" editable="false" desc="ADC Group name number."/>
+        <ParamString id="channelPair$idx" name="Channel Pair $idx" group="ADC Channel Configuration" default="`${((channel$idx_modular eq 0) ? 1 : -1)}`" visible="false" editable="false" desc="ADC Group name number."/>
+
+        <ParamBool id="channel$idx" name="Channel $idx / `${ch$idx_input}`" group="ADC Channel Configuration" default="false" visible="`${($idx &gt; 3) ? ((adcGroupNumber eq 0) || (adcGroupNumber eq 3) ? true : false) : true}`" editable="true" desc="if enabled, Channel $idx is enabled "/>
+
+
+        <ParamChoice id="channel$idxtype"
+                     name="Channel $idx Type"
+                     group="ADC Channel Configuration"
+                     visible="`${channel$idx}`"
+                     editable="`${channel$idx}`"
+                     desc="Single Ended Channel or Differential Channel. (0,1), (2,3), (4,5) and (6,7) are the 4 differential pairs based on the ADC group and number of channles available."
+                     default="`${(channel$idx_modular eq 0) ? 0 : getParamValue(&quot;channel&quot; . ($idx-1) . &quot;type&quot;)}`">
+          <Entry name="Single Ended" value="0" visible="`${(channel$idx_modular eq 0) ? true : ((getParamValue(&quot;channel&quot; . ($idx+channelPair$idx) . &quot;type&quot;) eq 0) ? true : false)}`"/>
+          <Entry name="Differential" value="1" visible="true"/>
+        </ParamChoice>
+        <ParamString id="channel$idx_visibility" name="Channel $idx visibility" group="ADC Channel Configuration" default="`${(channel$idxtype eq 0) ? true : (channel$idx_modular eq 0) ? true : false}`" visible="false" editable="false" desc="Internally used for visibility of the channel"/>
+        <ParamChoice id="channel$idxDataType"
+                     name="Channel $idx Data Type"
+                     group="ADC Channel Configuration"
+                     visible="`${(channel$idx) &amp;&amp; (channel$idx_visibility)}`"
+                     editable="`${(channel$idx) &amp;&amp; (channel$idx_visibility)}`"
+                     desc="Signed or Unsigned ADC channel"
+                     default="0">
+          <Entry name="Unsigned" value="0" visible="true"/>
+          <Entry name="Signed" value="1" visible="true"/>
+        </ParamChoice>
+    </Repeat>
+
+    <!-- AIN Pin enable status for parent personality access -->
+    <!-- ADC Group 0 (8 channels): AIN0P/N to AIN3P/N -->
+    <ParamBool id="AIN0P_enabled" name="AIN0P Enabled" group="Internal" default="`${(adcGroupNumber eq 0) ? channel0 : false}`" visible="false" editable="false" desc="AIN0P enable status" />
+    <ParamBool id="AIN0N_enabled" name="AIN0N Enabled" group="Internal" default="`${(adcGroupNumber eq 0) ? channel1 : false}`" visible="false" editable="false" desc="AIN0N enable status" />
+    <ParamBool id="AIN1P_enabled" name="AIN1P Enabled" group="Internal" default="`${(adcGroupNumber eq 0) ? channel2 : false}`" visible="false" editable="false" desc="AIN1P enable status" />
+    <ParamBool id="AIN1N_enabled" name="AIN1N Enabled" group="Internal" default="`${(adcGroupNumber eq 0) ? channel3 : false}`" visible="false" editable="false" desc="AIN1N enable status" />
+    <ParamBool id="AIN2P_enabled" name="AIN2P Enabled" group="Internal" default="`${(adcGroupNumber eq 0) ? channel4 : false}`" visible="false" editable="false" desc="AIN2P enable status" />
+    <ParamBool id="AIN2N_enabled" name="AIN2N Enabled" group="Internal" default="`${(adcGroupNumber eq 0) ? channel5 : false}`" visible="false" editable="false" desc="AIN2N enable status" />
+    <ParamBool id="AIN3P_enabled" name="AIN3P Enabled" group="Internal" default="`${(adcGroupNumber eq 0) ? channel6 : false}`" visible="false" editable="false" desc="AIN3P enable status" />
+    <ParamBool id="AIN3N_enabled" name="AIN3N Enabled" group="Internal" default="`${(adcGroupNumber eq 0) ? channel7 : false}`" visible="false" editable="false" desc="AIN3N enable status" />
+
+    <!-- ADC Group 1 (4 channels): AIN4P/N to AIN5P/N -->
+    <ParamBool id="AIN4P_enabled" name="AIN4P Enabled" group="Internal" default="`${(adcGroupNumber eq 1) ? channel0 : false}`" visible="false" editable="false" desc="AIN4P enable status" />
+    <ParamBool id="AIN4N_enabled" name="AIN4N Enabled" group="Internal" default="`${(adcGroupNumber eq 1) ? channel1 : false}`" visible="false" editable="false" desc="AIN4N enable status" />
+    <ParamBool id="AIN5P_enabled" name="AIN5P Enabled" group="Internal" default="`${(adcGroupNumber eq 1) ? channel2 : false}`" visible="false" editable="false" desc="AIN5P enable status" />
+    <ParamBool id="AIN5N_enabled" name="AIN5N Enabled" group="Internal" default="`${(adcGroupNumber eq 1) ? channel3 : false}`" visible="false" editable="false" desc="AIN5N enable status" />
+
+    <!-- ADC Group 2 (4 channels): AIN6P/N to AIN7P/N -->
+    <ParamBool id="AIN6P_enabled" name="AIN6P Enabled" group="Internal" default="`${(adcGroupNumber eq 2) ? channel0 : false}`" visible="false" editable="false" desc="AIN6P enable status" />
+    <ParamBool id="AIN6N_enabled" name="AIN6N Enabled" group="Internal" default="`${(adcGroupNumber eq 2) ? channel1 : false}`" visible="false" editable="false" desc="AIN6N enable status" />
+    <ParamBool id="AIN7P_enabled" name="AIN7P Enabled" group="Internal" default="`${(adcGroupNumber eq 2) ? channel2 : false}`" visible="false" editable="false" desc="AIN7P enable status" />
+    <ParamBool id="AIN7N_enabled" name="AIN7N Enabled" group="Internal" default="`${(adcGroupNumber eq 2) ? channel3 : false}`" visible="false" editable="false" desc="AIN7N enable status" />
+
+    <!-- ADC Group 3 (8 channels): AIN8P/N to AIN11P/N -->
+    <ParamBool id="AIN8P_enabled" name="AIN8P Enabled" group="Internal" default="`${(adcGroupNumber eq 3) ? channel0 : false}`" visible="false" editable="false" desc="AIN8P enable status" />
+    <ParamBool id="AIN8N_enabled" name="AIN8N Enabled" group="Internal" default="`${(adcGroupNumber eq 3) ? channel1 : false}`" visible="false" editable="false" desc="AIN8N enable status" />
+    <ParamBool id="AIN9P_enabled" name="AIN9P Enabled" group="Internal" default="`${(adcGroupNumber eq 3) ? channel2 : false}`" visible="false" editable="false" desc="AIN9P enable status" />
+    <ParamBool id="AIN9N_enabled" name="AIN9N Enabled" group="Internal" default="`${(adcGroupNumber eq 3) ? channel3 : false}`" visible="false" editable="false" desc="AIN9N enable status" />
+    <ParamBool id="AIN10P_enabled" name="AIN10P Enabled" group="Internal" default="`${(adcGroupNumber eq 3) ? channel4 : false}`" visible="false" editable="false" desc="AIN10P enable status" />
+    <ParamBool id="AIN10N_enabled" name="AIN10N Enabled" group="Internal" default="`${(adcGroupNumber eq 3) ? channel5 : false}`" visible="false" editable="false" desc="AIN10N enable status" />
+    <ParamBool id="AIN11P_enabled" name="AIN11P Enabled" group="Internal" default="`${(adcGroupNumber eq 3) ? channel6 : false}`" visible="false" editable="false" desc="AIN11P enable status" />
+    <ParamBool id="AIN11N_enabled" name="AIN11N Enabled" group="Internal" default="`${(adcGroupNumber eq 3) ? channel7 : false}`" visible="false" editable="false" desc="AIN11N enable status" />
+
+    <ParamString id="diffChEnabled" name="No Of Diiferential Channels Enabled" group="Internal" default="`${channel0type + channel2type + channel4type + channel6type}`" visible="false" editable="false" desc="ADC number of differential channels enabled." />
+    <ParamString id="channelsEnabled" name="No Of Channels Enabled" group="Internal" default="`${channel0 + channel1 + channel2 + channel3 + channel4 + channel5 + channel6 + channel7}`" visible="false" editable="false" desc="ADC number of channels enabled." />
+    <ParamRange id="noOfSlots" name="No Of Channels To Be Converted" group="ADC Channel Configuration" default="0" min="0" max="`${((adcGroupNumber eq 0) || (adcGroupNumber eq 3) ? 8 : 4)}`" resolution="1" visible="true" editable="true" desc="Number of channels to be converted during the slot operation. One differential channels is considered as 2 channels" />
+
+    <ParamRange id="noOfAuxSlots" name="No Of AUX Channels To Be Converted" group="Auxiliary Channel Configuration" default="0" min="0" max="8" resolution="1" visible="`${(adcGroupNumber eq 0)}`" editable="`${(adcGroupNumber eq 0)}`" desc="Number of Aux channels to be converted during the slot operation. Channel 7 must be enabled for Auxiliary channels." />
+    <ParamRange id="noOfAltAuxSlots" name="No Of ALT AUX Channels To Be Converted" group="ALT Auxiliary Channel Configuration" default="0" min="0" max="8" resolution="1" visible="`${((adcGroupNumber eq 0) || (adcGroupNumber eq 3))}`" editable="`${((adcGroupNumber eq 0) || (adcGroupNumber eq 3))}`" desc="Number of ALT AUX channels to be converted during the slot operation. Channel 7 must be enabled for ALT Auxiliary channels" />
+
+    <Repeat count="9">
+        <ParamChoice id="channel$idxSeq"
+             name="Channel to be Converted at Position $idx"
+             group="ADC Channel Configuration"
+             visible="`${($idx &gt; 0)&amp;&amp; ($idx &lt;= noOfSlots) &amp;&amp; (noOfSlots &gt; 0)}`"
+             editable="`${($idx &gt; 0)&amp;&amp; ($idx &lt;= noOfSlots) &amp;&amp; (noOfSlots &gt; 0)}`"
+             desc="Sequence in which the channels to be converted. When differential channels are enabled, make sure they are placed consecutively."
+             default="15">
+          <Entry name="Assign the position" value="15" visible="true"/>
+          <Entry name="Channel 0" value="1" visible="`${((channel0 eq true) ? true : false)}`"/>
+          <Entry name="Channel 1" value="2" visible="`${((channel1 eq true) ? true : false)}`"/>
+          <Entry name="Channel 2" value="3" visible="`${((channel2 eq true) ? true : false)}`"/>
+          <Entry name="Channel 3" value="4" visible="`${((channel3 eq true) ? true : false)}`"/>
+          <Entry name="Channel 4" value="5" visible="`${((((adcGroupNumber eq 0) || (adcGroupNumber eq 3)) &amp;&amp; (channel4 eq true)) ? true : false)}`"/>
+          <Entry name="Channel 5" value="6" visible="`${((((adcGroupNumber eq 0) || (adcGroupNumber eq 3)) &amp;&amp; (channel5 eq true)) ? true : false)}`"/>
+          <Entry name="Channel 6" value="7" visible="`${((((adcGroupNumber eq 0) || (adcGroupNumber eq 3)) &amp;&amp; (channel6 eq true)) ? true : false)}`"/>
+          <Entry name="Channel 7" value="8" visible="`${((((adcGroupNumber eq 0) || (adcGroupNumber eq 3)) &amp;&amp; (channel7 eq true)) ? true : false)}`"/>
+        </ParamChoice>
+
+        <ParamString id="ch$idxSeq" name="Actual Sequence" group="ADC Channel Configuration" default="`${(((channel$idxSeq eq 0) || (channel$idxSeq eq 15)) ? 15 : ((getParamValue(&quot;channel&quot; . ($idx) . &quot;Seq&quot;)) -1))}`" visible="false" editable="false" desc="ADC number of differential channels enabled." />
+    <!--ParamSignal port="adc_eoc[$idx]" name="adc_eoc[$idx]" visible="`${((hasVisibleOption(&quot;adc_eoc[$idx]&quot;)) &amp;&amp; (($idx &gt; 0) &amp;&amp; (channelsEnabled &gt;= $idx)))}`" canBeEmpty="true" group="Signals" desc="" /-->
+    <!-- <ParamSignal port="adc_eoc[$idx]" name="adc_eoc[$idx]" visible="`${(($idx &gt; 0) &amp;&amp; (channelsEnabled &gt;= $idx))}`" canBeEmpty="true" group="Signals" desc="" /> -->
+    </Repeat>
+    <ParamString id="chSeqValue" name="chSeqValue" group="ADC Channel Configuration" default="`${ch1Seq | (ch2Seq &lt;&lt; 4) | (ch3Seq &lt;&lt; 8) | (ch4Seq &lt;&lt; 12) | (ch5Seq &lt;&lt; 16) | (ch6Seq &lt;&lt; 20) | (ch7Seq &lt;&lt; 24) | (ch8Seq &lt;&lt; 28)}`" visible="false" editable="false" desc="ADC number of differential channels enabled." />
+    <!-- Human-readable channel sequence string (e.g., "0, 2, 3, 5") -->
+    <ParamString id="chSeqStr1" name="chSeqStr1" group="Internal" default="`${(channelsEnabled &gt;= 1) ? (ch1Seq) : &quot;&quot;}`" visible="false" editable="false" desc="Sequence position 1 channel" />
+    <ParamString id="chSeqStr2" name="chSeqStr2" group="Internal" default="`${(channelsEnabled &gt;= 2) ? &quot;, &quot; . (ch2Seq) : &quot;&quot;}`" visible="false" editable="false" desc="Sequence position 2 channel" />
+    <ParamString id="chSeqStr3" name="chSeqStr3" group="Internal" default="`${(channelsEnabled &gt;= 3) ? &quot;, &quot; . (ch3Seq) : &quot;&quot;}`" visible="false" editable="false" desc="Sequence position 3 channel" />
+    <ParamString id="chSeqStr4" name="chSeqStr4" group="Internal" default="`${(channelsEnabled &gt;= 4) ? &quot;, &quot; . (ch4Seq) : &quot;&quot;}`" visible="false" editable="false" desc="Sequence position 4 channel" />
+    <ParamString id="chSeqStr5" name="chSeqStr5" group="Internal" default="`${(channelsEnabled &gt;= 5) ? &quot;, &quot; . (ch5Seq) : &quot;&quot;}`" visible="false" editable="false" desc="Sequence position 5 channel" />
+    <ParamString id="chSeqStr6" name="chSeqStr6" group="Internal" default="`${(channelsEnabled &gt;= 6) ? &quot;, &quot; . (ch6Seq) : &quot;&quot;}`" visible="false" editable="false" desc="Sequence position 6 channel" />
+    <ParamString id="chSeqStr7" name="chSeqStr7" group="Internal" default="`${(channelsEnabled &gt;= 7) ? &quot;, &quot; . (ch7Seq) : &quot;&quot;}`" visible="false" editable="false" desc="Sequence position 7 channel" />
+    <ParamString id="chSeqStr8" name="chSeqStr8" group="Internal" default="`${(channelsEnabled &gt;= 8) ? &quot;, &quot; . (ch8Seq) : &quot;&quot;}`" visible="false" editable="false" desc="Sequence position 8 channel" />
+    <ParamString id="channelSeqText" name="Channel Sequence Text" group="Internal" default="`${(channelsEnabled &gt; 0) ? (chSeqStr1 . chSeqStr2 . chSeqStr3 . chSeqStr4 . chSeqStr5 . chSeqStr6 . chSeqStr7 . chSeqStr8) : &quot;-&quot;}`" visible="false" editable="false" desc="Human-readable channel sequence string" />
+    <!-- Human-readable AUX channel sequence string (using intermediate name params from Repeat) -->
+    <ParamString id="auxSlotsCount" name="auxSlotsCount" group="Internal" default="`${noOfAuxSlots}`" visible="false" editable="false" desc="AUX slots count as string" />
+    <ParamString id="auxSeqStr1" name="auxSeqStr1" group="Internal" default="`${(auxSlotsCount &gt;= 1) ? auxCh1Name : &quot;&quot;}`" visible="false" editable="false" desc="AUX sequence position 1" />
+    <ParamString id="auxSeqStr2" name="auxSeqStr2" group="Internal" default="`${(auxSlotsCount &gt;= 2) ? &quot;, &quot; . auxCh2Name : &quot;&quot;}`" visible="false" editable="false" desc="AUX sequence position 2" />
+    <ParamString id="auxSeqStr3" name="auxSeqStr3" group="Internal" default="`${(auxSlotsCount &gt;= 3) ? &quot;, &quot; . auxCh3Name : &quot;&quot;}`" visible="false" editable="false" desc="AUX sequence position 3" />
+    <ParamString id="auxSeqStr4" name="auxSeqStr4" group="Internal" default="`${(auxSlotsCount &gt;= 4) ? &quot;, &quot; . auxCh4Name : &quot;&quot;}`" visible="false" editable="false" desc="AUX sequence position 4" />
+    <ParamString id="auxSeqStr5" name="auxSeqStr5" group="Internal" default="`${(auxSlotsCount &gt;= 5) ? &quot;, &quot; . auxCh5Name : &quot;&quot;}`" visible="false" editable="false" desc="AUX sequence position 5" />
+    <ParamString id="auxSeqStr6" name="auxSeqStr6" group="Internal" default="`${(auxSlotsCount &gt;= 6) ? &quot;, &quot; . auxCh6Name : &quot;&quot;}`" visible="false" editable="false" desc="AUX sequence position 6" />
+    <ParamString id="auxSeqStr7" name="auxSeqStr7" group="Internal" default="`${(auxSlotsCount &gt;= 7) ? &quot;, &quot; . auxCh7Name : &quot;&quot;}`" visible="false" editable="false" desc="AUX sequence position 7" />
+    <ParamString id="auxSeqStr8" name="auxSeqStr8" group="Internal" default="`${(auxSlotsCount &gt;= 8) ? &quot;, &quot; . auxCh8Name : &quot;&quot;}`" visible="false" editable="false" desc="AUX sequence position 8" />
+    <ParamString id="auxSeqText" name="AUX Sequence Text" group="Internal" default="`${(auxSlotsCount &gt; 0) ? (auxSeqStr1 . auxSeqStr2 . auxSeqStr3 . auxSeqStr4 . auxSeqStr5 . auxSeqStr6 . auxSeqStr7 . auxSeqStr8) : &quot;N/A&quot;}`" visible="false" editable="false" desc="Human-readable AUX channel sequence string" />
+    <!-- Human-readable ALT AUX channel sequence string (using intermediate name params from Repeat) -->
+    <ParamString id="altAuxSlotsCount" name="altAuxSlotsCount" group="Internal" default="`${noOfAltAuxSlots}`" visible="false" editable="false" desc="ALT AUX slots count as string" />
+    <ParamString id="altAuxSeqStr1" name="altAuxSeqStr1" group="Internal" default="`${(altAuxSlotsCount &gt;= 1) ? altAuxCh1Name : &quot;&quot;}`" visible="false" editable="false" desc="ALT AUX sequence position 1" />
+    <ParamString id="altAuxSeqStr2" name="altAuxSeqStr2" group="Internal" default="`${(altAuxSlotsCount &gt;= 2) ? &quot;, &quot; . altAuxCh2Name : &quot;&quot;}`" visible="false" editable="false" desc="ALT AUX sequence position 2" />
+    <ParamString id="altAuxSeqStr3" name="altAuxSeqStr3" group="Internal" default="`${(altAuxSlotsCount &gt;= 3) ? &quot;, &quot; . altAuxCh3Name : &quot;&quot;}`" visible="false" editable="false" desc="ALT AUX sequence position 3" />
+    <ParamString id="altAuxSeqStr4" name="altAuxSeqStr4" group="Internal" default="`${(altAuxSlotsCount &gt;= 4) ? &quot;, &quot; . altAuxCh4Name : &quot;&quot;}`" visible="false" editable="false" desc="ALT AUX sequence position 4" />
+    <ParamString id="altAuxSeqStr5" name="altAuxSeqStr5" group="Internal" default="`${(altAuxSlotsCount &gt;= 5) ? &quot;, &quot; . altAuxCh5Name : &quot;&quot;}`" visible="false" editable="false" desc="ALT AUX sequence position 5" />
+    <ParamString id="altAuxSeqStr6" name="altAuxSeqStr6" group="Internal" default="`${(altAuxSlotsCount &gt;= 6) ? &quot;, &quot; . altAuxCh6Name : &quot;&quot;}`" visible="false" editable="false" desc="ALT AUX sequence position 6" />
+    <ParamString id="altAuxSeqStr7" name="altAuxSeqStr7" group="Internal" default="`${(altAuxSlotsCount &gt;= 7) ? &quot;, &quot; . altAuxCh7Name : &quot;&quot;}`" visible="false" editable="false" desc="ALT AUX sequence position 7" />
+    <ParamString id="altAuxSeqStr8" name="altAuxSeqStr8" group="Internal" default="`${(altAuxSlotsCount &gt;= 8) ? &quot;, &quot; . altAuxCh8Name : &quot;&quot;}`" visible="false" editable="false" desc="ALT AUX sequence position 8" />
+    <ParamString id="altAuxSeqText" name="ALT AUX Sequence Text" group="Internal" default="`${(altAuxSlotsCount &gt; 0) ? (altAuxSeqStr1 . altAuxSeqStr2 . altAuxSeqStr3 . altAuxSeqStr4 . altAuxSeqStr5 . altAuxSeqStr6 . altAuxSeqStr7 . altAuxSeqStr8) : &quot;N/A&quot;}`" visible="false" editable="false" desc="Human-readable ALT AUX channel sequence string" />
+    <!--                 Auxiliary Channel Configuration   -->
+
+
+    <Repeat count="9">
+    <ParamChoice id="auxChannel$idxSeq"
+                     name="AUX Channel to be Converted at Position $idx"
+                     group="Auxiliary Channel Configuration"
+                     visible="`${($idx &gt; 0)&amp;&amp; ($idx &lt;= noOfAuxSlots) &amp;&amp; (noOfAuxSlots &gt; 0)}`"
+                     editable="`${($idx &gt; 0)&amp;&amp; ($idx &lt;= noOfAuxSlots) &amp;&amp; (noOfAuxSlots &gt; 0)}`"
+                     desc="Sequence in which the Auxiliary channels to be converted."
+                     default="0">
+          <Entry name="DACR2R_0" value="0" visible="true"/>
+          <Entry name="DACR2R_1" value="1" visible="true"/>
+          <Entry name="AI0" value="2" visible="true"/>
+          <Entry name="AI1" value="3" visible="true"/>
+          <Entry name="TSNS" value="4" visible="true"/>
+          <Entry name="VREF" value="5" visible="true"/>
+          <Entry name="VDDA DIV2 DCSG GRP0" value="6" visible="true"/>
+          <Entry name="VDDA DIV2 DCSG GRP1" value="7" visible="true"/>
+    </ParamChoice>
+    <ParamChoice id="auxChannel$idxDataType"
+                     name="AUX Channel $idx Data Type"
+                     group="Auxiliary Channel Configuration"
+                     visible="`${($idx &gt; 0)&amp;&amp; ($idx &lt;= noOfAuxSlots) &amp;&amp; (noOfAuxSlots &gt; 0)}`"
+                     editable="`${($idx &gt; 0)&amp;&amp; ($idx &lt;= noOfAuxSlots) &amp;&amp; (noOfAuxSlots &gt; 0)}`"
+                     desc="Signed or Unsigned ADC channel"
+                     default="0">
+          <Entry name="Unsigned" value="0" visible="true"/>
+          <Entry name="Signed" value="1" visible="true"/>
+    </ParamChoice>
+    <ParamString id="auxCh$idxName" name="AUX Channel $idx Name" group="Internal" default="`${(auxChannel$idxSeq eq 0) ? &quot;R2R0&quot; : (auxChannel$idxSeq eq 1) ? &quot;R2R1&quot; : (auxChannel$idxSeq eq 2) ? &quot;AI0&quot; : (auxChannel$idxSeq eq 3) ? &quot;AI1&quot; : (auxChannel$idxSeq eq 4) ? &quot;TSNS&quot; : (auxChannel$idxSeq eq 5) ? &quot;VREF&quot; : (auxChannel$idxSeq eq 6) ? &quot;VDDA0&quot; : &quot;VDDA1&quot;}`" visible="false" editable="false" desc="Human-readable AUX channel name" />
+    </Repeat>
+
+
+    <Repeat count="9">
+    <ParamChoice id="altAuxChannel$idxSeq"
+                     name="ALT AUX Channel to be Converted at Position $idx"
+                     group="ALT Auxiliary Channel Configuration"
+                     visible="`${($idx &gt; 0)&amp;&amp; ($idx &lt;= noOfAltAuxSlots) &amp;&amp; (noOfAltAuxSlots &gt; 0)}`"
+                     editable="`${($idx &gt; 0)&amp;&amp; ($idx &lt;= noOfAltAuxSlots) &amp;&amp; (noOfAltAuxSlots &gt; 0)}`"
+                     desc="Sequence in which the alternate Auxiliary channels to be converted."
+                     default="0">
+          <Entry name="`${(adcGroupNumber eq 0) ? &quot;AIN3N&quot; : &quot;AIN11N&quot; }`" value="0" visible="true"/>
+          <Entry name="`${(adcGroupNumber eq 0) ? &quot;AI2&quot; : &quot;AI9&quot; }`" value="1" visible="true"/>
+          <Entry name="`${(adcGroupNumber eq 0) ? &quot;AI3&quot; : &quot;AI10&quot; }`" value="2" visible="true"/>
+          <Entry name="`${(adcGroupNumber eq 0) ? &quot;AI4&quot; : &quot;AI11&quot; }`" value="3" visible="true"/>
+          <Entry name="`${(adcGroupNumber eq 0) ? &quot;AI5&quot; : &quot;AI12&quot; }`" value="4" visible="true"/>
+          <Entry name="`${(adcGroupNumber eq 0) ? &quot;AI6&quot; : &quot;AI13&quot; }`" value="5" visible="true"/>
+          <Entry name="`${(adcGroupNumber eq 0) ? &quot;AI7&quot; : &quot;AI14&quot; }`" value="6" visible="true"/>
+          <Entry name="`${(adcGroupNumber eq 0) ? &quot;AI8&quot; : &quot;AI15&quot; }`" value="7" visible="true"/>
+    </ParamChoice>
+    <ParamChoice id="altAuxChannel$idxDataType"
+                     name="ALT AUX Channel $idx Data Type"
+                     group="ALT Auxiliary Channel Configuration"
+                     visible="`${($idx &gt; 0)&amp;&amp; ($idx &lt;= noOfAltAuxSlots) &amp;&amp; (noOfAltAuxSlots &gt; 0)}`"
+                     editable="`${($idx &gt; 0)&amp;&amp; ($idx &lt;= noOfAltAuxSlots) &amp;&amp; (noOfAltAuxSlots &gt; 0)}`"
+                     desc="Signed or Unsigned ADC channel"
+                     default="0">
+          <Entry name="Unsigned" value="0" visible="true"/>
+          <Entry name="Signed" value="1" visible="true"/>
+    </ParamChoice>
+    <ParamString id="altAuxCh$idxName" name="ALT AUX Channel $idx Name" group="Internal" default="`${(altAuxChannel$idxSeq eq 0) ? ((adcGroupNumber eq 0) ? &quot;AIN3N&quot; : &quot;AIN11N&quot;) : (altAuxChannel$idxSeq eq 1) ? ((adcGroupNumber eq 0) ? &quot;AI2&quot; : &quot;AI9&quot;) : (altAuxChannel$idxSeq eq 2) ? ((adcGroupNumber eq 0) ? &quot;AI3&quot; : &quot;AI10&quot;) : (altAuxChannel$idxSeq eq 3) ? ((adcGroupNumber eq 0) ? &quot;AI4&quot; : &quot;AI11&quot;) : (altAuxChannel$idxSeq eq 4) ? ((adcGroupNumber eq 0) ? &quot;AI5&quot; : &quot;AI12&quot;) : (altAuxChannel$idxSeq eq 5) ? ((adcGroupNumber eq 0) ? &quot;AI6&quot; : &quot;AI13&quot;) : (altAuxChannel$idxSeq eq 6) ? ((adcGroupNumber eq 0) ? &quot;AI7&quot; : &quot;AI14&quot;) : ((adcGroupNumber eq 0) ? &quot;AI8&quot; : &quot;AI15&quot;)}`" visible="false" editable="false" desc="Human-readable ALT AUX channel name" />
+    </Repeat>
+
+    <!-- AI0-AI15 enabled status for parent personality access -->
+    <!-- AUX channels (Group 0 only): AI0, AI1 are values 2, 3 in auxChannel*Seq -->
+    <ParamBool id="AI0_enabled" name="AI0 Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAuxSlots &gt; 0) &amp;&amp; (((noOfAuxSlots &gt;= 1) &amp;&amp; (auxChannel1Seq eq 2)) || ((noOfAuxSlots &gt;= 2) &amp;&amp; (auxChannel2Seq eq 2)) || ((noOfAuxSlots &gt;= 3) &amp;&amp; (auxChannel3Seq eq 2)) || ((noOfAuxSlots &gt;= 4) &amp;&amp; (auxChannel4Seq eq 2)) || ((noOfAuxSlots &gt;= 5) &amp;&amp; (auxChannel5Seq eq 2)) || ((noOfAuxSlots &gt;= 6) &amp;&amp; (auxChannel6Seq eq 2)) || ((noOfAuxSlots &gt;= 7) &amp;&amp; (auxChannel7Seq eq 2)) || ((noOfAuxSlots &gt;= 8) &amp;&amp; (auxChannel8Seq eq 2)))}`" visible="false" editable="false" desc="AI0 enable status via AUX channel" />
+    <ParamBool id="AI1_enabled" name="AI1 Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAuxSlots &gt; 0) &amp;&amp; (((noOfAuxSlots &gt;= 1) &amp;&amp; (auxChannel1Seq eq 3)) || ((noOfAuxSlots &gt;= 2) &amp;&amp; (auxChannel2Seq eq 3)) || ((noOfAuxSlots &gt;= 3) &amp;&amp; (auxChannel3Seq eq 3)) || ((noOfAuxSlots &gt;= 4) &amp;&amp; (auxChannel4Seq eq 3)) || ((noOfAuxSlots &gt;= 5) &amp;&amp; (auxChannel5Seq eq 3)) || ((noOfAuxSlots &gt;= 6) &amp;&amp; (auxChannel6Seq eq 3)) || ((noOfAuxSlots &gt;= 7) &amp;&amp; (auxChannel7Seq eq 3)) || ((noOfAuxSlots &gt;= 8) &amp;&amp; (auxChannel8Seq eq 3)))}`" visible="false" editable="false" desc="AI1 enable status via AUX channel" />
+
+    <!-- ALT AUX value 0: AIN3N (Group 0) / AIN11N (Group 3) -->
+    <ParamBool id="altAux_AIN3N_enabled" name="ALT AUX AIN3N Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 0)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 0)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 0)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 0)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 0)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 0)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 0)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 0)))}`" visible="false" editable="false" desc="AIN3N enable status via ALT AUX channel (Group 0)" />
+    <ParamBool id="altAux_AIN11N_enabled" name="ALT AUX AIN11N Enabled" group="Internal" default="`${(adcGroupNumber eq 3) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 0)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 0)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 0)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 0)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 0)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 0)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 0)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 0)))}`" visible="false" editable="false" desc="AIN11N enable status via ALT AUX channel (Group 3)" />
+
+    <!-- ALT AUX channels (Group 0): AI2-AI8 are values 1-7 in altAuxChannel*Seq -->
+    <ParamBool id="AI2_enabled" name="AI2 Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 1)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 1)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 1)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 1)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 1)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 1)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 1)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 1)))}`" visible="false" editable="false" desc="AI2 enable status via ALT AUX channel (Group 0)" />
+    <ParamBool id="AI3_enabled" name="AI3 Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 2)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 2)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 2)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 2)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 2)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 2)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 2)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 2)))}`" visible="false" editable="false" desc="AI3 enable status via ALT AUX channel (Group 0)" />
+    <ParamBool id="AI4_enabled" name="AI4 Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 3)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 3)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 3)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 3)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 3)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 3)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 3)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 3)))}`" visible="false" editable="false" desc="AI4 enable status via ALT AUX channel (Group 0)" />
+    <ParamBool id="AI5_enabled" name="AI5 Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 4)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 4)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 4)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 4)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 4)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 4)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 4)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 4)))}`" visible="false" editable="false" desc="AI5 enable status via ALT AUX channel (Group 0)" />
+    <ParamBool id="AI6_enabled" name="AI6 Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 5)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 5)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 5)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 5)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 5)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 5)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 5)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 5)))}`" visible="false" editable="false" desc="AI6 enable status via ALT AUX channel (Group 0)" />
+    <ParamBool id="AI7_enabled" name="AI7 Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 6)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 6)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 6)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 6)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 6)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 6)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 6)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 6)))}`" visible="false" editable="false" desc="AI7 enable status via ALT AUX channel (Group 0)" />
+    <ParamBool id="AI8_enabled" name="AI8 Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 7)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 7)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 7)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 7)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 7)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 7)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 7)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 7)))}`" visible="false" editable="false" desc="AI8 enable status via ALT AUX channel (Group 0)" />
+
+    <!-- ALT AUX channels (Group 3): AI9-AI15 are values 1-7 in altAuxChannel*Seq -->
+    <ParamBool id="AI9_enabled" name="AI9 Enabled" group="Internal" default="`${(adcGroupNumber eq 3) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 1)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 1)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 1)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 1)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 1)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 1)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 1)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 1)))}`" visible="false" editable="false" desc="AI9 enable status via ALT AUX channel (Group 3)" />
+    <ParamBool id="AI10_enabled" name="AI10 Enabled" group="Internal" default="`${(adcGroupNumber eq 3) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 2)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 2)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 2)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 2)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 2)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 2)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 2)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 2)))}`" visible="false" editable="false" desc="AI10 enable status via ALT AUX channel (Group 3)" />
+    <ParamBool id="AI11_enabled" name="AI11 Enabled" group="Internal" default="`${(adcGroupNumber eq 3) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 3)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 3)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 3)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 3)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 3)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 3)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 3)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 3)))}`" visible="false" editable="false" desc="AI11 enable status via ALT AUX channel (Group 3)" />
+    <ParamBool id="AI12_enabled" name="AI12 Enabled" group="Internal" default="`${(adcGroupNumber eq 3) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 4)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 4)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 4)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 4)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 4)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 4)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 4)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 4)))}`" visible="false" editable="false" desc="AI12 enable status via ALT AUX channel (Group 3)" />
+    <ParamBool id="AI13_enabled" name="AI13 Enabled" group="Internal" default="`${(adcGroupNumber eq 3) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 5)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 5)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 5)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 5)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 5)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 5)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 5)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 5)))}`" visible="false" editable="false" desc="AI13 enable status via ALT AUX channel (Group 3)" />
+    <ParamBool id="AI14_enabled" name="AI14 Enabled" group="Internal" default="`${(adcGroupNumber eq 3) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 6)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 6)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 6)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 6)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 6)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 6)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 6)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 6)))}`" visible="false" editable="false" desc="AI14 enable status via ALT AUX channel (Group 3)" />
+    <ParamBool id="AI15_enabled" name="AI15 Enabled" group="Internal" default="`${(adcGroupNumber eq 3) &amp;&amp; (noOfAltAuxSlots &gt; 0) &amp;&amp; (((noOfAltAuxSlots &gt;= 1) &amp;&amp; (altAuxChannel1Seq eq 7)) || ((noOfAltAuxSlots &gt;= 2) &amp;&amp; (altAuxChannel2Seq eq 7)) || ((noOfAltAuxSlots &gt;= 3) &amp;&amp; (altAuxChannel3Seq eq 7)) || ((noOfAltAuxSlots &gt;= 4) &amp;&amp; (altAuxChannel4Seq eq 7)) || ((noOfAltAuxSlots &gt;= 5) &amp;&amp; (altAuxChannel5Seq eq 7)) || ((noOfAltAuxSlots &gt;= 6) &amp;&amp; (altAuxChannel6Seq eq 7)) || ((noOfAltAuxSlots &gt;= 7) &amp;&amp; (altAuxChannel7Seq eq 7)) || ((noOfAltAuxSlots &gt;= 8) &amp;&amp; (altAuxChannel8Seq eq 7)))}`" visible="false" editable="false" desc="AI15 enable status via ALT AUX channel (Group 3)" />
+
+    <!-- TSNS, DAC0, DAC1, AREF enabled via AUX channel (Group 0 only) -->
+    <!-- TSNS = value 4, DAC0 = value 0, DAC1 = value 1, AREF/VREF = value 5 -->
+    <ParamBool id="TSNS_aux_enabled" name="TSNS AUX Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAuxSlots &gt; 0) &amp;&amp; (((noOfAuxSlots &gt;= 1) &amp;&amp; (auxChannel1Seq eq 4)) || ((noOfAuxSlots &gt;= 2) &amp;&amp; (auxChannel2Seq eq 4)) || ((noOfAuxSlots &gt;= 3) &amp;&amp; (auxChannel3Seq eq 4)) || ((noOfAuxSlots &gt;= 4) &amp;&amp; (auxChannel4Seq eq 4)) || ((noOfAuxSlots &gt;= 5) &amp;&amp; (auxChannel5Seq eq 4)) || ((noOfAuxSlots &gt;= 6) &amp;&amp; (auxChannel6Seq eq 4)) || ((noOfAuxSlots &gt;= 7) &amp;&amp; (auxChannel7Seq eq 4)) || ((noOfAuxSlots &gt;= 8) &amp;&amp; (auxChannel8Seq eq 4)))}`" visible="false" editable="false" desc="TSNS enable status via AUX channel" />
+    <ParamBool id="DAC0_aux_enabled" name="DAC0 AUX Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAuxSlots &gt; 0) &amp;&amp; (((noOfAuxSlots &gt;= 1) &amp;&amp; (auxChannel1Seq eq 0)) || ((noOfAuxSlots &gt;= 2) &amp;&amp; (auxChannel2Seq eq 0)) || ((noOfAuxSlots &gt;= 3) &amp;&amp; (auxChannel3Seq eq 0)) || ((noOfAuxSlots &gt;= 4) &amp;&amp; (auxChannel4Seq eq 0)) || ((noOfAuxSlots &gt;= 5) &amp;&amp; (auxChannel5Seq eq 0)) || ((noOfAuxSlots &gt;= 6) &amp;&amp; (auxChannel6Seq eq 0)) || ((noOfAuxSlots &gt;= 7) &amp;&amp; (auxChannel7Seq eq 0)) || ((noOfAuxSlots &gt;= 8) &amp;&amp; (auxChannel8Seq eq 0)))}`" visible="false" editable="false" desc="DAC0 (DACR2R_0) enable status via AUX channel" />
+    <ParamBool id="DAC1_aux_enabled" name="DAC1 AUX Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAuxSlots &gt; 0) &amp;&amp; (((noOfAuxSlots &gt;= 1) &amp;&amp; (auxChannel1Seq eq 1)) || ((noOfAuxSlots &gt;= 2) &amp;&amp; (auxChannel2Seq eq 1)) || ((noOfAuxSlots &gt;= 3) &amp;&amp; (auxChannel3Seq eq 1)) || ((noOfAuxSlots &gt;= 4) &amp;&amp; (auxChannel4Seq eq 1)) || ((noOfAuxSlots &gt;= 5) &amp;&amp; (auxChannel5Seq eq 1)) || ((noOfAuxSlots &gt;= 6) &amp;&amp; (auxChannel6Seq eq 1)) || ((noOfAuxSlots &gt;= 7) &amp;&amp; (auxChannel7Seq eq 1)) || ((noOfAuxSlots &gt;= 8) &amp;&amp; (auxChannel8Seq eq 1)))}`" visible="false" editable="false" desc="DAC1 (DACR2R_1) enable status via AUX channel" />
+    <ParamBool id="AREF_aux_enabled" name="AREF AUX Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAuxSlots &gt; 0) &amp;&amp; (((noOfAuxSlots &gt;= 1) &amp;&amp; (auxChannel1Seq eq 5)) || ((noOfAuxSlots &gt;= 2) &amp;&amp; (auxChannel2Seq eq 5)) || ((noOfAuxSlots &gt;= 3) &amp;&amp; (auxChannel3Seq eq 5)) || ((noOfAuxSlots &gt;= 4) &amp;&amp; (auxChannel4Seq eq 5)) || ((noOfAuxSlots &gt;= 5) &amp;&amp; (auxChannel5Seq eq 5)) || ((noOfAuxSlots &gt;= 6) &amp;&amp; (auxChannel6Seq eq 5)) || ((noOfAuxSlots &gt;= 7) &amp;&amp; (auxChannel7Seq eq 5)) || ((noOfAuxSlots &gt;= 8) &amp;&amp; (auxChannel8Seq eq 5)))}`" visible="false" editable="false" desc="AREF/VREF enable status via AUX channel" />
+    <ParamBool id="VDDA_DIV2_GRP0_aux_enabled" name="VDDA DIV2 GRP0 AUX Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAuxSlots &gt; 0) &amp;&amp; (((noOfAuxSlots &gt;= 1) &amp;&amp; (auxChannel1Seq eq 6)) || ((noOfAuxSlots &gt;= 2) &amp;&amp; (auxChannel2Seq eq 6)) || ((noOfAuxSlots &gt;= 3) &amp;&amp; (auxChannel3Seq eq 6)) || ((noOfAuxSlots &gt;= 4) &amp;&amp; (auxChannel4Seq eq 6)) || ((noOfAuxSlots &gt;= 5) &amp;&amp; (auxChannel5Seq eq 6)) || ((noOfAuxSlots &gt;= 6) &amp;&amp; (auxChannel6Seq eq 6)) || ((noOfAuxSlots &gt;= 7) &amp;&amp; (auxChannel7Seq eq 6)) || ((noOfAuxSlots &gt;= 8) &amp;&amp; (auxChannel8Seq eq 6)))}`" visible="false" editable="false" desc="VDDA/2 DCSG GRP0 enable status via AUX channel" />
+    <ParamBool id="VDDA_DIV2_GRP1_aux_enabled" name="VDDA DIV2 GRP1 AUX Enabled" group="Internal" default="`${(adcGroupNumber eq 0) &amp;&amp; (noOfAuxSlots &gt; 0) &amp;&amp; (((noOfAuxSlots &gt;= 1) &amp;&amp; (auxChannel1Seq eq 7)) || ((noOfAuxSlots &gt;= 2) &amp;&amp; (auxChannel2Seq eq 7)) || ((noOfAuxSlots &gt;= 3) &amp;&amp; (auxChannel3Seq eq 7)) || ((noOfAuxSlots &gt;= 4) &amp;&amp; (auxChannel4Seq eq 7)) || ((noOfAuxSlots &gt;= 5) &amp;&amp; (auxChannel5Seq eq 7)) || ((noOfAuxSlots &gt;= 6) &amp;&amp; (auxChannel6Seq eq 7)) || ((noOfAuxSlots &gt;= 7) &amp;&amp; (auxChannel7Seq eq 7)) || ((noOfAuxSlots &gt;= 8) &amp;&amp; (auxChannel8Seq eq 7)))}`" visible="false" editable="false" desc="VDDA/2 DCSG GRP1 enable status via AUX channel" />
+
+    <ParamRange id="auxSlotScanRate" name="AUX Slot Scan Rate" group="Auxiliary Channel Configuration" default="0" min="0" max="31" resolution="1" visible="`${((adcGroupNumber eq 0) &amp;&amp; (noOfAuxSlots &gt; 0))}`" editable="`${((adcGroupNumber eq 0) || (adcGroupNumber eq 3))}`" desc="To define how many times the channel will be converted before slot switches to the next AUX Channel." />
+    <ParamBool id="external_source_aux" name="AUX and ALT AUX External Source" group="Auxiliary And ALT Auxiliary Channel Configuration" default="false" visible="`${((noOfAltAuxSlots &gt; 0) || (noOfAuxSlots &gt; 0))  &amp;&amp; (triggerMode eq CY_ADC_AUTO_TRIGGER)}`" editable="`${((noOfAltAuxSlots &gt; 0) || (noOfAuxSlots &gt; 0)) &amp;&amp; (triggerMode eq CY_ADC_AUTO_TRIGGER)}`" desc="If enabled both channel 7 and auxiliary channels get converted."/>
+
+    <ParamChoice id="ch7DataPath"
+                 name="Data Path for Channel 7"
+                 group="Auxiliary And ALT Auxiliary Channel Configuration"
+                 visible="`${((adcGroupNumber eq 0) || (adcGroupNumber eq 3)) &amp;&amp; ((noOfAltAuxSlots &gt; 0) || (noOfAuxSlots &gt; 0)) &amp;&amp; ((triggerMode eq CY_ADC_MANUAL_TRIGGER) || (triggerMode eq CY_ADC_ARBITRARY_TRIGGER))}`"
+                 editable="`${((adcGroupNumber eq 0) || (adcGroupNumber eq 3)) &amp;&amp; ((noOfAltAuxSlots &gt; 0) || (noOfAuxSlots &gt; 0)) &amp;&amp; ((triggerMode eq CY_ADC_MANUAL_TRIGGER) || (triggerMode eq CY_ADC_ARBITRARY_TRIGGER))}`"
+                 desc="Specifies the data path used for channel 7. Applicable in Manual and Arbitrary Trigger modes. In Auto Trigger mode the data path is switched by hardware slot scanning."
+                 default="CY_DATA_PATH_ADC7">
+      <Entry name="Channel7 Data Path" value="CY_DATA_PATH_ADC7" visible="true"/>
+      <Entry name="Auxiliary Data Path" value="CY_DATA_PATH_AUX" visible="`${(adcGroupNumber eq 0)}`"/>
+      <Entry name="Alternate Auxiliary Data Path" value="CY_DATA_PATH_ALT_AUX" visible="`${((adcGroupNumber eq 0) || (adcGroupNumber eq 3))}`"/>
+    </ParamChoice>
+
+    <!--      AFE Configuration   -->
+
+    <ParamBool id="afeEnable" name="AFE Enable" group="AFE Configuration" default="false" visible="`${channel0}`" editable="`${channel0}`" desc="Enable/Disable AFE. "/>
+    <ParamChoice id="afeGain"
+                 name="AFE Gain"
+                 group="AFE Configuration"
+                 visible="`${afeEnable}`"
+                 editable="`${afeEnable}`"
+                 desc="AFE GAIN Settings."
+                 default="CY_AFE_GAIN_3">
+      <Entry name="AFE gain Set to 0" value="CY_AFE_GAIN_0" visible="false"/>
+      <Entry name="AFE gain Set to 3" value="CY_AFE_GAIN_3" visible="true"/>
+      <Entry name="AFE gain Set to 6" value="CY_AFE_GAIN_6" visible="true"/>
+      <Entry name="AFE gain Set to 12" value="CY_AFE_GAIN_12" visible="true"/>
+      <Entry name="AFE gain Set to 24" value="CY_AFE_GAIN_24" visible="true"/>
+    </ParamChoice>
+
+    <ParamChoice id="afePwr"
+                 name="AFE Power"
+                 group="AFE Configuration"
+                 visible="`${afeEnable}`"
+                 editable="`${afeEnable}`"
+                 desc="AFE Power Setting."
+                 default="CY_AFE_PWR_HFLG">
+      <Entry name="High Frequency Low Gain" value="CY_AFE_PWR_HFLG" visible="true"/>
+      <Entry name="High Frequency Low Gain, Low Power" value="CY_AFE_PWR_HFLG_LP" visible="true"/>
+      <Entry name="High Frequency Low Gain, Ultra Low Power" value="CY_AFE_PWR_HFLG_ULP" visible="true"/>
+      <Entry name="Low Frequency High Gain" value="CY_AFE_PWR_LFHG" visible="true"/>
+    </ParamChoice>
+    <ParamChoice id="afeClkRatio"
+                 name="AFE Clock Ratio Setting"
+                 group="AFE Configuration"
+                 visible="`${afeEnable}`"
+                 editable="`${afeEnable}`"
+                 desc="AFE Clock Ratio Setting. Define the ADC MSPS setup based on ATOP_CLK relationship."
+                 default="CY_AFE_CLK_RATIO_ATOPCLK_BY_4">
+      <Entry name="AFE Clock Ratio set to ATOP_CLOCK/4" value="CY_AFE_CLK_RATIO_ATOPCLK_BY_4" visible="true"/>
+      <Entry name="AFE Clock Ratio set to ATOP_CLOCK/8" value="CY_AFE_CLK_RATIO_ATOPCLK_BY_8" visible="true"/>
+      <Entry name="AFE Clock Ratio set to ATOP_CLOCK/16" value="CY_AFE_CLK_RATIO_ATOPCLK_BY_16" visible="true"/>
+      <Entry name="AFE Clock Ratio set to ATOP_CLOCK/32" value="CY_AFE_CLK_RATIO_ATOPCLK_BY_32" visible="true"/>
+    </ParamChoice>
+
+    <ParamString id="filt0Rsc" name="filt0Rsc" group="Internal" default="ppca[0].atop[0].adc_grp[`${adcGroupNumber}`].aflt[0]" visible="false" editable="false" desc="" />
+    <ParamString id="filt1Rsc" name="filt1Rsc" group="Internal" default="ppca[0].atop[0].adc_grp[`${adcGroupNumber}`].aflt[1]" visible="false" editable="false" desc="" />
+    <ParamString id="filt0Used" name="filt0Used" group="Internal" default="`${isBlockUsed(filt0Rsc)}`" visible="false" editable="false" desc="" />
+    <ParamString id="filt1Used" name="filt1Used" group="Internal" default="`${isBlockUsed(filt1Rsc)}`" visible="false" editable="false" desc="" />
+    <ParamString id="arefRsc" name="arefRsc" group="Internal" default="ppca[0].atop[0].adc_grp[0].aref[0]" visible="false" editable="false" desc="" />
+    <ParamString id="arefUsed" name="arefUsed" group="Internal" default="`${isBlockUsed(arefRsc)}`" visible="false" editable="false" desc="" />
+    <!-- R2R DAC resources for DRC checks -->
+    <ParamString id="r2rDac0Rsc" name="r2rDac0Rsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[0].r2r_dac[0]" visible="false" editable="false" desc="R2R DAC0 resource path" />
+    <ParamString id="r2rDac1Rsc" name="r2rDac1Rsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[1].r2r_dac[0]" visible="false" editable="false" desc="R2R DAC1 resource path" />
+    <ParamBool id="r2rDac0Used" name="r2rDac0Used" group="Internal" default="`${isBlockUsed(r2rDac0Rsc)}`" visible="false" editable="false" desc="R2R DAC0 enabled status" />
+    <ParamBool id="r2rDac1Used" name="r2rDac1Used" group="Internal" default="`${isBlockUsed(r2rDac1Rsc)}`" visible="false" editable="false" desc="R2R DAC1 enabled status" />
+
+    <Repeat count="9">
+        <ParamSignal port="adc_eoc[$idx]" name="adc_eoc[$idx]" visible="`${((hasVisibleOption(&quot;adc_eoc[$idx]&quot;)) &amp;&amp; ((channel$idx) &amp;&amp; (channel$idx_visibility)))}`" canBeEmpty="true" group="Signals" desc="">
+            <Constraint type="ACCEPT" targetLocation="ioss\[\d+\]\.port\[\d+\]\.pin.*" valid="true" >
+              <Parameter id="DriveModes" severity="DEFAULT" reason="">
+                <Fixed value="CY_GPIO_DM_STRONG_IN_OFF" />
+              </Parameter>
+            </Constraint>
+            <Constraint type="ACCEPT" targetLocation="ioss\[\d+\]\.port\[\d+\]\.pin.*" valid="true" >
+              <Parameter id="DriveModes" severity="INFO" reason="The pin Drive Mode parameter does not match expected.">
+                <Fixed value="CY_GPIO_DM_STRONG_IN_OFF" />
+              </Parameter>
+            </Constraint>
+            <Constraint type="ACCEPT" targetLocation=".*" valid="true" />
+        </ParamSignal>
+
+        <ParamSignal port="adc_soc[$idx]" name="adc_soc[$idx]" visible="`${((hasVisibleOption(&quot;adc_eoc[$idx]&quot;)) &amp;&amp; (((channel$idx) &amp;&amp; (channel$idx_visibility))) || (($idx eq 7) &amp;&amp; ((noOfAuxSlots &gt; 0) || (noOfAltAuxSlots &gt; 0))))}`" canBeEmpty="true" group="Signals" desc="" />
+    </Repeat>
+
+    <!-- SOC/EOC signal display text for image substitution -->
+    <ParamString id="adc_soc0_text" name="adc_soc0_text" group="Internal" default="`${(getParamValueDisplay(&quot;adc_soc[0]&quot;) eq &quot;&quot;) ? &quot;adc_soc[0]&quot; : getParamValueDisplay(&quot;adc_soc[0]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_soc1_text" name="adc_soc1_text" group="Internal" default="`${(getParamValueDisplay(&quot;adc_soc[1]&quot;) eq &quot;&quot;) ? &quot;adc_soc[1]&quot; : getParamValueDisplay(&quot;adc_soc[1]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_soc2_text" name="adc_soc2_text" group="Internal" default="`${(getParamValueDisplay(&quot;adc_soc[2]&quot;) eq &quot;&quot;) ? &quot;adc_soc[2]&quot; : getParamValueDisplay(&quot;adc_soc[2]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_soc3_text" name="adc_soc3_text" group="Internal" default="`${(getParamValueDisplay(&quot;adc_soc[3]&quot;) eq &quot;&quot;) ? &quot;adc_soc[3]&quot; : getParamValueDisplay(&quot;adc_soc[3]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_soc4_text" name="adc_soc4_text" group="Internal" default="`${(getParamValueDisplay(&quot;adc_soc[4]&quot;) eq &quot;&quot;) ? &quot;adc_soc[4]&quot; : getParamValueDisplay(&quot;adc_soc[4]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_soc5_text" name="adc_soc5_text" group="Internal" default="`${(getParamValueDisplay(&quot;adc_soc[5]&quot;) eq &quot;&quot;) ? &quot;adc_soc[5]&quot; : getParamValueDisplay(&quot;adc_soc[5]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_soc6_text" name="adc_soc6_text" group="Internal" default="`${(getParamValueDisplay(&quot;adc_soc[6]&quot;) eq &quot;&quot;) ? &quot;adc_soc[6]&quot; : getParamValueDisplay(&quot;adc_soc[6]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_soc7_text" name="adc_soc7_text" group="Internal" default="`${(getParamValueDisplay(&quot;adc_soc[7]&quot;) eq &quot;&quot;) ? &quot;adc_soc[7]&quot; : getParamValueDisplay(&quot;adc_soc[7]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc0_raw" name="adc_eoc0_raw" group="Internal" default="`${(getParamValueDisplay(&quot;adc_eoc[0]&quot;) eq &quot;&quot;) ? &quot;adc_eoc[0]&quot; : getParamValueDisplay(&quot;adc_eoc[0]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc1_raw" name="adc_eoc1_raw" group="Internal" default="`${(getParamValueDisplay(&quot;adc_eoc[1]&quot;) eq &quot;&quot;) ? &quot;adc_eoc[1]&quot; : getParamValueDisplay(&quot;adc_eoc[1]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc2_raw" name="adc_eoc2_raw" group="Internal" default="`${(getParamValueDisplay(&quot;adc_eoc[2]&quot;) eq &quot;&quot;) ? &quot;adc_eoc[2]&quot; : getParamValueDisplay(&quot;adc_eoc[2]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc3_raw" name="adc_eoc3_raw" group="Internal" default="`${(getParamValueDisplay(&quot;adc_eoc[3]&quot;) eq &quot;&quot;) ? &quot;adc_eoc[3]&quot; : getParamValueDisplay(&quot;adc_eoc[3]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc4_raw" name="adc_eoc4_raw" group="Internal" default="`${(getParamValueDisplay(&quot;adc_eoc[4]&quot;) eq &quot;&quot;) ? &quot;adc_eoc[4]&quot; : getParamValueDisplay(&quot;adc_eoc[4]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc5_raw" name="adc_eoc5_raw" group="Internal" default="`${(getParamValueDisplay(&quot;adc_eoc[5]&quot;) eq &quot;&quot;) ? &quot;adc_eoc[5]&quot; : getParamValueDisplay(&quot;adc_eoc[5]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc6_raw" name="adc_eoc6_raw" group="Internal" default="`${(getParamValueDisplay(&quot;adc_eoc[6]&quot;) eq &quot;&quot;) ? &quot;adc_eoc[6]&quot; : getParamValueDisplay(&quot;adc_eoc[6]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc7_raw" name="adc_eoc7_raw" group="Internal" default="`${(getParamValueDisplay(&quot;adc_eoc[7]&quot;) eq &quot;&quot;) ? &quot;adc_eoc[7]&quot; : getParamValueDisplay(&quot;adc_eoc[7]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="eoc_truncate" name="eoc_truncate" group="Internal" default="`${runTcl(&quot;truncate_signal_text-1.0.tcl&quot;, adc_eoc0_raw, adc_eoc1_raw, adc_eoc2_raw, adc_eoc3_raw, adc_eoc4_raw, adc_eoc5_raw, adc_eoc6_raw, adc_eoc7_raw)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc0_text" name="adc_eoc0_text" group="Internal" default="`${getTclVar(&quot;result0&quot;, eoc_truncate)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc1_text" name="adc_eoc1_text" group="Internal" default="`${getTclVar(&quot;result1&quot;, eoc_truncate)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc2_text" name="adc_eoc2_text" group="Internal" default="`${getTclVar(&quot;result2&quot;, eoc_truncate)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc3_text" name="adc_eoc3_text" group="Internal" default="`${getTclVar(&quot;result3&quot;, eoc_truncate)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc4_text" name="adc_eoc4_text" group="Internal" default="`${getTclVar(&quot;result4&quot;, eoc_truncate)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc5_text" name="adc_eoc5_text" group="Internal" default="`${getTclVar(&quot;result5&quot;, eoc_truncate)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc6_text" name="adc_eoc6_text" group="Internal" default="`${getTclVar(&quot;result6&quot;, eoc_truncate)}`" visible="false" editable="false" desc="" />
+    <ParamString id="adc_eoc7_text" name="adc_eoc7_text" group="Internal" default="`${getTclVar(&quot;result7&quot;, eoc_truncate)}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="gpioAIN2" name="gpioAIN2" group="Internal" default="`${(adcGroupNumber eq 0)  &amp;&amp; ((altAuxChannel1Seq eq 1) || (altAuxChannel2Seq eq 1) || (altAuxChannel3Seq eq 1) || (altAuxChannel4Seq eq 1) || (altAuxChannel5Seq eq 1) || (altAuxChannel6Seq eq 1) || (altAuxChannel7Seq eq 1) || (altAuxChannel8Seq eq 1))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN3" name="gpioAIN3" group="Internal" default="`${(adcGroupNumber eq 0)  &amp;&amp; ((altAuxChannel1Seq eq 2) || (altAuxChannel2Seq eq 2) || (altAuxChannel3Seq eq 2) || (altAuxChannel4Seq eq 2) || (altAuxChannel5Seq eq 2) || (altAuxChannel6Seq eq 2) || (altAuxChannel7Seq eq 2) || (altAuxChannel8Seq eq 2))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN4" name="gpioAIN4" group="Internal" default="`${(adcGroupNumber eq 0)  &amp;&amp; ((altAuxChannel1Seq eq 3) || (altAuxChannel2Seq eq 3) || (altAuxChannel3Seq eq 3) || (altAuxChannel4Seq eq 3) || (altAuxChannel5Seq eq 3) || (altAuxChannel6Seq eq 3) || (altAuxChannel7Seq eq 3) || (altAuxChannel8Seq eq 3))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN5" name="gpioAIN5" group="Internal" default="`${(adcGroupNumber eq 0)  &amp;&amp; ((altAuxChannel1Seq eq 4) || (altAuxChannel2Seq eq 4) || (altAuxChannel3Seq eq 4) || (altAuxChannel4Seq eq 4) || (altAuxChannel5Seq eq 4) || (altAuxChannel6Seq eq 4) || (altAuxChannel7Seq eq 4) || (altAuxChannel8Seq eq 4))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN6" name="gpioAIN6" group="Internal" default="`${(adcGroupNumber eq 0)  &amp;&amp; ((altAuxChannel1Seq eq 5) || (altAuxChannel2Seq eq 5) || (altAuxChannel3Seq eq 5) || (altAuxChannel4Seq eq 5) || (altAuxChannel5Seq eq 5) || (altAuxChannel6Seq eq 5) || (altAuxChannel7Seq eq 5) || (altAuxChannel8Seq eq 5))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN7" name="gpioAIN7" group="Internal" default="`${(adcGroupNumber eq 0)  &amp;&amp; ((altAuxChannel1Seq eq 6) || (altAuxChannel2Seq eq 6) || (altAuxChannel3Seq eq 6) || (altAuxChannel4Seq eq 6) || (altAuxChannel5Seq eq 6) || (altAuxChannel6Seq eq 6) || (altAuxChannel7Seq eq 6) || (altAuxChannel8Seq eq 6))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN8" name="gpioAIN8" group="Internal" default="`${(adcGroupNumber eq 0)  &amp;&amp; ((altAuxChannel1Seq eq 7) || (altAuxChannel2Seq eq 7) || (altAuxChannel3Seq eq 7) || (altAuxChannel4Seq eq 7) || (altAuxChannel5Seq eq 7) || (altAuxChannel6Seq eq 7) || (altAuxChannel7Seq eq 7) || (altAuxChannel8Seq eq 7))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN9" name="gpioAIN9" group="Internal" default="`${(adcGroupNumber eq 3)  &amp;&amp; ((altAuxChannel1Seq eq 1) || (altAuxChannel2Seq eq 1) || (altAuxChannel3Seq eq 1) || (altAuxChannel4Seq eq 1) || (altAuxChannel5Seq eq 1) || (altAuxChannel6Seq eq 1) || (altAuxChannel7Seq eq 1) || (altAuxChannel8Seq eq 1))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN10" name="gpioAIN10" group="Internal" default="`${(adcGroupNumber eq 3)  &amp;&amp; ((altAuxChannel1Seq eq 2) || (altAuxChannel2Seq eq 2) || (altAuxChannel3Seq eq 2) || (altAuxChannel4Seq eq 2) || (altAuxChannel5Seq eq 2) || (altAuxChannel6Seq eq 2) || (altAuxChannel7Seq eq 2) || (altAuxChannel8Seq eq 2))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN11" name="gpioAIN11" group="Internal" default="`${(adcGroupNumber eq 3)  &amp;&amp; ((altAuxChannel1Seq eq 3) || (altAuxChannel2Seq eq 3) || (altAuxChannel3Seq eq 3) || (altAuxChannel4Seq eq 3) || (altAuxChannel5Seq eq 3) || (altAuxChannel6Seq eq 3) || (altAuxChannel7Seq eq 3) || (altAuxChannel8Seq eq 3))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN12" name="gpioAIN12" group="Internal" default="`${(adcGroupNumber eq 3)  &amp;&amp; ((altAuxChannel1Seq eq 4) || (altAuxChannel2Seq eq 4) || (altAuxChannel3Seq eq 4) || (altAuxChannel4Seq eq 4) || (altAuxChannel5Seq eq 4) || (altAuxChannel6Seq eq 4) || (altAuxChannel7Seq eq 4) || (altAuxChannel8Seq eq 4))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN13" name="gpioAIN13" group="Internal" default="`${(adcGroupNumber eq 3)  &amp;&amp; ((altAuxChannel1Seq eq 5) || (altAuxChannel2Seq eq 5) || (altAuxChannel3Seq eq 5) || (altAuxChannel4Seq eq 5) || (altAuxChannel5Seq eq 5) || (altAuxChannel6Seq eq 5) || (altAuxChannel7Seq eq 5) || (altAuxChannel8Seq eq 5))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN14" name="gpioAIN14" group="Internal" default="`${(adcGroupNumber eq 3)  &amp;&amp; ((altAuxChannel1Seq eq 6) || (altAuxChannel2Seq eq 6) || (altAuxChannel3Seq eq 6) || (altAuxChannel4Seq eq 6) || (altAuxChannel5Seq eq 6) || (altAuxChannel6Seq eq 6) || (altAuxChannel7Seq eq 6) || (altAuxChannel8Seq eq 6))}`" visible="false" editable="false" desc="" />
+    <ParamBool id="gpioAIN15" name="gpioAIN15" group="Internal" default="`${(adcGroupNumber eq 3)  &amp;&amp; ((altAuxChannel1Seq eq 7) || (altAuxChannel2Seq eq 7) || (altAuxChannel3Seq eq 7) || (altAuxChannel4Seq eq 7) || (altAuxChannel5Seq eq 7) || (altAuxChannel6Seq eq 7) || (altAuxChannel7Seq eq 7) || (altAuxChannel8Seq eq 7))}`" visible="false" editable="false" desc="" />
+
+
+    <ParamString id="gpioRscAIN2" name="gpioRscAIN2" group="Internal" default="ioss[0].port[6].pin[5]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN3" name="gpioRscAIN3" group="Internal" default="ioss[0].port[6].pin[4]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN4" name="gpioRscAIN4" group="Internal" default="ioss[0].port[6].pin[3]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN5" name="gpioRscAIN5" group="Internal" default="ioss[0].port[6].pin[2]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN6" name="gpioRscAIN6" group="Internal" default="ioss[0].port[6].pin[1]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN7" name="gpioRscAIN7" group="Internal" default="ioss[0].port[6].pin[0]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN8" name="gpioRscAIN8" group="Internal" default="ioss[0].port[5].pin[3]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN9" name="gpioRscAIN9" group="Internal" default="ioss[0].port[7].pin[0]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN10" name="gpioRscAIN10" group="Internal" default="ioss[0].port[7].pin[1]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN11" name="gpioRscAIN11" group="Internal" default="ioss[0].port[7].pin[2]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN12" name="gpioRscAIN12" group="Internal" default="ioss[0].port[7].pin[3]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN13" name="gpioRscAIN13" group="Internal" default="ioss[0].port[7].pin[4]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN14" name="gpioRscAIN14" group="Internal" default="ioss[0].port[7].pin[5]" visible="false" editable="false" desc="" />
+    <ParamString id="gpioRscAIN15" name="gpioRscAIN15" group="Internal" default="ioss[0].port[7].pin[6]" visible="false" editable="false" desc="" />
+
+    <ParamBool id="isGpioAIN2Used" name="isGpioAIN2Used" group="Internal" default="`${gpioAIN2 ? isBlockUsed(gpioRscAIN2) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN3Used" name="isGpioAIN3Used" group="Internal" default="`${gpioAIN3 ? isBlockUsed(gpioRscAIN3) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN4Used" name="isGpioAIN4Used" group="Internal" default="`${gpioAIN4 ? isBlockUsed(gpioRscAIN4) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN5Used" name="isGpioAIN5Used" group="Internal" default="`${gpioAIN5 ? isBlockUsed(gpioRscAIN5) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN6Used" name="isGpioAIN6Used" group="Internal" default="`${gpioAIN6 ? isBlockUsed(gpioRscAIN6) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN7Used" name="isGpioAIN7Used" group="Internal" default="`${gpioAIN7 ? isBlockUsed(gpioRscAIN7) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN8Used" name="isGpioAIN8Used" group="Internal" default="`${gpioAIN8 ? isBlockUsed(gpioRscAIN8) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN9Used" name="isGpioAIN9Used" group="Internal" default="`${gpioAIN9 ? isBlockUsed(gpioRscAIN9) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN10Used" name="isGpioAIN10Used" group="Internal" default="`${gpioAIN10 ? isBlockUsed(gpioRscAIN10) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN11Used" name="isGpioAIN11Used" group="Internal" default="`${gpioAIN11 ? isBlockUsed(gpioRscAIN11) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN12Used" name="isGpioAIN12Used" group="Internal" default="`${gpioAIN12 ? isBlockUsed(gpioRscAIN12) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN13Used" name="isGpioAIN13Used" group="Internal" default="`${gpioAIN13 ? isBlockUsed(gpioRscAIN13) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN14Used" name="isGpioAIN14Used" group="Internal" default="`${gpioAIN14 ? isBlockUsed(gpioRscAIN14) : false}`" visible="false" editable="false" desc="" />
+    <ParamBool id="isGpioAIN15Used" name="isGpioAIN15Used" group="Internal" default="`${gpioAIN15 ? isBlockUsed(gpioRscAIN15) : false}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+  </Parameters>
+  <DRCs>
+
+    <DRC type="ERROR" text="Enable AREF in ADC Group0 and configure VREF Source accordingly." condition="`${!arefUsed}`">
+      <FixIt action="ENABLE_BLOCK" target="`${arefRsc}`" value="" valid="true" />
+    </DRC>
+
+    <DRC type="ERROR" text="The `${(&quot;channel&quot; . ($idx+1))}` should be enabled." condition="`${((channel$idx_modular eq 0) &amp;&amp; (getParamValue(&quot;channel&quot; . ($idx) . &quot;type&quot;) eq 1))&amp;&amp; ((getParamValue(&quot;channel&quot; . ($idx+1))) eq false) }`" paramId="channel$idx" repeatCount="8" >
+         <FixIt action="SET_PARAM" target="`${(&quot;channel&quot; . ($idx+1))}`" value="true" valid="`${((getParamValue(&quot;channel&quot; . ($idx+1))) eq false)}`" />
+    </DRC>
+    <DRC type="ERROR" text="The `${(&quot;channel&quot; . ($idx) . &quot;type&quot;)}` pair should have same Data type." condition="`${(channel$idx_modular eq 1) &amp;&amp; (getParamValue(&quot;channel&quot; . ($idx) . &quot;type&quot;) eq 1) &amp;&amp; (getParamValue(&quot;channel&quot; . ($idx-1) . &quot;type&quot;) eq 0)}`" paramId="channel$idxType" repeatCount="8" >
+         <FixIt action="SET_PARAM" target="`${(&quot;channel&quot; . ($idx-1))}`" value="true" valid="`${((getParamValue(&quot;channel&quot; . ($idx-1))) eq false)}`" />
+         <FixIt action="SET_PARAM" target="`${(&quot;channel&quot; . ($idx-1) . &quot;type&quot;)}`" value="1" valid="`${((getParamValue(&quot;channel&quot; . ($idx-1) . &quot;type&quot;)) eq 0)}`" />
+    </DRC>
+
+    <DRC type="ERROR" text="Assign channel for `${(&quot;Position &quot; . ($idx))}`. Unassigned sequence positions are not allowed." condition="`${($idx &gt; 0) &amp;&amp; (channelsEnabled &gt;= $idx) &amp;&amp; ((channel$idxSeq eq 0) || (channel$idxSeq eq 15))}`" paramId="channel$idxSeq" repeatCount="9" />
+
+    <DRC type="ERROR" text="The GPIO pin `${gpioRscAIN$idx}` should be enabled and configured" condition="`${gpioAIN$idx &amp;&amp; !isGpioAIN$idxUsed}`" repeatCount="16" >
+      <FixIt action="ENABLE_BLOCK" target="`${gpioRscAIN$idx}`" value="pin-3.0" valid="true" />
+    </DRC>
+    <DRC type="INFO" text="The GPIO pin `${gpioRscAIN$idx}` Drive Mode is not typical for analog inputs: &quot;Analog High-Z. Input buffer off&quot;" condition="`${isGpioAIN$idxUsed ? (&quot;CY_GPIO_DM_ANALOG&quot; ne getExposedMember(gpioRscAIN$idx, &quot;driveMode&quot;)) : false}`" repeatCount="16" />
+    <DRC type="ERROR" text="With AFE enabled, Channel 0 and 1 should be in differential mode." condition="`${afeEnable &amp;&amp; (channel0type eq 0) }`">
+      <FixIt action="SET_PARAM" target="channel0type" value="1" valid="true" />
+    </DRC>
+    <!-- DRC: AUX channel references R2R DAC0 but it is not enabled -->
+    <DRC type="ERROR" text="AUX channel is set to DACR2R_0 but R2R DAC0 (DCSG Group 0) is not enabled. Enable the R2R DAC0 block." condition="`${DAC0_aux_enabled &amp;&amp; !r2rDac0Used}`">
+      <FixIt action="ENABLE_BLOCK" target="`${r2rDac0Rsc}`" value="" valid="true" />
+    </DRC>
+    <!-- DRC: AUX channel references R2R DAC1 but it is not enabled -->
+    <DRC type="ERROR" text="AUX channel is set to DACR2R_1 but R2R DAC1 (DCSG Group 1) is not enabled. Enable the R2R DAC1 block." condition="`${DAC1_aux_enabled &amp;&amp; !r2rDac1Used}`">
+      <FixIt action="ENABLE_BLOCK" target="`${r2rDac1Rsc}`" value="" valid="true" />
+    </DRC>
+  </DRCs>
+
+ <ConfigFirmware>
+
+    <ConfigInclude value="cy_ppca_adc.h" include="true" />
+    <ConfigInclude value="mtb_hal.h" include="true" guard="defined (COMPONENT_MTB_HAL)" />
+    <ConfigInclude value="mtb_hal_hw_types.h" include="true" guard="defined (COMPONENT_MTB_HAL)" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_ATOPSS_ADC_GRP`${adcGroupNumber}`_SLICE0_ADC" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_AFE_HW" value="PPCA_ATOPSS_ADC_GRP`${adcGroupNumber}`_SLICE0_AFE" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_IRQ" value="ppca_atop_`${adcGroupNumber}`_IRQn" public="true" include="true" />
+
+    <ConfigStruct name="`${INST_NAME}`_aux_config" type="cy_stc_aux_slot_config_t" const="false" public="true" include="true" >
+      <Member name="aux_ch" value="`${auxChannel1Seq}`" />
+      <Member name="aux_ch_gnd" value="`${auxChannel1Seq}`" />
+      <Member name="alt_aux_ch" value="`${altAuxChannel1Seq}`" />
+      <Member name="ch7_data_path" value="`${ch7DataPath}`" />
+    </ConfigStruct>
+
+    <ConfigStruct name="`${INST_NAME}`_config" type="cy_stc_ppca_adc_config_t" const="`${inFlash}`" public="true" include="true" >
+      <Member name="calib_gain_mode" value="`${calibGainMode}`" />
+      <Member name="aux_slot" value="`${auxSlotSelect}`" />
+      <Member name="alt_aux_slot" value="`${altAuxSlotSelect}`" />
+      <Member name="channels" value="`${channel0 | (channel1 &lt;&lt; 1) | (channel2 &lt;&lt; 2) | (channel3 &lt;&lt; 3) | (channel4 &lt;&lt; 4) | (channel5 &lt;&lt; 5) | (channel6 &lt;&lt; 6) | (channel7 &lt;&lt; 7)}`" />
+      <Member name="channel_type" value="`${channel0type | (channel1type &lt;&lt; 1) | (channel2type &lt;&lt; 2) | (channel3type &lt;&lt; 3) | (channel4type &lt;&lt; 4) | (channel5type &lt;&lt; 5) | (channel6type &lt;&lt; 6) | (channel7type &lt;&lt; 7)}`" />
+      <Member name="channel_data_type" value="`${channel0DataType | (channel1DataType &lt;&lt; 1) | (channel2DataType &lt;&lt; 2) | (channel3DataType &lt;&lt; 3) | (channel4DataType &lt;&lt; 4) | (channel5DataType &lt;&lt; 5) | (channel6DataType &lt;&lt; 6) | (channel7DataType &lt;&lt; 7)}`" />
+      <Member name="aux_channel_data_type" value="`${auxChannel1DataType | (auxChannel2DataType &lt;&lt; 1) | (auxChannel3DataType &lt;&lt; 2) | (auxChannel4DataType &lt;&lt; 3) | (auxChannel5DataType &lt;&lt; 4) | (auxChannel6DataType &lt;&lt; 5) | (auxChannel7DataType &lt;&lt; 6) | (auxChannel8DataType &lt;&lt; 7)}`" />
+      <Member name="alt_aux_channel_data_type" value="`${altAuxChannel1DataType | (altAuxChannel2DataType &lt;&lt; 1) | (altAuxChannel3DataType &lt;&lt; 2) | (altAuxChannel4DataType &lt;&lt; 3) | (altAuxChannel5DataType &lt;&lt; 4) | (altAuxChannel6DataType &lt;&lt; 5) | (altAuxChannel7DataType &lt;&lt; 6) | (altAuxChannel8DataType &lt;&lt; 7)}`" />
+      <Member name="aux_slot_config" value="&amp;`${INST_NAME}`_aux_config" />
+      <ConfigStruct name="adc_conv_config" type="nested" const="false" public="true" include="true">
+        <Member name="group_channel" value="`${groupOfChannels}`" />
+        <Member name="trigger_mode" value="`${triggerMode}`" />
+        <Member name="auto_trigger_sample_clck" value="`${samplingCycles}`" />
+        <Member name="num_of_slot" value="`${noOfSlots}`" />
+        <Member name="eos_src" value="`${eosSignal}`" />
+        <Member name="num_of_aux_slot" value="`${noOfAuxSlots}`" />
+        <Member name="num_of_alt_aux_slot" value="`${noOfAltAuxSlots}`" />
+        <Member name="aux_slot_scan_rate" value="`${auxSlotScanRate}`" />
+        <Member name="ext_src" value="`${external_source_aux}`" />
+        <Member name="sequence_of_channel" value="`${chSeqValue}`" />
+        <Member name="sequence_of_aux_channel" value="`${auxChannel1Seq | (auxChannel2Seq &lt;&lt; 4) | (auxChannel3Seq &lt;&lt; 8) | (auxChannel4Seq &lt;&lt; 12) | (auxChannel5Seq &lt;&lt; 16) | (auxChannel6Seq &lt;&lt; 20) | (auxChannel7Seq &lt;&lt; 24) | (auxChannel8Seq &lt;&lt; 28)}`" />
+        <Member name="sequence_of_alt_aux_channel" value="`${altAuxChannel1Seq | (altAuxChannel2Seq &lt;&lt; 4) | (altAuxChannel3Seq &lt;&lt; 8) | (altAuxChannel4Seq &lt;&lt; 12) | (altAuxChannel5Seq &lt;&lt; 16) | (altAuxChannel6Seq &lt;&lt; 20) | (altAuxChannel7Seq &lt;&lt; 24) | (altAuxChannel8Seq &lt;&lt; 28)}`" />
+      </ConfigStruct>
+    </ConfigStruct>
+
+    <ConfigStruct name="`${INST_NAME}`_afe_config" type="cy_stc_ppca_afe_config_t" const="`${inFlash}`" public="true" include="`${afeEnable}`" >
+      <Member name="afe_gain" value="`${afeGain}`" />
+      <Member name="afe_pwr" value="`${afePwr}`" />
+      <Member name="afe_clk_ratio" value="`${afeClkRatio}`" />
+    </ConfigStruct>
+
+    <ConfigStruct name="`${INST_NAME}`_hal_config" type="mtb_hal_adc_configurator_t" const="`${inFlash}`" public="true" include="true" guard="defined (COMPONENT_MTB_HAL) &amp;&amp; (MTB_HAL_DRIVER_AVAILABLE_ADC)">
+      <Member name="base" value="`${INST_NAME}`_HW" />
+      <Member name="base_filter0" value="`${filt0Used ? getExposedMember(filt0Rsc, &quot;instName&quot;) . &quot;_HW&quot; : &quot;NULL&quot;}`" />
+      <Member name="base_filter1" value="`${filt1Used ? getExposedMember(filt1Rsc, &quot;instName&quot;) . &quot;_HW&quot; : &quot;NULL&quot;}`" />
+      <Member name="config" value="&amp;`${INST_NAME}`_config" />
+      <Member name="clock" value="NULL" />
+      <Member name="num_channels" value="`${channelsEnabled}`" />
+      <Member name="src_filter0" value="`${filt0Used ? getExposedMember(filt0Rsc, &quot;srcChannel&quot;) : 255u}`" />
+      <Member name="src_filter1" value="`${filt1Used ? getExposedMember(filt1Rsc, &quot;srcChannel&quot;) : 255u}`" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_ADC_Init(`${INST_NAME}`_HW, &amp;`${INST_NAME}`_config);" include="`${init}`" purpose="INITIALIZE" guard="!defined (COMPONENT_PPCA_DEVICE)" />
+    <ConfigInstruction value="Cy_PPCA_AFE_Init(`${INST_NAME}`_AFE_HW, &amp;`${INST_NAME}`_afe_config);" include="`${init &amp;&amp; afeEnable}`" purpose="INITIALIZE" guard="!defined (COMPONENT_PPCA_DEVICE)" />
+
+   </ConfigFirmware>
+
+</PersonalityTemplate>

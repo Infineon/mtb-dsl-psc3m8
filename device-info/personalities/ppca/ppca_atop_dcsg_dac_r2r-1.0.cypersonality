@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PersonalityTemplate id="mxs40ppca_dcsg_r2r_dac" name="DCSG R2R DAC" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v12">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.atop\.dcsg_grp\.r2r_dac" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers>
+    <ExposedMember key="dac_out_pin"  paramId="dac_out_pin" />
+  </ExposedMembers>
+
+  <Parameters>
+    <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__dacr2r.html" linkText="Open PPCA DACR2R Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+    <ParamBool id="pPPCABlock" name="PPCA BLock" desc="Is from PPCA Block" group="Internal" default="`${(&quot;mxs40ppss&quot; eq getIpBlockName())}`" visible="false" editable="false" />
+    <ParamString id="dcsgGroupNumber" name="DCSG Group Number" group="Internal" default="`${getInstNumber(&quot;dcsg_grp&quot;)}`" visible="false" editable="false" desc="DCSG Group name number." />
+    <ParamString id="arefRsc" name="arefRsc" group="Internal" default="ppca[0].atop[0].adc_grp[0].aref[0]" visible="false" editable="false" desc="" />
+    <ParamString id="arefUsed" name="arefUsed" group="Internal" default="`${isBlockUsed(arefRsc)}`" visible="false" editable="false" desc="" />
+    <Repeat count="6">
+        <ParamString id="dcsg$idxRsc" name="dcsg$idxRsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].dcsg[$idx]" visible="false" editable="false" desc="" />
+        <ParamString id="dcsg$idxUsed" name="dcsg$idxUsed" group="Internal" default="`${isBlockUsed(dcsg$idxRsc)}`" visible="false" editable="false" desc="" />
+    </Repeat>
+    <!-- DACR2R Configuration -->
+    <ParamBool id="dac_buf_enable" name="Enable DAC Buf" group="DACR2R Configuration" default="true" visible="true" editable="true" desc="If set to true, buf will be enabled."/>
+    <ParamChoice id="dacr2r_cnfg"
+             name="DAC R2R Mode"
+             group="DACR2R Configuration"
+             visible="true"
+             editable="true"
+             desc="DAC R2R Mode Configuration."
+             default="CY_DACR2R_CNFG_DAC_BUF_WITH_1_2_FULL_RANGE">
+        <Entry name="Loopback SingleEnded (P-G)/Differential Mode(P-N) 0V to 3.3V" value="CY_DACR2R_CNFG_LOOPBACK_SINGLE_ENDED_MODE" visible="true"/>
+        <Entry name="DAC Buffer with 1.2 Full Range" value="CY_DACR2R_CNFG_DAC_BUF_WITH_1_2_FULL_RANGE" visible="true"/>
+        <Entry name="DAC Buffer with VDDA/2 Full Range" value="CY_DACR2R_CNFG_DAC_BUF_WITH_VDDABY2_FULL_RANGE" visible="true"/>
+        <Entry name="Loopback Differential Mode -0.2V to 0.2V" value="CY_DACR2R_CNFG_LOOPBACK_200MV_DIFFERENTIAL_MODE" visible="true"/>
+        <Entry name="Loopback Differential Mode -3.3V to 3.3V" value="CY_DACR2R_CNFG_LOOPBACK_3V_DIFFERENTIAL_MODE" visible="true"/>
+    </ParamChoice>
+    <ParamBool id="offset_correction_disable" name="Disable Offset Correction" group="DACR2R Configuration" default="false" visible="true" editable="true" desc="Offset Correction is added to DOUT value before sending to R2R_DAC Analog module. false: correction enabled. true: correction disabled."/>
+    <ParamBool id="gain_correction_disable" name="Disable Gain Correction" group="DACR2R Configuration" default="false" visible="true" editable="true" desc="Gain Correction is added to DOUT value before sending to R2R_DAC Analog module. false: correction enabled. true: correction disabled."/>
+    <ParamBool id="buf_offset_correction_disable" name="Disable Buf Offset Correction" group="DACR2R Configuration" default="false" visible="true" editable="true" desc="Buf Offset Correction is added to DOUT value before sending to R2R_DAC Analog module. false: correction enabled. true: correction disabled."/>
+    <ParamBool id="vref_to_buf_enable" name="Enable VREF to BUF" group="DACR2R Configuration" default="false" visible="false" editable="false" desc="Enable VREF as reference to Buffer. false - VREF is not connected as reference true - VREF is connected as reference."/>
+    <ParamBool id="dac_out_to_buf_enable" name="Enable DAC OUT to BUF" group="DACR2R Configuration" default="true" visible="false" editable="false" desc="Enable DAC_Output as reference to Buffer. false - DAC_Output is not connected as reference. true - DAC_Output is connected as reference."/>
+
+    <ParamString id="dac_out_pin" name="DAC OUT PIN" group="Signal" default="`${((dcsgGroupNumber eq 0) ? &quot;AIN0&quot; : &quot;AIN1&quot;)}`" visible="true" editable="false" desc="" />
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+  </Parameters>
+  <DRCs>
+    <DRC type="ERROR" text="Enable AREF in ADC Group0 and configure VREF Source accordingly." condition="`${!arefUsed}`">
+      <FixIt action="ENABLE_BLOCK" target="`${arefRsc}`" value="" valid="true" />
+    </DRC>
+    <DRC type="ERROR" text="Enable DAC BUF." condition="`${((dacr2r_cnfg eq CY_DACR2R_CNFG_DAC_BUF_WITH_1_2_FULL_RANGE) || (dacr2r_cnfg eq CY_DACR2R_CNFG_DAC_BUF_WITH_VDDABY2_FULL_RANGE)) &amp;&amp; (dac_buf_enable eq false) }`">
+      <FixIt action="SET_PARAM" target="dac_buf_enable" value="true" valid="true" />
+    </DRC>
+    <DRC type="ERROR" text="Disable DAC BUF." condition="`${((dacr2r_cnfg ne CY_DACR2R_CNFG_DAC_BUF_WITH_1_2_FULL_RANGE) &amp;&amp; (dacr2r_cnfg ne CY_DACR2R_CNFG_DAC_BUF_WITH_VDDABY2_FULL_RANGE)) &amp;&amp; (dac_buf_enable eq true) }`">
+      <FixIt action="SET_PARAM" target="dac_buf_enable" value="false" valid="true" />
+    </DRC>
+    <DRC type="ERROR" text="DAC block require DCSG clock supply to propagate the selected internal DAC value to the analog block. Hence at least one of the DCSG in the same DCSG group has to be enabled in order to provide the required clock." condition="`${((dcsgGroupNumber eq 0) &amp;&amp; (!dcsg0Used &amp;&amp; !dcsg1Used &amp;&amp; !dcsg2Used &amp;&amp; !dcsg3Used &amp;&amp; !dcsg4Used &amp;&amp; !dcsg5Used))}`" />
+    <DRC type="ERROR" text="DAC block require DCSG clock supply to propagate the selected internal DAC value to the analog block. Hence at least one of the DCSG in the same DCSG group has to be enabled in order to provide the required clock." condition="`${((dcsgGroupNumber eq 1) &amp;&amp; (!dcsg0Used &amp;&amp; !dcsg1Used &amp;&amp; !dcsg2Used) )}`" />
+  </DRCs>
+
+ <ConfigFirmware>
+
+    <ConfigInclude value="cy_ppca_dacr2r.h" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_ATOPSS_DCSG_GRP`${dcsgGroupNumber}`_DAC_R2R" public="true" include="true" />
+    <ConfigStruct name="`${INST_NAME}`_config" type="cy_stc_ppca_dacr2r_config_t" const="`${inFlash}`" public="true" include="true" >
+      <Member name="dac_buf_enable" value="`${dac_buf_enable}`" />
+      <Member name="dacr2r_cnfg" value="`${dacr2r_cnfg}`" />
+      <Member name="offset_correction_disable" value="`${offset_correction_disable}`" />
+      <Member name="gain_correction_disable" value="`${gain_correction_disable}`" />
+      <Member name="buf_offset_correction_disable" value="`${buf_offset_correction_disable}`" />
+      <Member name="vref_to_buf_enable" value="`${vref_to_buf_enable}`" />
+      <Member name="dac_out_to_buf_enable" value="`${dac_out_to_buf_enable}`" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_DAC_Init(`${INST_NAME}`_HW, &amp;`${INST_NAME}`_config);" include="`${init}`" purpose="INITIALIZE" guard="!defined (COMPONENT_PPCA_DEVICE)"/>
+
+   </ConfigFirmware>
+</PersonalityTemplate>

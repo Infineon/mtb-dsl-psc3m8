@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+  <PersonalityTemplate id="mxs40ppca-epu" name="mxs40ppca-epu" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v10">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.epu" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers>
+    <ExposedMember key="puty1ResAlloc"  paramId="puty1ResAlloc" />
+    <ExposedMember key="puty2ResAlloc"  paramId="puty2ResAlloc" />
+  </ExposedMembers>
+
+  <Parameters>
+     <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__epu.html" linkText="Open PPCA EPU Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+
+    <ParamString id="ocean" name="ocean" group="Internal" default="#3b9b91" visible="false" editable="false" desc="" />
+    <ParamString id="berry" name="berry" group="Internal" default="#be3283" visible="false" editable="false" desc="" />
+    <ParamString id="grey" name="grey" group="Internal" default="#cccccc" visible="false" editable="false" desc="" />
+
+    <Repeat count="32">
+        <ParamChoice id="puty1_$idx"
+                     name='`${getBlockDisplayName("ppca[0].epu[0].putype1[$idx{0}]",true)}`'
+                     group="PUTY1"
+                     visible="true"
+                     editable="true"
+                     desc="Processing Unit Type-1 $idx Assignment"
+                     default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+          <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+          <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="true"/>
+        </ParamChoice>
+    <ParamString id="puty1_$idx_fill" name="puty1_$idx_fill" group="Internal" default="`${(puty1_$idx eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+    <ParamRange id="puty1_$idx_val" name="puty1_$idx_val" group="Internal" default="`${(puty1_$idx eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? 0 : 1}`" min="0" max="1" resolution="1" visible="false" editable="false" desc="" />
+
+    </Repeat>
+
+    <Repeat count="16">
+        <ParamChoice id="puty2_$idx"
+                     name='`${getBlockDisplayName("ppca[0].epu[0].putype2[$idx{0}]",true)}`'
+                     group="PUTY2"
+                     visible="true"
+                     editable="true"
+                     desc="Processing Unit Type-2 $idx Assignment"
+                     default="CY_ALLOCATE_PERIPHERAL_TO_CPU0">
+          <Entry name="CPU0" value="CY_ALLOCATE_PERIPHERAL_TO_CPU0" visible="true"/>
+          <Entry name="CPU1" value="CY_ALLOCATE_PERIPHERAL_TO_CPU1" visible="true"/>
+        </ParamChoice>
+    <ParamString id="puty2_$idx_fill" name="puty2_$idx_fill" group="Internal" default="`${(puty2_$idx eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? ocean : berry}`" visible="false" editable="false" desc="" />
+    <ParamRange id="puty2_$idx_val" name="puty2_$idx_val" group="Internal" default="`${(puty2_$idx eq CY_ALLOCATE_PERIPHERAL_TO_CPU0) ? 0 : 1}`" min="0" max="1" resolution="1" visible="false" editable="false" desc="" />
+    </Repeat>
+
+    <Repeat count="8">
+        <ParamChoice id="epuIrq$idx{0}"
+                     name="EPU_IRQ $idx{0} Source Select"
+                     group="EPU_IRQ"
+                     visible="true"
+                     editable="true"
+                     desc="Select one of the COMBO output as interrupt source."
+                     default="-1">
+          <Entry name="Unassigned" value="-1" visible="true" />
+          <Entry name='`${getBlockDisplayName("ppca[0].epu[0].combiner[$idx{0}]",true)}`' value="$idx{0}" visible="true" repeatCount="123" />
+        </ParamChoice>
+    </Repeat>
+
+    <ParamRange id="puty1ResAlloc" name="puty1ResAlloc" group="Internal" default="`${(puty1_0_val &lt;&lt; 0) | (puty1_1_val &lt;&lt; 1) | (puty1_2_val &lt;&lt; 2) | (puty1_3_val &lt;&lt; 3) | (puty1_4_val &lt;&lt; 4) | (puty1_5_val &lt;&lt; 5) | (puty1_6_val &lt;&lt; 6) | (puty1_7_val &lt;&lt; 7) | (puty1_8_val &lt;&lt; 8) | (puty1_9_val &lt;&lt; 9) | (puty1_10_val &lt;&lt; 10) | (puty1_11_val &lt;&lt; 11) | (puty1_12_val &lt;&lt; 12) | (puty1_13_val &lt;&lt; 13) | (puty1_14_val &lt;&lt; 14) | (puty1_15_val &lt;&lt; 15) | (puty1_16_val &lt;&lt; 16) | (puty1_17_val &lt;&lt; 17) | (puty1_18_val &lt;&lt; 18) | (puty1_19_val &lt;&lt; 19) | (puty1_20_val &lt;&lt; 20) | (puty1_21_val &lt;&lt; 21) | (puty1_22_val &lt;&lt; 22) | (puty1_23_val &lt;&lt; 23) | (puty1_24_val &lt;&lt; 24) | (puty1_25_val &lt;&lt; 25) | (puty1_26_val &lt;&lt; 26) | (puty1_27_val &lt;&lt; 27) | (puty1_28_val &lt;&lt; 28) | (puty1_29_val &lt;&lt; 29) | (puty1_30_val &lt;&lt; 30) | (puty1_31_val &lt;&lt; 31) }`" min="0" max="4294967295" resolution="1" visible="false" editable="false" desc="" />
+    <ParamRange id="puty2ResAlloc" name="puty2ResAlloc" group="Internal" default="`${(puty2_0_val &lt;&lt; 0) | (puty2_1_val &lt;&lt; 1) | (puty2_2_val &lt;&lt; 2) | (puty2_3_val &lt;&lt; 3) | (puty2_4_val &lt;&lt; 4) | (puty2_5_val &lt;&lt; 5) | (puty2_6_val &lt;&lt; 6) | (puty2_7_val &lt;&lt; 7) | (puty2_8_val &lt;&lt; 8) | (puty2_9_val &lt;&lt; 9) | (puty2_10_val &lt;&lt; 10) | (puty2_11_val &lt;&lt; 11) | (puty2_12_val &lt;&lt; 12) | (puty2_13_val &lt;&lt; 13) | (puty2_14_val &lt;&lt; 14) | (puty2_15_val &lt;&lt; 15) }`" min="0" max="65535" resolution="1" visible="false" editable="false" desc="" />
+
+
+    <ParamImage id="epu"
+                name="EPU"
+                group="EPU"
+                desc=""
+                visible="true"
+                position="OUTSET"
+                default="`${cy_libs_path()}`/device-info/personalities/ppca/epu.svg">
+        <Substitution name="puty1_0_colour" value="`${puty1_0_fill}`"/>
+        <Substitution name="puty1_1_colour" value="`${puty1_1_fill}`"/>
+        <Substitution name="puty1_2_colour" value="`${puty1_2_fill}`"/>
+        <Substitution name="puty1_3_colour" value="`${puty1_3_fill}`"/>
+        <Substitution name="puty1_4_colour" value="`${puty1_4_fill}`"/>
+        <Substitution name="puty1_5_colour" value="`${puty1_5_fill}`"/>
+        <Substitution name="puty1_6_colour" value="`${puty1_6_fill}`"/>
+        <Substitution name="puty1_7_colour" value="`${puty1_7_fill}`"/>
+        <Substitution name="puty1_8_colour" value="`${puty1_8_fill}`"/>
+        <Substitution name="puty1_9_colour" value="`${puty1_9_fill}`"/>
+        <Substitution name="puty1_10_colour" value="`${puty1_10_fill}`"/>
+        <Substitution name="puty1_11_colour" value="`${puty1_11_fill}`"/>
+        <Substitution name="puty1_12_colour" value="`${puty1_12_fill}`"/>
+        <Substitution name="puty1_13_colour" value="`${puty1_13_fill}`"/>
+        <Substitution name="puty1_14_colour" value="`${puty1_14_fill}`"/>
+        <Substitution name="puty1_15_colour" value="`${puty1_15_fill}`"/>
+        <Substitution name="puty1_16_colour" value="`${puty1_16_fill}`"/>
+        <Substitution name="puty1_17_colour" value="`${puty1_17_fill}`"/>
+        <Substitution name="puty1_18_colour" value="`${puty1_18_fill}`"/>
+        <Substitution name="puty1_19_colour" value="`${puty1_19_fill}`"/>
+        <Substitution name="puty1_20_colour" value="`${puty1_20_fill}`"/>
+        <Substitution name="puty1_21_colour" value="`${puty1_21_fill}`"/>
+        <Substitution name="puty1_22_colour" value="`${puty1_22_fill}`"/>
+        <Substitution name="puty1_23_colour" value="`${puty1_23_fill}`"/>
+        <Substitution name="puty1_24_colour" value="`${puty1_24_fill}`"/>
+        <Substitution name="puty1_25_colour" value="`${puty1_25_fill}`"/>
+        <Substitution name="puty1_26_colour" value="`${puty1_26_fill}`"/>
+        <Substitution name="puty1_27_colour" value="`${puty1_27_fill}`"/>
+        <Substitution name="puty1_28_colour" value="`${puty1_28_fill}`"/>
+        <Substitution name="puty1_29_colour" value="`${puty1_29_fill}`"/>
+        <Substitution name="puty1_30_colour" value="`${puty1_30_fill}`"/>
+        <Substitution name="puty1_31_colour" value="`${puty1_31_fill}`"/>
+        <Substitution name="puty2_0_colour" value="`${puty2_0_fill}`"/>
+        <Substitution name="puty2_1_colour" value="`${puty2_1_fill}`"/>
+        <Substitution name="puty2_2_colour" value="`${puty2_2_fill}`"/>
+        <Substitution name="puty2_3_colour" value="`${puty2_3_fill}`"/>
+        <Substitution name="puty2_4_colour" value="`${puty2_4_fill}`"/>
+        <Substitution name="puty2_5_colour" value="`${puty2_5_fill}`"/>
+        <Substitution name="puty2_6_colour" value="`${puty2_6_fill}`"/>
+        <Substitution name="puty2_7_colour" value="`${puty2_7_fill}`"/>
+        <Substitution name="puty2_8_colour" value="`${puty2_8_fill}`"/>
+        <Substitution name="puty2_9_colour" value="`${puty2_9_fill}`"/>
+        <Substitution name="puty2_10_colour" value="`${puty2_10_fill}`"/>
+        <Substitution name="puty2_11_colour" value="`${puty2_11_fill}`"/>
+        <Substitution name="puty2_12_colour" value="`${puty2_12_fill}`"/>
+        <Substitution name="puty2_13_colour" value="`${puty2_13_fill}`"/>
+        <Substitution name="puty2_14_colour" value="`${puty2_14_fill}`"/>
+        <Substitution name="puty2_15_colour" value="`${puty2_15_fill}`"/>
+    </ParamImage>
+
+    <ParamString id="HF3Rsc" name="HF3Rsc" group="Internal" default="srss[0].clock[0].hfclk[3]" visible="false" editable="false" desc="" />
+    <ParamBool id="HF3Used" name="HF3Used" group="Internal" default="`${isBlockUsed(HF3Rsc)}`" visible="false" editable="false" desc="" />
+
+  </Parameters>
+
+  <DRCs>
+    <DRC type="ERROR" text="Enable CPU1 in the CNFG Block." paramId="puty1_$idx" condition="`${(puty1_$idx eq CY_ALLOCATE_PERIPHERAL_TO_CPU1) &amp;&amp; !(getExposedMember(&quot;ppca[0].ppca_cnfg[0]&quot;, &quot;cpu1Enabled&quot;))}`" repeatCount="32">
+        <FixIt action="SET_PARAM" target="ppca[0].ppca_cnfg[0].cpu1Enable" value="true" valid="true" />
+    </DRC>
+    <DRC type="ERROR" text="Enable Clock HF3 For PPCA." condition="`${!HF3Used}`">
+      <FixIt action="ENABLE_BLOCK" target="`${HF3Rsc}`" value="" valid="true" />
+    </DRC>
+  </DRCs>
+
+  <ConfigFirmware>
+    <ConfigInclude value="cy_ppca_epu.h" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_EPU" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_EPU_IRQ$idx_HW" value="PPCA_EPU_EPU_IRQ$idx" public="true" include="`${epuIrq$idx ne -1}`" repeatCount="8" />
+    <ConfigDefine name="`${INST_NAME}`_IRQ_EPU_$idx" value="ppca_epu_$idx_IRQn" public="true" include="`${epuIrq$idx ne -1}`" repeatCount="8" />
+
+    <ConfigVariable name="epuIrqSrc$idx" type="uint8_t" const="false" value="`${epuIrq$idx}`" public="true" include="`${epuIrq$idx ne -1}`" repeatCount="8"/>
+    <ConfigInstruction value="Cy_PPCA_EPU_InterruptSourceSelect(`${INST_NAME}`_EPU_IRQ$idx_HW, false, epuIrqSrc$idx);" include="`${epuIrq$idx ne -1}`" purpose="INITIALIZE" repeatCount="8" />
+  </ConfigFirmware>
+
+</PersonalityTemplate>

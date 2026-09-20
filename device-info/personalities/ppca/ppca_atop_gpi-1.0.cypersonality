@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PersonalityTemplate id="mxs40ppca_gpi" name="GPI" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v10">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.atop\.adc_grp\.gpi" />
+    </MappingRules>
+  </FittingRules>
+  <Parameters>
+     <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__aref.html" linkText="Open PPCA GPI Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+    <ParamString id="adcGroupNumber" name="ADC Group Number" group="Internal" default="`${getInstNumber(&quot;adc_grp&quot;)}`" visible="false" editable="false" desc="ADC Group name number." />
+    <ParamBool id="ai0_enable" name="Enable For AI 0" group="General" default="false" visible="true" editable="true" desc="GPI  Enable for AI0 "/>
+    <ParamBool id="ai1_enable" name="Enable For AI 1" group="General" default="false" visible="true" editable="true" desc="GPI  Enable for AI1 "/>
+    <ParamString id="arefRsc" name="arefRsc" group="Internal" default="ppca[0].atop[0].adc_grp[0].aref[0]" visible="false" editable="false" desc="" />
+    <ParamString id="arefUsed" name="arefUsed" group="Internal" default="`${isBlockUsed(arefRsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+  </Parameters>
+  <DRCs>
+    <DRC type="ERROR" text="Enable AREF in ADC Group0 and configure VREF Source accordingly." condition="`${!arefUsed}`">
+      <FixIt action="ENABLE_BLOCK" target="`${arefRsc}`" value="" valid="true" />
+    </DRC>
+  </DRCs>
+
+  <ConfigFirmware>
+
+    <ConfigInclude value="cy_ppca_aref.h" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_ATOPSS_ADC_GRP`${adcGroupNumber}`_GPI" public="true" include="true" />
+
+    <ConfigStruct name="`${INST_NAME}`_config" type="cy_stc_ppca_gpi_config_t" const="`${inFlash}`" public="true" include="true" >
+      <Member name="ai0_enable" value="`${ai0_enable}`" />
+      <Member name="ai1_enable" value="`${ai1_enable}`" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_GPI_Init(`${INST_NAME}`_HW, &amp;`${INST_NAME}`_config);" include="`${init}`" purpose="INITIALIZE" />
+
+  </ConfigFirmware>
+</PersonalityTemplate>

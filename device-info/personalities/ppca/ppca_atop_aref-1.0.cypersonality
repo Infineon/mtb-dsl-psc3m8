@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PersonalityTemplate id="mxs40ppca_aref" name="AREF" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v10">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.atop\.adc_grp\.aref" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers>
+    <ExposedMember key="vref_source_sel" paramId="vref_source_sel" />
+    <ExposedMember key="vRefMv" paramId="vRefMv" />
+  </ExposedMembers>
+  <Parameters>
+    <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__aref.html" linkText="Open PPCA AREF Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+    <ParamString id="adcGroupNumber" name="ADC Group Number" group="Internal" default="`${getInstNumber(&quot;adc_grp&quot;)}`" visible="false" editable="false" desc="ADC Group name number." />
+
+    <ParamBool id="aref_mode" name="Enable High Noise Fast Startup Mode" group="AREF Configuration" default="false" visible="true" editable="true" desc=" Enables High Noise Fast Startup Mode."/>
+    <ParamBool id="enable_current_to_ts" name="Enable Bias current to Temp Sensor" group="AREF Configuration" default="false" visible="true" editable="true" desc=" Enables Bias current to Temp Sensor."/>
+    <ParamChoice id="analog_ctrl"
+             name="POR Analog control configuration"
+             group="AREF Configuration"
+             visible="true"
+             editable="false"
+             desc="ANA_CTL register writes are gated by the ENABLED bit. This parameter cannot be configured via Device Configurator. Call Cy_PPCA_AREF_SetAnalogCtrl() after Cy_PPCA_AREF_Enable() to configure POR analog control at runtime."
+             default="CY_AREF_POR_CONTROLLED_BY_HW">
+        <Entry name="POR controlled by HW (default)" value="CY_AREF_POR_CONTROLLED_BY_HW" visible="true"/>
+        <Entry name="Force POR asserted" value="CY_AREF_FORCE_POR_0" visible="true"/>
+        <Entry name="Force POR negated" value="CY_AREF_FORCE_POR_1" visible="true"/>
+    </ParamChoice>
+    <ParamChoice id="vref_source_sel"
+             name="VREF Source"
+             group="AREF Configuration"
+             visible="true"
+             editable="true"
+             desc="voltage source select."
+             default="CY_LOCALLY_GENERATED_VREF">
+        <Entry name="Locally Generated VREF" value="CY_LOCALLY_GENERATED_VREF" visible="true"/>
+        <Entry name="Externally Supplied VREF" value="CY_EXTERNALLY_SUPPLIED_VREF" visible="true"/>
+    </ParamChoice>
+    <ParamString id="powerRsc" name="powerRsc" group="AREF Configuration" default="srss[0].power[0]" visible="false" editable="false" desc="" />
+    <ParamBool id="powerUsed" name="powerUsed" group="AREF Configuration" default="`${isBlockUsed(powerRsc)}`" visible="false" editable="false" desc="" />
+    <ParamString id="vRefInternal" name="vRefInternal" group="AREF Configuration" default="1200" visible="false" editable="false" desc="" />
+    <ParamRange id="vRefMv" name="Vref Voltage (mV)" group="AREF Configuration" default="`${vref_source_sel eq CY_LOCALLY_GENERATED_VREF ? vRefInternal : 1200}`" min="1200" max="3600" resolution="1" visible="true" editable="`${vref_source_sel eq CY_EXTERNALLY_SUPPLIED_VREF}`" desc="The ADC reference voltage" />
+
+    <ParamString id="HF3Rsc" name="HF3Rsc" group="Internal" default="srss[0].clock[0].hfclk[3]" visible="false" editable="false" desc="" />
+    <ParamBool id="HF3Used" name="HF3Used" group="Internal" default="`${isBlockUsed(HF3Rsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+  </Parameters>
+  <DRCs>
+    <DRC type="ERROR" text="Enable Clock HF3 For PPCA." condition="`${!HF3Used}`">
+      <FixIt action="ENABLE_BLOCK" target="`${HF3Rsc}`" value="" valid="true" />
+    </DRC>
+  </DRCs>
+
+  <ConfigFirmware>
+
+    <ConfigInclude value="cy_ppca_aref.h" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_ATOPSS_ADC_GRP`${adcGroupNumber}`_AREF" public="true" include="true" />
+
+    <ConfigStruct name="`${INST_NAME}`_config" type="cy_stc_ppca_aref_config_t" const="`${inFlash}`" public="true" include="true" >
+      <Member name="aref_mode" value="`${aref_mode}`" />
+      <Member name="enable_current_to_ts" value="`${enable_current_to_ts}`" />
+      <Member name="analog_ctrl" value="CY_AREF_POR_CONTROLLED_BY_HW" />
+      <Member name="vref_source_sel" value="`${vref_source_sel}`" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_AREF_Init(`${INST_NAME}`_HW, &amp;`${INST_NAME}`_config);" include="`${init}`" purpose="INITIALIZE" guard="!defined (COMPONENT_PPCA_DEVICE)" />
+
+  </ConfigFirmware>
+</PersonalityTemplate>

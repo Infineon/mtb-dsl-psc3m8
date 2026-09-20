@@ -1,0 +1,1276 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PersonalityTemplate id="mxs40ppca-clb" name="mxs40ppca-clb" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v10">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.clb" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers />
+
+  <Parameters>
+    <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__clb.html" linkText="Open PPCA CLB Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+
+    <ParamChoice id="clbOutput" name="CLB Output" group="CLB Configuration" default="CY_CLB_DICO_SEL" visible="true" editable="true" desc="Selects CLB Output between DICO and MACO functionality.">
+      <Entry name="DICO Mode" value="CY_CLB_DICO_SEL" visible="true" />
+      <Entry name="MACO Mode" value="CY_CLB_MACO_SEL" visible="true" />
+    </ParamChoice>
+
+
+    <!--DICO-->
+
+    <ParamBool id="enablePhase1" name="Enable Phase 1" group="DICO Configuration" default="false" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter enables Phase 1 "/>
+    <ParamBool id="enablePhase2" name="Enable Phase 2" group="DICO Configuration" default="false" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter enables Phase 2 "/>
+    <ParamBool id="enablePhase3" name="Enable Phase 3" group="DICO Configuration" default="false" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter enables Phase 3 "/>
+    <ParamBool id="enablePhaseEnabler" name="Enable PE (Phase Enabler)" group="DICO Configuration" default="false" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter enables PE (Phase Enabler) "/>
+
+    <!-- TBD: Should default be unassigned ? -->
+    <ParamChoice id="vac" name="VAC" group="DICO Configuration" default="CY_ADC_GROUP_0_FILT_OUT0" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="Select ADC FILT out as input to VAC.">
+      <Entry name="ADC GROUP_0 FILTER OUT0" value="CY_ADC_GROUP_0_FILT_OUT0" visible="true" />
+      <Entry name="ADC GROUP_0 FILTER OUT1" value="CY_ADC_GROUP_0_FILT_OUT1" visible="true" />
+      <Entry name="ADC GROUP_1 FILTER OUT2" value="CY_ADC_GROUP_1_FILT_OUT2" visible="true" />
+      <Entry name="ADC GROUP_2 FILTER OUT3" value="CY_ADC_GROUP_2_FILT_OUT3" visible="true" />
+      <Entry name="ADC GROUP_3 FILTER OUT4" value="CY_ADC_GROUP_3_FILT_OUT4" visible="true" />
+      <Entry name="ADC GROUP_3 FILTER OUT5" value="CY_ADC_GROUP_3_FILT_OUT5" visible="true" />
+    </ParamChoice>
+
+    <!-- TBD: Should default be unassigned ? -->
+    <ParamChoice id="vbus" name="VBUS" group="DICO Configuration" default="CY_ADC_GROUP_0_FILT_OUT0" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="Select ADC FILT out as input to VBUS.">
+      <Entry name="ADC GROUP_0 FILTER OUT0" value="CY_ADC_GROUP_0_FILT_OUT0" visible="true" />
+      <Entry name="ADC GROUP_0 FILTER OUT1" value="CY_ADC_GROUP_0_FILT_OUT1" visible="true" />
+      <Entry name="ADC GROUP_1 FILTER OUT2" value="CY_ADC_GROUP_1_FILT_OUT2" visible="true" />
+      <Entry name="ADC GROUP_2 FILTER OUT3" value="CY_ADC_GROUP_2_FILT_OUT3" visible="true" />
+      <Entry name="ADC GROUP_3 FILTER OUT4" value="CY_ADC_GROUP_3_FILT_OUT4" visible="true" />
+      <Entry name="ADC GROUP_3 FILTER OUT5" value="CY_ADC_GROUP_3_FILT_OUT5" visible="true" />
+    </ParamChoice>
+
+    <!-- TBD: Should default be unassigned ? -->
+    <Repeat count="3">
+        <ParamChoice id="il$idx" name="IL `${$idx+1}`" group="DICO Configuration" default="CY_ADC_GROUP_0_FILT_OUT0" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="Select ADC FILT out as input to IL $idx.">
+          <Entry name="ADC GROUP_0 FILTER OUT0" value="CY_ADC_GROUP_0_FILT_OUT0" visible="true" />
+          <Entry name="ADC GROUP_0 FILTER OUT1" value="CY_ADC_GROUP_0_FILT_OUT1" visible="true" />
+          <Entry name="ADC GROUP_1 FILTER OUT2" value="CY_ADC_GROUP_1_FILT_OUT2" visible="true" />
+          <Entry name="ADC GROUP_2 FILTER OUT3" value="CY_ADC_GROUP_2_FILT_OUT3" visible="true" />
+          <Entry name="ADC GROUP_3 FILTER OUT4" value="CY_ADC_GROUP_3_FILT_OUT4" visible="true" />
+          <Entry name="ADC GROUP_3 FILTER OUT5" value="CY_ADC_GROUP_3_FILT_OUT5" visible="true" />
+        </ParamChoice>
+    </Repeat>
+
+    <ParamChoice id="vacPol" name="VAC Polarity" group="DICO Configuration" default="CY_NEG_VAC_POL" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter selects the VAC Polarity.">
+      <Entry name="Negative Polarity" value="CY_NEG_VAC_POL" visible="true" />
+      <Entry name="Zero Polarity" value="CY_ZERO_VAC_POL" visible="true" />
+      <Entry name="Positive Polarity" value="CY_POS_VAC_POL" visible="true" />
+    </ParamChoice>
+
+
+    <ParamChoice id="numPeriod" name="Switching Period" group="DICO Error Observer Configuration" default="CY_SINGLE_PERIOD" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="Error Observer: Number of periods to be measured.">
+      <Entry name="Single Period" value="CY_SINGLE_PERIOD" visible="true" />
+      <Entry name="Two Periods" value="CY_TWO_PERIODS" visible="true" />
+      <Entry name="Three Periods" value="CY_THREE_PERIODS" visible="true" />
+      <Entry name="Four Periods" value="CY_FOUR_PERIODS " visible="true" />
+    </ParamChoice>
+
+    <ParamRange id="pwmDeadTime" name="PWM Deadtime" group="DICO Modulator Configuration" default="0" min="0" max="127" resolution="1" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter configures the PWM Deadtime." />
+    <ParamBool id="skipSlopeCal" name="Skip Slope Calculation" group="DICO Modulator Configuration" default="false" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter for PE: Skip FSM states for calculating UP and DOWN slope"/>
+    <ParamBool id="recalSlope" name="Recalculate Slope" group="DICO Modulator Configuration" default="false" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter for PE: Recalculate slopes when in the state of PE_IDLE1 "/>
+
+    <ParamChoice id="monitorSignalSel" name="Signals to monitor" group="DICO Modulator Configuration" default="CY_PCO_0_SIGNALS" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="Error Observer: Number of periods to be measured.">
+      <Entry name="PCO_0 Signals" value="CY_PCO_0_SIGNALS" visible="true" />
+      <Entry name="PCO_1 Signals" value="CY_PCO_1_SIGNALS" visible="true" />
+      <Entry name="PCO_2 Signals" value="CY_PCO_2_SIGNALS" visible="true" />
+      <Entry name="PE Signals" value="CY_PE_SIGNALS " visible="true" />
+      <Entry name="PS Signals" value="CY_PS_SIGNALS " visible="true" />
+    </ParamChoice>
+
+    <ParamBool id="onlyCorrCharg" name="Correction Charge" group="DICO Modulator Configuration" default="false" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter, if enabled, corrects only the IMIN or IMAX reached during the charging phase. "/>
+
+    <ParamRange id="safeState" name="Safe State" group="DICO Modulator Configuration" default="0" min="0" max="63" resolution="1" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter configures safe state of DICO output.." />
+
+    <ParamRange id="imaxl" name="Maximum Current: IMAXL" group="DICO Modulator Configuration" default="0" min="0" max="16777215" resolution="1" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter configures the maximum current." />
+    <ParamRange id="iminl" name="Minimum Current: IMINL" group="DICO Modulator Configuration" default="0" min="0" max="16777215" resolution="1" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter configures the minimum current." />
+
+    <ParamRange id="pwmMaxOnTime" name="PWM Max ON Time" group="DICO Modulator Configuration" default="4095" min="0" max="4095" resolution="1" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter configures the value at which PWM switching is forced when reached." />
+    <ParamRange id="pwmMinOnTime" name="PWM Min ON Time" group="DICO Modulator Configuration" default="0" min="0" max="4095" resolution="1" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter configures the value at which PWM switching is enabled when reached." />
+
+    <ParamRange id="peTPHD1" name="PCO_1 TPHD" group="MPA: Phase Enabler Configuration" default="0" min="0" max="4095" resolution="1" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter configures the TPHD value for activating PCO_1." />
+    <ParamRange id="peTPHD2" name="PCO_2 TPHD" group="MPA: Phase Enabler Configuration" default="0" min="0" max="4095" resolution="1" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter configures the TPHD value for activating PCO_2." />
+
+    <ParamRange id="psThld" name="Phase Synchronizer Threshold" group="MPA: Phase Synchronizer Configuration" default="0" min="0" max="16777215" resolution="1" visible="`${clbOutput eq CY_CLB_DICO_SEL}`" editable="true" desc="This parameter configures the threshold for the comparator in Phase Synchronizer (PS)." />
+
+    <!-- MACO -->
+
+    <ParamChoice id="muxselInSrcSel" name="Input Source" group="MACO Configuration" default="CY_INTERNAL" visible="`${clbOutput eq CY_CLB_MACO_SEL}`" editable="true" desc="This parameter selects the MUXSEL_IN input source.">
+      <Entry name="Internal" value="CY_INTERNAL" visible="true" />
+      <Entry name="External(CLB_TRIG_IN[2])" value="CY_EXTERNAL" visible="true" />
+    </ParamChoice>
+
+    <ParamChoice id="muxselOutSyncBypass" name="Bypass Mode" group="MACO Configuration" default="CY_ASYNC_REL" visible="`${clbOutput eq CY_CLB_MACO_SEL}`" editable="true" desc="This parameter selects between the synchronous or asynchronous release of generated MUXSEL_OUT.">
+      <Entry name="Asynchronous" value="CY_ASYNC_REL" visible="true" />
+      <Entry name="Synchronous to CLB_TRIG_IN[3]" value="CY_SYNC_REL" visible="true" />
+    </ParamChoice>
+
+    <ParamChoice id="startMode" name="Start Mode" group="MACO Configuration" default="CY_START_WITH_ENABLE_BIT" visible="`${clbOutput eq CY_CLB_MACO_SEL}`" editable="true" desc="This parameter selects the start mode.">
+      <Entry name="Start with Enable bit" value="CY_START_WITH_ENABLE_BIT" visible="true" />
+      <Entry name="Wait for trigger CLB_TRIG_IN[4] before start(after enable has been set)" value="CY_WAIT_FOR_TRIGGER" visible="true" />
+    </ParamChoice>
+
+    <ParamChoice id="transitionMode" name="Transition Mode" group="MACO Configuration" default="CY_MANUAL_TRANSITION" visible="`${clbOutput eq CY_CLB_MACO_SEL}`" editable="true" desc="This parameter selects the table transition mode.">
+      <Entry name="Manual Transition" value="CY_MANUAL_TRANSITION" visible="true" />
+      <Entry name="Auto Transition" value="CY_AUTO_TRANSITION" visible="true" />
+    </ParamChoice>
+
+    <ParamChoice id="macoFunc" name="Function of MACO" group="MACO Configuration" default="CY_MATRIX_CONVERTER" visible="`${clbOutput eq CY_CLB_MACO_SEL}`" editable="true" desc="This parameter selects the MACO functionality.">
+      <Entry name="Matrix Converter" value="CY_MATRIX_CONVERTER" visible="true" />
+      <Entry name="Trajectory Control" value="CY_TRAJECTORY_CONTROL" visible="true" />
+    </ParamChoice>
+
+    <ParamChoice id="monitorSel" name="Signals to monitor" group="MACO Configuration" default="CY_PATTERN_ROW_COUTER_LSB" visible="`${clbOutput eq CY_CLB_MACO_SEL}`" editable="true" desc="This parameter selects the signals to monitor.">
+      <Entry name="Pattern (2-bit), Row (5-bit), Counter_LSB (1-bit)" value="CY_PATTERN_ROW_COUTER_LSB" visible="true" />
+      <Entry name="Counter (8-bit)" value="CY_COUNTER" visible="true" />
+    </ParamChoice>
+
+    <ParamChoice id="selNxtSec" name="Select Next Sector for Scan" group="MACO Configuration" default="CY_CURRENT_SECTOR" visible="`${clbOutput eq CY_CLB_MACO_SEL}`" editable="true" desc="This parameter selects the next sector pattern to be scanned.">
+      <Entry name="Current Sector" value="CY_CURRENT_SECTOR" visible="true" />
+      <Entry name="Next Sector" value="CY_NEXT_SECTOR" visible="true" />
+      <Entry name="Previous Sector" value="CY_PREVIOUS_SECTOR" visible="true" />
+    </ParamChoice>
+
+    <Repeat count="3">
+        <ParamRange id="tranRow$idx" name="Number of Rows in Transition Table" group="Sector $idx Pattern $idx" default="0" min="0" max="65535" resolution="1" visible="`${clbOutput eq CY_CLB_MACO_SEL}`" editable="true" desc="This parameter configures the number of rows in the transition table." />
+        <ParamRange id="allRow$idx" name="Number of Rows in the Entire Table" group="Sector $idx Pattern $idx" default="0" min="0" max="65535" resolution="1" visible="`${clbOutput eq CY_CLB_MACO_SEL}`" editable="true" desc="This parameter configures the number of rows in the entire table." />
+        <ParamRange id="safeState$idx" name="Safe State" group="Sector $idx Pattern $idx" default="0" min="0" max="65535" resolution="1" visible="`${clbOutput eq CY_CLB_MACO_SEL}`" editable="true" desc="This parameter configures the Safe Status of Driver Signals controlling the switches ." />
+        <Repeat count="20">
+            <ParamRange id="driverSignal$idx{0}_$idx{1}" name="Driver Signal $idx{0}" group="Sector $idx{1} Pattern $idx{1}" default="0" min="0" max="65535" resolution="1" visible="`${clbOutput eq CY_CLB_MACO_SEL}`" editable="true" desc="This parameter configures the Status of Driver Signals controlling the switches." />
+        </Repeat>
+        <Repeat count="20">
+            <ParamRange id="holdTime$idx{0}_$idx{1}" name="Hold Time $idx{0}" group="Sector $idx{1} Pattern $idx{1}" default="0" min="0" max="255" resolution="1" visible="`${clbOutput eq CY_CLB_MACO_SEL}`" editable="true" desc="This parameter configures the Scan Pattern Hold Time in clock cycles ." />
+        </Repeat>
+    </Repeat>
+
+    <ParamSignal port="clb_out[0]" name="End of Scan" visible="`${(clbOutput eq CY_CLB_MACO_SEL) &amp;&amp; (hasVisibleOption(&quot;clb_out[0]&quot;))}`" canBeEmpty="true" group="CLB Events to EPU" desc="MACO end of scan event to EPU" />
+    <ParamSignal port="clb_out[1]" name="Spread Pulse Startup " visible="`${(clbOutput eq CY_CLB_MACO_SEL) &amp;&amp; (hasVisibleOption(&quot;clb_out[1]&quot;))}`" canBeEmpty="true" group="CLB Events to EPU" desc="Spread Pulse Startup muxsel_out" />
+    <ParamSignal port="clb_out[2]" name="Incorrect setting of DICO" visible="`${(clbOutput eq CY_CLB_DICO_SEL) &amp;&amp; (hasVisibleOption(&quot;clb_out[2]&quot;))}`" canBeEmpty="true" group="CLB Events to EPU" desc="Incorrect setting of DICO (polarity)" />
+    <ParamSignal port="clb_out[3]" name="Maximum-on time reached signal of PCO0" visible="`${(clbOutput eq CY_CLB_DICO_SEL) &amp;&amp; (hasVisibleOption(&quot;clb_out[3]&quot;))}`" canBeEmpty="true" group="CLB Events to EPU" desc="Maximum-on time reached signal of PCO0" />
+    <ParamSignal port="clb_out[4]" name="Maximum-on time not reached signal of PCO0" visible="`${(clbOutput eq CY_CLB_DICO_SEL) &amp;&amp; (hasVisibleOption(&quot;clb_out[4]&quot;))}`" canBeEmpty="true" group="CLB Events to EPU" desc="Minimum-on time not reached signal of PCO0 when the estimated current hits IMIN or IMAX" />
+
+
+    <Repeat count="16">
+      <ParamSignal port="line_out[$idx]" name="line_out[$idx]" visible="`${hasVisibleOption(&quot;line_out[$idx]&quot;)}`" canBeEmpty="true" group="Signals" desc="" />
+      <ParamSignal port="line_compl_out[$idx]" name="line_compl_out[$idx]" visible="`${hasVisibleOption(&quot;line_compl_out[$idx]&quot;)}`" canBeEmpty="true" group="Signals" desc="" />
+    </Repeat>
+
+    <ParamSignal port="trig_in[0]" name="CLB_TRIG_IN[0]" visible="`${(clbOutput eq CY_CLB_MACO_SEL) &amp;&amp; (hasVisibleOption(&quot;trig_in[0]&quot;))}`" canBeEmpty="true" group="Signals" desc="" />
+    <ParamSignal port="trig_in[1]" name="CLB_TRIG_IN[1]" visible="`${(clbOutput eq CY_CLB_MACO_SEL) &amp;&amp; (hasVisibleOption(&quot;trig_in[1]&quot;))}`" canBeEmpty="true" group="Signals" desc="" />
+    <ParamSignal port="trig_in[2]" name="CLB_TRIG_IN[2]" visible="`${(clbOutput eq CY_CLB_MACO_SEL) &amp;&amp; (hasVisibleOption(&quot;trig_in[2]&quot;))}`" canBeEmpty="`${muxselInSrcSel ne CY_EXTERNAL}`" group="Signals" desc="" />
+    <ParamSignal port="trig_in[3]" name="CLB_TRIG_IN[3]" visible="`${(clbOutput eq CY_CLB_MACO_SEL) &amp;&amp; (hasVisibleOption(&quot;trig_in[3]&quot;))}`" canBeEmpty="`${muxselOutSyncBypass ne CY_SYNC_REL}`" group="Signals" desc="" />
+    <ParamSignal port="trig_in[4]" name="CLB_TRIG_IN[4]" visible="`${(clbOutput eq CY_CLB_MACO_SEL) &amp;&amp; (hasVisibleOption(&quot;trig_in[4]&quot;))}`" canBeEmpty="`${startMode ne CY_WAIT_FOR_TRIGGER}`" group="Signals" desc="" />
+    <ParamSignal port="trig_in[5]" name="CLB_TRIG_IN[5]" visible="`${(clbOutput eq CY_CLB_MACO_SEL) &amp;&amp; (hasVisibleOption(&quot;trig_in[5]&quot;))}`" canBeEmpty="true" group="Signals" desc="" />
+
+    <Repeat count="16">
+        <ParamRange id="power$idx" name="power$idx" group="Internal" default="`${pow(2,$idx)}`" min="0" max="32768" resolution="1" visible="false" editable="false" desc="" />
+    </Repeat>
+
+<!-- Pattern 0 -->
+    <Repeat count="16">
+        <Repeat count="20">
+            <ParamRange id="sw$idx{1}st$idx{0}_p0" name="sw$idx{1}st$idx{0}" group="Internal" default="`${(driverSignal$idx{0}_0 &amp; power$idx{1}) ? 1 : 0}`" min="0" max="1" resolution="1" visible="false" editable="false" desc="" />
+        </Repeat>
+    </Repeat>
+
+<!-- Pattern 1 -->
+    <Repeat count="16">
+        <Repeat count="20">
+            <ParamRange id="sw$idx{1}st$idx{0}_p1" name="sw$idx{1}st$idx{0}" group="Internal" default="`${(driverSignal$idx{0}_1 &amp; power$idx{1}) ? 1 : 0}`" min="0" max="1" resolution="1" visible="false" editable="false" desc="" />
+        </Repeat>
+    </Repeat>
+
+<!-- Pattern 2 -->
+    <Repeat count="16">
+        <Repeat count="20">
+            <ParamRange id="sw$idx{1}st$idx{0}_p2" name="sw$idx{1}st$idx{0}" group="Internal" default="`${(driverSignal$idx{0}_2 &amp; power$idx{1}) ? 1 : 0}`" min="0" max="1" resolution="1" visible="false" editable="false" desc="" />
+        </Repeat>
+    </Repeat>
+
+    <ParamString id="white" name="Normal" group="Internal" default="#ffffff" visible="false" editable="false" desc="" />
+    <ParamString id="black" name="Lighten" group="Internal" default="#000000" visible="false" editable="false" desc="" />
+
+    <Repeat count="3">
+    <ParamImage id="clb_pattern$idx_diagram"
+                name="Pattern $idx MACO"
+                group="Sector $idx Pattern $idx"
+                desc=""
+                visible="`${clbOutput eq CY_CLB_MACO_SEL}`"
+                position="OUTSET"
+                default="`${cy_libs_path()}`/device-info/personalities/ppca/clb_maco_pattern$idx.svg">
+                <Substitution name="sw0_st0_l" value="`${sw0st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st0_t" value="`${sw0st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st0_b" value="`${sw0st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st0_st1_rl" value="`${(sw0st0_p$idx eq 1) ? ((sw0st1_p$idx eq 1) ? white : black) : ((sw0st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st1_t" value="`${sw0st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st1_b" value="`${sw0st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st1_st2_rl" value="`${(sw0st1_p$idx eq 1) ? ((sw0st2_p$idx eq 1) ? white : black) : ((sw0st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st2_t" value="`${sw0st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st2_b" value="`${sw0st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st2_st3_rl" value="`${(sw0st2_p$idx eq 1) ? ((sw0st3_p$idx eq 1) ? white : black) : ((sw0st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st3_t" value="`${sw0st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st3_b" value="`${sw0st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st3_st4_rl" value="`${(sw0st3_p$idx eq 1) ? ((sw0st4_p$idx eq 1) ? white : black) : ((sw0st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st4_t" value="`${sw0st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st4_b" value="`${sw0st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st4_st5_rl" value="`${(sw0st4_p$idx eq 1) ? ((sw0st5_p$idx eq 1) ? white : black) : ((sw0st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st5_t" value="`${sw0st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st5_b" value="`${sw0st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st5_st6_rl" value="`${(sw0st5_p$idx eq 1) ? ((sw0st6_p$idx eq 1) ? white : black) : ((sw0st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st6_t" value="`${sw0st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st6_b" value="`${sw0st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st6_st7_rl" value="`${(sw0st6_p$idx eq 1) ? ((sw0st7_p$idx eq 1) ? white : black) : ((sw0st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st7_t" value="`${sw0st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st7_b" value="`${sw0st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st7_st8_rl" value="`${(sw0st7_p$idx eq 1) ? ((sw0st8_p$idx eq 1) ? white : black) : ((sw0st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st8_t" value="`${sw0st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st8_b" value="`${sw0st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st8_st9_rl" value="`${(sw0st8_p$idx eq 1) ? ((sw0st9_p$idx eq 1) ? white : black) : ((sw0st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st9_t" value="`${sw0st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st9_b" value="`${sw0st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st9_st10_rl" value="`${(sw0st9_p$idx eq 1) ? ((sw0st10_p$idx eq 1) ? white : black) : ((sw0st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st10_t" value="`${sw0st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st10_b" value="`${sw0st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st10_st11_rl" value="`${(sw0st10_p$idx eq 1) ? ((sw0st11_p$idx eq 1) ? white : black) : ((sw0st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st11_t" value="`${sw0st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st11_b" value="`${sw0st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st11_st12_rl" value="`${(sw0st11_p$idx eq 1) ? ((sw0st12_p$idx eq 1) ? white : black) : ((sw0st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st12_t" value="`${sw0st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st12_b" value="`${sw0st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st12_st13_rl" value="`${(sw0st12_p$idx eq 1) ? ((sw0st13_p$idx eq 1) ? white : black) : ((sw0st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st13_t" value="`${sw0st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st13_b" value="`${sw0st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st13_st14_rl" value="`${(sw0st13_p$idx eq 1) ? ((sw0st14_p$idx eq 1) ? white : black) : ((sw0st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st14_t" value="`${sw0st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st14_b" value="`${sw0st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st14_st15_rl" value="`${(sw0st14_p$idx eq 1) ? ((sw0st15_p$idx eq 1) ? white : black) : ((sw0st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st15_t" value="`${sw0st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st15_b" value="`${sw0st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st15_st16_rl" value="`${(sw0st15_p$idx eq 1) ? ((sw0st16_p$idx eq 1) ? white : black) : ((sw0st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st16_t" value="`${sw0st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st16_b" value="`${sw0st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st16_st17_rl" value="`${(sw0st16_p$idx eq 1) ? ((sw0st17_p$idx eq 1) ? white : black) : ((sw0st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st17_t" value="`${sw0st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st17_b" value="`${sw0st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st17_st18_rl" value="`${(sw0st17_p$idx eq 1) ? ((sw0st18_p$idx eq 1) ? white : black) : ((sw0st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st18_t" value="`${sw0st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st18_b" value="`${sw0st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st18_st19_rl" value="`${(sw0st18_p$idx eq 1) ? ((sw0st19_p$idx eq 1) ? white : black) : ((sw0st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw0_st19_t" value="`${sw0st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw0_st19_b" value="`${sw0st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw0_st19_r" value="`${sw0st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW1-->
+                <Substitution name="sw1_st0_l" value="`${sw1st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st0_t" value="`${sw1st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st0_b" value="`${sw1st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st0_st1_rl" value="`${(sw1st0_p$idx eq 1) ? ((sw1st1_p$idx eq 1) ? white : black) : ((sw1st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st1_t" value="`${sw1st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st1_b" value="`${sw1st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st1_st2_rl" value="`${(sw1st1_p$idx eq 1) ? ((sw1st2_p$idx eq 1) ? white : black) : ((sw1st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st2_t" value="`${sw1st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st2_b" value="`${sw1st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st2_st3_rl" value="`${(sw1st2_p$idx eq 1) ? ((sw1st3_p$idx eq 1) ? white : black) : ((sw1st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st3_t" value="`${sw1st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st3_b" value="`${sw1st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st3_st4_rl" value="`${(sw1st3_p$idx eq 1) ? ((sw1st4_p$idx eq 1) ? white : black) : ((sw1st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st4_t" value="`${sw1st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st4_b" value="`${sw1st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st4_st5_rl" value="`${(sw1st4_p$idx eq 1) ? ((sw1st5_p$idx eq 1) ? white : black) : ((sw1st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st5_t" value="`${sw1st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st5_b" value="`${sw1st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st5_st6_rl" value="`${(sw1st5_p$idx eq 1) ? ((sw1st6_p$idx eq 1) ? white : black) : ((sw1st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st6_t" value="`${sw1st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st6_b" value="`${sw1st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st6_st7_rl" value="`${(sw1st6_p$idx eq 1) ? ((sw1st7_p$idx eq 1) ? white : black) : ((sw1st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st7_t" value="`${sw1st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st7_b" value="`${sw1st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st7_st8_rl" value="`${(sw1st7_p$idx eq 1) ? ((sw1st8_p$idx eq 1) ? white : black) : ((sw1st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st8_t" value="`${sw1st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st8_b" value="`${sw1st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st8_st9_rl" value="`${(sw1st8_p$idx eq 1) ? ((sw1st9_p$idx eq 1) ? white : black) : ((sw1st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st9_t" value="`${sw1st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st9_b" value="`${sw1st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st9_st10_rl" value="`${(sw1st9_p$idx eq 1) ? ((sw1st10_p$idx eq 1) ? white : black) : ((sw1st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st10_t" value="`${sw1st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st10_b" value="`${sw1st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st10_st11_rl" value="`${(sw1st10_p$idx eq 1) ? ((sw1st11_p$idx eq 1) ? white : black) : ((sw1st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st11_t" value="`${sw1st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st11_b" value="`${sw1st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st11_st12_rl" value="`${(sw1st11_p$idx eq 1) ? ((sw1st12_p$idx eq 1) ? white : black) : ((sw1st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st12_t" value="`${sw1st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st12_b" value="`${sw1st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st12_st13_rl" value="`${(sw1st12_p$idx eq 1) ? ((sw1st13_p$idx eq 1) ? white : black) : ((sw1st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st13_t" value="`${sw1st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st13_b" value="`${sw1st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st13_st14_rl" value="`${(sw1st13_p$idx eq 1) ? ((sw1st14_p$idx eq 1) ? white : black) : ((sw1st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st14_t" value="`${sw1st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st14_b" value="`${sw1st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st14_st15_rl" value="`${(sw1st14_p$idx eq 1) ? ((sw1st15_p$idx eq 1) ? white : black) : ((sw1st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st15_t" value="`${sw1st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st15_b" value="`${sw1st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st15_st16_rl" value="`${(sw1st15_p$idx eq 1) ? ((sw1st16_p$idx eq 1) ? white : black) : ((sw1st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st16_t" value="`${sw1st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st16_b" value="`${sw1st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st16_st17_rl" value="`${(sw1st16_p$idx eq 1) ? ((sw1st17_p$idx eq 1) ? white : black) : ((sw1st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st17_t" value="`${sw1st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st17_b" value="`${sw1st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st17_st18_rl" value="`${(sw1st17_p$idx eq 1) ? ((sw1st18_p$idx eq 1) ? white : black) : ((sw1st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st18_t" value="`${sw1st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st18_b" value="`${sw1st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st18_st19_rl" value="`${(sw1st18_p$idx eq 1) ? ((sw1st19_p$idx eq 1) ? white : black) : ((sw1st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw1_st19_t" value="`${sw1st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw1_st19_b" value="`${sw1st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw1_st19_r" value="`${sw1st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW2-->
+                <Substitution name="sw2_st0_l" value="`${sw2st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st0_t" value="`${sw2st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st0_b" value="`${sw2st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st0_st1_rl" value="`${(sw2st0_p$idx eq 1) ? ((sw2st1_p$idx eq 1) ? white : black) : ((sw2st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st1_t" value="`${sw2st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st1_b" value="`${sw2st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st1_st2_rl" value="`${(sw2st1_p$idx eq 1) ? ((sw2st2_p$idx eq 1) ? white : black) : ((sw2st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st2_t" value="`${sw2st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st2_b" value="`${sw2st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st2_st3_rl" value="`${(sw2st2_p$idx eq 1) ? ((sw2st3_p$idx eq 1) ? white : black) : ((sw2st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st3_t" value="`${sw2st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st3_b" value="`${sw2st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st3_st4_rl" value="`${(sw2st3_p$idx eq 1) ? ((sw2st4_p$idx eq 1) ? white : black) : ((sw2st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st4_t" value="`${sw2st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st4_b" value="`${sw2st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st4_st5_rl" value="`${(sw2st4_p$idx eq 1) ? ((sw2st5_p$idx eq 1) ? white : black) : ((sw2st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st5_t" value="`${sw2st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st5_b" value="`${sw2st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st5_st6_rl" value="`${(sw2st5_p$idx eq 1) ? ((sw2st6_p$idx eq 1) ? white : black) : ((sw2st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st6_t" value="`${sw2st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st6_b" value="`${sw2st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st6_st7_rl" value="`${(sw2st6_p$idx eq 1) ? ((sw2st7_p$idx eq 1) ? white : black) : ((sw2st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st7_t" value="`${sw2st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st7_b" value="`${sw2st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st7_st8_rl" value="`${(sw2st7_p$idx eq 1) ? ((sw2st8_p$idx eq 1) ? white : black) : ((sw2st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st8_t" value="`${sw2st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st8_b" value="`${sw2st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st8_st9_rl" value="`${(sw2st8_p$idx eq 1) ? ((sw2st9_p$idx eq 1) ? white : black) : ((sw2st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st9_t" value="`${sw2st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st9_b" value="`${sw2st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st9_st10_rl" value="`${(sw2st9_p$idx eq 1) ? ((sw2st10_p$idx eq 1) ? white : black) : ((sw2st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st10_t" value="`${sw2st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st10_b" value="`${sw2st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st10_st11_rl" value="`${(sw2st10_p$idx eq 1) ? ((sw2st11_p$idx eq 1) ? white : black) : ((sw2st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st11_t" value="`${sw2st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st11_b" value="`${sw2st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st11_st12_rl" value="`${(sw2st11_p$idx eq 1) ? ((sw2st12_p$idx eq 1) ? white : black) : ((sw2st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st12_t" value="`${sw2st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st12_b" value="`${sw2st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st12_st13_rl" value="`${(sw2st12_p$idx eq 1) ? ((sw2st13_p$idx eq 1) ? white : black) : ((sw2st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st13_t" value="`${sw2st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st13_b" value="`${sw2st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st13_st14_rl" value="`${(sw2st13_p$idx eq 1) ? ((sw2st14_p$idx eq 1) ? white : black) : ((sw2st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st14_t" value="`${sw2st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st14_b" value="`${sw2st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st14_st15_rl" value="`${(sw2st14_p$idx eq 1) ? ((sw2st15_p$idx eq 1) ? white : black) : ((sw2st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st15_t" value="`${sw2st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st15_b" value="`${sw2st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st15_st16_rl" value="`${(sw2st15_p$idx eq 1) ? ((sw2st16_p$idx eq 1) ? white : black) : ((sw2st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st16_t" value="`${sw2st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st16_b" value="`${sw2st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st16_st17_rl" value="`${(sw2st16_p$idx eq 1) ? ((sw2st17_p$idx eq 1) ? white : black) : ((sw2st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st17_t" value="`${sw2st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st17_b" value="`${sw2st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st17_st18_rl" value="`${(sw2st17_p$idx eq 1) ? ((sw2st18_p$idx eq 1) ? white : black) : ((sw2st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st18_t" value="`${sw2st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st18_b" value="`${sw2st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st18_st19_rl" value="`${(sw2st18_p$idx eq 1) ? ((sw2st19_p$idx eq 1) ? white : black) : ((sw2st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw2_st19_t" value="`${sw2st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw2_st19_b" value="`${sw2st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw2_st19_r" value="`${sw2st19_p$idx eq 1 ? black : white}`"/>
+                <!-- SW3 -->
+                <Substitution name="sw3_st0_l" value="`${sw3st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st0_t" value="`${sw3st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st0_b" value="`${sw3st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st0_st1_rl" value="`${(sw3st0_p$idx eq 1) ? ((sw3st1_p$idx eq 1) ? white : black) : ((sw3st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st1_t" value="`${sw3st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st1_b" value="`${sw3st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st1_st2_rl" value="`${(sw3st1_p$idx eq 1) ? ((sw3st2_p$idx eq 1) ? white : black) : ((sw3st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st2_t" value="`${sw3st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st2_b" value="`${sw3st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st2_st3_rl" value="`${(sw3st2_p$idx eq 1) ? ((sw3st3_p$idx eq 1) ? white : black) : ((sw3st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st3_t" value="`${sw3st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st3_b" value="`${sw3st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st3_st4_rl" value="`${(sw3st3_p$idx eq 1) ? ((sw3st4_p$idx eq 1) ? white : black) : ((sw3st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st4_t" value="`${sw3st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st4_b" value="`${sw3st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st4_st5_rl" value="`${(sw3st4_p$idx eq 1) ? ((sw3st5_p$idx eq 1) ? white : black) : ((sw3st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st5_t" value="`${sw3st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st5_b" value="`${sw3st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st5_st6_rl" value="`${(sw3st5_p$idx eq 1) ? ((sw3st6_p$idx eq 1) ? white : black) : ((sw3st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st6_t" value="`${sw3st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st6_b" value="`${sw3st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st6_st7_rl" value="`${(sw3st6_p$idx eq 1) ? ((sw3st7_p$idx eq 1) ? white : black) : ((sw3st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st7_t" value="`${sw3st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st7_b" value="`${sw3st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st7_st8_rl" value="`${(sw3st7_p$idx eq 1) ? ((sw3st8_p$idx eq 1) ? white : black) : ((sw3st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st8_t" value="`${sw3st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st8_b" value="`${sw3st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st8_st9_rl" value="`${(sw3st8_p$idx eq 1) ? ((sw3st9_p$idx eq 1) ? white : black) : ((sw3st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st9_t" value="`${sw3st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st9_b" value="`${sw3st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st9_st10_rl" value="`${(sw3st9_p$idx eq 1) ? ((sw3st10_p$idx eq 1) ? white : black) : ((sw3st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st10_t" value="`${sw3st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st10_b" value="`${sw3st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st10_st11_rl" value="`${(sw3st10_p$idx eq 1) ? ((sw3st11_p$idx eq 1) ? white : black) : ((sw3st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st11_t" value="`${sw3st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st11_b" value="`${sw3st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st11_st12_rl" value="`${(sw3st11_p$idx eq 1) ? ((sw3st12_p$idx eq 1) ? white : black) : ((sw3st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st12_t" value="`${sw3st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st12_b" value="`${sw3st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st12_st13_rl" value="`${(sw3st12_p$idx eq 1) ? ((sw3st13_p$idx eq 1) ? white : black) : ((sw3st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st13_t" value="`${sw3st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st13_b" value="`${sw3st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st13_st14_rl" value="`${(sw3st13_p$idx eq 1) ? ((sw3st14_p$idx eq 1) ? white : black) : ((sw3st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st14_t" value="`${sw3st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st14_b" value="`${sw3st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st14_st15_rl" value="`${(sw3st14_p$idx eq 1) ? ((sw3st15_p$idx eq 1) ? white : black) : ((sw3st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st15_t" value="`${sw3st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st15_b" value="`${sw3st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st15_st16_rl" value="`${(sw3st15_p$idx eq 1) ? ((sw3st16_p$idx eq 1) ? white : black) : ((sw3st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st16_t" value="`${sw3st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st16_b" value="`${sw3st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st16_st17_rl" value="`${(sw3st16_p$idx eq 1) ? ((sw3st17_p$idx eq 1) ? white : black) : ((sw3st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st17_t" value="`${sw3st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st17_b" value="`${sw3st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st17_st18_rl" value="`${(sw3st17_p$idx eq 1) ? ((sw3st18_p$idx eq 1) ? white : black) : ((sw3st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st18_t" value="`${sw3st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st18_b" value="`${sw3st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st18_st19_rl" value="`${(sw3st18_p$idx eq 1) ? ((sw3st19_p$idx eq 1) ? white : black) : ((sw3st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw3_st19_t" value="`${sw3st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw3_st19_b" value="`${sw3st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw3_st19_r" value="`${sw3st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW4-->
+                <Substitution name="sw4_st0_l" value="`${sw4st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st0_t" value="`${sw4st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st0_b" value="`${sw4st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st0_st1_rl" value="`${(sw4st0_p$idx eq 1) ? ((sw4st1_p$idx eq 1) ? white : black) : ((sw4st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st1_t" value="`${sw4st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st1_b" value="`${sw4st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st1_st2_rl" value="`${(sw4st1_p$idx eq 1) ? ((sw4st2_p$idx eq 1) ? white : black) : ((sw4st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st2_t" value="`${sw4st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st2_b" value="`${sw4st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st2_st3_rl" value="`${(sw4st2_p$idx eq 1) ? ((sw4st3_p$idx eq 1) ? white : black) : ((sw4st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st3_t" value="`${sw4st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st3_b" value="`${sw4st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st3_st4_rl" value="`${(sw4st3_p$idx eq 1) ? ((sw4st4_p$idx eq 1) ? white : black) : ((sw4st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st4_t" value="`${sw4st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st4_b" value="`${sw4st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st4_st5_rl" value="`${(sw4st4_p$idx eq 1) ? ((sw4st5_p$idx eq 1) ? white : black) : ((sw4st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st5_t" value="`${sw4st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st5_b" value="`${sw4st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st5_st6_rl" value="`${(sw4st5_p$idx eq 1) ? ((sw4st6_p$idx eq 1) ? white : black) : ((sw4st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st6_t" value="`${sw4st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st6_b" value="`${sw4st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st6_st7_rl" value="`${(sw4st6_p$idx eq 1) ? ((sw4st7_p$idx eq 1) ? white : black) : ((sw4st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st7_t" value="`${sw4st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st7_b" value="`${sw4st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st7_st8_rl" value="`${(sw4st7_p$idx eq 1) ? ((sw4st8_p$idx eq 1) ? white : black) : ((sw4st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st8_t" value="`${sw4st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st8_b" value="`${sw4st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st8_st9_rl" value="`${(sw4st8_p$idx eq 1) ? ((sw4st9_p$idx eq 1) ? white : black) : ((sw4st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st9_t" value="`${sw4st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st9_b" value="`${sw4st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st9_st10_rl" value="`${(sw4st9_p$idx eq 1) ? ((sw4st10_p$idx eq 1) ? white : black) : ((sw4st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st10_t" value="`${sw4st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st10_b" value="`${sw4st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st10_st11_rl" value="`${(sw4st10_p$idx eq 1) ? ((sw4st11_p$idx eq 1) ? white : black) : ((sw4st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st11_t" value="`${sw4st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st11_b" value="`${sw4st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st11_st12_rl" value="`${(sw4st11_p$idx eq 1) ? ((sw4st12_p$idx eq 1) ? white : black) : ((sw4st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st12_t" value="`${sw4st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st12_b" value="`${sw4st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st12_st13_rl" value="`${(sw4st12_p$idx eq 1) ? ((sw4st13_p$idx eq 1) ? white : black) : ((sw4st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st13_t" value="`${sw4st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st13_b" value="`${sw4st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st13_st14_rl" value="`${(sw4st13_p$idx eq 1) ? ((sw4st14_p$idx eq 1) ? white : black) : ((sw4st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st14_t" value="`${sw4st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st14_b" value="`${sw4st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st14_st15_rl" value="`${(sw4st14_p$idx eq 1) ? ((sw4st15_p$idx eq 1) ? white : black) : ((sw4st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st15_t" value="`${sw4st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st15_b" value="`${sw4st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st15_st16_rl" value="`${(sw4st15_p$idx eq 1) ? ((sw4st16_p$idx eq 1) ? white : black) : ((sw4st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st16_t" value="`${sw4st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st16_b" value="`${sw4st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st16_st17_rl" value="`${(sw4st16_p$idx eq 1) ? ((sw4st17_p$idx eq 1) ? white : black) : ((sw4st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st17_t" value="`${sw4st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st17_b" value="`${sw4st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st17_st18_rl" value="`${(sw4st17_p$idx eq 1) ? ((sw4st18_p$idx eq 1) ? white : black) : ((sw4st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st18_t" value="`${sw4st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st18_b" value="`${sw4st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st18_st19_rl" value="`${(sw4st18_p$idx eq 1) ? ((sw4st19_p$idx eq 1) ? white : black) : ((sw4st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw4_st19_t" value="`${sw4st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw4_st19_b" value="`${sw4st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw4_st19_r" value="`${sw4st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW5-->
+                <Substitution name="sw5_st0_l" value="`${sw5st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st0_t" value="`${sw5st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st0_b" value="`${sw5st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st0_st1_rl" value="`${(sw5st0_p$idx eq 1) ? ((sw5st1_p$idx eq 1) ? white : black) : ((sw5st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st1_t" value="`${sw5st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st1_b" value="`${sw5st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st1_st2_rl" value="`${(sw5st1_p$idx eq 1) ? ((sw5st2_p$idx eq 1) ? white : black) : ((sw5st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st2_t" value="`${sw5st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st2_b" value="`${sw5st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st2_st3_rl" value="`${(sw5st2_p$idx eq 1) ? ((sw5st3_p$idx eq 1) ? white : black) : ((sw5st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st3_t" value="`${sw5st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st3_b" value="`${sw5st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st3_st4_rl" value="`${(sw5st3_p$idx eq 1) ? ((sw5st4_p$idx eq 1) ? white : black) : ((sw5st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st4_t" value="`${sw5st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st4_b" value="`${sw5st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st4_st5_rl" value="`${(sw5st4_p$idx eq 1) ? ((sw5st5_p$idx eq 1) ? white : black) : ((sw5st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st5_t" value="`${sw5st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st5_b" value="`${sw5st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st5_st6_rl" value="`${(sw5st5_p$idx eq 1) ? ((sw5st6_p$idx eq 1) ? white : black) : ((sw5st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st6_t" value="`${sw5st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st6_b" value="`${sw5st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st6_st7_rl" value="`${(sw5st6_p$idx eq 1) ? ((sw5st7_p$idx eq 1) ? white : black) : ((sw5st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st7_t" value="`${sw5st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st7_b" value="`${sw5st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st7_st8_rl" value="`${(sw5st7_p$idx eq 1) ? ((sw5st8_p$idx eq 1) ? white : black) : ((sw5st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st8_t" value="`${sw5st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st8_b" value="`${sw5st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st8_st9_rl" value="`${(sw5st8_p$idx eq 1) ? ((sw5st9_p$idx eq 1) ? white : black) : ((sw5st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st9_t" value="`${sw5st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st9_b" value="`${sw5st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st9_st10_rl" value="`${(sw5st9_p$idx eq 1) ? ((sw5st10_p$idx eq 1) ? white : black) : ((sw5st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st10_t" value="`${sw5st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st10_b" value="`${sw5st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st10_st11_rl" value="`${(sw5st10_p$idx eq 1) ? ((sw5st11_p$idx eq 1) ? white : black) : ((sw5st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st11_t" value="`${sw5st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st11_b" value="`${sw5st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st11_st12_rl" value="`${(sw5st11_p$idx eq 1) ? ((sw5st12_p$idx eq 1) ? white : black) : ((sw5st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st12_t" value="`${sw5st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st12_b" value="`${sw5st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st12_st13_rl" value="`${(sw5st12_p$idx eq 1) ? ((sw5st13_p$idx eq 1) ? white : black) : ((sw5st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st13_t" value="`${sw5st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st13_b" value="`${sw5st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st13_st14_rl" value="`${(sw5st13_p$idx eq 1) ? ((sw5st14_p$idx eq 1) ? white : black) : ((sw5st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st14_t" value="`${sw5st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st14_b" value="`${sw5st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st14_st15_rl" value="`${(sw5st14_p$idx eq 1) ? ((sw5st15_p$idx eq 1) ? white : black) : ((sw5st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st15_t" value="`${sw5st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st15_b" value="`${sw5st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st15_st16_rl" value="`${(sw5st15_p$idx eq 1) ? ((sw5st16_p$idx eq 1) ? white : black) : ((sw5st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st16_t" value="`${sw5st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st16_b" value="`${sw5st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st16_st17_rl" value="`${(sw5st16_p$idx eq 1) ? ((sw5st17_p$idx eq 1) ? white : black) : ((sw5st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st17_t" value="`${sw5st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st17_b" value="`${sw5st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st17_st18_rl" value="`${(sw5st17_p$idx eq 1) ? ((sw5st18_p$idx eq 1) ? white : black) : ((sw5st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st18_t" value="`${sw5st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st18_b" value="`${sw5st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st18_st19_rl" value="`${(sw5st18_p$idx eq 1) ? ((sw5st19_p$idx eq 1) ? white : black) : ((sw5st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw5_st19_t" value="`${sw5st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw5_st19_b" value="`${sw5st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw5_st19_r" value="`${sw5st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW6-->
+                <Substitution name="sw6_st0_l" value="`${sw6st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st0_t" value="`${sw6st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st0_b" value="`${sw6st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st0_st1_rl" value="`${(sw6st0_p$idx eq 1) ? ((sw6st1_p$idx eq 1) ? white : black) : ((sw6st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st1_t" value="`${sw6st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st1_b" value="`${sw6st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st1_st2_rl" value="`${(sw6st1_p$idx eq 1) ? ((sw6st2_p$idx eq 1) ? white : black) : ((sw6st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st2_t" value="`${sw6st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st2_b" value="`${sw6st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st2_st3_rl" value="`${(sw6st2_p$idx eq 1) ? ((sw6st3_p$idx eq 1) ? white : black) : ((sw6st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st3_t" value="`${sw6st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st3_b" value="`${sw6st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st3_st4_rl" value="`${(sw6st3_p$idx eq 1) ? ((sw6st4_p$idx eq 1) ? white : black) : ((sw6st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st4_t" value="`${sw6st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st4_b" value="`${sw6st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st4_st5_rl" value="`${(sw6st4_p$idx eq 1) ? ((sw6st5_p$idx eq 1) ? white : black) : ((sw6st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st5_t" value="`${sw6st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st5_b" value="`${sw6st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st5_st6_rl" value="`${(sw6st5_p$idx eq 1) ? ((sw6st6_p$idx eq 1) ? white : black) : ((sw6st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st6_t" value="`${sw6st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st6_b" value="`${sw6st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st6_st7_rl" value="`${(sw6st6_p$idx eq 1) ? ((sw6st7_p$idx eq 1) ? white : black) : ((sw6st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st7_t" value="`${sw6st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st7_b" value="`${sw6st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st7_st8_rl" value="`${(sw6st7_p$idx eq 1) ? ((sw6st8_p$idx eq 1) ? white : black) : ((sw6st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st8_t" value="`${sw6st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st8_b" value="`${sw6st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st8_st9_rl" value="`${(sw6st8_p$idx eq 1) ? ((sw6st9_p$idx eq 1) ? white : black) : ((sw6st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st9_t" value="`${sw6st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st9_b" value="`${sw6st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st9_st10_rl" value="`${(sw6st9_p$idx eq 1) ? ((sw6st10_p$idx eq 1) ? white : black) : ((sw6st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st10_t" value="`${sw6st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st10_b" value="`${sw6st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st10_st11_rl" value="`${(sw6st10_p$idx eq 1) ? ((sw6st11_p$idx eq 1) ? white : black) : ((sw6st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st11_t" value="`${sw6st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st11_b" value="`${sw6st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st11_st12_rl" value="`${(sw6st11_p$idx eq 1) ? ((sw6st12_p$idx eq 1) ? white : black) : ((sw6st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st12_t" value="`${sw6st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st12_b" value="`${sw6st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st12_st13_rl" value="`${(sw6st12_p$idx eq 1) ? ((sw6st13_p$idx eq 1) ? white : black) : ((sw6st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st13_t" value="`${sw6st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st13_b" value="`${sw6st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st13_st14_rl" value="`${(sw6st13_p$idx eq 1) ? ((sw6st14_p$idx eq 1) ? white : black) : ((sw6st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st14_t" value="`${sw6st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st14_b" value="`${sw6st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st14_st15_rl" value="`${(sw6st14_p$idx eq 1) ? ((sw6st15_p$idx eq 1) ? white : black) : ((sw6st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st15_t" value="`${sw6st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st15_b" value="`${sw6st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st15_st16_rl" value="`${(sw6st15_p$idx eq 1) ? ((sw6st16_p$idx eq 1) ? white : black) : ((sw6st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st16_t" value="`${sw6st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st16_b" value="`${sw6st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st16_st17_rl" value="`${(sw6st16_p$idx eq 1) ? ((sw6st17_p$idx eq 1) ? white : black) : ((sw6st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st17_t" value="`${sw6st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st17_b" value="`${sw6st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st17_st18_rl" value="`${(sw6st17_p$idx eq 1) ? ((sw6st18_p$idx eq 1) ? white : black) : ((sw6st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st18_t" value="`${sw6st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st18_b" value="`${sw6st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st18_st19_rl" value="`${(sw6st18_p$idx eq 1) ? ((sw6st19_p$idx eq 1) ? white : black) : ((sw6st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw6_st19_t" value="`${sw6st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw6_st19_b" value="`${sw6st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw6_st19_r" value="`${sw6st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW7-->
+                <Substitution name="sw7_st0_l" value="`${sw7st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st0_t" value="`${sw7st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st0_b" value="`${sw7st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st0_st1_rl" value="`${(sw7st0_p$idx eq 1) ? ((sw7st1_p$idx eq 1) ? white : black) : ((sw7st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st1_t" value="`${sw7st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st1_b" value="`${sw7st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st1_st2_rl" value="`${(sw7st1_p$idx eq 1) ? ((sw7st2_p$idx eq 1) ? white : black) : ((sw7st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st2_t" value="`${sw7st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st2_b" value="`${sw7st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st2_st3_rl" value="`${(sw7st2_p$idx eq 1) ? ((sw7st3_p$idx eq 1) ? white : black) : ((sw7st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st3_t" value="`${sw7st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st3_b" value="`${sw7st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st3_st4_rl" value="`${(sw7st3_p$idx eq 1) ? ((sw7st4_p$idx eq 1) ? white : black) : ((sw7st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st4_t" value="`${sw7st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st4_b" value="`${sw7st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st4_st5_rl" value="`${(sw7st4_p$idx eq 1) ? ((sw7st5_p$idx eq 1) ? white : black) : ((sw7st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st5_t" value="`${sw7st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st5_b" value="`${sw7st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st5_st6_rl" value="`${(sw7st5_p$idx eq 1) ? ((sw7st6_p$idx eq 1) ? white : black) : ((sw7st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st6_t" value="`${sw7st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st6_b" value="`${sw7st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st6_st7_rl" value="`${(sw7st6_p$idx eq 1) ? ((sw7st7_p$idx eq 1) ? white : black) : ((sw7st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st7_t" value="`${sw7st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st7_b" value="`${sw7st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st7_st8_rl" value="`${(sw7st7_p$idx eq 1) ? ((sw7st8_p$idx eq 1) ? white : black) : ((sw7st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st8_t" value="`${sw7st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st8_b" value="`${sw7st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st8_st9_rl" value="`${(sw7st8_p$idx eq 1) ? ((sw7st9_p$idx eq 1) ? white : black) : ((sw7st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st9_t" value="`${sw7st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st9_b" value="`${sw7st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st9_st10_rl" value="`${(sw7st9_p$idx eq 1) ? ((sw7st10_p$idx eq 1) ? white : black) : ((sw7st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st10_t" value="`${sw7st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st10_b" value="`${sw7st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st10_st11_rl" value="`${(sw7st10_p$idx eq 1) ? ((sw7st11_p$idx eq 1) ? white : black) : ((sw7st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st11_t" value="`${sw7st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st11_b" value="`${sw7st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st11_st12_rl" value="`${(sw7st11_p$idx eq 1) ? ((sw7st12_p$idx eq 1) ? white : black) : ((sw7st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st12_t" value="`${sw7st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st12_b" value="`${sw7st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st12_st13_rl" value="`${(sw7st12_p$idx eq 1) ? ((sw7st13_p$idx eq 1) ? white : black) : ((sw7st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st13_t" value="`${sw7st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st13_b" value="`${sw7st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st13_st14_rl" value="`${(sw7st13_p$idx eq 1) ? ((sw7st14_p$idx eq 1) ? white : black) : ((sw7st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st14_t" value="`${sw7st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st14_b" value="`${sw7st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st14_st15_rl" value="`${(sw7st14_p$idx eq 1) ? ((sw7st15_p$idx eq 1) ? white : black) : ((sw7st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st15_t" value="`${sw7st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st15_b" value="`${sw7st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st15_st16_rl" value="`${(sw7st15_p$idx eq 1) ? ((sw7st16_p$idx eq 1) ? white : black) : ((sw7st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st16_t" value="`${sw7st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st16_b" value="`${sw7st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st16_st17_rl" value="`${(sw7st16_p$idx eq 1) ? ((sw7st17_p$idx eq 1) ? white : black) : ((sw7st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st17_t" value="`${sw7st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st17_b" value="`${sw7st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st17_st18_rl" value="`${(sw7st17_p$idx eq 1) ? ((sw7st18_p$idx eq 1) ? white : black) : ((sw7st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st18_t" value="`${sw7st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st18_b" value="`${sw7st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st18_st19_rl" value="`${(sw7st18_p$idx eq 1) ? ((sw7st19_p$idx eq 1) ? white : black) : ((sw7st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw7_st19_t" value="`${sw7st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw7_st19_b" value="`${sw7st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw7_st19_r" value="`${sw7st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW8-->
+                <Substitution name="sw8_st0_l" value="`${sw8st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st0_t" value="`${sw8st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st0_b" value="`${sw8st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st0_st1_rl" value="`${(sw8st0_p$idx eq 1) ? ((sw8st1_p$idx eq 1) ? white : black) : ((sw8st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st1_t" value="`${sw8st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st1_b" value="`${sw8st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st1_st2_rl" value="`${(sw8st1_p$idx eq 1) ? ((sw8st2_p$idx eq 1) ? white : black) : ((sw8st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st2_t" value="`${sw8st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st2_b" value="`${sw8st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st2_st3_rl" value="`${(sw8st2_p$idx eq 1) ? ((sw8st3_p$idx eq 1) ? white : black) : ((sw8st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st3_t" value="`${sw8st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st3_b" value="`${sw8st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st3_st4_rl" value="`${(sw8st3_p$idx eq 1) ? ((sw8st4_p$idx eq 1) ? white : black) : ((sw8st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st4_t" value="`${sw8st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st4_b" value="`${sw8st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st4_st5_rl" value="`${(sw8st4_p$idx eq 1) ? ((sw8st5_p$idx eq 1) ? white : black) : ((sw8st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st5_t" value="`${sw8st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st5_b" value="`${sw8st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st5_st6_rl" value="`${(sw8st5_p$idx eq 1) ? ((sw8st6_p$idx eq 1) ? white : black) : ((sw8st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st6_t" value="`${sw8st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st6_b" value="`${sw8st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st6_st7_rl" value="`${(sw8st6_p$idx eq 1) ? ((sw8st7_p$idx eq 1) ? white : black) : ((sw8st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st7_t" value="`${sw8st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st7_b" value="`${sw8st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st7_st8_rl" value="`${(sw8st7_p$idx eq 1) ? ((sw8st8_p$idx eq 1) ? white : black) : ((sw8st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st8_t" value="`${sw8st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st8_b" value="`${sw8st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st8_st9_rl" value="`${(sw8st8_p$idx eq 1) ? ((sw8st9_p$idx eq 1) ? white : black) : ((sw8st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st9_t" value="`${sw8st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st9_b" value="`${sw8st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st9_st10_rl" value="`${(sw8st9_p$idx eq 1) ? ((sw8st10_p$idx eq 1) ? white : black) : ((sw8st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st10_t" value="`${sw8st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st10_b" value="`${sw8st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st10_st11_rl" value="`${(sw8st10_p$idx eq 1) ? ((sw8st11_p$idx eq 1) ? white : black) : ((sw8st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st11_t" value="`${sw8st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st11_b" value="`${sw8st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st11_st12_rl" value="`${(sw8st11_p$idx eq 1) ? ((sw8st12_p$idx eq 1) ? white : black) : ((sw8st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st12_t" value="`${sw8st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st12_b" value="`${sw8st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st12_st13_rl" value="`${(sw8st12_p$idx eq 1) ? ((sw8st13_p$idx eq 1) ? white : black) : ((sw8st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st13_t" value="`${sw8st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st13_b" value="`${sw8st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st13_st14_rl" value="`${(sw8st13_p$idx eq 1) ? ((sw8st14_p$idx eq 1) ? white : black) : ((sw8st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st14_t" value="`${sw8st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st14_b" value="`${sw8st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st14_st15_rl" value="`${(sw8st14_p$idx eq 1) ? ((sw8st15_p$idx eq 1) ? white : black) : ((sw8st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st15_t" value="`${sw8st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st15_b" value="`${sw8st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st15_st16_rl" value="`${(sw8st15_p$idx eq 1) ? ((sw8st16_p$idx eq 1) ? white : black) : ((sw8st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st16_t" value="`${sw8st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st16_b" value="`${sw8st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st16_st17_rl" value="`${(sw8st16_p$idx eq 1) ? ((sw8st17_p$idx eq 1) ? white : black) : ((sw8st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st17_t" value="`${sw8st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st17_b" value="`${sw8st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st17_st18_rl" value="`${(sw8st17_p$idx eq 1) ? ((sw8st18_p$idx eq 1) ? white : black) : ((sw8st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st18_t" value="`${sw8st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st18_b" value="`${sw8st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st18_st19_rl" value="`${(sw8st18_p$idx eq 1) ? ((sw8st19_p$idx eq 1) ? white : black) : ((sw8st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw8_st19_t" value="`${sw8st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw8_st19_b" value="`${sw8st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw8_st19_r" value="`${sw8st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW9-->
+                <Substitution name="sw9_st0_l" value="`${sw9st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st0_t" value="`${sw9st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st0_b" value="`${sw9st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st0_st1_rl" value="`${(sw9st0_p$idx eq 1) ? ((sw9st1_p$idx eq 1) ? white : black) : ((sw9st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st1_t" value="`${sw9st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st1_b" value="`${sw9st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st1_st2_rl" value="`${(sw9st1_p$idx eq 1) ? ((sw9st2_p$idx eq 1) ? white : black) : ((sw9st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st2_t" value="`${sw9st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st2_b" value="`${sw9st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st2_st3_rl" value="`${(sw9st2_p$idx eq 1) ? ((sw9st3_p$idx eq 1) ? white : black) : ((sw9st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st3_t" value="`${sw9st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st3_b" value="`${sw9st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st3_st4_rl" value="`${(sw9st3_p$idx eq 1) ? ((sw9st4_p$idx eq 1) ? white : black) : ((sw9st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st4_t" value="`${sw9st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st4_b" value="`${sw9st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st4_st5_rl" value="`${(sw9st4_p$idx eq 1) ? ((sw9st5_p$idx eq 1) ? white : black) : ((sw9st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st5_t" value="`${sw9st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st5_b" value="`${sw9st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st5_st6_rl" value="`${(sw9st5_p$idx eq 1) ? ((sw9st6_p$idx eq 1) ? white : black) : ((sw9st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st6_t" value="`${sw9st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st6_b" value="`${sw9st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st6_st7_rl" value="`${(sw9st6_p$idx eq 1) ? ((sw9st7_p$idx eq 1) ? white : black) : ((sw9st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st7_t" value="`${sw9st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st7_b" value="`${sw9st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st7_st8_rl" value="`${(sw9st7_p$idx eq 1) ? ((sw9st8_p$idx eq 1) ? white : black) : ((sw9st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st8_t" value="`${sw9st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st8_b" value="`${sw9st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st8_st9_rl" value="`${(sw9st8_p$idx eq 1) ? ((sw9st9_p$idx eq 1) ? white : black) : ((sw9st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st9_t" value="`${sw9st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st9_b" value="`${sw9st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st9_st10_rl" value="`${(sw9st9_p$idx eq 1) ? ((sw9st10_p$idx eq 1) ? white : black) : ((sw9st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st10_t" value="`${sw9st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st10_b" value="`${sw9st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st10_st11_rl" value="`${(sw9st10_p$idx eq 1) ? ((sw9st11_p$idx eq 1) ? white : black) : ((sw9st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st11_t" value="`${sw9st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st11_b" value="`${sw9st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st11_st12_rl" value="`${(sw9st11_p$idx eq 1) ? ((sw9st12_p$idx eq 1) ? white : black) : ((sw9st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st12_t" value="`${sw9st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st12_b" value="`${sw9st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st12_st13_rl" value="`${(sw9st12_p$idx eq 1) ? ((sw9st13_p$idx eq 1) ? white : black) : ((sw9st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st13_t" value="`${sw9st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st13_b" value="`${sw9st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st13_st14_rl" value="`${(sw9st13_p$idx eq 1) ? ((sw9st14_p$idx eq 1) ? white : black) : ((sw9st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st14_t" value="`${sw9st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st14_b" value="`${sw9st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st14_st15_rl" value="`${(sw9st14_p$idx eq 1) ? ((sw9st15_p$idx eq 1) ? white : black) : ((sw9st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st15_t" value="`${sw9st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st15_b" value="`${sw9st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st15_st16_rl" value="`${(sw9st15_p$idx eq 1) ? ((sw9st16_p$idx eq 1) ? white : black) : ((sw9st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st16_t" value="`${sw9st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st16_b" value="`${sw9st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st16_st17_rl" value="`${(sw9st16_p$idx eq 1) ? ((sw9st17_p$idx eq 1) ? white : black) : ((sw9st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st17_t" value="`${sw9st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st17_b" value="`${sw9st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st17_st18_rl" value="`${(sw9st17_p$idx eq 1) ? ((sw9st18_p$idx eq 1) ? white : black) : ((sw9st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st18_t" value="`${sw9st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st18_b" value="`${sw9st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st18_st19_rl" value="`${(sw9st18_p$idx eq 1) ? ((sw9st19_p$idx eq 1) ? white : black) : ((sw9st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw9_st19_t" value="`${sw9st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw9_st19_b" value="`${sw9st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw9_st19_r" value="`${sw9st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW10-->
+                <Substitution name="sw10_st0_l" value="`${sw10st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st0_t" value="`${sw10st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st0_b" value="`${sw10st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st0_st1_rl" value="`${(sw10st0_p$idx eq 1) ? ((sw10st1_p$idx eq 1) ? white : black) : ((sw10st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st1_t" value="`${sw10st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st1_b" value="`${sw10st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st1_st2_rl" value="`${(sw10st1_p$idx eq 1) ? ((sw10st2_p$idx eq 1) ? white : black) : ((sw10st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st2_t" value="`${sw10st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st2_b" value="`${sw10st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st2_st3_rl" value="`${(sw10st2_p$idx eq 1) ? ((sw10st3_p$idx eq 1) ? white : black) : ((sw10st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st3_t" value="`${sw10st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st3_b" value="`${sw10st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st3_st4_rl" value="`${(sw10st3_p$idx eq 1) ? ((sw10st4_p$idx eq 1) ? white : black) : ((sw10st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st4_t" value="`${sw10st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st4_b" value="`${sw10st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st4_st5_rl" value="`${(sw10st4_p$idx eq 1) ? ((sw10st5_p$idx eq 1) ? white : black) : ((sw10st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st5_t" value="`${sw10st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st5_b" value="`${sw10st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st5_st6_rl" value="`${(sw10st5_p$idx eq 1) ? ((sw10st6_p$idx eq 1) ? white : black) : ((sw10st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st6_t" value="`${sw10st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st6_b" value="`${sw10st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st6_st7_rl" value="`${(sw10st6_p$idx eq 1) ? ((sw10st7_p$idx eq 1) ? white : black) : ((sw10st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st7_t" value="`${sw10st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st7_b" value="`${sw10st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st7_st8_rl" value="`${(sw10st7_p$idx eq 1) ? ((sw10st8_p$idx eq 1) ? white : black) : ((sw10st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st8_t" value="`${sw10st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st8_b" value="`${sw10st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st8_st9_rl" value="`${(sw10st8_p$idx eq 1) ? ((sw10st9_p$idx eq 1) ? white : black) : ((sw10st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st9_t" value="`${sw10st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st9_b" value="`${sw10st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st9_st10_rl" value="`${(sw10st9_p$idx eq 1) ? ((sw10st10_p$idx eq 1) ? white : black) : ((sw10st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st10_t" value="`${sw10st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st10_b" value="`${sw10st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st10_st11_rl" value="`${(sw10st10_p$idx eq 1) ? ((sw10st11_p$idx eq 1) ? white : black) : ((sw10st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st11_t" value="`${sw10st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st11_b" value="`${sw10st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st11_st12_rl" value="`${(sw10st11_p$idx eq 1) ? ((sw10st12_p$idx eq 1) ? white : black) : ((sw10st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st12_t" value="`${sw10st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st12_b" value="`${sw10st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st12_st13_rl" value="`${(sw10st12_p$idx eq 1) ? ((sw10st13_p$idx eq 1) ? white : black) : ((sw10st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st13_t" value="`${sw10st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st13_b" value="`${sw10st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st13_st14_rl" value="`${(sw10st13_p$idx eq 1) ? ((sw10st14_p$idx eq 1) ? white : black) : ((sw10st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st14_t" value="`${sw10st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st14_b" value="`${sw10st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st14_st15_rl" value="`${(sw10st14_p$idx eq 1) ? ((sw10st15_p$idx eq 1) ? white : black) : ((sw10st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st15_t" value="`${sw10st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st15_b" value="`${sw10st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st15_st16_rl" value="`${(sw10st15_p$idx eq 1) ? ((sw10st16_p$idx eq 1) ? white : black) : ((sw10st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st16_t" value="`${sw10st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st16_b" value="`${sw10st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st16_st17_rl" value="`${(sw10st16_p$idx eq 1) ? ((sw10st17_p$idx eq 1) ? white : black) : ((sw10st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st17_t" value="`${sw10st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st17_b" value="`${sw10st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st17_st18_rl" value="`${(sw10st17_p$idx eq 1) ? ((sw10st18_p$idx eq 1) ? white : black) : ((sw10st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st18_t" value="`${sw10st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st18_b" value="`${sw10st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st18_st19_rl" value="`${(sw10st18_p$idx eq 1) ? ((sw10st19_p$idx eq 1) ? white : black) : ((sw10st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw10_st19_t" value="`${sw10st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw10_st19_b" value="`${sw10st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw10_st19_r" value="`${sw10st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW11-->
+                <Substitution name="sw11_st0_l" value="`${sw11st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st0_t" value="`${sw11st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st0_b" value="`${sw11st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st0_st1_rl" value="`${(sw11st0_p$idx eq 1) ? ((sw11st1_p$idx eq 1) ? white : black) : ((sw11st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st1_t" value="`${sw11st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st1_b" value="`${sw11st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st1_st2_rl" value="`${(sw11st1_p$idx eq 1) ? ((sw11st2_p$idx eq 1) ? white : black) : ((sw11st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st2_t" value="`${sw11st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st2_b" value="`${sw11st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st2_st3_rl" value="`${(sw11st2_p$idx eq 1) ? ((sw11st3_p$idx eq 1) ? white : black) : ((sw11st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st3_t" value="`${sw11st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st3_b" value="`${sw11st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st3_st4_rl" value="`${(sw11st3_p$idx eq 1) ? ((sw11st4_p$idx eq 1) ? white : black) : ((sw11st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st4_t" value="`${sw11st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st4_b" value="`${sw11st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st4_st5_rl" value="`${(sw11st4_p$idx eq 1) ? ((sw11st5_p$idx eq 1) ? white : black) : ((sw11st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st5_t" value="`${sw11st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st5_b" value="`${sw11st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st5_st6_rl" value="`${(sw11st5_p$idx eq 1) ? ((sw11st6_p$idx eq 1) ? white : black) : ((sw11st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st6_t" value="`${sw11st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st6_b" value="`${sw11st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st6_st7_rl" value="`${(sw11st6_p$idx eq 1) ? ((sw11st7_p$idx eq 1) ? white : black) : ((sw11st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st7_t" value="`${sw11st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st7_b" value="`${sw11st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st7_st8_rl" value="`${(sw11st7_p$idx eq 1) ? ((sw11st8_p$idx eq 1) ? white : black) : ((sw11st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st8_t" value="`${sw11st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st8_b" value="`${sw11st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st8_st9_rl" value="`${(sw11st8_p$idx eq 1) ? ((sw11st9_p$idx eq 1) ? white : black) : ((sw11st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st9_t" value="`${sw11st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st9_b" value="`${sw11st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st9_st10_rl" value="`${(sw11st9_p$idx eq 1) ? ((sw11st10_p$idx eq 1) ? white : black) : ((sw11st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st10_t" value="`${sw11st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st10_b" value="`${sw11st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st10_st11_rl" value="`${(sw11st10_p$idx eq 1) ? ((sw11st11_p$idx eq 1) ? white : black) : ((sw11st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st11_t" value="`${sw11st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st11_b" value="`${sw11st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st11_st12_rl" value="`${(sw11st11_p$idx eq 1) ? ((sw11st12_p$idx eq 1) ? white : black) : ((sw11st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st12_t" value="`${sw11st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st12_b" value="`${sw11st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st12_st13_rl" value="`${(sw11st12_p$idx eq 1) ? ((sw11st13_p$idx eq 1) ? white : black) : ((sw11st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st13_t" value="`${sw11st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st13_b" value="`${sw11st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st13_st14_rl" value="`${(sw11st13_p$idx eq 1) ? ((sw11st14_p$idx eq 1) ? white : black) : ((sw11st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st14_t" value="`${sw11st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st14_b" value="`${sw11st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st14_st15_rl" value="`${(sw11st14_p$idx eq 1) ? ((sw11st15_p$idx eq 1) ? white : black) : ((sw11st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st15_t" value="`${sw11st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st15_b" value="`${sw11st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st15_st16_rl" value="`${(sw11st15_p$idx eq 1) ? ((sw11st16_p$idx eq 1) ? white : black) : ((sw11st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st16_t" value="`${sw11st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st16_b" value="`${sw11st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st16_st17_rl" value="`${(sw11st16_p$idx eq 1) ? ((sw11st17_p$idx eq 1) ? white : black) : ((sw11st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st17_t" value="`${sw11st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st17_b" value="`${sw11st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st17_st18_rl" value="`${(sw11st17_p$idx eq 1) ? ((sw11st18_p$idx eq 1) ? white : black) : ((sw11st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st18_t" value="`${sw11st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st18_b" value="`${sw11st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st18_st19_rl" value="`${(sw11st18_p$idx eq 1) ? ((sw11st19_p$idx eq 1) ? white : black) : ((sw11st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw11_st19_t" value="`${sw11st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw11_st19_b" value="`${sw11st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw11_st19_r" value="`${sw11st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW12-->
+                <Substitution name="sw12_st0_l" value="`${sw12st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st0_t" value="`${sw12st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st0_b" value="`${sw12st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st0_st1_rl" value="`${(sw12st0_p$idx eq 1) ? ((sw12st1_p$idx eq 1) ? white : black) : ((sw12st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st1_t" value="`${sw12st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st1_b" value="`${sw12st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st1_st2_rl" value="`${(sw12st1_p$idx eq 1) ? ((sw12st2_p$idx eq 1) ? white : black) : ((sw12st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st2_t" value="`${sw12st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st2_b" value="`${sw12st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st2_st3_rl" value="`${(sw12st2_p$idx eq 1) ? ((sw12st3_p$idx eq 1) ? white : black) : ((sw12st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st3_t" value="`${sw12st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st3_b" value="`${sw12st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st3_st4_rl" value="`${(sw12st3_p$idx eq 1) ? ((sw12st4_p$idx eq 1) ? white : black) : ((sw12st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st4_t" value="`${sw12st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st4_b" value="`${sw12st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st4_st5_rl" value="`${(sw12st4_p$idx eq 1) ? ((sw12st5_p$idx eq 1) ? white : black) : ((sw12st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st5_t" value="`${sw12st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st5_b" value="`${sw12st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st5_st6_rl" value="`${(sw12st5_p$idx eq 1) ? ((sw12st6_p$idx eq 1) ? white : black) : ((sw12st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st6_t" value="`${sw12st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st6_b" value="`${sw12st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st6_st7_rl" value="`${(sw12st6_p$idx eq 1) ? ((sw12st7_p$idx eq 1) ? white : black) : ((sw12st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st7_t" value="`${sw12st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st7_b" value="`${sw12st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st7_st8_rl" value="`${(sw12st7_p$idx eq 1) ? ((sw12st8_p$idx eq 1) ? white : black) : ((sw12st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st8_t" value="`${sw12st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st8_b" value="`${sw12st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st8_st9_rl" value="`${(sw12st8_p$idx eq 1) ? ((sw12st9_p$idx eq 1) ? white : black) : ((sw12st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st9_t" value="`${sw12st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st9_b" value="`${sw12st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st9_st10_rl" value="`${(sw12st9_p$idx eq 1) ? ((sw12st10_p$idx eq 1) ? white : black) : ((sw12st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st10_t" value="`${sw12st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st10_b" value="`${sw12st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st10_st11_rl" value="`${(sw12st10_p$idx eq 1) ? ((sw12st11_p$idx eq 1) ? white : black) : ((sw12st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st11_t" value="`${sw12st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st11_b" value="`${sw12st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st11_st12_rl" value="`${(sw12st11_p$idx eq 1) ? ((sw12st12_p$idx eq 1) ? white : black) : ((sw12st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st12_t" value="`${sw12st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st12_b" value="`${sw12st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st12_st13_rl" value="`${(sw12st12_p$idx eq 1) ? ((sw12st13_p$idx eq 1) ? white : black) : ((sw12st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st13_t" value="`${sw12st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st13_b" value="`${sw12st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st13_st14_rl" value="`${(sw12st13_p$idx eq 1) ? ((sw12st14_p$idx eq 1) ? white : black) : ((sw12st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st14_t" value="`${sw12st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st14_b" value="`${sw12st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st14_st15_rl" value="`${(sw12st14_p$idx eq 1) ? ((sw12st15_p$idx eq 1) ? white : black) : ((sw12st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st15_t" value="`${sw12st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st15_b" value="`${sw12st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st15_st16_rl" value="`${(sw12st15_p$idx eq 1) ? ((sw12st16_p$idx eq 1) ? white : black) : ((sw12st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st16_t" value="`${sw12st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st16_b" value="`${sw12st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st16_st17_rl" value="`${(sw12st16_p$idx eq 1) ? ((sw12st17_p$idx eq 1) ? white : black) : ((sw12st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st17_t" value="`${sw12st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st17_b" value="`${sw12st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st17_st18_rl" value="`${(sw12st17_p$idx eq 1) ? ((sw12st18_p$idx eq 1) ? white : black) : ((sw12st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st18_t" value="`${sw12st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st18_b" value="`${sw12st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st18_st19_rl" value="`${(sw12st18_p$idx eq 1) ? ((sw12st19_p$idx eq 1) ? white : black) : ((sw12st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw12_st19_t" value="`${sw12st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw12_st19_b" value="`${sw12st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw12_st19_r" value="`${sw12st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW13-->
+                <Substitution name="sw13_st0_l" value="`${sw13st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st0_t" value="`${sw13st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st0_b" value="`${sw13st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st0_st1_rl" value="`${(sw13st0_p$idx eq 1) ? ((sw13st1_p$idx eq 1) ? white : black) : ((sw13st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st1_t" value="`${sw13st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st1_b" value="`${sw13st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st1_st2_rl" value="`${(sw13st1_p$idx eq 1) ? ((sw13st2_p$idx eq 1) ? white : black) : ((sw13st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st2_t" value="`${sw13st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st2_b" value="`${sw13st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st2_st3_rl" value="`${(sw13st2_p$idx eq 1) ? ((sw13st3_p$idx eq 1) ? white : black) : ((sw13st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st3_t" value="`${sw13st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st3_b" value="`${sw13st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st3_st4_rl" value="`${(sw13st3_p$idx eq 1) ? ((sw13st4_p$idx eq 1) ? white : black) : ((sw13st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st4_t" value="`${sw13st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st4_b" value="`${sw13st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st4_st5_rl" value="`${(sw13st4_p$idx eq 1) ? ((sw13st5_p$idx eq 1) ? white : black) : ((sw13st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st5_t" value="`${sw13st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st5_b" value="`${sw13st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st5_st6_rl" value="`${(sw13st5_p$idx eq 1) ? ((sw13st6_p$idx eq 1) ? white : black) : ((sw13st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st6_t" value="`${sw13st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st6_b" value="`${sw13st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st6_st7_rl" value="`${(sw13st6_p$idx eq 1) ? ((sw13st7_p$idx eq 1) ? white : black) : ((sw13st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st7_t" value="`${sw13st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st7_b" value="`${sw13st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st7_st8_rl" value="`${(sw13st7_p$idx eq 1) ? ((sw13st8_p$idx eq 1) ? white : black) : ((sw13st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st8_t" value="`${sw13st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st8_b" value="`${sw13st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st8_st9_rl" value="`${(sw13st8_p$idx eq 1) ? ((sw13st9_p$idx eq 1) ? white : black) : ((sw13st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st9_t" value="`${sw13st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st9_b" value="`${sw13st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st9_st10_rl" value="`${(sw13st9_p$idx eq 1) ? ((sw13st10_p$idx eq 1) ? white : black) : ((sw13st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st10_t" value="`${sw13st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st10_b" value="`${sw13st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st10_st11_rl" value="`${(sw13st10_p$idx eq 1) ? ((sw13st11_p$idx eq 1) ? white : black) : ((sw13st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st11_t" value="`${sw13st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st11_b" value="`${sw13st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st11_st12_rl" value="`${(sw13st11_p$idx eq 1) ? ((sw13st12_p$idx eq 1) ? white : black) : ((sw13st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st12_t" value="`${sw13st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st12_b" value="`${sw13st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st12_st13_rl" value="`${(sw13st12_p$idx eq 1) ? ((sw13st13_p$idx eq 1) ? white : black) : ((sw13st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st13_t" value="`${sw13st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st13_b" value="`${sw13st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st13_st14_rl" value="`${(sw13st13_p$idx eq 1) ? ((sw13st14_p$idx eq 1) ? white : black) : ((sw13st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st14_t" value="`${sw13st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st14_b" value="`${sw13st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st14_st15_rl" value="`${(sw13st14_p$idx eq 1) ? ((sw13st15_p$idx eq 1) ? white : black) : ((sw13st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st15_t" value="`${sw13st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st15_b" value="`${sw13st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st15_st16_rl" value="`${(sw13st15_p$idx eq 1) ? ((sw13st16_p$idx eq 1) ? white : black) : ((sw13st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st16_t" value="`${sw13st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st16_b" value="`${sw13st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st16_st17_rl" value="`${(sw13st16_p$idx eq 1) ? ((sw13st17_p$idx eq 1) ? white : black) : ((sw13st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st17_t" value="`${sw13st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st17_b" value="`${sw13st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st17_st18_rl" value="`${(sw13st17_p$idx eq 1) ? ((sw13st18_p$idx eq 1) ? white : black) : ((sw13st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st18_t" value="`${sw13st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st18_b" value="`${sw13st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st18_st19_rl" value="`${(sw13st18_p$idx eq 1) ? ((sw13st19_p$idx eq 1) ? white : black) : ((sw13st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw13_st19_t" value="`${sw13st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw13_st19_b" value="`${sw13st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw13_st19_r" value="`${sw13st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW14-->
+                <Substitution name="sw14_st0_l" value="`${sw14st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st0_t" value="`${sw14st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st0_b" value="`${sw14st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st0_st1_rl" value="`${(sw14st0_p$idx eq 1) ? ((sw14st1_p$idx eq 1) ? white : black) : ((sw14st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st1_t" value="`${sw14st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st1_b" value="`${sw14st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st1_st2_rl" value="`${(sw14st1_p$idx eq 1) ? ((sw14st2_p$idx eq 1) ? white : black) : ((sw14st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st2_t" value="`${sw14st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st2_b" value="`${sw14st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st2_st3_rl" value="`${(sw14st2_p$idx eq 1) ? ((sw14st3_p$idx eq 1) ? white : black) : ((sw14st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st3_t" value="`${sw14st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st3_b" value="`${sw14st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st3_st4_rl" value="`${(sw14st3_p$idx eq 1) ? ((sw14st4_p$idx eq 1) ? white : black) : ((sw14st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st4_t" value="`${sw14st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st4_b" value="`${sw14st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st4_st5_rl" value="`${(sw14st4_p$idx eq 1) ? ((sw14st5_p$idx eq 1) ? white : black) : ((sw14st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st5_t" value="`${sw14st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st5_b" value="`${sw14st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st5_st6_rl" value="`${(sw14st5_p$idx eq 1) ? ((sw14st6_p$idx eq 1) ? white : black) : ((sw14st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st6_t" value="`${sw14st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st6_b" value="`${sw14st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st6_st7_rl" value="`${(sw14st6_p$idx eq 1) ? ((sw14st7_p$idx eq 1) ? white : black) : ((sw14st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st7_t" value="`${sw14st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st7_b" value="`${sw14st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st7_st8_rl" value="`${(sw14st7_p$idx eq 1) ? ((sw14st8_p$idx eq 1) ? white : black) : ((sw14st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st8_t" value="`${sw14st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st8_b" value="`${sw14st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st8_st9_rl" value="`${(sw14st8_p$idx eq 1) ? ((sw14st9_p$idx eq 1) ? white : black) : ((sw14st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st9_t" value="`${sw14st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st9_b" value="`${sw14st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st9_st10_rl" value="`${(sw14st9_p$idx eq 1) ? ((sw14st10_p$idx eq 1) ? white : black) : ((sw14st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st10_t" value="`${sw14st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st10_b" value="`${sw14st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st10_st11_rl" value="`${(sw14st10_p$idx eq 1) ? ((sw14st11_p$idx eq 1) ? white : black) : ((sw14st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st11_t" value="`${sw14st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st11_b" value="`${sw14st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st11_st12_rl" value="`${(sw14st11_p$idx eq 1) ? ((sw14st12_p$idx eq 1) ? white : black) : ((sw14st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st12_t" value="`${sw14st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st12_b" value="`${sw14st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st12_st13_rl" value="`${(sw14st12_p$idx eq 1) ? ((sw14st13_p$idx eq 1) ? white : black) : ((sw14st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st13_t" value="`${sw14st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st13_b" value="`${sw14st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st13_st14_rl" value="`${(sw14st13_p$idx eq 1) ? ((sw14st14_p$idx eq 1) ? white : black) : ((sw14st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st14_t" value="`${sw14st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st14_b" value="`${sw14st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st14_st15_rl" value="`${(sw14st14_p$idx eq 1) ? ((sw14st15_p$idx eq 1) ? white : black) : ((sw14st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st15_t" value="`${sw14st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st15_b" value="`${sw14st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st15_st16_rl" value="`${(sw14st15_p$idx eq 1) ? ((sw14st16_p$idx eq 1) ? white : black) : ((sw14st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st16_t" value="`${sw14st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st16_b" value="`${sw14st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st16_st17_rl" value="`${(sw14st16_p$idx eq 1) ? ((sw14st17_p$idx eq 1) ? white : black) : ((sw14st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st17_t" value="`${sw14st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st17_b" value="`${sw14st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st17_st18_rl" value="`${(sw14st17_p$idx eq 1) ? ((sw14st18_p$idx eq 1) ? white : black) : ((sw14st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st18_t" value="`${sw14st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st18_b" value="`${sw14st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st18_st19_rl" value="`${(sw14st18_p$idx eq 1) ? ((sw14st19_p$idx eq 1) ? white : black) : ((sw14st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw14_st19_t" value="`${sw14st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw14_st19_b" value="`${sw14st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw14_st19_r" value="`${sw14st19_p$idx eq 1 ? black : white}`"/>
+                <!--SW15-->
+                <Substitution name="sw15_st0_l" value="`${sw15st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st0_t" value="`${sw15st0_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st0_b" value="`${sw15st0_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st0_st1_rl" value="`${(sw15st0_p$idx eq 1) ? ((sw15st1_p$idx eq 1) ? white : black) : ((sw15st1_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st1_t" value="`${sw15st1_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st1_b" value="`${sw15st1_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st1_st2_rl" value="`${(sw15st1_p$idx eq 1) ? ((sw15st2_p$idx eq 1) ? white : black) : ((sw15st2_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st2_t" value="`${sw15st2_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st2_b" value="`${sw15st2_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st2_st3_rl" value="`${(sw15st2_p$idx eq 1) ? ((sw15st3_p$idx eq 1) ? white : black) : ((sw15st3_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st3_t" value="`${sw15st3_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st3_b" value="`${sw15st3_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st3_st4_rl" value="`${(sw15st3_p$idx eq 1) ? ((sw15st4_p$idx eq 1) ? white : black) : ((sw15st4_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st4_t" value="`${sw15st4_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st4_b" value="`${sw15st4_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st4_st5_rl" value="`${(sw15st4_p$idx eq 1) ? ((sw15st5_p$idx eq 1) ? white : black) : ((sw15st5_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st5_t" value="`${sw15st5_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st5_b" value="`${sw15st5_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st5_st6_rl" value="`${(sw15st5_p$idx eq 1) ? ((sw15st6_p$idx eq 1) ? white : black) : ((sw15st6_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st6_t" value="`${sw15st6_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st6_b" value="`${sw15st6_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st6_st7_rl" value="`${(sw15st6_p$idx eq 1) ? ((sw15st7_p$idx eq 1) ? white : black) : ((sw15st7_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st7_t" value="`${sw15st7_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st7_b" value="`${sw15st7_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st7_st8_rl" value="`${(sw15st7_p$idx eq 1) ? ((sw15st8_p$idx eq 1) ? white : black) : ((sw15st8_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st8_t" value="`${sw15st8_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st8_b" value="`${sw15st8_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st8_st9_rl" value="`${(sw15st8_p$idx eq 1) ? ((sw15st9_p$idx eq 1) ? white : black) : ((sw15st9_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st9_t" value="`${sw15st9_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st9_b" value="`${sw15st9_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st9_st10_rl" value="`${(sw15st9_p$idx eq 1) ? ((sw15st10_p$idx eq 1) ? white : black) : ((sw15st10_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st10_t" value="`${sw15st10_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st10_b" value="`${sw15st10_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st10_st11_rl" value="`${(sw15st10_p$idx eq 1) ? ((sw15st11_p$idx eq 1) ? white : black) : ((sw15st11_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st11_t" value="`${sw15st11_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st11_b" value="`${sw15st11_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st11_st12_rl" value="`${(sw15st11_p$idx eq 1) ? ((sw15st12_p$idx eq 1) ? white : black) : ((sw15st12_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st12_t" value="`${sw15st12_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st12_b" value="`${sw15st12_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st12_st13_rl" value="`${(sw15st12_p$idx eq 1) ? ((sw15st13_p$idx eq 1) ? white : black) : ((sw15st13_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st13_t" value="`${sw15st13_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st13_b" value="`${sw15st13_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st13_st14_rl" value="`${(sw15st13_p$idx eq 1) ? ((sw15st14_p$idx eq 1) ? white : black) : ((sw15st14_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st14_t" value="`${sw15st14_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st14_b" value="`${sw15st14_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st14_st15_rl" value="`${(sw15st14_p$idx eq 1) ? ((sw15st15_p$idx eq 1) ? white : black) : ((sw15st15_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st15_t" value="`${sw15st15_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st15_b" value="`${sw15st15_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st15_st16_rl" value="`${(sw15st15_p$idx eq 1) ? ((sw15st16_p$idx eq 1) ? white : black) : ((sw15st16_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st16_t" value="`${sw15st16_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st16_b" value="`${sw15st16_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st16_st17_rl" value="`${(sw15st16_p$idx eq 1) ? ((sw15st17_p$idx eq 1) ? white : black) : ((sw15st17_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st17_t" value="`${sw15st17_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st17_b" value="`${sw15st17_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st17_st18_rl" value="`${(sw15st17_p$idx eq 1) ? ((sw15st18_p$idx eq 1) ? white : black) : ((sw15st18_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st18_t" value="`${sw15st18_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st18_b" value="`${sw15st18_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st18_st19_rl" value="`${(sw15st18_p$idx eq 1) ? ((sw15st19_p$idx eq 1) ? white : black) : ((sw15st19_p$idx eq 1) ? black : white )}`"/>
+                <Substitution name="sw15_st19_t" value="`${sw15st19_p$idx eq 1 ? black : white}`"/>
+                <Substitution name="sw15_st19_b" value="`${sw15st19_p$idx eq 0 ? black : white}`"/>
+                <Substitution name="sw15_st19_r" value="`${sw15st19_p$idx eq 1 ? black : white}`"/>
+    </ParamImage>
+    </Repeat>
+    <ParamString id="HF3Rsc" name="HF3Rsc" group="Internal" default="srss[0].clock[0].hfclk[3]" visible="false" editable="false" desc="" />
+    <ParamBool id="HF3Used" name="HF3Used" group="Internal" default="`${isBlockUsed(HF3Rsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+  </Parameters>
+  <DRCs>
+    <DRC type="ERROR" text="Enable Clock HF3 For PPCA." condition="`${!HF3Used}`">
+      <FixIt action="ENABLE_BLOCK" target="`${HF3Rsc}`" value="" valid="true" />
+    </DRC>
+  </DRCs>
+
+  <ConfigFirmware>
+
+    <ConfigInclude value="cy_ppca_clb.h" include="true" />
+
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_CLB" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_DICO_HW" value="PPCA_CLB_DICO" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_MACO_HW" value="PPCA_CLB_MACO" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_IRQ" value="ppca_clb_IRQn" public="true" include="true" />
+
+    <ConfigStruct name="`${INST_NAME}`_dicoConfig" type="cy_stc_ppca_clb_dico_config_t" const="`${inFlash}`" public="true" include="`${clbOutput eq CY_CLB_DICO_SEL}`" >
+      <Member name="enablePhase1" value="`${enablePhase1}`" />
+      <Member name="enablePhase2" value="`${enablePhase2}`" />
+      <Member name="enablePhase3" value="`${enablePhase3}`" />
+      <Member name="enablePhaseEnabler" value="`${enablePhaseEnabler}`" />
+      <Member name="vac" value="`${vac}`" />
+      <Member name="vbus" value="`${vbus}`" />
+      <Member name="il1" value="`${il0}`" />
+      <Member name="il2" value="`${il1}`" />
+      <Member name="il3" value="`${il2}`" />
+      <Member name="vacPol" value="`${vacPol}`" />
+      <Member name="numPeriod" value="`${numPeriod}`" />
+      <Member name="pwmDeadTime" value="`${pwmDeadTime}`" />
+      <Member name="skipslopeCal" value="`${skipSlopeCal}`" />
+      <Member name="recalSlope" value="`${recalSlope}`" />
+      <Member name="monitorSignalSel" value="`${monitorSignalSel}`" />
+      <Member name="onlyCorrCharg" value="`${onlyCorrCharg}`" />
+      <Member name="safeState" value="`${safeState}`" />
+      <Member name="imaxl" value="`${imaxl}`" />
+      <Member name="iminl" value="`${iminl}`" />
+      <Member name="peTPHD1" value="`${peTPHD1}`" />
+      <Member name="peTPHD2" value="`${peTPHD2}`" />
+      <Member name="psThld" value="`${psThld}`" />
+      <Member name="pwmMaxOnTime" value="`${pwmMaxOnTime}`" />
+      <Member name="pwmMinOnTime" value="`${pwmMinOnTime}`" />
+    </ConfigStruct>
+
+    <ConfigStruct name="`${INST_NAME}`_macoConfig" type="cy_stc_ppca_clb_maco_config_t" const="`${inFlash}`" public="true" include="`${clbOutput eq CY_CLB_MACO_SEL}`" >
+      <Member name="muxselInSrcSel" value="`${muxselInSrcSel}`" />
+      <Member name="muxselOutSyncBypass" value="`${muxselOutSyncBypass}`" />
+      <Member name="startMode" value="`${startMode}`" />
+      <Member name="transitionMode" value="`${transitionMode}`" />
+      <Member name="macoFunc" value="`${macoFunc}`" />
+      <Member name="monitorSel" value="`${monitorSel}`" />
+      <Member name="selNxtSec" value="`${selNxtSec}`" />
+      <ConfigArray name="patternConfig" type="nested" const="false" public="true"  include="true" >
+        <ConfigStruct name="empty" type="nested" const="false" public="true"  include="true" repeatCount="3">
+          <Member name="tranRow" value="`${tranRow$idx{1}}`" />
+          <Member name="allRow" value="`${allRow$idx{1}}`" />
+          <Member name="safeState" value="`${safeState$idx{1}}`" />
+          <ConfigArray name="driverSignal" type="nested" const="false" public="true" include="true" >
+            <ArrayElement value="`${driverSignal$idx{0}_$idx{2}}`" count="20" />
+          </ConfigArray>
+          <ConfigArray name="holdTime" type="nested" const="false" public="true" include="true" >
+            <ArrayElement value="`${holdTime$idx{0}_$idx{2}}`" count="20" />
+          </ConfigArray>
+        </ConfigStruct>
+      </ConfigArray>
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_CLB_InitConfig_DICO(`${INST_NAME}`_DICO_HW, &amp;`${INST_NAME}`_dicoConfig);" include="`${init &amp;&amp; clbOutput eq CY_CLB_DICO_SEL}`" purpose="INITIALIZE" />
+    <ConfigInstruction value="Cy_PPCA_CLB_MACO_InitConfig(`${INST_NAME}`_MACO_HW, &amp;`${INST_NAME}`_macoConfig);" include="`${init &amp;&amp; clbOutput eq CY_CLB_MACO_SEL}`" purpose="INITIALIZE" />
+
+  </ConfigFirmware>
+
+</PersonalityTemplate>

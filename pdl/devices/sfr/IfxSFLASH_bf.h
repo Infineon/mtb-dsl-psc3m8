@@ -1,0 +1,2386 @@
+/***************************************************************************//**
+* \file IfxSFLASH_bf.h
+*
+* \brief
+* SFLASH Bitfields mask and offset
+*
+********************************************************************************
+* \copyright
+* (c) 2025-2026, Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG.
+* SPDX-License-Identifier: Apache-2.0
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+********************************************************************************
+*
+* \defgroup IfxSfr_SFLASH_Registers_BitfieldsMask Bitfields mask and offset
+* \ingroup IfxSfr_SFLASH_Registers
+*
+*******************************************************************************/
+
+#ifndef _IFXSFLASH_BF_H_
+#define _IFXSFLASH_BF_H_ 1
+
+/******************************************************************************/
+
+/******************************************************************************/
+
+/** \addtogroup IfxSfr_SFLASH_Registers_BitfieldsMask
+ * \{  */
+/** \brief Length for Ifx_SFLASH_SI_REVISION_ID_Bits.SI_REVISION_ID */
+#define IFX_SFLASH_SI_REVISION_ID_SI_REVISION_ID_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_SI_REVISION_ID_Bits.SI_REVISION_ID */
+#define IFX_SFLASH_SI_REVISION_ID_SI_REVISION_ID_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_SI_REVISION_ID_Bits.SI_REVISION_ID */
+#define IFX_SFLASH_SI_REVISION_ID_SI_REVISION_ID_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_SILICON_ID_Bits.ID */
+#define IFX_SFLASH_SILICON_ID_ID_LEN (16u)
+
+/** \brief Mask for Ifx_SFLASH_SILICON_ID_Bits.ID */
+#define IFX_SFLASH_SILICON_ID_ID_MSK (0xffffu)
+
+/** \brief Offset for Ifx_SFLASH_SILICON_ID_Bits.ID */
+#define IFX_SFLASH_SILICON_ID_ID_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_FAMILY_ID_Bits.FAMILY_ID */
+#define IFX_SFLASH_FAMILY_ID_FAMILY_ID_LEN (16u)
+
+/** \brief Mask for Ifx_SFLASH_FAMILY_ID_Bits.FAMILY_ID */
+#define IFX_SFLASH_FAMILY_ID_FAMILY_ID_MSK (0xffffu)
+
+/** \brief Offset for Ifx_SFLASH_FAMILY_ID_Bits.FAMILY_ID */
+#define IFX_SFLASH_FAMILY_ID_FAMILY_ID_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_SFLASH_SVN_Bits.DATA32 */
+#define IFX_SFLASH_SFLASH_SVN_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_SFLASH_SVN_Bits.DATA32 */
+#define IFX_SFLASH_SFLASH_SVN_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_SFLASH_SVN_Bits.DATA32 */
+#define IFX_SFLASH_SFLASH_SVN_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVC_EN */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVC_EN_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVC_EN */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVC_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVC_EN */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVC_EN_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.OVC_EN */
+#define IFX_SFLASH_SVGS_CMP_CFG_OVC_EN_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.OVC_EN */
+#define IFX_SFLASH_SVGS_CMP_CFG_OVC_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.OVC_EN */
+#define IFX_SFLASH_SVGS_CMP_CFG_OVC_EN_OFF (1u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVFC_EN */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVFC_EN_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVFC_EN */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVFC_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVFC_EN */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVFC_EN_OFF (2u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.NVC_EN */
+#define IFX_SFLASH_SVGS_CMP_CFG_NVC_EN_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.NVC_EN */
+#define IFX_SFLASH_SVGS_CMP_CFG_NVC_EN_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.NVC_EN */
+#define IFX_SFLASH_SVGS_CMP_CFG_NVC_EN_OFF (3u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVC_PWR */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVC_PWR_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVC_PWR */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVC_PWR_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVC_PWR */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVC_PWR_OFF (8u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.OVC_PWR */
+#define IFX_SFLASH_SVGS_CMP_CFG_OVC_PWR_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.OVC_PWR */
+#define IFX_SFLASH_SVGS_CMP_CFG_OVC_PWR_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.OVC_PWR */
+#define IFX_SFLASH_SVGS_CMP_CFG_OVC_PWR_OFF (9u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVFC_PWR */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVFC_PWR_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVFC_PWR */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVFC_PWR_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVFC_PWR */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVFC_PWR_OFF (10u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.NVC_PWR */
+#define IFX_SFLASH_SVGS_CMP_CFG_NVC_PWR_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.NVC_PWR */
+#define IFX_SFLASH_SVGS_CMP_CFG_NVC_PWR_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.NVC_PWR */
+#define IFX_SFLASH_SVGS_CMP_CFG_NVC_PWR_OFF (11u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVC_MASK_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVC_MASK_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVC_MASK_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.OVC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_OVC_MASK_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.OVC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_OVC_MASK_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.OVC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_OVC_MASK_OFF (17u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVFC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVFC_MASK_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVFC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVFC_MASK_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.UVFC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_UVFC_MASK_OFF (18u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.NVC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_NVC_MASK_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.NVC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_NVC_MASK_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.NVC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_NVC_MASK_OFF (19u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.HVC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_HVC_MASK_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.HVC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_HVC_MASK_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.HVC_MASK */
+#define IFX_SFLASH_SVGS_CMP_CFG_HVC_MASK_OFF (20u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_CFG_Bits.SVGS_UVFC_TC */
+#define IFX_SFLASH_SVGS_CMP_CFG_SVGS_UVFC_TC_LEN (4u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_CFG_Bits.SVGS_UVFC_TC */
+#define IFX_SFLASH_SVGS_CMP_CFG_SVGS_UVFC_TC_MSK (0xfu)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_CFG_Bits.SVGS_UVFC_TC */
+#define IFX_SFLASH_SVGS_CMP_CFG_SVGS_UVFC_TC_OFF (24u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_TRIP_Bits.SVGS_UVC_TRIP */
+#define IFX_SFLASH_SVGS_CMP_TRIP_SVGS_UVC_TRIP_LEN (6u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_TRIP_Bits.SVGS_UVC_TRIP */
+#define IFX_SFLASH_SVGS_CMP_TRIP_SVGS_UVC_TRIP_MSK (0x3fu)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_TRIP_Bits.SVGS_UVC_TRIP */
+#define IFX_SFLASH_SVGS_CMP_TRIP_SVGS_UVC_TRIP_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_TRIP_Bits.SVGS_OVC_TRIP */
+#define IFX_SFLASH_SVGS_CMP_TRIP_SVGS_OVC_TRIP_LEN (2u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_TRIP_Bits.SVGS_OVC_TRIP */
+#define IFX_SFLASH_SVGS_CMP_TRIP_SVGS_OVC_TRIP_MSK (0x3u)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_TRIP_Bits.SVGS_OVC_TRIP */
+#define IFX_SFLASH_SVGS_CMP_TRIP_SVGS_OVC_TRIP_OFF (8u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_TRIP_Bits.SVGS_UVFC_TRIP */
+#define IFX_SFLASH_SVGS_CMP_TRIP_SVGS_UVFC_TRIP_LEN (6u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_TRIP_Bits.SVGS_UVFC_TRIP */
+#define IFX_SFLASH_SVGS_CMP_TRIP_SVGS_UVFC_TRIP_MSK (0x3fu)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_TRIP_Bits.SVGS_UVFC_TRIP */
+#define IFX_SFLASH_SVGS_CMP_TRIP_SVGS_UVFC_TRIP_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_CMP_TRIP_Bits.SVGS_NVC_TRIP */
+#define IFX_SFLASH_SVGS_CMP_TRIP_SVGS_NVC_TRIP_LEN (4u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_CMP_TRIP_Bits.SVGS_NVC_TRIP */
+#define IFX_SFLASH_SVGS_CMP_TRIP_SVGS_NVC_TRIP_MSK (0xfu)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_CMP_TRIP_Bits.SVGS_NVC_TRIP */
+#define IFX_SFLASH_SVGS_CMP_TRIP_SVGS_NVC_TRIP_OFF (24u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_TRIM_Bits.SVGS_VREG_TRIM */
+#define IFX_SFLASH_SVGS_TRIM_SVGS_VREG_TRIM_LEN (4u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_TRIM_Bits.SVGS_VREG_TRIM */
+#define IFX_SFLASH_SVGS_TRIM_SVGS_VREG_TRIM_MSK (0xfu)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_TRIM_Bits.SVGS_VREG_TRIM */
+#define IFX_SFLASH_SVGS_TRIM_SVGS_VREG_TRIM_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_SVGS_TRIM_Bits.SVGS_IBIAS_TRIM */
+#define IFX_SFLASH_SVGS_TRIM_SVGS_IBIAS_TRIM_LEN (4u)
+
+/** \brief Mask for Ifx_SFLASH_SVGS_TRIM_Bits.SVGS_IBIAS_TRIM */
+#define IFX_SFLASH_SVGS_TRIM_SVGS_IBIAS_TRIM_MSK (0xfu)
+
+/** \brief Offset for Ifx_SFLASH_SVGS_TRIM_Bits.SVGS_IBIAS_TRIM */
+#define IFX_SFLASH_SVGS_TRIM_SVGS_IBIAS_TRIM_OFF (8u)
+
+/** \brief Length for Ifx_SFLASH_SAR_INFRA_TRIM_TABLE_Bits.DATA32 */
+#define IFX_SFLASH_SAR_INFRA_TRIM_TABLE_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_SAR_INFRA_TRIM_TABLE_Bits.DATA32 */
+#define IFX_SFLASH_SAR_INFRA_TRIM_TABLE_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_SAR_INFRA_TRIM_TABLE_Bits.DATA32 */
+#define IFX_SFLASH_SAR_INFRA_TRIM_TABLE_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_DIE_LOT_Bits.LOT */
+#define IFX_SFLASH_DIE_LOT_LOT_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_LOT_Bits.LOT */
+#define IFX_SFLASH_DIE_LOT_LOT_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_DIE_LOT_Bits.LOT */
+#define IFX_SFLASH_DIE_LOT_LOT_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_DIE_WAFER_Bits.WAFER */
+#define IFX_SFLASH_DIE_WAFER_WAFER_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_WAFER_Bits.WAFER */
+#define IFX_SFLASH_DIE_WAFER_WAFER_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_DIE_WAFER_Bits.WAFER */
+#define IFX_SFLASH_DIE_WAFER_WAFER_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_DIE_X_Bits.X */
+#define IFX_SFLASH_DIE_X_X_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_X_Bits.X */
+#define IFX_SFLASH_DIE_X_X_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_DIE_X_Bits.X */
+#define IFX_SFLASH_DIE_X_X_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_DIE_Y_Bits.Y */
+#define IFX_SFLASH_DIE_Y_Y_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_Y_Bits.Y */
+#define IFX_SFLASH_DIE_Y_Y_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_DIE_Y_Bits.Y */
+#define IFX_SFLASH_DIE_Y_Y_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_DIE_SORT_Bits.S1_PASS */
+#define IFX_SFLASH_DIE_SORT_S1_PASS_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_SORT_Bits.S1_PASS */
+#define IFX_SFLASH_DIE_SORT_S1_PASS_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_DIE_SORT_Bits.S1_PASS */
+#define IFX_SFLASH_DIE_SORT_S1_PASS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_DIE_SORT_Bits.S2_PASS */
+#define IFX_SFLASH_DIE_SORT_S2_PASS_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_SORT_Bits.S2_PASS */
+#define IFX_SFLASH_DIE_SORT_S2_PASS_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_DIE_SORT_Bits.S2_PASS */
+#define IFX_SFLASH_DIE_SORT_S2_PASS_OFF (1u)
+
+/** \brief Length for Ifx_SFLASH_DIE_SORT_Bits.S3_PASS */
+#define IFX_SFLASH_DIE_SORT_S3_PASS_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_SORT_Bits.S3_PASS */
+#define IFX_SFLASH_DIE_SORT_S3_PASS_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_DIE_SORT_Bits.S3_PASS */
+#define IFX_SFLASH_DIE_SORT_S3_PASS_OFF (2u)
+
+/** \brief Length for Ifx_SFLASH_DIE_SORT_Bits.CRI_PASS */
+#define IFX_SFLASH_DIE_SORT_CRI_PASS_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_SORT_Bits.CRI_PASS */
+#define IFX_SFLASH_DIE_SORT_CRI_PASS_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_DIE_SORT_Bits.CRI_PASS */
+#define IFX_SFLASH_DIE_SORT_CRI_PASS_OFF (3u)
+
+/** \brief Length for Ifx_SFLASH_DIE_SORT_Bits.CHI_PASS */
+#define IFX_SFLASH_DIE_SORT_CHI_PASS_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_SORT_Bits.CHI_PASS */
+#define IFX_SFLASH_DIE_SORT_CHI_PASS_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_DIE_SORT_Bits.CHI_PASS */
+#define IFX_SFLASH_DIE_SORT_CHI_PASS_OFF (4u)
+
+/** \brief Length for Ifx_SFLASH_DIE_SORT_Bits.ENG_PASS */
+#define IFX_SFLASH_DIE_SORT_ENG_PASS_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_SORT_Bits.ENG_PASS */
+#define IFX_SFLASH_DIE_SORT_ENG_PASS_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_DIE_SORT_Bits.ENG_PASS */
+#define IFX_SFLASH_DIE_SORT_ENG_PASS_OFF (5u)
+
+/** \brief Length for Ifx_SFLASH_DIE_MINOR_Bits.MINOR */
+#define IFX_SFLASH_DIE_MINOR_MINOR_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_MINOR_Bits.MINOR */
+#define IFX_SFLASH_DIE_MINOR_MINOR_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_DIE_MINOR_Bits.MINOR */
+#define IFX_SFLASH_DIE_MINOR_MINOR_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_DIE_DAY_Bits.MINOR */
+#define IFX_SFLASH_DIE_DAY_MINOR_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_DAY_Bits.MINOR */
+#define IFX_SFLASH_DIE_DAY_MINOR_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_DIE_DAY_Bits.MINOR */
+#define IFX_SFLASH_DIE_DAY_MINOR_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_DIE_MONTH_Bits.MINOR */
+#define IFX_SFLASH_DIE_MONTH_MINOR_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_MONTH_Bits.MINOR */
+#define IFX_SFLASH_DIE_MONTH_MINOR_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_DIE_MONTH_Bits.MINOR */
+#define IFX_SFLASH_DIE_MONTH_MINOR_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_DIE_YEAR_Bits.MINOR */
+#define IFX_SFLASH_DIE_YEAR_MINOR_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_DIE_YEAR_Bits.MINOR */
+#define IFX_SFLASH_DIE_YEAR_MINOR_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_DIE_YEAR_Bits.MINOR */
+#define IFX_SFLASH_DIE_YEAR_MINOR_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_CSP_PANEL_ID_Bits.CSP_X */
+#define IFX_SFLASH_CSP_PANEL_ID_CSP_X_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_CSP_PANEL_ID_Bits.CSP_X */
+#define IFX_SFLASH_CSP_PANEL_ID_CSP_X_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_CSP_PANEL_ID_Bits.CSP_X */
+#define IFX_SFLASH_CSP_PANEL_ID_CSP_X_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_CSP_PANEL_ID_Bits.CSP_Y */
+#define IFX_SFLASH_CSP_PANEL_ID_CSP_Y_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_CSP_PANEL_ID_Bits.CSP_Y */
+#define IFX_SFLASH_CSP_PANEL_ID_CSP_Y_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_CSP_PANEL_ID_Bits.CSP_Y */
+#define IFX_SFLASH_CSP_PANEL_ID_CSP_Y_OFF (8u)
+
+/** \brief Length for Ifx_SFLASH_CSP_PANEL_ID_Bits.CSP_LOT */
+#define IFX_SFLASH_CSP_PANEL_ID_CSP_LOT_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_CSP_PANEL_ID_Bits.CSP_LOT */
+#define IFX_SFLASH_CSP_PANEL_ID_CSP_LOT_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_CSP_PANEL_ID_Bits.CSP_LOT */
+#define IFX_SFLASH_CSP_PANEL_ID_CSP_LOT_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_CSP_PANEL_ID_Bits.PAD */
+#define IFX_SFLASH_CSP_PANEL_ID_PAD_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_CSP_PANEL_ID_Bits.PAD */
+#define IFX_SFLASH_CSP_PANEL_ID_PAD_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_CSP_PANEL_ID_Bits.PAD */
+#define IFX_SFLASH_CSP_PANEL_ID_PAD_OFF (24u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.TIMCAL_ON */
+#define IFX_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_TIMCAL_ON_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.TIMCAL_ON */
+#define IFX_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_TIMCAL_ON_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.TIMCAL_ON */
+#define IFX_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_TIMCAL_ON_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.OFFCAL_ON */
+#define IFX_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_OFFCAL_ON_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.OFFCAL_ON */
+#define IFX_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_OFFCAL_ON_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.OFFCAL_ON */
+#define IFX_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_OFFCAL_ON_OFF (1u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.GAICAL_ON */
+#define IFX_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_GAICAL_ON_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.GAICAL_ON */
+#define IFX_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_GAICAL_ON_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.GAICAL_ON */
+#define IFX_SFLASH_GRP0_ADC_STARTUPCTRL_VTOICAL_TRIM_GAICAL_ON_OFF (2u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_ADC_CALOFFSET_Bits.OFFSET_SE */
+#define IFX_SFLASH_GRP0_ADC_CALOFFSET_OFFSET_SE_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_ADC_CALOFFSET_Bits.OFFSET_SE */
+#define IFX_SFLASH_GRP0_ADC_CALOFFSET_OFFSET_SE_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_ADC_CALOFFSET_Bits.OFFSET_SE */
+#define IFX_SFLASH_GRP0_ADC_CALOFFSET_OFFSET_SE_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_ADC_CALOFFSET_Bits.OFFSET_DIFF */
+#define IFX_SFLASH_GRP0_ADC_CALOFFSET_OFFSET_DIFF_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_ADC_CALOFFSET_Bits.OFFSET_DIFF */
+#define IFX_SFLASH_GRP0_ADC_CALOFFSET_OFFSET_DIFF_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_ADC_CALOFFSET_Bits.OFFSET_DIFF */
+#define IFX_SFLASH_GRP0_ADC_CALOFFSET_OFFSET_DIFF_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_ADC_CALGAIN_GAINX1_Bits.GAINx1_SE_mode */
+#define IFX_SFLASH_GRP0_ADC_CALGAIN_GAINX1_GAINx1_SE_mode_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_ADC_CALGAIN_GAINX1_Bits.GAINx1_SE_mode */
+#define IFX_SFLASH_GRP0_ADC_CALGAIN_GAINX1_GAINx1_SE_mode_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_ADC_CALGAIN_GAINX1_Bits.GAINx1_SE_mode */
+#define IFX_SFLASH_GRP0_ADC_CALGAIN_GAINX1_GAINx1_SE_mode_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_ADC_CALGAIN_GAINX1_Bits.GAINx1_DIFF_mode */
+#define IFX_SFLASH_GRP0_ADC_CALGAIN_GAINX1_GAINx1_DIFF_mode_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_ADC_CALGAIN_GAINX1_Bits.GAINx1_DIFF_mode */
+#define IFX_SFLASH_GRP0_ADC_CALGAIN_GAINX1_GAINx1_DIFF_mode_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_ADC_CALGAIN_GAINX1_Bits.GAINx1_DIFF_mode */
+#define IFX_SFLASH_GRP0_ADC_CALGAIN_GAINX1_GAINx1_DIFF_mode_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_1_Bits.HFLG2_3 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_1_HFLG2_3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_1_Bits.HFLG2_3 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_1_HFLG2_3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_1_Bits.HFLG2_3 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_1_HFLG2_3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_1_Bits.HFLG2_6 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_1_HFLG2_6_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_1_Bits.HFLG2_6 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_1_HFLG2_6_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_1_Bits.HFLG2_6 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_1_HFLG2_6_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_2_Bits.HFLG3_3 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_2_HFLG3_3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_2_Bits.HFLG3_3 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_2_HFLG3_3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_2_Bits.HFLG3_3 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_2_HFLG3_3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_2_Bits.HFLG3_6 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_2_HFLG3_6_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_2_Bits.HFLG3_6 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_2_HFLG3_6_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_2_Bits.HFLG3_6 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_2_HFLG3_6_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_3_Bits.LFHG1_12 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_3_LFHG1_12_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_3_Bits.LFHG1_12 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_3_LFHG1_12_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_3_Bits.LFHG1_12 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_3_LFHG1_12_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_3_Bits.LFHG1_24 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_3_LFHG1_24_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_3_Bits.LFHG1_24 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_3_LFHG1_24_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_3_Bits.LFHG1_24 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_3_LFHG1_24_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_4_Bits.HFLG1_3 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_4_HFLG1_3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_4_Bits.HFLG1_3 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_4_HFLG1_3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_4_Bits.HFLG1_3 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_4_HFLG1_3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_4_Bits.HFLG1_6 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_4_HFLG1_6_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_4_Bits.HFLG1_6 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_4_HFLG1_6_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALGAIN_AFE_4_Bits.HFLG1_6 */
+#define IFX_SFLASH_GRP0_AFE_CALGAIN_AFE_4_HFLG1_6_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_1_Bits.HFLG2_3_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_1_HFLG2_3_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_1_Bits.HFLG2_3_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_1_HFLG2_3_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_1_Bits.HFLG2_3_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_1_HFLG2_3_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_1_Bits.HFLG2_6_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_1_HFLG2_6_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_1_Bits.HFLG2_6_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_1_HFLG2_6_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_1_Bits.HFLG2_6_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_1_HFLG2_6_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_2_Bits.HFLG3_3_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_2_HFLG3_3_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_2_Bits.HFLG3_3_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_2_HFLG3_3_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_2_Bits.HFLG3_3_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_2_HFLG3_3_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_2_Bits.HFLG3_6_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_2_HFLG3_6_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_2_Bits.HFLG3_6_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_2_HFLG3_6_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_2_Bits.HFLG3_6_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_2_HFLG3_6_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_3_Bits.LFHG1_12_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_3_LFHG1_12_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_3_Bits.LFHG1_12_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_3_LFHG1_12_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_3_Bits.LFHG1_12_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_3_LFHG1_12_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_3_Bits.LFHG1_24_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_3_LFHG1_24_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_3_Bits.LFHG1_24_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_3_LFHG1_24_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_3_Bits.LFHG1_24_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_3_LFHG1_24_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_4_Bits.HFLG1_3_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_4_HFLG1_3_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_4_Bits.HFLG1_3_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_4_HFLG1_3_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_4_Bits.HFLG1_3_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_4_HFLG1_3_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_4_Bits.HFLG1_6_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_4_HFLG1_6_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_4_Bits.HFLG1_6_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_4_HFLG1_6_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_AFE_CALOFFSET_AFE_4_Bits.HFLG1_6_OS */
+#define IFX_SFLASH_GRP0_AFE_CALOFFSET_AFE_4_HFLG1_6_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.TIMCAL_ON */
+#define IFX_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_TIMCAL_ON_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.TIMCAL_ON */
+#define IFX_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_TIMCAL_ON_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.TIMCAL_ON */
+#define IFX_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_TIMCAL_ON_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.OFFCAL_ON */
+#define IFX_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_OFFCAL_ON_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.OFFCAL_ON */
+#define IFX_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_OFFCAL_ON_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.OFFCAL_ON */
+#define IFX_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_OFFCAL_ON_OFF (1u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.GAICAL_ON */
+#define IFX_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_GAICAL_ON_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.GAICAL_ON */
+#define IFX_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_GAICAL_ON_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.GAICAL_ON */
+#define IFX_SFLASH_GRP1_ADC_STARTUPCTRL_VTOICAL_TRIM_GAICAL_ON_OFF (2u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_ADC_CALOFFSET_Bits.OFFSET_SE */
+#define IFX_SFLASH_GRP1_ADC_CALOFFSET_OFFSET_SE_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_ADC_CALOFFSET_Bits.OFFSET_SE */
+#define IFX_SFLASH_GRP1_ADC_CALOFFSET_OFFSET_SE_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_ADC_CALOFFSET_Bits.OFFSET_SE */
+#define IFX_SFLASH_GRP1_ADC_CALOFFSET_OFFSET_SE_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_ADC_CALOFFSET_Bits.OFFSET_DIFF */
+#define IFX_SFLASH_GRP1_ADC_CALOFFSET_OFFSET_DIFF_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_ADC_CALOFFSET_Bits.OFFSET_DIFF */
+#define IFX_SFLASH_GRP1_ADC_CALOFFSET_OFFSET_DIFF_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_ADC_CALOFFSET_Bits.OFFSET_DIFF */
+#define IFX_SFLASH_GRP1_ADC_CALOFFSET_OFFSET_DIFF_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_ADC_CALGAIN_GAINX1_Bits.GAINx1_SE_mode */
+#define IFX_SFLASH_GRP1_ADC_CALGAIN_GAINX1_GAINx1_SE_mode_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_ADC_CALGAIN_GAINX1_Bits.GAINx1_SE_mode */
+#define IFX_SFLASH_GRP1_ADC_CALGAIN_GAINX1_GAINx1_SE_mode_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_ADC_CALGAIN_GAINX1_Bits.GAINx1_SE_mode */
+#define IFX_SFLASH_GRP1_ADC_CALGAIN_GAINX1_GAINx1_SE_mode_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_ADC_CALGAIN_GAINX1_Bits.GAINx1_DIFF_mode */
+#define IFX_SFLASH_GRP1_ADC_CALGAIN_GAINX1_GAINx1_DIFF_mode_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_ADC_CALGAIN_GAINX1_Bits.GAINx1_DIFF_mode */
+#define IFX_SFLASH_GRP1_ADC_CALGAIN_GAINX1_GAINx1_DIFF_mode_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_ADC_CALGAIN_GAINX1_Bits.GAINx1_DIFF_mode */
+#define IFX_SFLASH_GRP1_ADC_CALGAIN_GAINX1_GAINx1_DIFF_mode_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_1_Bits.HFLG2_3 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_1_HFLG2_3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_1_Bits.HFLG2_3 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_1_HFLG2_3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_1_Bits.HFLG2_3 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_1_HFLG2_3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_1_Bits.HFLG2_6 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_1_HFLG2_6_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_1_Bits.HFLG2_6 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_1_HFLG2_6_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_1_Bits.HFLG2_6 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_1_HFLG2_6_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_2_Bits.HFLG3_3 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_2_HFLG3_3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_2_Bits.HFLG3_3 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_2_HFLG3_3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_2_Bits.HFLG3_3 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_2_HFLG3_3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_2_Bits.HFLG3_6 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_2_HFLG3_6_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_2_Bits.HFLG3_6 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_2_HFLG3_6_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_2_Bits.HFLG3_6 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_2_HFLG3_6_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_3_Bits.LFHG1_12 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_3_LFHG1_12_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_3_Bits.LFHG1_12 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_3_LFHG1_12_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_3_Bits.LFHG1_12 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_3_LFHG1_12_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_3_Bits.LFHG1_24 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_3_LFHG1_24_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_3_Bits.LFHG1_24 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_3_LFHG1_24_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_3_Bits.LFHG1_24 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_3_LFHG1_24_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_4_Bits.HFLG1_3 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_4_HFLG1_3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_4_Bits.HFLG1_3 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_4_HFLG1_3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_4_Bits.HFLG1_3 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_4_HFLG1_3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_4_Bits.HFLG1_6 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_4_HFLG1_6_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_4_Bits.HFLG1_6 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_4_HFLG1_6_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALGAIN_AFE_4_Bits.HFLG1_6 */
+#define IFX_SFLASH_GRP1_AFE_CALGAIN_AFE_4_HFLG1_6_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_1_Bits.HFLG2_3_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_1_HFLG2_3_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_1_Bits.HFLG2_3_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_1_HFLG2_3_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_1_Bits.HFLG2_3_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_1_HFLG2_3_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_1_Bits.HFLG2_6_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_1_HFLG2_6_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_1_Bits.HFLG2_6_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_1_HFLG2_6_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_1_Bits.HFLG2_6_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_1_HFLG2_6_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_2_Bits.HFLG3_3_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_2_HFLG3_3_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_2_Bits.HFLG3_3_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_2_HFLG3_3_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_2_Bits.HFLG3_3_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_2_HFLG3_3_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_2_Bits.HFLG3_6_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_2_HFLG3_6_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_2_Bits.HFLG3_6_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_2_HFLG3_6_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_2_Bits.HFLG3_6_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_2_HFLG3_6_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_3_Bits.LFHG1_12_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_3_LFHG1_12_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_3_Bits.LFHG1_12_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_3_LFHG1_12_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_3_Bits.LFHG1_12_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_3_LFHG1_12_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_3_Bits.LFHG1_24_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_3_LFHG1_24_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_3_Bits.LFHG1_24_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_3_LFHG1_24_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_3_Bits.LFHG1_24_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_3_LFHG1_24_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_4_Bits.HFLG1_3_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_4_HFLG1_3_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_4_Bits.HFLG1_3_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_4_HFLG1_3_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_4_Bits.HFLG1_3_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_4_HFLG1_3_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_4_Bits.HFLG1_6_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_4_HFLG1_6_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_4_Bits.HFLG1_6_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_4_HFLG1_6_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_AFE_CALOFFSET_AFE_4_Bits.HFLG1_6_OS */
+#define IFX_SFLASH_GRP1_AFE_CALOFFSET_AFE_4_HFLG1_6_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.TIMCAL_ON */
+#define IFX_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_TIMCAL_ON_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.TIMCAL_ON */
+#define IFX_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_TIMCAL_ON_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.TIMCAL_ON */
+#define IFX_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_TIMCAL_ON_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.OFFCAL_ON */
+#define IFX_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_OFFCAL_ON_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.OFFCAL_ON */
+#define IFX_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_OFFCAL_ON_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.OFFCAL_ON */
+#define IFX_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_OFFCAL_ON_OFF (1u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.GAICAL_ON */
+#define IFX_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_GAICAL_ON_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.GAICAL_ON */
+#define IFX_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_GAICAL_ON_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.GAICAL_ON */
+#define IFX_SFLASH_GRP2_ADC_STARTUPCTRL_VTOICAL_TRIM_GAICAL_ON_OFF (2u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_ADC_CALOFFSET_Bits.OFFSET_SE */
+#define IFX_SFLASH_GRP2_ADC_CALOFFSET_OFFSET_SE_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_ADC_CALOFFSET_Bits.OFFSET_SE */
+#define IFX_SFLASH_GRP2_ADC_CALOFFSET_OFFSET_SE_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_ADC_CALOFFSET_Bits.OFFSET_SE */
+#define IFX_SFLASH_GRP2_ADC_CALOFFSET_OFFSET_SE_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_ADC_CALOFFSET_Bits.OFFSET_DIFF */
+#define IFX_SFLASH_GRP2_ADC_CALOFFSET_OFFSET_DIFF_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_ADC_CALOFFSET_Bits.OFFSET_DIFF */
+#define IFX_SFLASH_GRP2_ADC_CALOFFSET_OFFSET_DIFF_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_ADC_CALOFFSET_Bits.OFFSET_DIFF */
+#define IFX_SFLASH_GRP2_ADC_CALOFFSET_OFFSET_DIFF_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_ADC_CALGAIN_GAINX1_Bits.GAINx1_SE_mode */
+#define IFX_SFLASH_GRP2_ADC_CALGAIN_GAINX1_GAINx1_SE_mode_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_ADC_CALGAIN_GAINX1_Bits.GAINx1_SE_mode */
+#define IFX_SFLASH_GRP2_ADC_CALGAIN_GAINX1_GAINx1_SE_mode_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_ADC_CALGAIN_GAINX1_Bits.GAINx1_SE_mode */
+#define IFX_SFLASH_GRP2_ADC_CALGAIN_GAINX1_GAINx1_SE_mode_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_ADC_CALGAIN_GAINX1_Bits.GAINx1_DIFF_mode */
+#define IFX_SFLASH_GRP2_ADC_CALGAIN_GAINX1_GAINx1_DIFF_mode_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_ADC_CALGAIN_GAINX1_Bits.GAINx1_DIFF_mode */
+#define IFX_SFLASH_GRP2_ADC_CALGAIN_GAINX1_GAINx1_DIFF_mode_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_ADC_CALGAIN_GAINX1_Bits.GAINx1_DIFF_mode */
+#define IFX_SFLASH_GRP2_ADC_CALGAIN_GAINX1_GAINx1_DIFF_mode_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_1_Bits.HFLG2_3 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_1_HFLG2_3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_1_Bits.HFLG2_3 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_1_HFLG2_3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_1_Bits.HFLG2_3 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_1_HFLG2_3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_1_Bits.HFLG2_6 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_1_HFLG2_6_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_1_Bits.HFLG2_6 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_1_HFLG2_6_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_1_Bits.HFLG2_6 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_1_HFLG2_6_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_2_Bits.HFLG3_3 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_2_HFLG3_3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_2_Bits.HFLG3_3 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_2_HFLG3_3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_2_Bits.HFLG3_3 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_2_HFLG3_3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_2_Bits.HFLG3_6 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_2_HFLG3_6_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_2_Bits.HFLG3_6 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_2_HFLG3_6_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_2_Bits.HFLG3_6 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_2_HFLG3_6_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_3_Bits.LFHG1_12 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_3_LFHG1_12_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_3_Bits.LFHG1_12 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_3_LFHG1_12_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_3_Bits.LFHG1_12 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_3_LFHG1_12_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_3_Bits.LFHG1_24 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_3_LFHG1_24_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_3_Bits.LFHG1_24 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_3_LFHG1_24_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_3_Bits.LFHG1_24 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_3_LFHG1_24_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_4_Bits.HFLG1_3 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_4_HFLG1_3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_4_Bits.HFLG1_3 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_4_HFLG1_3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_4_Bits.HFLG1_3 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_4_HFLG1_3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_4_Bits.HFLG1_6 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_4_HFLG1_6_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_4_Bits.HFLG1_6 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_4_HFLG1_6_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALGAIN_AFE_4_Bits.HFLG1_6 */
+#define IFX_SFLASH_GRP2_AFE_CALGAIN_AFE_4_HFLG1_6_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_1_Bits.HFLG2_3_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_1_HFLG2_3_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_1_Bits.HFLG2_3_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_1_HFLG2_3_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_1_Bits.HFLG2_3_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_1_HFLG2_3_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_1_Bits.HFLG2_6_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_1_HFLG2_6_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_1_Bits.HFLG2_6_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_1_HFLG2_6_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_1_Bits.HFLG2_6_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_1_HFLG2_6_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_2_Bits.HFLG3_3_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_2_HFLG3_3_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_2_Bits.HFLG3_3_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_2_HFLG3_3_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_2_Bits.HFLG3_3_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_2_HFLG3_3_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_2_Bits.HFLG3_6_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_2_HFLG3_6_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_2_Bits.HFLG3_6_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_2_HFLG3_6_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_2_Bits.HFLG3_6_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_2_HFLG3_6_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_3_Bits.LFHG1_12_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_3_LFHG1_12_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_3_Bits.LFHG1_12_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_3_LFHG1_12_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_3_Bits.LFHG1_12_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_3_LFHG1_12_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_3_Bits.LFHG1_24_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_3_LFHG1_24_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_3_Bits.LFHG1_24_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_3_LFHG1_24_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_3_Bits.LFHG1_24_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_3_LFHG1_24_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_4_Bits.HFLG1_3_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_4_HFLG1_3_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_4_Bits.HFLG1_3_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_4_HFLG1_3_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_4_Bits.HFLG1_3_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_4_HFLG1_3_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_4_Bits.HFLG1_6_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_4_HFLG1_6_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_4_Bits.HFLG1_6_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_4_HFLG1_6_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP2_AFE_CALOFFSET_AFE_4_Bits.HFLG1_6_OS */
+#define IFX_SFLASH_GRP2_AFE_CALOFFSET_AFE_4_HFLG1_6_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.TIMCAL_ON */
+#define IFX_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_TIMCAL_ON_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.TIMCAL_ON */
+#define IFX_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_TIMCAL_ON_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.TIMCAL_ON */
+#define IFX_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_TIMCAL_ON_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.OFFCAL_ON */
+#define IFX_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_OFFCAL_ON_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.OFFCAL_ON */
+#define IFX_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_OFFCAL_ON_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.OFFCAL_ON */
+#define IFX_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_OFFCAL_ON_OFF (1u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.GAICAL_ON */
+#define IFX_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_GAICAL_ON_LEN (1u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.GAICAL_ON */
+#define IFX_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_GAICAL_ON_MSK (0x1u)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_Bits.GAICAL_ON */
+#define IFX_SFLASH_GRP3_ADC_STARTUPCTRL_VTOICAL_TRIM_GAICAL_ON_OFF (2u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_ADC_CALOFFSET_Bits.OFFSET_SE */
+#define IFX_SFLASH_GRP3_ADC_CALOFFSET_OFFSET_SE_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_ADC_CALOFFSET_Bits.OFFSET_SE */
+#define IFX_SFLASH_GRP3_ADC_CALOFFSET_OFFSET_SE_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_ADC_CALOFFSET_Bits.OFFSET_SE */
+#define IFX_SFLASH_GRP3_ADC_CALOFFSET_OFFSET_SE_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_ADC_CALOFFSET_Bits.OFFSET_DIFF */
+#define IFX_SFLASH_GRP3_ADC_CALOFFSET_OFFSET_DIFF_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_ADC_CALOFFSET_Bits.OFFSET_DIFF */
+#define IFX_SFLASH_GRP3_ADC_CALOFFSET_OFFSET_DIFF_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_ADC_CALOFFSET_Bits.OFFSET_DIFF */
+#define IFX_SFLASH_GRP3_ADC_CALOFFSET_OFFSET_DIFF_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_ADC_CALGAIN_GAINX1_Bits.GAINx1_SE_mode */
+#define IFX_SFLASH_GRP3_ADC_CALGAIN_GAINX1_GAINx1_SE_mode_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_ADC_CALGAIN_GAINX1_Bits.GAINx1_SE_mode */
+#define IFX_SFLASH_GRP3_ADC_CALGAIN_GAINX1_GAINx1_SE_mode_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_ADC_CALGAIN_GAINX1_Bits.GAINx1_SE_mode */
+#define IFX_SFLASH_GRP3_ADC_CALGAIN_GAINX1_GAINx1_SE_mode_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_ADC_CALGAIN_GAINX1_Bits.GAINx1_DIFF_mode */
+#define IFX_SFLASH_GRP3_ADC_CALGAIN_GAINX1_GAINx1_DIFF_mode_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_ADC_CALGAIN_GAINX1_Bits.GAINx1_DIFF_mode */
+#define IFX_SFLASH_GRP3_ADC_CALGAIN_GAINX1_GAINx1_DIFF_mode_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_ADC_CALGAIN_GAINX1_Bits.GAINx1_DIFF_mode */
+#define IFX_SFLASH_GRP3_ADC_CALGAIN_GAINX1_GAINx1_DIFF_mode_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_1_Bits.HFLG2_3 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_1_HFLG2_3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_1_Bits.HFLG2_3 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_1_HFLG2_3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_1_Bits.HFLG2_3 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_1_HFLG2_3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_1_Bits.HFLG2_6 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_1_HFLG2_6_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_1_Bits.HFLG2_6 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_1_HFLG2_6_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_1_Bits.HFLG2_6 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_1_HFLG2_6_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_2_Bits.HFLG3_3 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_2_HFLG3_3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_2_Bits.HFLG3_3 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_2_HFLG3_3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_2_Bits.HFLG3_3 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_2_HFLG3_3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_2_Bits.HFLG3_6 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_2_HFLG3_6_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_2_Bits.HFLG3_6 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_2_HFLG3_6_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_2_Bits.HFLG3_6 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_2_HFLG3_6_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_3_Bits.LFHG1_12 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_3_LFHG1_12_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_3_Bits.LFHG1_12 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_3_LFHG1_12_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_3_Bits.LFHG1_12 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_3_LFHG1_12_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_3_Bits.LFHG1_24 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_3_LFHG1_24_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_3_Bits.LFHG1_24 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_3_LFHG1_24_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_3_Bits.LFHG1_24 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_3_LFHG1_24_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_4_Bits.HFLG1_3 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_4_HFLG1_3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_4_Bits.HFLG1_3 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_4_HFLG1_3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_4_Bits.HFLG1_3 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_4_HFLG1_3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_4_Bits.HFLG1_6 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_4_HFLG1_6_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_4_Bits.HFLG1_6 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_4_HFLG1_6_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALGAIN_AFE_4_Bits.HFLG1_6 */
+#define IFX_SFLASH_GRP3_AFE_CALGAIN_AFE_4_HFLG1_6_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_1_Bits.HFLG2_3_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_1_HFLG2_3_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_1_Bits.HFLG2_3_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_1_HFLG2_3_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_1_Bits.HFLG2_3_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_1_HFLG2_3_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_1_Bits.HFLG2_6_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_1_HFLG2_6_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_1_Bits.HFLG2_6_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_1_HFLG2_6_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_1_Bits.HFLG2_6_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_1_HFLG2_6_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_2_Bits.HFLG3_3_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_2_HFLG3_3_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_2_Bits.HFLG3_3_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_2_HFLG3_3_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_2_Bits.HFLG3_3_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_2_HFLG3_3_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_2_Bits.HFLG3_6_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_2_HFLG3_6_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_2_Bits.HFLG3_6_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_2_HFLG3_6_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_2_Bits.HFLG3_6_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_2_HFLG3_6_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_3_Bits.LFHG1_12_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_3_LFHG1_12_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_3_Bits.LFHG1_12_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_3_LFHG1_12_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_3_Bits.LFHG1_12_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_3_LFHG1_12_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_3_Bits.LFHG1_24_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_3_LFHG1_24_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_3_Bits.LFHG1_24_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_3_LFHG1_24_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_3_Bits.LFHG1_24_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_3_LFHG1_24_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_4_Bits.HFLG1_3_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_4_HFLG1_3_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_4_Bits.HFLG1_3_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_4_HFLG1_3_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_4_Bits.HFLG1_3_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_4_HFLG1_3_OS_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_4_Bits.HFLG1_6_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_4_HFLG1_6_OS_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_4_Bits.HFLG1_6_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_4_HFLG1_6_OS_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP3_AFE_CALOFFSET_AFE_4_Bits.HFLG1_6_OS */
+#define IFX_SFLASH_GRP3_AFE_CALOFFSET_AFE_4_HFLG1_6_OS_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DCSG_TEST_VREF_TRIM_Bits.VREF_TRIM */
+#define IFX_SFLASH_GRP0_DCSG_TEST_VREF_TRIM_VREF_TRIM_LEN (6u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DCSG_TEST_VREF_TRIM_Bits.VREF_TRIM */
+#define IFX_SFLASH_GRP0_DCSG_TEST_VREF_TRIM_VREF_TRIM_MSK (0x3fu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DCSG_TEST_VREF_TRIM_Bits.VREF_TRIM */
+#define IFX_SFLASH_GRP0_DCSG_TEST_VREF_TRIM_VREF_TRIM_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_ER */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_ER_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_ER */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_ER_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_ER */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_ER_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_FR */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_FR_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_FR */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_FR_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_FR */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_FR_OFF (10u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_RR */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_RR_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_RR */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_RR_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_RR */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_RR_OFF (20u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DCSG_SE_CALOFFSET_Bits.OFFSET_SE_SP */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALOFFSET_OFFSET_SE_SP_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DCSG_SE_CALOFFSET_Bits.OFFSET_SE_SP */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALOFFSET_OFFSET_SE_SP_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DCSG_SE_CALOFFSET_Bits.OFFSET_SE_SP */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALOFFSET_OFFSET_SE_SP_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DCSG_SE_CALOFFSET_Bits.OFFSET_SE_SN */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALOFFSET_OFFSET_SE_SN_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DCSG_SE_CALOFFSET_Bits.OFFSET_SE_SN */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALOFFSET_OFFSET_SE_SN_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DCSG_SE_CALOFFSET_Bits.OFFSET_SE_SN */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALOFFSET_OFFSET_SE_SN_OFF (10u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DCSG_SE_CALOFFSET_Bits.OFFSET_A_VS_B */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALOFFSET_OFFSET_A_VS_B_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DCSG_SE_CALOFFSET_Bits.OFFSET_A_VS_B */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALOFFSET_OFFSET_A_VS_B_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DCSG_SE_CALOFFSET_Bits.OFFSET_A_VS_B */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALOFFSET_OFFSET_A_VS_B_OFF (20u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DCSG_DIFF_CALGAIN_1_Bits.GAIN_DIFF_ER */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALGAIN_1_GAIN_DIFF_ER_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DCSG_DIFF_CALGAIN_1_Bits.GAIN_DIFF_ER */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALGAIN_1_GAIN_DIFF_ER_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DCSG_DIFF_CALGAIN_1_Bits.GAIN_DIFF_ER */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALGAIN_1_GAIN_DIFF_ER_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DCSG_DIFF_CALGAIN_1_Bits.GAIN_DIFF_FR */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALGAIN_1_GAIN_DIFF_FR_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DCSG_DIFF_CALGAIN_1_Bits.GAIN_DIFF_FR */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALGAIN_1_GAIN_DIFF_FR_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DCSG_DIFF_CALGAIN_1_Bits.GAIN_DIFF_FR */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALGAIN_1_GAIN_DIFF_FR_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DCSG_DIFF_CALGAIN_2_Bits.GAIN_DIFF_RR */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALGAIN_2_GAIN_DIFF_RR_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DCSG_DIFF_CALGAIN_2_Bits.GAIN_DIFF_RR */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALGAIN_2_GAIN_DIFF_RR_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DCSG_DIFF_CALGAIN_2_Bits.GAIN_DIFF_RR */
+#define IFX_SFLASH_GRP0_DCSG_DIFF_CALGAIN_2_GAIN_DIFF_RR_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DCSG_SE_CALGAIN_Bits.GAIN_SE_SP */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALGAIN_GAIN_SE_SP_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DCSG_SE_CALGAIN_Bits.GAIN_SE_SP */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALGAIN_GAIN_SE_SP_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DCSG_SE_CALGAIN_Bits.GAIN_SE_SP */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALGAIN_GAIN_SE_SP_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DCSG_SE_CALGAIN_Bits.GAIN_SE_SN */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALGAIN_GAIN_SE_SN_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DCSG_SE_CALGAIN_Bits.GAIN_SE_SN */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALGAIN_GAIN_SE_SN_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DCSG_SE_CALGAIN_Bits.GAIN_SE_SN */
+#define IFX_SFLASH_GRP0_DCSG_SE_CALGAIN_GAIN_SE_SN_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG1_Bits.DAC_OFFSET_CNFG1 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG1_DAC_OFFSET_CNFG1_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG1_Bits.DAC_OFFSET_CNFG1 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG1_DAC_OFFSET_CNFG1_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG1_Bits.DAC_OFFSET_CNFG1 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG1_DAC_OFFSET_CNFG1_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG2_Bits.DAC_OFFSET_CNFG2 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG2_DAC_OFFSET_CNFG2_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG2_Bits.DAC_OFFSET_CNFG2 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG2_DAC_OFFSET_CNFG2_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG2_Bits.DAC_OFFSET_CNFG2 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG2_DAC_OFFSET_CNFG2_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG3_Bits.DAC_OFFSET_CNFG3 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG3_DAC_OFFSET_CNFG3_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG3_Bits.DAC_OFFSET_CNFG3 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG3_DAC_OFFSET_CNFG3_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG3_Bits.DAC_OFFSET_CNFG3 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG3_DAC_OFFSET_CNFG3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG4_Bits.DAC_OFFSET_CNFG4 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG4_DAC_OFFSET_CNFG4_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG4_Bits.DAC_OFFSET_CNFG4 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG4_DAC_OFFSET_CNFG4_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG4_Bits.DAC_OFFSET_CNFG4 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG4_DAC_OFFSET_CNFG4_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG5_Bits.DAC_OFFSET_CNFG5 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG5_DAC_OFFSET_CNFG5_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG5_Bits.DAC_OFFSET_CNFG5 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG5_DAC_OFFSET_CNFG5_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DAC_OFFSET_CNFG5_Bits.DAC_OFFSET_CNFG5 */
+#define IFX_SFLASH_GRP0_DAC_OFFSET_CNFG5_DAC_OFFSET_CNFG5_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG1_Bits.DAC_GAIN_CNFG1 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG1_DAC_GAIN_CNFG1_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG1_Bits.DAC_GAIN_CNFG1 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG1_DAC_GAIN_CNFG1_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG1_Bits.DAC_GAIN_CNFG1 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG1_DAC_GAIN_CNFG1_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG2_Bits.DAC_GAIN_CNFG2 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG2_DAC_GAIN_CNFG2_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG2_Bits.DAC_GAIN_CNFG2 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG2_DAC_GAIN_CNFG2_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG2_Bits.DAC_GAIN_CNFG2 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG2_DAC_GAIN_CNFG2_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG3_Bits.DAC_GAIN_CNFG3 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG3_DAC_GAIN_CNFG3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG3_Bits.DAC_GAIN_CNFG3 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG3_DAC_GAIN_CNFG3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG3_Bits.DAC_GAIN_CNFG3 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG3_DAC_GAIN_CNFG3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG4_Bits.DAC_GAIN_CNFG4 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG4_DAC_GAIN_CNFG4_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG4_Bits.DAC_GAIN_CNFG4 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG4_DAC_GAIN_CNFG4_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG4_Bits.DAC_GAIN_CNFG4 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG4_DAC_GAIN_CNFG4_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG5_Bits.DAC_GAIN_CNFG5 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG5_DAC_GAIN_CNFG5_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG5_Bits.DAC_GAIN_CNFG5 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG5_DAC_GAIN_CNFG5_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_DAC_GAIN_CNFG5_Bits.DAC_GAIN_CNFG5 */
+#define IFX_SFLASH_GRP0_DAC_GAIN_CNFG5_DAC_GAIN_CNFG5_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_BUFFER_OFFSET_1_Bits.BUFFER_OFFSET_1 */
+#define IFX_SFLASH_GRP0_BUFFER_OFFSET_1_BUFFER_OFFSET_1_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_BUFFER_OFFSET_1_Bits.BUFFER_OFFSET_1 */
+#define IFX_SFLASH_GRP0_BUFFER_OFFSET_1_BUFFER_OFFSET_1_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_BUFFER_OFFSET_1_Bits.BUFFER_OFFSET_1 */
+#define IFX_SFLASH_GRP0_BUFFER_OFFSET_1_BUFFER_OFFSET_1_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP0_BUFFER_OFFSET_2_Bits.BUFFER_OFFSET_2 */
+#define IFX_SFLASH_GRP0_BUFFER_OFFSET_2_BUFFER_OFFSET_2_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP0_BUFFER_OFFSET_2_Bits.BUFFER_OFFSET_2 */
+#define IFX_SFLASH_GRP0_BUFFER_OFFSET_2_BUFFER_OFFSET_2_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP0_BUFFER_OFFSET_2_Bits.BUFFER_OFFSET_2 */
+#define IFX_SFLASH_GRP0_BUFFER_OFFSET_2_BUFFER_OFFSET_2_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DCSG_TEST_VREF_TRIM_Bits.VREF_TRIM */
+#define IFX_SFLASH_GRP1_DCSG_TEST_VREF_TRIM_VREF_TRIM_LEN (6u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DCSG_TEST_VREF_TRIM_Bits.VREF_TRIM */
+#define IFX_SFLASH_GRP1_DCSG_TEST_VREF_TRIM_VREF_TRIM_MSK (0x3fu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DCSG_TEST_VREF_TRIM_Bits.VREF_TRIM */
+#define IFX_SFLASH_GRP1_DCSG_TEST_VREF_TRIM_VREF_TRIM_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_ER */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_ER_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_ER */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_ER_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_ER */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_ER_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_FR */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_FR_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_FR */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_FR_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_FR */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_FR_OFF (10u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_RR */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_RR_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_RR */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_RR_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_Bits.OFFSET_DIFF_RR */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALOFFSET_OFFSET_DIFF_RR_OFF (20u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DCSG_SE_CALOFFSET_Bits.OFFSET_SE_SP */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALOFFSET_OFFSET_SE_SP_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DCSG_SE_CALOFFSET_Bits.OFFSET_SE_SP */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALOFFSET_OFFSET_SE_SP_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DCSG_SE_CALOFFSET_Bits.OFFSET_SE_SP */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALOFFSET_OFFSET_SE_SP_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DCSG_SE_CALOFFSET_Bits.OFFSET_SE_SN */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALOFFSET_OFFSET_SE_SN_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DCSG_SE_CALOFFSET_Bits.OFFSET_SE_SN */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALOFFSET_OFFSET_SE_SN_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DCSG_SE_CALOFFSET_Bits.OFFSET_SE_SN */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALOFFSET_OFFSET_SE_SN_OFF (10u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DCSG_SE_CALOFFSET_Bits.OFFSET_A_VS_B */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALOFFSET_OFFSET_A_VS_B_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DCSG_SE_CALOFFSET_Bits.OFFSET_A_VS_B */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALOFFSET_OFFSET_A_VS_B_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DCSG_SE_CALOFFSET_Bits.OFFSET_A_VS_B */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALOFFSET_OFFSET_A_VS_B_OFF (20u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DCSG_DIFF_CALGAIN_1_Bits.GAIN_DIFF_ER */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALGAIN_1_GAIN_DIFF_ER_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DCSG_DIFF_CALGAIN_1_Bits.GAIN_DIFF_ER */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALGAIN_1_GAIN_DIFF_ER_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DCSG_DIFF_CALGAIN_1_Bits.GAIN_DIFF_ER */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALGAIN_1_GAIN_DIFF_ER_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DCSG_DIFF_CALGAIN_1_Bits.GAIN_DIFF_FR */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALGAIN_1_GAIN_DIFF_FR_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DCSG_DIFF_CALGAIN_1_Bits.GAIN_DIFF_FR */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALGAIN_1_GAIN_DIFF_FR_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DCSG_DIFF_CALGAIN_1_Bits.GAIN_DIFF_FR */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALGAIN_1_GAIN_DIFF_FR_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DCSG_DIFF_CALGAIN_2_Bits.GAIN_DIFF_RR */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALGAIN_2_GAIN_DIFF_RR_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DCSG_DIFF_CALGAIN_2_Bits.GAIN_DIFF_RR */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALGAIN_2_GAIN_DIFF_RR_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DCSG_DIFF_CALGAIN_2_Bits.GAIN_DIFF_RR */
+#define IFX_SFLASH_GRP1_DCSG_DIFF_CALGAIN_2_GAIN_DIFF_RR_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DCSG_SE_CALGAIN_Bits.GAIN_SE_SP */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALGAIN_GAIN_SE_SP_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DCSG_SE_CALGAIN_Bits.GAIN_SE_SP */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALGAIN_GAIN_SE_SP_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DCSG_SE_CALGAIN_Bits.GAIN_SE_SP */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALGAIN_GAIN_SE_SP_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DCSG_SE_CALGAIN_Bits.GAIN_SE_SN */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALGAIN_GAIN_SE_SN_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DCSG_SE_CALGAIN_Bits.GAIN_SE_SN */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALGAIN_GAIN_SE_SN_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DCSG_SE_CALGAIN_Bits.GAIN_SE_SN */
+#define IFX_SFLASH_GRP1_DCSG_SE_CALGAIN_GAIN_SE_SN_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG1_Bits.DAC_OFFSET_CNFG1 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG1_DAC_OFFSET_CNFG1_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG1_Bits.DAC_OFFSET_CNFG1 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG1_DAC_OFFSET_CNFG1_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG1_Bits.DAC_OFFSET_CNFG1 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG1_DAC_OFFSET_CNFG1_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG2_Bits.DAC_OFFSET_CNFG2 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG2_DAC_OFFSET_CNFG2_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG2_Bits.DAC_OFFSET_CNFG2 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG2_DAC_OFFSET_CNFG2_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG2_Bits.DAC_OFFSET_CNFG2 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG2_DAC_OFFSET_CNFG2_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG3_Bits.DAC_OFFSET_CNFG3 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG3_DAC_OFFSET_CNFG3_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG3_Bits.DAC_OFFSET_CNFG3 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG3_DAC_OFFSET_CNFG3_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG3_Bits.DAC_OFFSET_CNFG3 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG3_DAC_OFFSET_CNFG3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG4_Bits.DAC_OFFSET_CNFG4 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG4_DAC_OFFSET_CNFG4_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG4_Bits.DAC_OFFSET_CNFG4 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG4_DAC_OFFSET_CNFG4_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG4_Bits.DAC_OFFSET_CNFG4 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG4_DAC_OFFSET_CNFG4_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG5_Bits.DAC_OFFSET_CNFG5 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG5_DAC_OFFSET_CNFG5_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG5_Bits.DAC_OFFSET_CNFG5 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG5_DAC_OFFSET_CNFG5_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DAC_OFFSET_CNFG5_Bits.DAC_OFFSET_CNFG5 */
+#define IFX_SFLASH_GRP1_DAC_OFFSET_CNFG5_DAC_OFFSET_CNFG5_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG1_Bits.DAC_GAIN_CNFG1 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG1_DAC_GAIN_CNFG1_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG1_Bits.DAC_GAIN_CNFG1 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG1_DAC_GAIN_CNFG1_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG1_Bits.DAC_GAIN_CNFG1 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG1_DAC_GAIN_CNFG1_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG2_Bits.DAC_GAIN_CNFG2 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG2_DAC_GAIN_CNFG2_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG2_Bits.DAC_GAIN_CNFG2 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG2_DAC_GAIN_CNFG2_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG2_Bits.DAC_GAIN_CNFG2 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG2_DAC_GAIN_CNFG2_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG3_Bits.DAC_GAIN_CNFG3 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG3_DAC_GAIN_CNFG3_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG3_Bits.DAC_GAIN_CNFG3 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG3_DAC_GAIN_CNFG3_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG3_Bits.DAC_GAIN_CNFG3 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG3_DAC_GAIN_CNFG3_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG4_Bits.DAC_GAIN_CNFG4 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG4_DAC_GAIN_CNFG4_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG4_Bits.DAC_GAIN_CNFG4 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG4_DAC_GAIN_CNFG4_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG4_Bits.DAC_GAIN_CNFG4 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG4_DAC_GAIN_CNFG4_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG5_Bits.DAC_GAIN_CNFG5 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG5_DAC_GAIN_CNFG5_LEN (11u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG5_Bits.DAC_GAIN_CNFG5 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG5_DAC_GAIN_CNFG5_MSK (0x7ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_DAC_GAIN_CNFG5_Bits.DAC_GAIN_CNFG5 */
+#define IFX_SFLASH_GRP1_DAC_GAIN_CNFG5_DAC_GAIN_CNFG5_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_BUFFER_OFFSET_1_Bits.BUFFER_OFFSET_1 */
+#define IFX_SFLASH_GRP1_BUFFER_OFFSET_1_BUFFER_OFFSET_1_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_BUFFER_OFFSET_1_Bits.BUFFER_OFFSET_1 */
+#define IFX_SFLASH_GRP1_BUFFER_OFFSET_1_BUFFER_OFFSET_1_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_BUFFER_OFFSET_1_Bits.BUFFER_OFFSET_1 */
+#define IFX_SFLASH_GRP1_BUFFER_OFFSET_1_BUFFER_OFFSET_1_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_GRP1_BUFFER_OFFSET_2_Bits.BUFFER_OFFSET_2 */
+#define IFX_SFLASH_GRP1_BUFFER_OFFSET_2_BUFFER_OFFSET_2_LEN (10u)
+
+/** \brief Mask for Ifx_SFLASH_GRP1_BUFFER_OFFSET_2_Bits.BUFFER_OFFSET_2 */
+#define IFX_SFLASH_GRP1_BUFFER_OFFSET_2_BUFFER_OFFSET_2_MSK (0x3ffu)
+
+/** \brief Offset for Ifx_SFLASH_GRP1_BUFFER_OFFSET_2_Bits.BUFFER_OFFSET_2 */
+#define IFX_SFLASH_GRP1_BUFFER_OFFSET_2_BUFFER_OFFSET_2_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_SAR_TEMP_COEF_A_Bits.DATA16 */
+#define IFX_SFLASH_SAR_TEMP_COEF_A_DATA16_LEN (16u)
+
+/** \brief Mask for Ifx_SFLASH_SAR_TEMP_COEF_A_Bits.DATA16 */
+#define IFX_SFLASH_SAR_TEMP_COEF_A_DATA16_MSK (0xffffu)
+
+/** \brief Offset for Ifx_SFLASH_SAR_TEMP_COEF_A_Bits.DATA16 */
+#define IFX_SFLASH_SAR_TEMP_COEF_A_DATA16_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_SAR_TEMP_COEF_B_Bits.DATA16 */
+#define IFX_SFLASH_SAR_TEMP_COEF_B_DATA16_LEN (16u)
+
+/** \brief Mask for Ifx_SFLASH_SAR_TEMP_COEF_B_Bits.DATA16 */
+#define IFX_SFLASH_SAR_TEMP_COEF_B_DATA16_MSK (0xffffu)
+
+/** \brief Offset for Ifx_SFLASH_SAR_TEMP_COEF_B_Bits.DATA16 */
+#define IFX_SFLASH_SAR_TEMP_COEF_B_DATA16_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_LDO_0P9V_TRIM_Bits.DATA32 */
+#define IFX_SFLASH_LDO_0P9V_TRIM_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_LDO_0P9V_TRIM_Bits.DATA32 */
+#define IFX_SFLASH_LDO_0P9V_TRIM_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_LDO_0P9V_TRIM_Bits.DATA32 */
+#define IFX_SFLASH_LDO_0P9V_TRIM_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_LDO_1P0V_TRIM_Bits.DATA32 */
+#define IFX_SFLASH_LDO_1P0V_TRIM_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_LDO_1P0V_TRIM_Bits.DATA32 */
+#define IFX_SFLASH_LDO_1P0V_TRIM_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_LDO_1P0V_TRIM_Bits.DATA32 */
+#define IFX_SFLASH_LDO_1P0V_TRIM_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_LDO_1P1V_TRIM_Bits.DATA32 */
+#define IFX_SFLASH_LDO_1P1V_TRIM_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_LDO_1P1V_TRIM_Bits.DATA32 */
+#define IFX_SFLASH_LDO_1P1V_TRIM_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_LDO_1P1V_TRIM_Bits.DATA32 */
+#define IFX_SFLASH_LDO_1P1V_TRIM_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_LDO_1P2V_TRIM_Bits.DATA32 */
+#define IFX_SFLASH_LDO_1P2V_TRIM_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_LDO_1P2V_TRIM_Bits.DATA32 */
+#define IFX_SFLASH_LDO_1P2V_TRIM_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_LDO_1P2V_TRIM_Bits.DATA32 */
+#define IFX_SFLASH_LDO_1P2V_TRIM_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PWR_TRIM_WAKE_CTL_Bits.WAKE_DELAY_0P9V */
+#define IFX_SFLASH_PWR_TRIM_WAKE_CTL_WAKE_DELAY_0P9V_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_PWR_TRIM_WAKE_CTL_Bits.WAKE_DELAY_0P9V */
+#define IFX_SFLASH_PWR_TRIM_WAKE_CTL_WAKE_DELAY_0P9V_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_PWR_TRIM_WAKE_CTL_Bits.WAKE_DELAY_0P9V */
+#define IFX_SFLASH_PWR_TRIM_WAKE_CTL_WAKE_DELAY_0P9V_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PWR_TRIM_WAKE_CTL_Bits.WAKE_DELAY_1P0V */
+#define IFX_SFLASH_PWR_TRIM_WAKE_CTL_WAKE_DELAY_1P0V_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_PWR_TRIM_WAKE_CTL_Bits.WAKE_DELAY_1P0V */
+#define IFX_SFLASH_PWR_TRIM_WAKE_CTL_WAKE_DELAY_1P0V_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_PWR_TRIM_WAKE_CTL_Bits.WAKE_DELAY_1P0V */
+#define IFX_SFLASH_PWR_TRIM_WAKE_CTL_WAKE_DELAY_1P0V_OFF (8u)
+
+/** \brief Length for Ifx_SFLASH_PWR_TRIM_WAKE_CTL_Bits.WAKE_DELAY_1P1V */
+#define IFX_SFLASH_PWR_TRIM_WAKE_CTL_WAKE_DELAY_1P1V_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_PWR_TRIM_WAKE_CTL_Bits.WAKE_DELAY_1P1V */
+#define IFX_SFLASH_PWR_TRIM_WAKE_CTL_WAKE_DELAY_1P1V_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_PWR_TRIM_WAKE_CTL_Bits.WAKE_DELAY_1P1V */
+#define IFX_SFLASH_PWR_TRIM_WAKE_CTL_WAKE_DELAY_1P1V_OFF (16u)
+
+/** \brief Length for Ifx_SFLASH_PWR_TRIM_WAKE_CTL_Bits.WAKE_DELAY_1P2V */
+#define IFX_SFLASH_PWR_TRIM_WAKE_CTL_WAKE_DELAY_1P2V_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_PWR_TRIM_WAKE_CTL_Bits.WAKE_DELAY_1P2V */
+#define IFX_SFLASH_PWR_TRIM_WAKE_CTL_WAKE_DELAY_1P2V_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_PWR_TRIM_WAKE_CTL_Bits.WAKE_DELAY_1P2V */
+#define IFX_SFLASH_PWR_TRIM_WAKE_CTL_WAKE_DELAY_1P2V_OFF (24u)
+
+/** \brief Length for Ifx_SFLASH_BASIC_TRIMS_SORT_FLAG_Bits.DATA32 */
+#define IFX_SFLASH_BASIC_TRIMS_SORT_FLAG_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_BASIC_TRIMS_SORT_FLAG_Bits.DATA32 */
+#define IFX_SFLASH_BASIC_TRIMS_SORT_FLAG_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_BASIC_TRIMS_SORT_FLAG_Bits.DATA32 */
+#define IFX_SFLASH_BASIC_TRIMS_SORT_FLAG_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_BASIC_TRIM_SORT_Bits.DATA32 */
+#define IFX_SFLASH_BASIC_TRIM_SORT_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_BASIC_TRIM_SORT_Bits.DATA32 */
+#define IFX_SFLASH_BASIC_TRIM_SORT_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_BASIC_TRIM_SORT_Bits.DATA32 */
+#define IFX_SFLASH_BASIC_TRIM_SORT_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_COUNTER_FLASH_ROW6_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_ROW6_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_COUNTER_FLASH_ROW6_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_ROW6_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_COUNTER_FLASH_ROW6_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_ROW6_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_BOOTROW_CRC_Bits.DATA32 */
+#define IFX_SFLASH_BOOTROW_CRC_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_BOOTROW_CRC_Bits.DATA32 */
+#define IFX_SFLASH_BOOTROW_CRC_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_BOOTROW_CRC_Bits.DATA32 */
+#define IFX_SFLASH_BOOTROW_CRC_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_IFX_RMA_MASTER_KEY_REVOCATION_Bits.DATA8 */
+#define IFX_SFLASH_IFX_RMA_MASTER_KEY_REVOCATION_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_IFX_RMA_MASTER_KEY_REVOCATION_Bits.DATA8 */
+#define IFX_SFLASH_IFX_RMA_MASTER_KEY_REVOCATION_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_IFX_RMA_MASTER_KEY_REVOCATION_Bits.DATA8 */
+#define IFX_SFLASH_IFX_RMA_MASTER_KEY_REVOCATION_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_OEM_ROT_KEY_REVOCATION_Bits.DATA8 */
+#define IFX_SFLASH_OEM_ROT_KEY_REVOCATION_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_OEM_ROT_KEY_REVOCATION_Bits.DATA8 */
+#define IFX_SFLASH_OEM_ROT_KEY_REVOCATION_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_OEM_ROT_KEY_REVOCATION_Bits.DATA8 */
+#define IFX_SFLASH_OEM_ROT_KEY_REVOCATION_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_NV_COUNTER_RAMAPP_Bits.DATA8 */
+#define IFX_SFLASH_NV_COUNTER_RAMAPP_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_NV_COUNTER_RAMAPP_Bits.DATA8 */
+#define IFX_SFLASH_NV_COUNTER_RAMAPP_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_NV_COUNTER_RAMAPP_Bits.DATA8 */
+#define IFX_SFLASH_NV_COUNTER_RAMAPP_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_NV_COUNTER_A1_Bits.DATA8 */
+#define IFX_SFLASH_NV_COUNTER_A1_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_NV_COUNTER_A1_Bits.DATA8 */
+#define IFX_SFLASH_NV_COUNTER_A1_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_NV_COUNTER_A1_Bits.DATA8 */
+#define IFX_SFLASH_NV_COUNTER_A1_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_NV_COUNTER_A2_Bits.DATA8 */
+#define IFX_SFLASH_NV_COUNTER_A2_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_NV_COUNTER_A2_Bits.DATA8 */
+#define IFX_SFLASH_NV_COUNTER_A2_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_NV_COUNTER_A2_Bits.DATA8 */
+#define IFX_SFLASH_NV_COUNTER_A2_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PROV_OEM_COMPLETE_Bits.DATA32 */
+#define IFX_SFLASH_PROV_OEM_COMPLETE_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_PROV_OEM_COMPLETE_Bits.DATA32 */
+#define IFX_SFLASH_PROV_OEM_COMPLETE_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_PROV_OEM_COMPLETE_Bits.DATA32 */
+#define IFX_SFLASH_PROV_OEM_COMPLETE_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_HASH_SLOT_1_Bits.DATA8 */
+#define IFX_SFLASH_HASH_SLOT_1_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_HASH_SLOT_1_Bits.DATA8 */
+#define IFX_SFLASH_HASH_SLOT_1_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_HASH_SLOT_1_Bits.DATA8 */
+#define IFX_SFLASH_HASH_SLOT_1_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_HASH_SLOT_2_Bits.DATA8 */
+#define IFX_SFLASH_HASH_SLOT_2_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_HASH_SLOT_2_Bits.DATA8 */
+#define IFX_SFLASH_HASH_SLOT_2_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_HASH_SLOT_2_Bits.DATA8 */
+#define IFX_SFLASH_HASH_SLOT_2_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_HASH_SLOT_3_Bits.DATA8 */
+#define IFX_SFLASH_HASH_SLOT_3_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_HASH_SLOT_3_Bits.DATA8 */
+#define IFX_SFLASH_HASH_SLOT_3_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_HASH_SLOT_3_Bits.DATA8 */
+#define IFX_SFLASH_HASH_SLOT_3_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_HASH_SLOT_4_Bits.DATA8 */
+#define IFX_SFLASH_HASH_SLOT_4_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_HASH_SLOT_4_Bits.DATA8 */
+#define IFX_SFLASH_HASH_SLOT_4_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_HASH_SLOT_4_Bits.DATA8 */
+#define IFX_SFLASH_HASH_SLOT_4_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_SECURE_HASH_LIST_Bits.DATA8 */
+#define IFX_SFLASH_SECURE_HASH_LIST_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_SECURE_HASH_LIST_Bits.DATA8 */
+#define IFX_SFLASH_SECURE_HASH_LIST_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_SECURE_HASH_LIST_Bits.DATA8 */
+#define IFX_SFLASH_SECURE_HASH_LIST_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PROT_FW_HASH_LIST_Bits.DATA8 */
+#define IFX_SFLASH_PROT_FW_HASH_LIST_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_PROT_FW_HASH_LIST_Bits.DATA8 */
+#define IFX_SFLASH_PROT_FW_HASH_LIST_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_PROT_FW_HASH_LIST_Bits.DATA8 */
+#define IFX_SFLASH_PROT_FW_HASH_LIST_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_FAILED_SIGNATURE_COUNTER_Bits.DATA8 */
+#define IFX_SFLASH_FAILED_SIGNATURE_COUNTER_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_FAILED_SIGNATURE_COUNTER_Bits.DATA8 */
+#define IFX_SFLASH_FAILED_SIGNATURE_COUNTER_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_FAILED_SIGNATURE_COUNTER_Bits.DATA8 */
+#define IFX_SFLASH_FAILED_SIGNATURE_COUNTER_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_SECURE_HASH_Bits.DATA8 */
+#define IFX_SFLASH_SECURE_HASH_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_SECURE_HASH_Bits.DATA8 */
+#define IFX_SFLASH_SECURE_HASH_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_SECURE_HASH_Bits.DATA8 */
+#define IFX_SFLASH_SECURE_HASH_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PROT_FW_HASH_Bits.DATA8 */
+#define IFX_SFLASH_PROT_FW_HASH_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_PROT_FW_HASH_Bits.DATA8 */
+#define IFX_SFLASH_PROT_FW_HASH_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_PROT_FW_HASH_Bits.DATA8 */
+#define IFX_SFLASH_PROT_FW_HASH_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_COUNTER_FLASH_ROW7_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_ROW7_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_COUNTER_FLASH_ROW7_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_ROW7_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_COUNTER_FLASH_ROW7_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_ROW7_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_ACCESS_RESTRICT_Bits.DATA32 */
+#define IFX_SFLASH_ACCESS_RESTRICT_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_ACCESS_RESTRICT_Bits.DATA32 */
+#define IFX_SFLASH_ACCESS_RESTRICT_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_ACCESS_RESTRICT_Bits.DATA32 */
+#define IFX_SFLASH_ACCESS_RESTRICT_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_ACCESS_RESTRICT_2_Bits.SYS_AP_MMIO */
+#define IFX_SFLASH_ACCESS_RESTRICT_2_SYS_AP_MMIO_LEN (2u)
+
+/** \brief Mask for Ifx_SFLASH_ACCESS_RESTRICT_2_Bits.SYS_AP_MMIO */
+#define IFX_SFLASH_ACCESS_RESTRICT_2_SYS_AP_MMIO_MSK (0x3u)
+
+/** \brief Offset for Ifx_SFLASH_ACCESS_RESTRICT_2_Bits.SYS_AP_MMIO */
+#define IFX_SFLASH_ACCESS_RESTRICT_2_SYS_AP_MMIO_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_ACCESS_RESTRICT_2_Bits.DEBUG_PINS */
+#define IFX_SFLASH_ACCESS_RESTRICT_2_DEBUG_PINS_LEN (4u)
+
+/** \brief Mask for Ifx_SFLASH_ACCESS_RESTRICT_2_Bits.DEBUG_PINS */
+#define IFX_SFLASH_ACCESS_RESTRICT_2_DEBUG_PINS_MSK (0xfu)
+
+/** \brief Offset for Ifx_SFLASH_ACCESS_RESTRICT_2_Bits.DEBUG_PINS */
+#define IFX_SFLASH_ACCESS_RESTRICT_2_DEBUG_PINS_OFF (4u)
+
+/** \brief Length for Ifx_SFLASH_ACCESS_RESTRICT_2_Bits.DEBUG_TAG */
+#define IFX_SFLASH_ACCESS_RESTRICT_2_DEBUG_TAG_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_ACCESS_RESTRICT_2_Bits.DEBUG_TAG */
+#define IFX_SFLASH_ACCESS_RESTRICT_2_DEBUG_TAG_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_ACCESS_RESTRICT_2_Bits.DEBUG_TAG */
+#define IFX_SFLASH_ACCESS_RESTRICT_2_DEBUG_TAG_OFF (24u)
+
+/** \brief Length for Ifx_SFLASH_LISTEN_WINDOW_Bits.DATA32 */
+#define IFX_SFLASH_LISTEN_WINDOW_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_LISTEN_WINDOW_Bits.DATA32 */
+#define IFX_SFLASH_LISTEN_WINDOW_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_LISTEN_WINDOW_Bits.DATA32 */
+#define IFX_SFLASH_LISTEN_WINDOW_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_BOOT_CFG_ID_Bits.DATA32 */
+#define IFX_SFLASH_BOOT_CFG_ID_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_BOOT_CFG_ID_Bits.DATA32 */
+#define IFX_SFLASH_BOOT_CFG_ID_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_BOOT_CFG_ID_Bits.DATA32 */
+#define IFX_SFLASH_BOOT_CFG_ID_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_BOOT_BANK_CTR_OFFSET_Bits.DATA8 */
+#define IFX_SFLASH_BOOT_BANK_CTR_OFFSET_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_BOOT_BANK_CTR_OFFSET_Bits.DATA8 */
+#define IFX_SFLASH_BOOT_BANK_CTR_OFFSET_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_BOOT_BANK_CTR_OFFSET_Bits.DATA8 */
+#define IFX_SFLASH_BOOT_BANK_CTR_OFFSET_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_BOOT_HASH_LOCKING_Bits.DATA8 */
+#define IFX_SFLASH_BOOT_HASH_LOCKING_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_BOOT_HASH_LOCKING_Bits.DATA8 */
+#define IFX_SFLASH_BOOT_HASH_LOCKING_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_BOOT_HASH_LOCKING_Bits.DATA8 */
+#define IFX_SFLASH_BOOT_HASH_LOCKING_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_BOOT_AUTH_Bits.DATA8 */
+#define IFX_SFLASH_BOOT_AUTH_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_BOOT_AUTH_Bits.DATA8 */
+#define IFX_SFLASH_BOOT_AUTH_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_BOOT_AUTH_Bits.DATA8 */
+#define IFX_SFLASH_BOOT_AUTH_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_BOOT_APP_LAYOUT_Bits.DATA32 */
+#define IFX_SFLASH_BOOT_APP_LAYOUT_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_BOOT_APP_LAYOUT_Bits.DATA32 */
+#define IFX_SFLASH_BOOT_APP_LAYOUT_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_BOOT_APP_LAYOUT_Bits.DATA32 */
+#define IFX_SFLASH_BOOT_APP_LAYOUT_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PC_CTL_VALID_Bits.DATA8 */
+#define IFX_SFLASH_PC_CTL_VALID_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_PC_CTL_VALID_Bits.DATA8 */
+#define IFX_SFLASH_PC_CTL_VALID_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_PC_CTL_VALID_Bits.DATA8 */
+#define IFX_SFLASH_PC_CTL_VALID_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_OEM_DEVICE_CERT_BLOCKS_Bits.DATA8 */
+#define IFX_SFLASH_OEM_DEVICE_CERT_BLOCKS_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_OEM_DEVICE_CERT_BLOCKS_Bits.DATA8 */
+#define IFX_SFLASH_OEM_DEVICE_CERT_BLOCKS_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_OEM_DEVICE_CERT_BLOCKS_Bits.DATA8 */
+#define IFX_SFLASH_OEM_DEVICE_CERT_BLOCKS_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PC2_HANDLER_Bits.DATA32 */
+#define IFX_SFLASH_PC2_HANDLER_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_PC2_HANDLER_Bits.DATA32 */
+#define IFX_SFLASH_PC2_HANDLER_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_PC2_HANDLER_Bits.DATA32 */
+#define IFX_SFLASH_PC2_HANDLER_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PC3_HANDLER_Bits.DATA32 */
+#define IFX_SFLASH_PC3_HANDLER_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_PC3_HANDLER_Bits.DATA32 */
+#define IFX_SFLASH_PC3_HANDLER_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_PC3_HANDLER_Bits.DATA32 */
+#define IFX_SFLASH_PC3_HANDLER_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_DFU_POLICY_Bits.DATA32 */
+#define IFX_SFLASH_DFU_POLICY_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_DFU_POLICY_Bits.DATA32 */
+#define IFX_SFLASH_DFU_POLICY_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_DFU_POLICY_Bits.DATA32 */
+#define IFX_SFLASH_DFU_POLICY_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_OEM_DEVICE_CERT_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_OEM_DEVICE_CERT_ADDR_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_OEM_DEVICE_CERT_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_OEM_DEVICE_CERT_ADDR_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_OEM_DEVICE_CERT_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_OEM_DEVICE_CERT_ADDR_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_BOUNDARY_SCAN_EN_Bits.DATA32 */
+#define IFX_SFLASH_BOUNDARY_SCAN_EN_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_BOUNDARY_SCAN_EN_Bits.DATA32 */
+#define IFX_SFLASH_BOUNDARY_SCAN_EN_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_BOUNDARY_SCAN_EN_Bits.DATA32 */
+#define IFX_SFLASH_BOUNDARY_SCAN_EN_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_OEM_POLICY_RESERVED_Bits.DATA32 */
+#define IFX_SFLASH_OEM_POLICY_RESERVED_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_OEM_POLICY_RESERVED_Bits.DATA32 */
+#define IFX_SFLASH_OEM_POLICY_RESERVED_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_OEM_POLICY_RESERVED_Bits.DATA32 */
+#define IFX_SFLASH_OEM_POLICY_RESERVED_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_OEM_ROT_KEY_0_Bits.DATA8 */
+#define IFX_SFLASH_OEM_ROT_KEY_0_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_OEM_ROT_KEY_0_Bits.DATA8 */
+#define IFX_SFLASH_OEM_ROT_KEY_0_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_OEM_ROT_KEY_0_Bits.DATA8 */
+#define IFX_SFLASH_OEM_ROT_KEY_0_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_OEM_ROT_KEY_1_Bits.DATA8 */
+#define IFX_SFLASH_OEM_ROT_KEY_1_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_OEM_ROT_KEY_1_Bits.DATA8 */
+#define IFX_SFLASH_OEM_ROT_KEY_1_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_OEM_ROT_KEY_1_Bits.DATA8 */
+#define IFX_SFLASH_OEM_ROT_KEY_1_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_COUNTER_FLASH_ROW8_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_ROW8_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_COUNTER_FLASH_ROW8_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_ROW8_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_COUNTER_FLASH_ROW8_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_ROW8_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_UNUSED_2_Bits.DATA8 */
+#define IFX_SFLASH_UNUSED_2_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_UNUSED_2_Bits.DATA8 */
+#define IFX_SFLASH_UNUSED_2_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_UNUSED_2_Bits.DATA8 */
+#define IFX_SFLASH_UNUSED_2_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_N_FLASH_MPC_Bits.DATA8 */
+#define IFX_SFLASH_N_FLASH_MPC_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_N_FLASH_MPC_Bits.DATA8 */
+#define IFX_SFLASH_N_FLASH_MPC_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_N_FLASH_MPC_Bits.DATA8 */
+#define IFX_SFLASH_N_FLASH_MPC_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_MPC_STRUCT_Bits.DATA32 */
+#define IFX_SFLASH_MPC_STRUCT_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_MPC_STRUCT_Bits.DATA32 */
+#define IFX_SFLASH_MPC_STRUCT_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_MPC_STRUCT_Bits.DATA32 */
+#define IFX_SFLASH_MPC_STRUCT_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PROT_FW_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_ADDR_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_PROT_FW_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_ADDR_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_PROT_FW_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_ADDR_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PROT_FW_SIZE_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_SIZE_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_PROT_FW_SIZE_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_SIZE_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_PROT_FW_SIZE_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_SIZE_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PROT_FW_RW_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_RW_ADDR_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_PROT_FW_RW_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_RW_ADDR_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_PROT_FW_RW_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_RW_ADDR_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PROT_FW_RW_SIZE_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_RW_SIZE_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_PROT_FW_RW_SIZE_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_RW_SIZE_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_PROT_FW_RW_SIZE_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_RW_SIZE_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PROT_FW_RAM_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_RAM_ADDR_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_PROT_FW_RAM_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_RAM_ADDR_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_PROT_FW_RAM_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_RAM_ADDR_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PROT_FW_RAM_SIZE_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_RAM_SIZE_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_PROT_FW_RAM_SIZE_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_RAM_SIZE_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_PROT_FW_RAM_SIZE_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_RAM_SIZE_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_PROT_FW_COMPLETE_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_COMPLETE_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_PROT_FW_COMPLETE_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_COMPLETE_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_PROT_FW_COMPLETE_Bits.DATA32 */
+#define IFX_SFLASH_PROT_FW_COMPLETE_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_COUNTER_FLASH_ROW9_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_ROW9_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_COUNTER_FLASH_ROW9_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_ROW9_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_COUNTER_FLASH_ROW9_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_ROW9_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_IFX_ROT_KEY_0_Bits.DATA8 */
+#define IFX_SFLASH_IFX_ROT_KEY_0_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_IFX_ROT_KEY_0_Bits.DATA8 */
+#define IFX_SFLASH_IFX_ROT_KEY_0_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_IFX_ROT_KEY_0_Bits.DATA8 */
+#define IFX_SFLASH_IFX_ROT_KEY_0_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_IFX_ROT_KEY_1_Bits.DATA8 */
+#define IFX_SFLASH_IFX_ROT_KEY_1_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_IFX_ROT_KEY_1_Bits.DATA8 */
+#define IFX_SFLASH_IFX_ROT_KEY_1_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_IFX_ROT_KEY_1_Bits.DATA8 */
+#define IFX_SFLASH_IFX_ROT_KEY_1_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_IFX_RMA_MASTER_KEY_0_Bits.DATA8 */
+#define IFX_SFLASH_IFX_RMA_MASTER_KEY_0_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_IFX_RMA_MASTER_KEY_0_Bits.DATA8 */
+#define IFX_SFLASH_IFX_RMA_MASTER_KEY_0_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_IFX_RMA_MASTER_KEY_0_Bits.DATA8 */
+#define IFX_SFLASH_IFX_RMA_MASTER_KEY_0_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_IFX_RMA_MASTER_KEY_1_Bits.DATA8 */
+#define IFX_SFLASH_IFX_RMA_MASTER_KEY_1_DATA8_LEN (8u)
+
+/** \brief Mask for Ifx_SFLASH_IFX_RMA_MASTER_KEY_1_Bits.DATA8 */
+#define IFX_SFLASH_IFX_RMA_MASTER_KEY_1_DATA8_MSK (0xffu)
+
+/** \brief Offset for Ifx_SFLASH_IFX_RMA_MASTER_KEY_1_Bits.DATA8 */
+#define IFX_SFLASH_IFX_RMA_MASTER_KEY_1_DATA8_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_TOC1_Bits.DATA32 */
+#define IFX_SFLASH_TOC1_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_TOC1_Bits.DATA32 */
+#define IFX_SFLASH_TOC1_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_TOC1_Bits.DATA32 */
+#define IFX_SFLASH_TOC1_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_TOC2_Bits.DATA32 */
+#define IFX_SFLASH_TOC2_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_TOC2_Bits.DATA32 */
+#define IFX_SFLASH_TOC2_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_TOC2_Bits.DATA32 */
+#define IFX_SFLASH_TOC2_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_ASSET_HASH_LIST_Bits.DATA32 */
+#define IFX_SFLASH_ASSET_HASH_LIST_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_ASSET_HASH_LIST_Bits.DATA32 */
+#define IFX_SFLASH_ASSET_HASH_LIST_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_ASSET_HASH_LIST_Bits.DATA32 */
+#define IFX_SFLASH_ASSET_HASH_LIST_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_FACTORY_HASH_LIST_Bits.DATA32 */
+#define IFX_SFLASH_FACTORY_HASH_LIST_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_FACTORY_HASH_LIST_Bits.DATA32 */
+#define IFX_SFLASH_FACTORY_HASH_LIST_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_FACTORY_HASH_LIST_Bits.DATA32 */
+#define IFX_SFLASH_FACTORY_HASH_LIST_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_FLASH_BOOT_OBJECT_SIZE_Bits.DATA32 */
+#define IFX_SFLASH_FLASH_BOOT_OBJECT_SIZE_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_FLASH_BOOT_OBJECT_SIZE_Bits.DATA32 */
+#define IFX_SFLASH_FLASH_BOOT_OBJECT_SIZE_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_FLASH_BOOT_OBJECT_SIZE_Bits.DATA32 */
+#define IFX_SFLASH_FLASH_BOOT_OBJECT_SIZE_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_FLASH_BOOT_VERSION_HIGH_Bits.DATA32 */
+#define IFX_SFLASH_FLASH_BOOT_VERSION_HIGH_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_FLASH_BOOT_VERSION_HIGH_Bits.DATA32 */
+#define IFX_SFLASH_FLASH_BOOT_VERSION_HIGH_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_FLASH_BOOT_VERSION_HIGH_Bits.DATA32 */
+#define IFX_SFLASH_FLASH_BOOT_VERSION_HIGH_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_FLASH_BOOT_VERSION_LOW_Bits.DATA32 */
+#define IFX_SFLASH_FLASH_BOOT_VERSION_LOW_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_FLASH_BOOT_VERSION_LOW_Bits.DATA32 */
+#define IFX_SFLASH_FLASH_BOOT_VERSION_LOW_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_FLASH_BOOT_VERSION_LOW_Bits.DATA32 */
+#define IFX_SFLASH_FLASH_BOOT_VERSION_LOW_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_FB_STACK_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_FB_STACK_ADDR_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_FB_STACK_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_FB_STACK_ADDR_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_FB_STACK_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_FB_STACK_ADDR_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_FB_RESET_HANDLER_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_FB_RESET_HANDLER_ADDR_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_FB_RESET_HANDLER_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_FB_RESET_HANDLER_ADDR_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_FB_RESET_HANDLER_ADDR_Bits.DATA32 */
+#define IFX_SFLASH_FB_RESET_HANDLER_ADDR_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_FB_FUNC_LIST_Bits.DATA32 */
+#define IFX_SFLASH_FB_FUNC_LIST_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_FB_FUNC_LIST_Bits.DATA32 */
+#define IFX_SFLASH_FB_FUNC_LIST_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_FB_FUNC_LIST_Bits.DATA32 */
+#define IFX_SFLASH_FB_FUNC_LIST_DATA32_OFF (0u)
+
+/** \brief Length for Ifx_SFLASH_COUNTER_FLASH_HUK_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_HUK_DATA32_LEN (32u)
+
+/** \brief Mask for Ifx_SFLASH_COUNTER_FLASH_HUK_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_HUK_DATA32_MSK (0xffffffffu)
+
+/** \brief Offset for Ifx_SFLASH_COUNTER_FLASH_HUK_Bits.DATA32 */
+#define IFX_SFLASH_COUNTER_FLASH_HUK_DATA32_OFF (0u)
+
+/** \}  */
+
+/******************************************************************************/
+
+/******************************************************************************/
+
+#endif /* _IFXSFLASH_BF_H_ */

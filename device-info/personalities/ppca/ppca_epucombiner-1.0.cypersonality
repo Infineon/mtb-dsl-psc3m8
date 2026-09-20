@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+  <PersonalityTemplate id="mxs40ppca-epucombiner" name="mxs40ppca-epucombiner" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v12">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.epu\.combiner" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers />
+  <Parameters>
+     <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__epu.html" linkText="Open PPCA EPU Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+
+    <ParamString id="greenBlock" name="greenBlock" group="Internal" default="#9BBA43" visible="false" editable="false" desc="" />
+    <ParamString id="greenText" name="greenText" group="Internal" default="#00B050" visible="false" editable="false" desc="" />
+    <ParamString id="greenLine" name="greenLine" group="Internal" default="#0A8276" visible="false" editable="false" desc="" />
+    <ParamString id="defaultLine" name="greenLine" group="Internal" default="#000000" visible="false" editable="false" desc="" />
+    <ParamString id="defaultBlock" name="greenLine" group="Internal" default="#ffffff" visible="false" editable="false" desc="" />
+
+    <ParamSignal port="signal_a[0]" name="Signal A" group="COMBO Configuration/Bank Select" visible="true" desc="" canBeEmpty="true" />
+    <ParamString id="signal_a_block" name="signal_a_block" default='`${getBlockFromSignal("signal_a[0]")}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_a_pu_split_count" name="signal_a_pu_split_count" default='`${splitCount(signal_a_block, ".") -1}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_a_pu" name="signal_a_pu" default='`${signal_a_pu_split_count > 0 ? splitAt(signal_a_block, 2, ".") : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="aix" name="signal_a_pu_index" default='`${signal_a_pu_split_count > 0 ? splitAt(splitAt(signal_a_pu, 1, "["), 0, "]") : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_b_sig" name="signal_b_sig" default='`${signal_a_pu_split_count > 0 ? "ppca[0].epu[0].putype1[" . (aix + 1) . "].out[0]" : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_b_block_exp" name="signal_b_block_exp" default='`${getBlockFromSignal("signal_b_sig")}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_b_pu_exp" name="signal_b_pu_exp" default='`${signal_a_pu_split_count > 0 ? splitAt(signal_b_block_exp, 2, ".") : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="bix_exp" name="signal_b_pu_index_expected" default='`${signal_a_pu_split_count > 0 ? splitAt(splitAt(signal_b_pu_exp, 1, "["), 0, "]") : ""}`' desc="" group="" visible="false" editable="false"/>
+
+    <ParamSignal port="signal_b[0]" name="Signal B" group="COMBO Configuration/Bank Select" visible='true' desc="" canBeEmpty='true' />
+    <ParamString id="signal_b_block" name="ssignal_b_block" default='`${getBlockFromSignal("signal_b[0]")}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_b_pu_split_count" name="signal_b_pu_split_count" default='`${splitCount(signal_b_block, ".") -1}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_b_pu" name="signal_b_pu" default='`${signal_b_pu_split_count > 0 ? splitAt(signal_b_block, 2, "."): ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="bix" name="signal_b_pu_index" default='`${signal_b_pu_split_count > 0 ? splitAt(splitAt(signal_b_pu, 1, "["), 0, "]") : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_a_sig" name="signal_a_sig" default='`${signal_b_pu_split_count > 0 ? "ppca[0].epu[0].putype1[" . (bix - 1) . "].out[0]" : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_a_block_exp" name="signal_a_block_exp" default='`${getBlockFromSignal("signal_a_sig")}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_a_pu_exp" name="signal_b_pu_exp" default='`${signal_b_pu_split_count > 0 ? splitAt(signal_a_block_exp, 2, ".") : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="aix_exp" name="signal_b_pu_index_expected" default='`${signal_b_pu_split_count > 0 ? splitAt(splitAt(signal_a_pu_exp, 1, "["), 0, "]") : ""}`' desc="" group="" visible="false" editable="false"/>
+
+    <ParamSignal port="signal_c[0]" name="Signal C" group="COMBO Configuration/Processing Unit Input Source Select" visible='true' desc="" canBeEmpty='true' />
+    <ParamString id="signal_c_block" name="signal_c_block" default='`${getBlockFromSignal("signal_c[0]")}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_c_pu_split_count" name="signal_c_pu_split_count" default='`${splitCount(signal_c_block, ".") -1}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_c_pu" name="signal_c_pu" default='`${signal_c_pu_split_count > 0 ? splitAt(signal_c_block, 2, ".") : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="cix" name="signal_c_pu_index" default='`${signal_c_pu_split_count > 0 ? splitAt(splitAt(signal_c_pu, 1, "["), 0, "]") : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_d_sig" name="signal_d_sig" default='`${signal_c_pu_split_count > 0 ? "ppca[0].epu[0].putype2[" . (cix - 16) . "].out[0]" : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_d_block_exp" name="signal_d_block_exp" default='`${getBlockFromSignal("signal_d_sig")}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_d_pu_exp" name="signal_d_pu_exp" default='`${signal_c_pu_split_count > 0 ? splitAt(signal_d_block_exp, 2, ".") : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="dix_exp" name="signal_d_pu_index_expected" default='`${signal_c_pu_split_count > 0 ? splitAt(splitAt(signal_d_pu_exp, 1, "["), 0, "]") : ""}`' desc="" group="" visible="false" editable="false"/>
+
+    <ParamSignal port="signal_d[0]" name="Signal D" group="COMBO Configuration/Processing Unit Input Source Select" visible='true' desc="" canBeEmpty='true' />
+    <ParamString id="signal_d_block" name="signal_d_block" default='`${getBlockFromSignal("signal_d[0]")}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_d_pu_split_count" name="signal_d_pu_split_count" default='`${splitCount(signal_d_block, ".") -1}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_d_pu" name="signal_d_pu" default='`${signal_d_pu_split_count > 0 ? splitAt(signal_d_block, 2, ".") : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="dix" name="signal_d_pu_index" default='`${signal_d_pu_split_count > 0 ? splitAt(splitAt(signal_d_pu, 1, "["), 0, "]") : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_c_sig" name="signal_c_sig" default='`${signal_d_pu_split_count > 0 ? "ppca[0].epu[0].putype1[" . (dix + 16) . "].out[0]" :""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_c_block_exp" name="signal_c_block_exp" default='`${getBlockFromSignal("signal_c_sig")}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_c_pu_exp" name="signal_c_pu_exp" default='`${signal_d_pu_split_count > 0 ? splitAt(signal_c_block_exp, 2, ".") : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="cix_exp" name="signal_c_pu_index_expected" default='`${signal_d_pu_split_count > 0 ? splitAt(splitAt(signal_c_pu_exp, 1, "["), 0, "]") : ""}`' desc="" group="" visible="false" editable="false"/>
+
+    <ParamSignal port="pu_in_qualifier[0]" name="Processing Unit Input Qualifier" group="COMBO Configuration/Qualifier" visible='true' desc="Select PU (= PU_T1 31:PU_T1 27, PU_T2 15:PU_T2 12) as qualifier." canBeEmpty='true' />
+    <ParamString id="signal_qualifier_block" name="signal_qualifier_block" default='`${getBlockFromSignal("pu_in_qualifier[0]")}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_qualifier_split_count" name="signal_qualifier_split_count" default='`${splitCount(signal_qualifier_block, ".") -1}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="signal_qualifier_pu" name="signal_qualifier_pu" default='`${signal_qualifier_split_count > 0 ? splitAt(signal_qualifier_block, 2, ".") : ""}`' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="qix" name="signal_q_pu_index" default='`${signal_qualifier_split_count > 0 ? splitAt(splitAt(signal_qualifier_pu, 1, "["), 0, "]") : ""}`' desc="" group="" visible="false" editable="false"/>
+
+    <ParamString id="blank" name="" default='CY_COMBO_UNASSIGNED_BANK_OUT' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out0_1" name="" default='CY_COMBO_PUT1_OUT0_PUT1_OUT1' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out2_3" name="" default='CY_COMBO_PUT1_OUT2_PUT1_OUT3' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out4_5" name="" default='CY_COMBO_PUT1_OUT4_PUT1_OUT5' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out6_7" name="" default='CY_COMBO_PUT1_OUT6_PUT1_OUT7' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out8_9" name="" default='CY_COMBO_PUT1_OUT8_PUT1_OUT9' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out10_11" name="" default='CY_COMBO_PUT1_OUT10_PUT1_OUT11' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out12_13" name="" default='CY_COMBO_PUT1_OUT12_PUT1_OUT13' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out14_15" name="" default='CY_COMBO_PUT1_OUT14_PUT1_OUT15' desc="" group="" visible="false" editable="false"/>
+
+    <ParamString id="bankSel" name="Bank Select" default='`${((aix eq 0) || (bix eq 1)) ? out0_1 : (((aix eq 2) || (bix eq 3)) ? out2_3 : (((aix eq 4) || (bix eq 5)) ? out4_5 : (((aix eq 6) || (bix eq 7)) ? out6_7 : (((aix eq 8) || (bix eq 9)) ? out8_9 : (((aix eq 10) || (bix eq 11)) ? out10_11 : (((aix eq 12) || (bix eq 13)) ? out12_13 : (((aix eq 14) || (bix eq 15)) ? out14_15 : blank)))))))}`' desc="Input Signals from PUT1_OUT[0-15]" group="" visible="false" editable="false"/>
+
+    <ParamChoice id="put1InEnable"
+                 name="Processing Unit Type1 Input Enable"
+                 group="COMBO Configuration/Bank Select"
+                 visible="true"
+                 editable="true"
+                 desc="Enable Input Signals from PUT1_OUT[0-15]"
+                 default="CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B">
+      <Entry name="Disable both Signal A and Signal B" value="CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B" visible="true"/>
+      <Entry name="Enable Signal A" value="CY_COMBO_ENABLE_INPUT_SIGNAL_A" visible="true"/>
+      <Entry name="Enable Signal B" value="CY_COMBO_ENABLE_INPUT_SIGNAL_B" visible="true"/>
+      <Entry name="Enable both Signal A and Signal B" value="CY_COMBO_ENABLE_INPUT_SIGNAL_A_AND_B" visible="true"/>
+    </ParamChoice>
+    <ParamString id="bankSelSigALineColor" name="bankSelSigALineColor" group="Internal" default="`${((put1InEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A) || (put1InEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A_AND_B)) ? greenLine : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="bankSelSigBLineColor" name="bankSelSigBLineColor" group="Internal" default="`${((put1InEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_B) || (put1InEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A_AND_B)) ? greenLine : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="bankSelSigATextColor" name="bankSelSigATextColor" group="Internal" default="`${((put1InEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A) || (put1InEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A_AND_B)) ? greenText : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="bankSelSigBTextColor" name="bankSelSigBTextColor" group="Internal" default="`${((put1InEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_B) || (put1InEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A_AND_B)) ? greenText : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="bankSelLineColor" name="bankSelLineColor" group="Internal" default="`${(put1InEnable ne CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B) ? greenLine : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="bankSelBlockColor" name="bankSelBlockColor" group="Internal" default="`${(put1InEnable ne CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B) ? greenBlock : defaultBlock}`" visible="false" editable="false" desc="" />
+    <ParamString id="bankSelSigAText" name="bankSelSigAText" group="Internal" default="`${hasConnection(&quot;signal_a&quot;, 0) ? ((bankSel eq out0_1) ? &quot;PU_OUT_SEL0&quot; : ((bankSel eq out2_3) ? &quot;PU_OUT_SEL2&quot; : ((bankSel eq out4_5) ? &quot;PU_OUT_SEL4&quot; : ((bankSel eq out6_7) ? &quot;PU_OUT_SEL6&quot; : ((bankSel eq out8_9) ? &quot;PU_OUT_SEL8&quot; : ((bankSel eq out10_11) ? &quot;PU_OUT_SEL10&quot; : ((bankSel eq out12_13) ? &quot;PU_OUT_SEL12&quot; : ((bankSel eq out14_15) ? &quot;PU_OUT_SEL14&quot; : &quot;&quot;)))))))) : &quot;&quot;}`" visible="false" editable="false" desc="" />
+    <ParamString id="bankSelSigBText" name="bankSelSigBText" group="Internal" default="`${hasConnection(&quot;signal_b&quot;, 0) ? ((bankSel eq out0_1) ? &quot;PU_OUT_SEL1&quot; : ((bankSel eq out2_3) ? &quot;PU_OUT_SEL3&quot; : ((bankSel eq out4_5) ? &quot;PU_OUT_SEL5&quot; : ((bankSel eq out6_7) ? &quot;PU_OUT_SEL7&quot; : ((bankSel eq out8_9) ? &quot;PU_OUT_SEL9&quot; : ((bankSel eq out10_11) ? &quot;PU_OUT_SEL11&quot; : ((bankSel eq out12_13) ? &quot;PU_OUT_SEL13&quot; : ((bankSel eq out14_15) ? &quot;PU_OUT_SEL15&quot; : &quot;&quot;)))))))) : &quot;&quot;}`" visible="false" editable="false" desc="" />
+
+    <ParamString id="NULL_PUT" name="" default='CY_COMBO_UNASSIGNED_PUT_OUT' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out16_0" name="" default='CY_COMBO_PUT1_OUT16_PUT2_OUT0' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out17_1" name="" default='CY_COMBO_PUT1_OUT17_PUT2_OUT1' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out18_2" name="" default='CY_COMBO_PUT1_OUT18_PUT2_OUT2' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out19_3" name="" default='CY_COMBO_PUT1_OUT19_PUT2_OUT3' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out20_4" name="" default='CY_COMBO_PUT1_OUT20_PUT2_OUT4' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out21_5" name="" default='CY_COMBO_PUT1_OUT21_PUT2_OUT5' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out22_6" name="" default='CY_COMBO_PUT1_OUT22_PUT2_OUT6' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out23_7" name="" default='CY_COMBO_PUT1_OUT23_PUT2_OUT7' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out24_8" name="" default='CY_COMBO_PUT1_OUT24_PUT2_OUT8' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out25_9" name="" default='CY_COMBO_PUT1_OUT25_PUT2_OUT9' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out26_10" name="" default='CY_COMBO_PUT1_OUT26_PUT2_OUT10' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out27_11" name="" default='CY_COMBO_PUT1_OUT27_PUT2_OUT11' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out28_12" name="" default='CY_COMBO_PUT1_OUT28_PUT2_OUT12' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out29_13" name="" default='CY_COMBO_PUT1_OUT29_PUT2_OUT13' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out30_14" name="" default='CY_COMBO_PUT1_OUT30_PUT2_OUT14' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out31_15" name="" default='CY_COMBO_PUT1_OUT31_PUT2_OUT15' desc="" group="" visible="false" editable="false"/>
+
+    <ParamString id="puSrcIn" name="Processing Unit Input Source Select" default='`${((cix eq 16) || (dix eq 0)) ? out16_0 : (((cix eq 17) || (dix eq 1)) ? out17_1 : (((cix eq 18) || (dix eq 2)) ? out18_2 : (((cix eq 19) || (dix eq 3)) ? out19_3 : (((cix eq 20) || (dix eq 4)) ? out20_4 : (((cix eq 21) || (dix eq 5)) ? out21_5 : (((cix eq 22) || (dix eq 6)) ? out22_6 : (((cix eq 23) || (dix eq 7)) ? out23_7 : (((cix eq 24) || (dix eq 8)) ? out24_8 : (((cix eq 25) || (dix eq 9)) ? out25_9 : (((cix eq 26) || (dix eq 10)) ? out26_10 : (((cix eq 27) || (dix eq 11)) ? out27_11 : (((cix eq 28) || (dix eq 12)) ? out28_12 : (((cix eq 29) || (dix eq 13)) ? out29_13 : (((cix eq 30) || (dix eq 14)) ? out30_14 : (((cix eq 31) || (dix eq 15)) ? out31_15 : NULL_PUT)))))))))))))))}`' desc="Input signals from PUT1_OUT[16-31] and PUT2_OUT[0-15] " group="" visible="false" editable="false"/>
+
+    <ParamChoice id="srcInEnable"
+                 name="Processing Unit Input Enable"
+                 group="COMBO Configuration/Processing Unit Input Source Select"
+                 visible="true"
+                 editable="true"
+                 desc="Enable Input Signals PUT1_OUT[16-31] and PUT2_OUT[0-15]"
+                 default="CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B">
+      <Entry name="Disable both Signal C and Signal D" value="CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B" visible="true"/>
+      <Entry name="Enable Signal C" value="CY_COMBO_ENABLE_INPUT_SIGNAL_A" visible="true"/>
+      <Entry name="Enable Signal D" value="CY_COMBO_ENABLE_INPUT_SIGNAL_B" visible="true"/>
+      <Entry name="Enable both Signal C and Signal D" value="CY_COMBO_ENABLE_INPUT_SIGNAL_A_AND_B" visible="true"/>
+    </ParamChoice>
+    <ParamString id="srcInSigCLineColor" name="srcInSigCLineColor" group="Internal" default="`${((srcInEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A) || (srcInEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A_AND_B)) ? greenLine : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="srcInSigDLineColor" name="srcInSigDLineColor" group="Internal" default="`${((srcInEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_B) || (srcInEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A_AND_B)) ? greenLine : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="srcInSigCTextColor" name="srcInSigCTextColor" group="Internal" default="`${((srcInEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A) || (srcInEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A_AND_B)) ? greenText : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="srcInSigDTextColor" name="srcInSigDTextColor" group="Internal" default="`${((srcInEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_B) || (srcInEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A_AND_B)) ? greenText : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="srcInSigCText" name="srcInSigCText" group="Internal" default="`${hasConnection(&quot;signal_c&quot;, 0) ? ((puSrcIn eq out16_0) ? &quot;PUT1_OUT16&quot; : ((puSrcIn eq out17_1) ? &quot;PUT1_OUT17&quot; : ((puSrcIn eq out18_2) ? &quot;PUT1_OUT18&quot; : ((puSrcIn eq out19_3) ? &quot;PUT1_OUT19&quot; : ((puSrcIn eq out20_4) ? &quot;PUT1_OUT20&quot; : ((puSrcIn eq out21_5) ? &quot;PUT1_OUT21&quot; : ((puSrcIn eq out22_6) ? &quot;PUT1_OUT22&quot; : ((puSrcIn eq out23_7) ? &quot;PUT1_OUT23&quot; : ((puSrcIn eq out24_8) ? &quot;PUT1_OUT24&quot; : ((puSrcIn eq out25_9) ? &quot;PUT1_OUT25&quot; : ((puSrcIn eq out26_10) ? &quot;PUT1_OUT26&quot; : ((puSrcIn eq out27_11) ? &quot;PUT1_OUT27&quot; : ((puSrcIn eq out28_12) ? &quot;PUT1_OUT28&quot; : ((puSrcIn eq out29_13) ? &quot;PUT1_OUT29&quot; : ((puSrcIn eq out30_14) ? &quot;PUT1_OUT30&quot; : ((puSrcIn eq out31_15) ? &quot;PUT1_OUT31&quot; : &quot;&quot;)))))))))))))))) : &quot;&quot;}`" visible="false" editable="false" desc="" />
+    <ParamString id="srcInSigDText" name="srcInSigDText" group="Internal" default="`${hasConnection(&quot;signal_d&quot;, 0) ? ((puSrcIn eq out16_0) ? &quot;PUT2_OUT0&quot; : ((puSrcIn eq out17_1) ? &quot;PUT2_OUT1&quot; : ((puSrcIn eq out18_2) ? &quot;PUT2_OUT2&quot; : ((puSrcIn eq out19_3) ? &quot;PUT2_OUT3&quot; : ((puSrcIn eq out20_4) ? &quot;PUT2_OUT4&quot; : ((puSrcIn eq out21_5) ? &quot;PUT2_OUT5&quot; : ((puSrcIn eq out22_6) ? &quot;PUT2_OUT6&quot; : ((puSrcIn eq out23_7) ? &quot;PUT2_OUT7&quot; : ((puSrcIn eq out24_8) ? &quot;PUT2_OUT8&quot; : ((puSrcIn eq out25_9) ? &quot;PUT2_OUT9&quot; : ((puSrcIn eq out26_10) ? &quot;PUT2_OUT10&quot; : ((puSrcIn eq out27_11) ? &quot;PUT2_OUT11&quot; : ((puSrcIn eq out28_12) ? &quot;PUT2_OUT12&quot; : ((puSrcIn eq out29_13) ? &quot;PUT2_OUT13&quot; : ((puSrcIn eq out30_14) ? &quot;PUT2_OUT14&quot; : ((puSrcIn eq out31_15) ? &quot;PUT2_OUT15&quot; : &quot;&quot;)))))))))))))))) : &quot;&quot;}`" visible="false" editable="false" desc="" />
+    <ParamString id="puSrcInLineColor" name="puSrcInLineColor" group="Internal" default="`${(srcInEnable ne CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B) ? greenLine : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="puSrcInBlockColor" name="puSrcInBlockColor" group="Internal" default="`${(srcInEnable ne CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B) ? greenBlock : defaultBlock}`" visible="false" editable="false" desc="" />
+
+
+    <ParamString id="NULL_QUAL" name="" default='CY_COMBO_UNASSIGNED_QUAL' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out_28" name="" default='CY_COMBO_PUT1_OUT28_QUAL' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out_29" name="" default='CY_COMBO_PUT1_OUT29_QUAL' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out_30" name="" default='CY_COMBO_PUT1_OUT30_QUAL' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out_31" name="" default='CY_COMBO_PUT1_OUT31_QUAL' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out_12" name="" default='CY_COMBO_PUT2_OUT12_QUAL' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out_13" name="" default='CY_COMBO_PUT2_OUT13_QUAL' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out_14" name="" default='CY_COMBO_PUT2_OUT14_QUAL' desc="" group="" visible="false" editable="false"/>
+    <ParamString id="out_15" name="" default='CY_COMBO_PUT2_OUT15_QUAL' desc="" group="" visible="false" editable="false"/>
+
+    <ParamString id="inQual" name="Input Qualifier" default='`${((qix eq 28) ) ? out_28 : (((qix eq 29)) ? out_29 : (((qix eq 30)) ? out_30 : (((qix eq 31)) ? out_31 : (((qix eq 12)) ? out_12 : (((qix eq 13)) ? out_13 : (((qix eq 14)) ? out_14 : (((qix eq 15)) ? out_15 : NULL_QUAL)))))))}`' desc="Input Signals from PUT1_OUT[0-15]" group="" visible="false" editable="false"/>
+
+    <ParamString id="qualInText" name="qualInText" group="Internal" default="`${hasConnection(&quot;pu_in_qualifier&quot;, 0) ? ((inQual eq out_28) ? &quot;PUT1_OUT28&quot; : ((inQual eq out_29) ? &quot;PUT1_OUT29&quot; : ((inQual eq out_30) ? &quot;PUT1_OUT30&quot; : ((inQual eq out_31) ? &quot;PUT1_OUT31&quot; : ((inQual eq out_12) ? &quot;PUT2_OUT12&quot; : ((inQual eq out_13) ? &quot;PUT2_OUT13&quot; : ((inQual eq out_14) ? &quot;PUT2_OUT14&quot; : ((inQual eq out_15) ? &quot;PUT2_OUT15&quot; : &quot;PU_IN_QUAL&quot;)))))))) : &quot;PU_IN_QUAL&quot;}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="enableQual" name="Enable Qualifier" group="COMBO Configuration/Qualifier" default="false" visible="true" editable="true" desc="This parameter enables/disables Qualifier "/>
+    <ParamString id="qualInLineColor" name="qualInLineColor" group="Internal" default="`${(enableQual) ? greenLine : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="qualInBlockColor" name="qualInBlockColor" group="Internal" default="`${(enableQual) ? greenBlock : defaultBlock}`" visible="false" editable="false" desc="" />
+    <ParamString id="qualInTextColor" name="qualInTextColor" group="Internal" default="`${(enableQual) ? greenText : defaultLine}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="enablePolInv" name="Enable Polarity Inversion" group="COMBO Configuration" default="false" visible="true" editable="true" desc="This parameter enables/disables Polarity Inversion "/>
+    <ParamString id="polInvLineColor" name="polInvLineColor" group="Internal" default="`${(enablePolInv) ? greenLine : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="polInvBlockColor" name="polInvBlockColor" group="Internal" default="`${(enablePolInv) ? greenBlock : defaultBlock}`" visible="false" editable="false" desc="" />
+    <ParamString id="polInvTextColor" name="polInvTextColor" group="Internal" default="`${(enablePolInv) ? greenText : defaultLine}`" visible="false" editable="false" desc="" />
+
+    <ParamString id="comboEnLineColor" name="comboEnLineColor" group="Internal" default="`${((srcInEnable ne CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B) || (put1InEnable ne CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B)) ? greenLine : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="comboEnBlockColor" name="comboEnBlockColor" group="Internal" default="`${((srcInEnable ne CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B) || (put1InEnable ne CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B)) ? greenBlock : defaultBlock}`" visible="false" editable="false" desc="" />
+    <ParamString id="comboEnTextColor" name="comboEnTextColor" group="Internal" default="`${((srcInEnable ne CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B) || (put1InEnable ne CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B)) ? greenText : defaultLine}`" visible="false" editable="false" desc="" />
+
+    <ParamString id="instNumber" name="Instance number" group="Internal" default="`${getInstNumber(&quot;combiner&quot;)}`" visible="false" editable="false" desc="EPUTY1 Instance name number." />
+    <ParamString id="combinerRsc" name="Combiner Resource" group="Internal" default="`${&quot;ppca[0].epu[0].combiner[&quot; . instNumber . &quot;]&quot;}`" visible="false" editable="false" desc="" />
+
+    <ParamSignal port="event_out[0]" name="event_out" group="Signals" visible="`${hasVisibleOption(&quot;event_out[0]&quot;)}`" desc="" canBeEmpty="true" />
+    <ParamBool id="requiresEventOut" name="requiresEventOut" group="Internal" default="`${hasConnection(&quot;event_out&quot;, 0)}`" visible="false" editable="true" desc="Latches true once event_out is connected, so a later disconnect can still be detected." />
+
+    <ParamImage id="combo"
+                name="COMBINER"
+                group="COMBO Configuration"
+                desc=""
+                visible="true"
+                position="OUTSET"
+                default="`${cy_libs_path()}`/device-info/personalities/ppca/EPU_COMBO.svg">
+    <Substitution name="bankSel_lineColor" value="`${bankSelLineColor}`"/>
+    <Substitution name="bankSel_blockColor" value="`${bankSelBlockColor}`"/>
+    <Substitution name="bankSelSigA_lineColor" value="`${bankSelSigALineColor}`"/>
+    <Substitution name="bankSelSigB_lineColor" value="`${bankSelSigBLineColor}`"/>
+    <Substitution name="bankSelSigA_textColor" value="`${bankSelSigATextColor}`"/>
+    <Substitution name="bankSelSigB_textColor" value="`${bankSelSigBTextColor}`"/>
+    <Substitution name="puSrcIn_lineColor" value="`${puSrcInLineColor}`"/>
+    <Substitution name="puSrcIn_blockColor" value="`${puSrcInBlockColor}`"/>
+    <Substitution name="srcInSigC_lineColor" value="`${srcInSigCLineColor}`"/>
+    <Substitution name="srcInSigD_lineColor" value="`${srcInSigDLineColor}`"/>
+    <Substitution name="srcInSigC_textColor" value="`${srcInSigCTextColor}`"/>
+    <Substitution name="srcInSigD_textColor" value="`${srcInSigDTextColor}`"/>
+    <Substitution name="qualIn_lineColor" value="`${qualInLineColor}`"/>
+    <Substitution name="qualIn_blockColor" value="`${qualInBlockColor}`"/>
+    <Substitution name="qualIn_textColor" value="`${qualInTextColor}`"/>
+    <Substitution name="polInv_lineColor" value="`${polInvLineColor}`"/>
+    <Substitution name="polInv_blockColor" value="`${polInvBlockColor}`"/>
+    <Substitution name="polInv_textColor" value="`${polInvTextColor}`"/>
+    <Substitution name="comboEn_lineColor" value="`${comboEnLineColor}`"/>
+    <Substitution name="comboEn_blockColor" value="`${comboEnBlockColor}`"/>
+    <Substitution name="comboEn_textColor" value="`${comboEnTextColor}`"/>
+    <Substitution name="bankSelSigA_text" value="`${bankSelSigAText}`"/>
+    <Substitution name="bankSelSigB_text" value="`${bankSelSigBText}`"/>
+    <Substitution name="srcInSigC_Text" value="`${srcInSigCText}`"/>
+    <Substitution name="srcInSigD_Text" value="`${srcInSigDText}`"/>
+    <Substitution name="qualIn_Text" value="`${qualInText}`"/>
+
+    </ParamImage>
+
+    <ParamString id="epuRsc" name="epuRsc" group="Internal" default="`${&quot;ppca[0].epu[0]&quot;}`" visible="false" editable="false" desc="" />
+    <ParamString id="epuUsed" name="epuUsed" group="Internal" default="`${isBlockUsed(epuRsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+  </Parameters>
+
+  <DRCs>
+      <DRC type="ERROR" text="Enable EPU." condition="`${!epuUsed}`">
+        <FixIt action="ENABLE_BLOCK" target="`${epuRsc}`" value="mxs40ppca-epu-1.0" valid="true" />
+      </DRC>
+      <DRC type="ERROR" text="Invalid Bank Select combination. If Signal A = PU T1[`${aix}`], then Signal B should be PU T1[`${bix_exp}`]. If Signal B = PU T1[`${bix}`], then Signal A should be PU T1[`${aix_exp}`]. Change either Signal A or Signal B." condition='`${getParamValue("signal_a[0]") ne "" &amp;&amp; getParamValue("signal_b[0]") ne "" &amp;&amp; getParamValue("signal_b[0]") ne signal_b_sig}`'>
+        <FixIt action='SET_PARAM' target='signal_b[0]' value='`${signal_b_sig}`' valid='true' />
+        <FixIt action='SET_PARAM' target='signal_a[0]' value='`${signal_a_sig}`' valid='true' />
+      </DRC>
+      <DRC type="ERROR" text="Invalid Processing Unit Input Source Select combination. If Signal C = PU T1[`${cix}`], Signal D should be PU T2[`${dix_exp}`]. If Signal D = PU T2[`${dix}`], Signal C should be PU T1[`${cix_exp}`]. Change either Signal C or Signal D." condition='`${getParamValue("signal_c[0]") ne "" &amp;&amp; getParamValue("signal_d[0]") ne "" &amp;&amp; getParamValue("signal_d[0]") ne signal_d_sig}`'>
+        <FixIt action='SET_PARAM' target='signal_c[0]' value='`${signal_c_sig}`' valid='true' />
+        <FixIt action='SET_PARAM' target='signal_d[0]' value='`${signal_d_sig}`' valid='true' />
+      </DRC>
+      <DRC type="INFO" text="Signal A is enabled but has no connection." condition="`${!hasConnection(&quot;signal_a&quot;, 0) &amp;&amp; (put1InEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A)}`" paramId="put1InEnable" />
+      <DRC type="INFO" text="Signal B is enabled but has no connection." condition="`${!hasConnection(&quot;signal_b&quot;, 0) &amp;&amp; (put1InEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_B)}`" paramId="put1InEnable" />
+      <DRC type="INFO" text="Both Signal A and B should have connections." condition="`${(!hasConnection(&quot;signal_b&quot;, 0) || !hasConnection(&quot;signal_a&quot;, 0)) &amp;&amp; (put1InEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A_AND_B)}`" paramId="put1InEnable" />
+
+      <DRC type="INFO" text="Signal C is enabled but has no connection." condition="`${!hasConnection(&quot;signal_c&quot;, 0) &amp;&amp; (srcInEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A)}`" paramId="srcInEnable" />
+      <DRC type="INFO" text="Signal D is enabled but has no connection." condition="`${!hasConnection(&quot;signal_d&quot;, 0) &amp;&amp; (srcInEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_B)}`" paramId="srcInEnable" />
+      <DRC type="INFO" text="Both Signal C and D should have connections." condition="`${(!hasConnection(&quot;signal_c&quot;, 0) || !hasConnection(&quot;signal_d&quot;, 0)) &amp;&amp; (srcInEnable eq CY_COMBO_ENABLE_INPUT_SIGNAL_A_AND_B)}`" paramId="srcInEnable" />
+
+      <DRC type="INFO" text="Combiner should have at least one input signal." condition="`${(put1InEnable eq CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B) &amp;&amp; (srcInEnable eq CY_COMBO_DISABLE_INPUT_SIGNAL_A_AND_B)}`" paramId="srcSignal" />
+
+      <DRC type="ERROR" text="Event signal became unassigned." condition="`${isBlockUsed(combinerRsc) &amp;&amp; requiresEventOut &amp;&amp; !hasConnection(&quot;event_out&quot;, 0)}`">
+        <FixIt action="DISABLE_BLOCK" target="`${combinerRsc}`" valid="true" />
+      </DRC>
+
+      <DRC type="INFO" text="Qualifier is enabled but has no connection." condition="`${!hasConnection(&quot;pu_in_qualifier&quot;, 0) &amp;&amp; enableQual}`" paramId="enableQual" />
+
+  </DRCs>
+
+  <ConfigFirmware>
+      <ConfigInclude value="cy_ppca_epu.h" include="true" />
+      <ConfigDefine name="`${INST_NAME}`_INDEX" value="`${instNumber}`" public="true" include="true" />
+      <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_EPU_EPU" public="true" include="true" />
+      <ConfigStruct name="`${INST_NAME}`_combo_config" type="cy_stc_ppca_epu_combo_config_t" const="`${inFlash}`"  public="true" include="true" >
+      <Member name="bankSel" value="`${bankSel}`" />
+      <Member name="put1InEnable" value="`${put1InEnable}`" />
+      <Member name="puSrcIn" value="`${puSrcIn}`" />
+      <Member name="srcInEnable" value="`${srcInEnable}`" />
+      <Member name="inQual" value="`${inQual}`" />
+      <Member name="enableQual" value="`${enableQual}`" />
+      <Member name="enablePolInv" value="`${enablePolInv}`" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_EPU_Combo_Configure(`${INST_NAME}`_HW, `${INST_NAME}`_INDEX, &amp;`${INST_NAME}`_combo_config);" include="`${init}`" purpose="INITIALIZE" />
+
+  </ConfigFirmware>
+
+</PersonalityTemplate>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+  <PersonalityTemplate id="mxs40ppca-epucombinerfb" name="mxs40ppca-epucombinerfb" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v10">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.epu\.combiner_fb" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers />
+
+  <Parameters>
+     <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__epu.html" linkText="Open PPCA EPU Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+
+    <ParamString id="greenBlock" name="greenBlock" group="Internal" default="#9BBA43" visible="false" editable="false" desc="" />
+    <ParamString id="greenText" name="greenText" group="Internal" default="#9BBA43" visible="false" editable="false" desc="" />
+    <ParamString id="greenLine" name="greenLine" group="Internal" default="#0A8276" visible="false" editable="false" desc="" />
+    <ParamString id="defaultLine" name="greenLine" group="Internal" default="#000000" visible="false" editable="false" desc="" />
+    <ParamString id="defaultBlock" name="greenLine" group="Internal" default="#ffffff" visible="false" editable="false" desc="" />
+
+    <ParamChoice id="combofbin"
+                 name="COMBO_FB_IN"
+                 group="COMBO FB Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="COMBO FB Input"
+                 default="-1">
+      <Entry name="Unassigned" value="-1" visible="true"/>
+      <Entry name='`${getBlockDisplayName("ppca[0].epu[0].combiner[$idx{0}]",true)}`' value="$idx" visible="true" repeatCount="123" />
+    </ParamChoice>
+
+    <ParamString id="comboFbLineColor" name="comboFbLineColor" group="Internal" default="`${(combofbin ne -1) ? greenLine : defaultLine}`" visible="false" editable="false" desc="" />
+    <ParamString id="comboFbBlockColor" name="comboFbBlockColor" group="Internal" default="`${(combofbin ne -1) ? greenBlock : defaultBlock}`" visible="false" editable="false" desc="" />
+    <ParamString id="comboFbTextColor" name="comboFbTextColor" group="Internal" default="`${(combofbin ne -1) ? greenText : defaultLine}`" visible="false" editable="false" desc="" />
+
+    <ParamString id="inputName" name="inputName" group="Internal" default="`${(getParamValueDisplay(&quot;combofbin&quot;) eq &quot;Unassigned&quot;) ? &quot;COMBO_FB_IN&quot; : getParamValueDisplay(&quot;combofbin&quot;)}`" visible="false" editable="false" desc="" />
+
+    <ParamSignal port="event_fb_ff[0]" name="EVFB_SYNC" group="COMBO FB Configuration" visible="true" desc="" canBeEmpty="true" />
+
+    <ParamImage id="combo"
+                name="COMBINER"
+                group="COMBO FB Configuration"
+                desc=""
+                visible="true"
+                position="OUTSET"
+                default="`${cy_libs_path()}`/device-info/personalities/ppca/EPU_COMBO_FB.svg">
+    <Substitution name="comboFb_lineColor" value="`${comboFbLineColor}`"/>
+    <Substitution name="comboFb_blockColor" value="`${comboFbBlockColor}`"/>
+    <Substitution name="comboFb_textColor" value="`${comboFbTextColor}`"/>
+    <Substitution name="input_text" value="`${inputName}`"/>
+    </ParamImage>
+
+    <ParamString id="instNumber" name="Instance number" group="Internal" default="`${getInstNumber(&quot;combiner_fb&quot;)}`" visible="false" editable="false" desc="EPUTY1 Instance name number." />
+    <ParamString id="epuRsc" name="epuRsc" group="Internal" default="`${&quot;ppca[0].epu[0]&quot;}`" visible="false" editable="false" desc="" />
+    <ParamString id="epuUsed" name="epuUsed" group="Internal" default="`${isBlockUsed(epuRsc)}`" visible="false" editable="false" desc="" />
+  </Parameters>
+
+  <DRCs>
+    <DRC type="INFO" text="Combo FB Input: Select valid signals" paramId="combofbin" condition="`${combofbin eq -1}`" />
+      <DRC type="ERROR" text="Enable EPU." condition="`${!epuUsed}`">
+        <FixIt action="ENABLE_BLOCK" target="`${epuRsc}`" value="mxs40ppca-epu-1.0" valid="true" />
+      </DRC>
+  </DRCs>
+
+  <ConfigFirmware>
+    <ConfigInclude value="cy_ppca_epu.h" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_EPU_EPU" public="true" include="true" />
+
+    <ConfigDefine name="`${INST_NAME}`_INDEX" value="`${instNumber}`" public="true" include="true" />
+    <ConfigDefine name="`${INST_NAME}`_SRCIN" value="`${combofbin}`" public="true" include="true" />
+
+    <ConfigInstruction value="Cy_PPCA_EPU_Combo_Feedback_Configure(`${INST_NAME}`_HW, `${INST_NAME}`_INDEX, `${INST_NAME}`_SRCIN);" include="`${combofbin ne -1}`" purpose="INITIALIZE" />
+  </ConfigFirmware>
+</PersonalityTemplate>

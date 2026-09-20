@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Personality id="mxcordic" name="MXCORDIC" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v8">
+  <Dependencies>
+    <IpBlock name="mxcordic,mxs40ppss" />
+    <Resource name="(ppca\.)?cordic" />
+  </Dependencies>
+  <ExposedMembers />
+  <Parameters>
+    <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__cordic.html" linkText="Open MXCORDIC Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+    <!--Inputs-->
+    <ParamSignal port="tr_done_mxcordic[0]" name="TR DONE" group="Triggers" visible="true" desc="Connects DONE trigger output to the DMA" canBeEmpty="true" />
+    <ParamString id="InstNumber" name="InstNumber" group="Internal" default="`${getInstNumber(&quot;cordic&quot;)}`" visible="false" editable="false" desc="CORDIC Instance name number." />
+    <ParamBool id="ppcaBlock" name="PPCA BLock" desc="Is from PPCA Block" group="Internal" default="`${(&quot;mxs40ppss&quot; eq getIpBlockName())}`" visible="false" editable="false" />
+
+  </Parameters>
+  <DRCs>
+  </DRCs>
+  <ConfigFirmware>
+      <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_MXCORDIC`${InstNumber}`" public="true" include="`${ppcaBlock}`" />
+      <ConfigDefine name="`${INST_NAME}`_IRQ" value="ppca_cordic_`${InstNumber}`_IRQn" public="true" include="`${ppcaBlock}`" />
+  </ConfigFirmware>
+</Personality>

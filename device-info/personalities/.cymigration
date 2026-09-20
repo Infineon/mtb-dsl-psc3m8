@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Migration>
+  <Source id="mxs40pwm_ver2-1.0">
+    <Destination id="mxs40pwm_ver2-2.0" valid="true" message="Migration is successful" defaultMapping="true">
+      <Parameter param="Period0" value="`${(value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) ? floor(value(&quot;Period0&quot;,&quot;0&quot;) / 64) : value(&quot;Period0&quot;,&quot;0&quot;)}`" />
+      <Parameter param="Period0_hrpwm" value="`${(value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) ? (value(&quot;Period0&quot;,&quot;0&quot;) - floor(value(&quot;Period0&quot;,&quot;0&quot;) / 64) * 64) : 0}`" />
+      <Parameter param="Period1" value="`${(value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) ? floor(value(&quot;Period1&quot;,&quot;0&quot;) / 64) : value(&quot;Period1&quot;,&quot;0&quot;)}`" />
+      <Parameter param="Period1_hrpwm" value="`${(value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) ? (value(&quot;Period1&quot;,&quot;0&quot;) - floor(value(&quot;Period1&quot;,&quot;0&quot;) / 64) * 64) : 0}`" />
+      <Parameter param="Compare0" value="`${(value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) ? floor(value(&quot;Compare0&quot;,&quot;0&quot;) / 64) : value(&quot;Compare0&quot;,&quot;0&quot;)}`" />
+      <Parameter param="Compare0_hrpwm" value="`${(value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) ? (value(&quot;Compare0&quot;,&quot;0&quot;) - floor(value(&quot;Compare0&quot;,&quot;0&quot;) / 64) * 64) : 0}`" />
+      <Parameter param="Compare1" value="`${(value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) ? floor(value(&quot;Compare1&quot;,&quot;0&quot;) / 64) : value(&quot;Compare1&quot;,&quot;0&quot;)}`" />
+      <Parameter param="Compare1_hrpwm" value="`${(value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) ? (value(&quot;Compare1&quot;,&quot;0&quot;) - floor(value(&quot;Compare1&quot;,&quot;0&quot;) / 64) * 64) : 0}`" />
+      <Parameter param="Compare2" value="`${(value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) ? floor(value(&quot;Compare2&quot;,&quot;0&quot;) / 64) : value(&quot;Compare2&quot;,&quot;0&quot;)}`" />
+      <Parameter param="Compare2_hrpwm" value="`${(value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) ? (value(&quot;Compare2&quot;,&quot;0&quot;) - floor(value(&quot;Compare2&quot;,&quot;0&quot;) / 64) * 64) : 0}`" />
+      <Parameter param="Compare3" value="`${(value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) ? floor(value(&quot;Compare3&quot;,&quot;0&quot;) / 64) : value(&quot;Compare3&quot;,&quot;0&quot;)}`" />
+      <Parameter param="Compare3_hrpwm" value="`${(value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) ? (value(&quot;Compare3&quot;,&quot;0&quot;) - floor(value(&quot;Compare3&quot;,&quot;0&quot;) / 64) * 64) : 0}`" />
+      <Parameter param="DeadClocks" value="`${((value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) &amp;&amp; (value(&quot;pCntAMC&quot;,&quot;false&quot;) eq &quot;true&quot;)) ? floor(value(&quot;DeadClocks&quot;,&quot;0&quot;) / 64) : value(&quot;DeadClocks&quot;,&quot;0&quot;)}`" />
+      <Parameter param="DeadClocks_hrpwm" value="`${((value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) &amp;&amp; (value(&quot;pCntAMC&quot;,&quot;false&quot;) eq &quot;true&quot;)) ? (value(&quot;DeadClocks&quot;,&quot;0&quot;) - floor(value(&quot;DeadClocks&quot;,&quot;0&quot;) / 64) * 64) : 0}`" />
+      <Parameter param="DeadClocks_compl" value="`${((value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) &amp;&amp; (value(&quot;pCntAMC&quot;,&quot;false&quot;) eq &quot;true&quot;)) ? floor(value(&quot;DeadClocks_compl&quot;,&quot;0&quot;) / 64) : value(&quot;DeadClocks_compl&quot;,&quot;0&quot;)}`" />
+      <Parameter param="DeadClocks_compl_hrpwm" value="`${((value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) &amp;&amp; (value(&quot;pCntAMC&quot;,&quot;false&quot;) eq &quot;true&quot;)) ? (value(&quot;DeadClocks_compl&quot;,&quot;0&quot;) - floor(value(&quot;DeadClocks_compl&quot;,&quot;0&quot;) / 64) * 64) : 0}`" />
+      <Parameter param="DeadClocksBuff" value="`${((value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) &amp;&amp; (value(&quot;pCntAMC&quot;,&quot;false&quot;) eq &quot;true&quot;)) ? floor(value(&quot;DeadClocksBuff&quot;,&quot;0&quot;) / 64) : value(&quot;DeadClocksBuff&quot;,&quot;0&quot;)}`" />
+      <Parameter param="DeadClocksBuff_hrpwm" value="`${((value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) &amp;&amp; (value(&quot;pCntAMC&quot;,&quot;false&quot;) eq &quot;true&quot;)) ? (value(&quot;DeadClocksBuff&quot;,&quot;0&quot;) - floor(value(&quot;DeadClocksBuff&quot;,&quot;0&quot;) / 64) * 64) : 0}`" />
+      <Parameter param="DeadClocksBuff_compl" value="`${((value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) &amp;&amp; (value(&quot;pCntAMC&quot;,&quot;false&quot;) eq &quot;true&quot;)) ? floor(value(&quot;DeadClocksBuff_compl&quot;,&quot;0&quot;) / 64) : value(&quot;DeadClocksBuff_compl&quot;,&quot;0&quot;)}`" />
+      <Parameter param="DeadClocksBuff_compl_hrpwm" value="`${((value(&quot;enable_hrpwm&quot;,&quot;false&quot;) eq &quot;true&quot;) &amp;&amp; (value(&quot;pCntAMC&quot;,&quot;false&quot;) eq &quot;true&quot;)) ? (value(&quot;DeadClocksBuff_compl&quot;,&quot;0&quot;) - floor(value(&quot;DeadClocksBuff_compl&quot;,&quot;0&quot;) / 64) * 64) : 0}`" />
+    </Destination>
+  </Source>
+</Migration>

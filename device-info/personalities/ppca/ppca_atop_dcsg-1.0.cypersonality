@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PersonalityTemplate id="mxs40ppca_dcsg" name="DCSG" version="1.0" xmlns="http://cypress.com/xsd/cyhwpersonality_v10">
+  <FittingRules>
+    <MappingRules>
+      <IpBlock name="mxs40ppss" />
+      <Resource name="ppca\.atop\.dcsg_grp\.dcsg" />
+    </MappingRules>
+  </FittingRules>
+  <ExposedMembers>
+    <ExposedMember key="threshold"  paramId="threshold" />
+    <ExposedMember key="src_type"  paramId="src_type" />
+    <ExposedMember key="src_ch"  paramId="src_ch" />
+    <ExposedMember key="dcsg_out0_text"  paramId="dcsg_out0_text" />
+  </ExposedMembers>
+  <Parameters>
+    <!-- PDL documentation -->
+    <ParamDoc id="pdlDoc" name="Configuration Help" group="Overview" default="file:///`${cy_libs_path()}`/docs/html/group__group__ppca__dcsg.html" linkText="Open PPCA DCSG Documentation" visible="true" desc="Opens the Peripheral Driver Library Documentation" />
+
+    <!-- DCSG Configuration -->
+
+    <ParamChoice id="src_type"
+             name="Source Is From"
+             group="DCSG Configuration"
+             visible="true"
+             editable="true"
+             desc="if enabled, source to DCSG is from DAC R2R(internal). If disabled, source to DCSG is from analog input pad(external)."
+             default="0">
+        <Entry name="DAC R2R(internal)" value="1" visible="true"/>
+        <Entry name="Analog Input Pad(external)" value="0" visible="true"/>
+    </ParamChoice>
+    <ParamChoice id="src_ch"
+             name="Analog Input Channel Source"
+             group="DCSG Configuration"
+             visible="`${(src_type eq 0)}`"
+             editable="`${(src_type eq 0)}`"
+             desc="Analog Input Channel Source. Valid range 0 to 11."
+             default="0">
+        <Entry name="SRC 0 : Input from AIN0P and AIN0N" value="0" visible="true"/>
+        <Entry name="SRC 1 : Input from AIN1P and AIN1N" value="1" visible="true"/>
+        <Entry name="SRC 2 : Input from AIN2P and AIN2N" value="2" visible="true"/>
+        <Entry name="SRC 3 : Input from AIN3P and AIN3N" value="3" visible="true"/>
+        <Entry name="SRC 4 : Input from AIN4P and AIN4N" value="4" visible="true"/>
+        <Entry name="SRC 5 : Input from AIN5P and AIN5N" value="5" visible="true"/>
+        <Entry name="SRC 6 : Input from AIN6P and AIN6N" value="6" visible="true"/>
+        <Entry name="SRC 7 : Input from AIN7P and AIN7N" value="7" visible="true"/>
+        <Entry name="SRC 8 : Input from AIN8P and AIN8N" value="8" visible="true"/>
+        <Entry name="SRC 9 : Input from AIN9P and AIN9N" value="9" visible="true"/>
+        <Entry name="SRC 10 : Input from AIN10P and AIN10N" value="10" visible="true"/>
+        <Entry name="SRC 11 : Input from AIN11P and AIN11N" value="11" visible="true"/>
+    </ParamChoice>
+
+    <ParamChoice id="src_ch_type"
+             name="Source Channel Type"
+             group="DCSG Configuration"
+             visible="true"
+             editable="true"
+             desc="Analog Comparator channel source type."
+             default="CY_DCSG_CH_SRC_TYPE_CH_DIFF_ER">
+        <Entry name="Differential Mode Extended Range support +/-3.3V" value="CY_DCSG_CH_SRC_TYPE_CH_DIFF_ER" visible="true"/>
+        <Entry name="Differential Mode Full Range support 0-3.3V" value="CY_DCSG_CH_SRC_TYPE_CH_DIFF_FR" visible="true"/>
+        <Entry name="Single-Ended Mode P Vs GND" value="CY_DCSG_CH_SRC_TYPE_CH_SINGLE_P" visible="true"/>
+        <Entry name="Single-Ended Mode N Vs GND" value="CY_DCSG_CH_SRC_TYPE_CH_SINGLE_N" visible="true"/>
+        <Entry name="Differential Mode Reduced Range support +/-200mV" value="CY_DCSG_CH_SRC_TYPE_CH_DIFF_RR" visible="true"/>
+        <Entry name="A vs B Mode" value="CY_DCSG_CH_SRC_TYPE_CH_A_VS_B" visible="true"/>
+    </ParamChoice>
+    <ParamChoice id="blanking_period"
+             name="Blanking Period Setting"
+             group="DCSG Configuration"
+             visible="true"
+             editable="true"
+             desc="DCSG Blanking Period Setting."
+             default="CY_DCSG_BLANKING_PERIOD_8">
+        <Entry name="Blanking period is 8" value="CY_DCSG_BLANKING_PERIOD_8" visible="true"/>
+        <Entry name="Blanking period is 10" value="CY_DCSG_BLANKING_PERIOD_10_1" visible="true"/>
+        <Entry name="Blanking period is 12" value="CY_DCSG_BLANKING_PERIOD_12" visible="true"/>
+    </ParamChoice>
+
+    <ParamChoice id="dac_clk_blk_rate"
+                 name="DCSG DAC Update Rate"
+                 group="DCSG Configuration"
+                 visible="true"
+                 editable="true"
+                 desc="configures the DCSG DAC update rate. 4 Clock Cycles should only be used when slopegen is used."
+                 default="CY_DCSG_DAC_RATE_10CLK_8BLANK_CYCLES">
+      <Entry name="4 Clock Cycles, 0 Blank Cycles" value="CY_DCSG_DAC_RATE_4CLK_0BLANK_CYCLES" visible="true"/>
+      <Entry name="4 Clock Cycles, 2 Blank Cycles" value="CY_DCSG_DAC_RATE_4CLK_2BLANK_CYCLES" visible="true"/>
+      <Entry name="4 Clock Cycles, 3 Blank Cycles" value="CY_DCSG_DAC_RATE_4CLK_3BLANK_CYCLES" visible="true"/>
+      <Entry name="6 Clock Cycles, 4 Blank Cycles" value="CY_DCSG_DAC_RATE_6CLK_4BLANK_CYCLES" visible="true"/>
+      <Entry name="8 Clock Cycles, 6 Blank Cycles" value="CY_DCSG_DAC_RATE_8CLK_6BLANK_CYCLES" visible="true"/>
+      <Entry name="10 Clock Cycles, 8 Blank Cycles" value="CY_DCSG_DAC_RATE_10CLK_8BLANK_CYCLES" visible="true"/>
+      <Entry name="12 Clock Cycles, 10 Blank Cycles" value="CY_DCSG_DAC_RATE_12CLK_10BLANK_CYCLES" visible="true"/>
+      <Entry name="20 Clock Cycles, 18 Blank Cycles" value="CY_DCSG_DAC_RATE_20CLK_18BLANK_CYCLES" visible="true"/>
+    </ParamChoice>
+    <ParamBool id="bypass_refresh" name="Bypass Refresh" group="DCSG Configuration" default="false" visible="true" editable="true" desc=" Bypass DCSG refresh."/>
+    <ParamChoice id="refresh_rate"
+                 name="DCSG Refrsh Rate"
+                 group="DCSG Configuration"
+                 visible="`${(bypass_refresh eq false)}`"
+                 editable="`${(bypass_refresh eq false)}`"
+                 desc="configures the DCSG DAC update rate."
+                 default="CY_DCSG_REFRESH_RATE_10000_CYCLES">
+      <Entry name="10000 Clock Cycles" value="CY_DCSG_REFRESH_RATE_10000_CYCLES" visible="true"/>
+      <Entry name="7500 Clock Cycles" value="CY_DCSG_REFRESH_RATE_7500_CYCLES" visible="true"/>
+      <Entry name="5000 Clock Cycles" value="CY_DCSG_REFRESH_RATE_5000_CYCLES" visible="true"/>
+      <Entry name="3500 Clock Cycles" value="CY_DCSG_REFRESH_RATE_3500_CYCLES" visible="true"/>
+      <Entry name="2500 Clock Cycles" value="CY_DCSG_REFRESH_RATE_2500_CYCLES" visible="true"/>
+      <Entry name="1750 Clock Cycles" value="CY_DCSG_REFRESH_RATE_1750_CYCLES" visible="true"/>
+      <Entry name="1250 Clock Cycles" value="CY_DCSG_REFRESH_RATE_1250_CYCLES" visible="true"/>
+      <Entry name="1000 Clock Cycles" value="CY_DCSG_REFRESH_RATE_1000_CYCLES" visible="true"/>
+    </ParamChoice>
+    <ParamBool id="use_user_value" name="Use User Value" group="DCSG Configuration" default="false" visible="true" editable="true" desc="To use User Defined Value during Refresh. 0: CMP_Flag from comparator output. 1: CMP_Flag from User defined value."/>
+    <ParamChoice id="user_value"
+             name="User Defined Value"
+             group="DCSG Configuration"
+             visible="`${(use_user_value)}`"
+             editable="`${(use_user_value)}`"
+             desc="User defined value. used as CMP_FLAG when bypass_refresh and use_user_value are set to true."
+             default="0">
+        <Entry name="User Defined Value 0" value="0" visible="true"/>
+        <Entry name="User Defined Value 1" value="1" visible="true"/>
+    </ParamChoice>
+
+    <ParamChoice id="hyst_value"
+                 name="DCSG Hysteresis"
+                 group="DCSG Configuration"
+                 visible="`${(src_ch_type eq CY_DCSG_CH_SRC_TYPE_CH_A_VS_B)}`"
+                 editable="`${(src_ch_type eq CY_DCSG_CH_SRC_TYPE_CH_A_VS_B)}`"
+                 desc="Configures the DCSG Hysteresis setup for A_VS_B Mode. 1 LSB is equivalent to 1.6mV."
+                 default="CY_DCSG_HYSTERESIS_IS_DISABLED">
+      <Entry name="Hysteresis Feature is Disabled" value="CY_DCSG_HYSTERESIS_IS_DISABLED" visible="true"/>
+      <Entry name="+/- 1 LSB hysteresis" value="CY_DCSG_HYSTERESIS_IS_1_LSB" visible="true"/>
+      <Entry name="+/- 2 LSB hysteresis" value="CY_DCSG_HYSTERESIS_IS_2_LSB" visible="true"/>
+      <Entry name="+/- 4 LSB hysteresis" value="CY_DCSG_HYSTERESIS_IS_4_LSB" visible="true"/>
+      <Entry name="+/- 8 LSB hysteresis" value="CY_DCSG_HYSTERESIS_IS_8_LSB" visible="true"/>
+      <Entry name="+/- 16 LSB hysteresis" value="CY_DCSG_HYSTERESIS_IS_16_LSB" visible="true"/>
+      <Entry name="+/- 32 LSB hysteresis" value="CY_DCSG_HYSTERESIS_IS_32_LSB" visible="true"/>
+      <Entry name="+/- 64 LSB hysteresis" value="CY_DCSG_HYSTERESIS_IS_64_LSB" visible="true"/>
+    </ParamChoice>
+    <ParamChoice id="debounce_rate"
+                 name="DCSG Debounce Rate"
+                 group="DCSG Configuration"
+                 visible="`${(src_ch_type eq CY_DCSG_CH_SRC_TYPE_CH_A_VS_B)}`"
+                 editable="`${(src_ch_type eq CY_DCSG_CH_SRC_TYPE_CH_A_VS_B)}`"
+                 desc="Configures the DCSG Hysteresis setup for A_VS_B Mode. 1 LSB is equivalent to 1.6mV."
+                 default="CY_DCSG_DEBOUNCE_RATE_DISABLED">
+      <Entry name="Debounce Feature is Disabled" value="CY_DCSG_DEBOUNCE_RATE_DISABLED" visible="true"/>
+      <Entry name="Transistion Valid for 2 Clock Cycles" value="CY_DCSG_DEBOUNCE_RATE_2_CYCLES" visible="true"/>
+      <Entry name="Transistion Valid for 3 Clock Cycles" value="CY_DCSG_DEBOUNCE_RATE_3_CYCLES" visible="true"/>
+      <Entry name="Transistion Valid for 4 Clock Cycles" value="CY_DCSG_DEBOUNCE_RATE_4_CYCLES" visible="true"/>
+      <Entry name="Transistion Valid for 5 Clock Cycles" value="CY_DCSG_DEBOUNCE_RATE_5_CYCLES" visible="true"/>
+      <Entry name="Transistion Valid for 6 Clock Cycles" value="CY_DCSG_DEBOUNCE_RATE_6_CYCLES" visible="true"/>
+      <Entry name="Transistion Valid for 7 Clock Cycles" value="CY_DCSG_DEBOUNCE_RATE_7_CYCLES" visible="true"/>
+      <Entry name="Transistion Valid for 8 Clock Cycles" value="CY_DCSG_DEBOUNCE_RATE_8_CYCLES" visible="true"/>
+    </ParamChoice>
+    <ParamRange id="threshold" name="DCSG Threshold" group="DCSG Configuration" default="0" min="0" max="4095" resolution="1" visible="true" editable="true" desc="12 bit DCSG Threshold Value." />
+    <ParamSignal port="dcsg_out[0]" name="dcsg_out[0]" visible="`${hasVisibleOption(&quot;dcsg_out[0]&quot;)}`" canBeEmpty="true" group="Signals" desc="" />
+
+    <ParamString id="dcsgGroupNumber" name="DCSG Group Number" group="Internal" default="`${getInstNumber(&quot;dcsg_grp&quot;)}`" visible="false" editable="false" desc="DCSG Group name number." />
+    <ParamString id="InstNumber" name="InstNumber" group="Internal" default="`${getInstNumber(&quot;dcsg&quot;)}`" visible="false" editable="false" desc="Instance number." />
+
+    <!-- Output signal text for SVG visualization -->
+    <ParamString id="dcsg_out0_raw" name="dcsg_out0_raw" group="Internal" default="`${(getParamValueDisplay(&quot;dcsg_out[0]&quot;) eq &quot;&quot;) ? &quot;DCSG_OUT[&quot; . InstNumber . &quot;]&quot; : getParamValueDisplay(&quot;dcsg_out[0]&quot;)}`" visible="false" editable="false" desc="" />
+    <ParamString id="dcsg_out0_truncate" name="dcsg_out0_truncate" group="Internal" default="`${runTcl(&quot;truncate_signal_text-1.0.tcl&quot;, dcsg_out0_raw)}`" visible="false" editable="false" desc="" />
+    <ParamString id="dcsg_out0_text" name="dcsg_out0_text" group="Internal" default="`${getTclVar(&quot;result0&quot;, dcsg_out0_truncate)}`" visible="false" editable="false" desc="" />
+    <ParamString id="arefRsc" name="arefRsc" group="Internal" default="ppca[0].atop[0].adc_grp[0].aref[0]" visible="false" editable="false" desc="" />
+    <ParamString id="arefUsed" name="arefUsed" group="Internal" default="`${isBlockUsed(arefRsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamString id="dacRsc" name="dacRsc" group="Internal" default="ppca[0].atop[0].dcsg_grp[`${dcsgGroupNumber}`].r2r_dac[0]" visible="false" editable="false" desc="" />
+    <ParamString id="dacUsed" name="dacUsed" group="Internal" default="`${isBlockUsed(dacRsc)}`" visible="false" editable="false" desc="" />
+
+    <ParamBool id="init" name="Initialize During Startup" group="Advanced" default="true" visible="true" editable="true" desc="Performs an automatic initialization in the init_cycfg_peripherals() generated function." />
+    <ParamBool id="inFlash" name="Store Config in Flash" group="Advanced" default="true" visible="true" editable="true" desc="Controls whether the configuration structure is stored in flash (const, true) or SRAM (not const, false)." />
+
+  </Parameters>
+  <DRCs>
+    <DRC type="ERROR" text="Enable AREF in ADC Group0 and configure VREF Source accordingly." condition="`${!arefUsed}`">
+      <FixIt action="ENABLE_BLOCK" target="`${arefRsc}`" value="" valid="true" />
+    </DRC>
+    <DRC type="ERROR" text="Enable and Configure DAC." condition="`${(!dacUsed) &amp;&amp; (src_type eq 1)}`">
+      <FixIt action="ENABLE_BLOCK" target="`${dacRsc}`" value="" valid="true" />
+    </DRC>
+  </DRCs>
+
+ <ConfigFirmware>
+
+    <ConfigInclude value="cy_ppca_dcsg.h" include="true" />
+    <ConfigInclude value="mtb_hal.h" include="true" guard="defined (COMPONENT_MTB_HAL)" />
+    <ConfigInclude value="mtb_hal_hw_types.h" include="true" guard="defined (COMPONENT_MTB_HAL)" />
+    <ConfigDefine name="`${INST_NAME}`_HW" value="PPCA_ATOPSS_DCSG_GRP`${dcsgGroupNumber}`_DCSG_SLICE`${InstNumber}`" public="true" include="true" />
+    <ConfigStruct name="`${INST_NAME}`_config" type="cy_stc_ppca_dcsg_config_t" const="`${inFlash}`" public="true" include="true" >
+      <Member name="src_type" value="`${src_type}`" />
+      <Member name="src_ch" value="`${src_ch}`" />
+      <Member name="src_ch_type" value="`${src_ch_type}`" />
+      <Member name="blanking_period" value="`${blanking_period}`" />
+      <Member name="dac_clk_blk_rate" value="`${dac_clk_blk_rate}`" />
+      <Member name="refresh_rate" value="`${refresh_rate}`" />
+      <Member name="bypass_refresh" value="`${bypass_refresh}`" />
+      <Member name="use_user_value" value="`${use_user_value}`" />
+      <Member name="user_value" value="`${user_value}`" />
+      <Member name="hyst_value" value="`${hyst_value}`" />
+      <Member name="debounce_rate" value="`${debounce_rate}`" />
+      <Member name="threshold" value="`${threshold}`" />
+      <Member name="groupNumber" value="`${dcsgGroupNumber}`" />
+    </ConfigStruct>
+
+    <ConfigStruct name="`${INST_NAME}`_hal_config" type="mtb_hal_comp_configurator_t" const="`${inFlash}`" public="true" include="true" guard="defined (COMPONENT_MTB_HAL) &amp;&amp; (_MTB_HAL_DRIVER_AVAILABLE_COMP_DCSG)">
+      <Member name="dcsg_base" value="`${INST_NAME}`_HW" />
+      <Member name="channel_num" value="`${InstNumber}`" />
+      <Member name="resource_type" value="MTB_HAL_COMP_DCSG" />
+    </ConfigStruct>
+
+    <ConfigInstruction value="Cy_PPCA_DCSG_Init(`${INST_NAME}`_HW, &amp;`${INST_NAME}`_config);" include="`${init}`" purpose="INITIALIZE" guard="!defined (COMPONENT_PPCA_DEVICE)" />
+
+   </ConfigFirmware>
+</PersonalityTemplate>
